@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.1.5
+
+- Added upright screen-space SVG emblems above each faction capital system.
+- Capital assignments: Eventide/Abydos, XUANJIA Mandate/Sais, Adainian Conclave/Nekhen, Signatories of the Accords Paramount/Saqqara, and Union/Amarna.
+- Added simplified map glyphs based on the established faction flag designs: Eventide enclosed sunrise, Mandate Fivefold Lotus, Conclave eclipsed sun, Accords Bound Star, and Union three-bars mark.
+- Capital emblems follow their projected star positions while remaining visually north-up and constant-size as the 3D cube rotates and zooms.
+- Added non-interactive leader lines so capital symbols remain clearly associated with their systems without interfering with star selection.
+- Added deterministic tests for all five capital assignments and system references.
+
 ## v0.1.4
 
 - Extrapolated the 2D Manger faction-control map into approximate three-dimensional territorial volumes.
