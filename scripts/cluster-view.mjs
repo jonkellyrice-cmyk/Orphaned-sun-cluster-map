@@ -169,16 +169,52 @@ export class ClusterView {
         role: "button",
         "aria-label": system.name,
       });
-      const hitTarget = svgElement("circle", { class: "oscm-star-hit-target", r: "22" });
-      const halo = svgElement("circle", { class: "oscm-star-halo", r: "10" });
-      const core = svgElement("circle", { class: "oscm-star-core", r: "4.5" });
-      const label = svgElement("text", { class: "oscm-star-label", x: "10", y: "-8" });
+      const hitTarget = svgElement("circle", { class: "oscm-star-hit-target", r: "24" });
+      const stellarNodes = [];
+      const stars = system.stars?.length ? system.stars : [{ id: "A", color: "#eaffff", coreColor: "#ffffff", radiusScale: 1 }];
+      const selectionRadiusBase = stars.length > 1 ? 17 : 12.5;
+      const selectionRing = svgElement("circle", { class: "oscm-star-selection-ring", r: String(selectionRadiusBase) });
+
+      for (const star of stars) {
+        const offsetX = Number(star.markerOffsetX ?? 0);
+        const radiusScale = Number(star.radiusScale ?? 1);
+        const stellarGroup = svgElement("g", {
+          class: `oscm-stellar-component${star.anomalous ? " is-anomalous" : ""}`,
+          transform: `translate(${offsetX} 0)`,
+        });
+        const halo = svgElement("circle", {
+          class: "oscm-star-halo",
+          r: (10 * radiusScale).toFixed(2),
+          fill: star.color,
+        });
+        halo.style.setProperty("--oscm-stellar-color", star.color);
+        const core = svgElement("circle", {
+          class: "oscm-star-core",
+          r: (4.5 * radiusScale).toFixed(2),
+          fill: star.color,
+          stroke: star.coreColor ?? "rgba(255,255,255,0.85)",
+        });
+        const innerCore = svgElement("circle", {
+          class: "oscm-star-inner-core",
+          r: (1.75 * radiusScale).toFixed(2),
+          fill: star.coreColor ?? star.color,
+        });
+        stellarGroup.append(halo, core, innerCore);
+        group.append(stellarGroup);
+        stellarNodes.push({ group: stellarGroup, halo, core, innerCore, star, radiusScale });
+      }
+
+      const labelOffsetX = stars.length > 1 ? 15 : 10;
+      const label = svgElement("text", { class: "oscm-star-label", x: String(labelOffsetX), y: "-8" });
       label.textContent = system.name;
-      const coords = svgElement("text", { class: "oscm-star-coords", x: "10", y: "7" });
+      const coords = svgElement("text", { class: "oscm-star-coords", x: String(labelOffsetX), y: "7" });
       coords.textContent = `${system.x.toFixed(1)}, ${system.y.toFixed(1)}, ${system.z.toFixed(1)} ly`;
-      group.append(hitTarget, halo, core, label, coords);
+      const title = svgElement("title");
+      title.textContent = `${system.name}: ${stars.map((star) => `${star.id} ${star.spectralType} — ${star.visibleColor}`).join("; ")}`;
+      group.prepend(hitTarget, selectionRing);
+      group.append(label, coords, title);
       this.starLayer.append(group);
-      this.starNodes.set(system.id, { group, hitTarget, halo, core, label, coords, system });
+      this.starNodes.set(system.id, { group, hitTarget, selectionRing, selectionRadiusBase, stellarNodes, label, coords, system });
 
       group.addEventListener("click", (event) => {
         event.stopPropagation();
@@ -404,8 +440,14 @@ export class ClusterView {
       projectedStars.push({ node, p });
       node.group.setAttribute("transform", `translate(${p.x.toFixed(2)} ${p.y.toFixed(2)})`);
       node.group.style.opacity = String(clamp(0.68 + p.perspective * 0.26, 0.65, 1));
-      node.core.setAttribute("r", (4.4 * clamp(p.perspective, 0.75, 1.3)).toFixed(2));
-      node.halo.setAttribute("r", (10 * clamp(p.perspective, 0.75, 1.3)).toFixed(2));
+      const perspectiveScale = clamp(p.perspective, 0.75, 1.3);
+      node.selectionRing.setAttribute("r", (node.selectionRadiusBase * perspectiveScale).toFixed(2));
+      for (const stellarNode of node.stellarNodes) {
+        const scaled = stellarNode.radiusScale * perspectiveScale;
+        stellarNode.core.setAttribute("r", (4.5 * scaled).toFixed(2));
+        stellarNode.innerCore.setAttribute("r", (1.75 * scaled).toFixed(2));
+        stellarNode.halo.setAttribute("r", (10 * scaled).toFixed(2));
+      }
     }
 
     // Keep nearer labels/points visually on top.
