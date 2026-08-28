@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cluster preview</title>
+<style>
+html,body{margin:0;background:#050b0e;color:#d8edf0;font-family:Arial,sans-serif;height:100%}
+#wrap{display:grid;grid-template-columns:1fr 330px;height:100vh;min-height:700px}
+#view{position:relative;min-width:0}.oscm-cluster-svg{width:100%;height:100%;display:block;background:#071014;cursor:grab;touch-action:none}
+.oscm-grid-line{stroke:#75bec4;stroke-width:.55;vector-effect:non-scaling-stroke}.oscm-grid-line.is-major{stroke-width:.9}.oscm-grid-line.is-boundary{stroke-width:1.05}
+.oscm-axis{stroke-width:1.4;vector-effect:non-scaling-stroke;opacity:.72}.oscm-axis-x{stroke:#d16a6a}.oscm-axis-y{stroke:#6ed08b}.oscm-axis-z{stroke:#6a91d1}.oscm-axis-label{fill:#83a6aa;font:700 12px monospace}
+.oscm-star{cursor:pointer}.oscm-star-hit-target{fill:transparent;stroke:none;pointer-events:all}.oscm-star-halo{fill:rgba(214,248,251,.15)}.oscm-star-core{fill:#eaffff;stroke:white;stroke-width:1}.oscm-star-label{fill:#ecfbfc;font:700 13px Arial,sans-serif;paint-order:stroke;stroke:#030a0c;stroke-width:3}.oscm-star-coords{fill:#86a9ad;font:9px monospace;paint-order:stroke;stroke:#030a0c;stroke-width:2.5}.oscm-star.is-origin .oscm-star-core{fill:#f4d35e}.oscm-star.is-destination .oscm-star-core{fill:#78dce8}.oscm-route-line-shadow{stroke:#000;stroke-width:6}.oscm-route-line{stroke:#dffcff;stroke-width:2.2;stroke-dasharray:7 5}
+#panel{padding:20px;background:#0d171b;border-left:1px solid rgba(151,220,225,.2)}h1{font-size:22px;margin:0 0 15px}.card{border:1px solid rgba(151,220,225,.2);padding:12px;margin-bottom:12px}.row{display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid rgba(151,220,225,.08);font-size:12px}.muted{color:#83a6aa}button{margin-right:7px;padding:7px 10px}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="view"><svg id="cluster" class="oscm-cluster-svg"></svg><div style="position:absolute;left:12px;bottom:12px;padding:7px 10px;background:rgba(3,11,14,.8);color:#83a6aa;font-size:11px;border:1px solid rgba(151,220,225,.18)">Drag / 1 finger: rotate · Wheel / pinch: zoom · Click / tap two stars: route</div></div>
+  <aside id="panel">
+    <h1>Beehive Cluster</h1>
+    <div class="card"><div class="muted" id="prompt">Select two systems.</div><div id="results"></div></div>
+    <button id="clear">Clear</button><button id="reset">Reset View</button>
+  </aside>
+</div>
+<script type="module">
+import {ClusterView} from '../scripts/cluster-view.mjs';
+import {projectedDistanceLy, spatialDistanceLy} from '../scripts/cluster-data.mjs';
+import {calculateTransit, formatDuration} from '../scripts/relativity.mjs';
+const results=document.querySelector('#results'); const prompt=document.querySelector('#prompt');
+const view=new ClusterView(document.querySelector('#cluster'),{gridSpacing:1,onSelectionChange:(a,b)=>{
+  if(!a||!b){prompt.textContent=a?`Origin: ${a.name}. Select destination.`:'Select two systems.';results.innerHTML='';return}
+  const d=spatialDistanceLy(a,b); const t=calculateTransit(d,{accelerationG:200,cruiseBeta:.995});
+  prompt.textContent=`${a.name} → ${b.name}`;
+  results.innerHTML=`<div class="row"><span>Projected</span><b>${projectedDistanceLy(a,b).toFixed(2)} ly</b></div><div class="row"><span>True 3D</span><b>${d.toFixed(2)} ly</b></div><div class="row"><span>Cluster time</span><b>${formatDuration(t.clusterYears)}</b></div><div class="row"><span>Ship time</span><b>${formatDuration(t.shipYears)}</b></div>`;
+}});
+document.querySelector('#clear').onclick=()=>view.clearSelection();document.querySelector('#reset').onclick=()=>view.resetView();
+setTimeout(()=>{document.querySelector('[data-system-id="iunu"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));document.querySelector('[data-system-id="nekhen"]').dispatchEvent(new MouseEvent('click',{bubbles:true}));},200);
+</script>
+</body>
+</html>
