@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.1.6
+
+- Added a compact route-travel HUD directly over the upper-right corner of the 3D cluster view.
+- The HUD appears only after two systems are selected and stays visible while the cube rotates.
+- It shows origin → destination, true 3D distance, cluster/reference-frame elapsed time, and shipboard/subjective elapsed time.
+- Added the current acceleration/cruise profile as a compact footer so the time assumptions remain visible.
+- Added responsive mobile sizing and made the HUD non-interactive so it cannot block star taps or rotation gestures.
+- Added deterministic tests for HUD fields, visibility wiring, and upper-right mobile overlay behavior.
+
 ## v0.1.5
 
 - Added upright screen-space SVG emblems above each faction capital system.
