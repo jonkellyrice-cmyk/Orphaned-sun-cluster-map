@@ -28,8 +28,11 @@ jobs:
           VERSION="$(node -p "require('./package.json').version")"
           ARCHIVE="orphaned-sun-cluster-map-v${VERSION}.zip"
           zip -r "$ARCHIVE" \
-            module.json scripts templates styles lang README.md docs \
+            module.json scripts templates styles lang README.md docs data \
             -x "*.DS_Store"
+          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-geography/manifest.json"
+          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-geography/sais/nalini.json"
+          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-geography/sais/shanvara.json"
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "ARCHIVE=$ARCHIVE" >> "$GITHUB_ENV"
 

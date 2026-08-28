@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.3.1
+
+- Fixed Forge orbital-body views failing to load because the v0.3.0 release archive omitted `data/planet-geography`.
+- Added release-package checks for the geography manifest and representative Sais world assets.
+
 ## v0.3.0
 
 - Added a third orbital/body zoom level for terrestrial planets, moons, dwarf worlds, giants, stations, shipyards, vessels, fleets, blinkgates, megastructures, and anomalies.
