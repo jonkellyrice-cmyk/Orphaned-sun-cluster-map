@@ -106,6 +106,9 @@ export function formatDuration(years) {
   if (years === 0) return "0";
 
   const days = years * 365.25;
+  const seconds = days * 86_400;
+  if (seconds < 120) return `${seconds.toFixed(1)} sec`;
+  if (seconds < 7_200) return `${(seconds / 60).toFixed(1)} min`;
   if (days < 2) return `${(days * 24).toFixed(1)} hr`;
   if (days < 60) return `${days.toFixed(1)} days`;
   if (years < 2) return `${(years * 12).toFixed(2)} mo`;

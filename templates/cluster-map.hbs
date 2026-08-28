@@ -22,7 +22,7 @@
     <div class="oscm-view-help">
       <span><i class="fa-solid fa-arrows-rotate"></i> Drag / 1 finger: rotate</span>
       <span><i class="fa-solid fa-magnifying-glass"></i> Wheel / pinch: zoom</span>
-      <span><i class="fa-solid fa-star"></i> Click / tap two systems: route</span>
+      <span data-map-help><i class="fa-solid fa-star"></i> Click / tap two systems: route</span>
     </div>
   </section>
 
@@ -30,9 +30,10 @@
     <header class="oscm-panel-header">
       <div>
         <div class="oscm-kicker">RA // PRAESEPE TEST VOLUME</div>
-        <h2>Beehive Cluster</h2>
+        <button class="oscm-back-button is-hidden" type="button" data-action="back-to-cluster">← Beehive Cluster</button>
+        <h2 data-map-title>Beehive Cluster</h2>
       </div>
-      <div class="oscm-system-count">{{systemCount}} systems</div>
+      <div class="oscm-system-count" data-map-count>{{systemCount}} systems</div>
     </header>
 
     <section class="oscm-card oscm-selection-card">
@@ -56,6 +57,15 @@
         <button type="button" data-action="clear-route"><i class="fa-solid fa-xmark"></i> Clear Route</button>
         <button type="button" data-action="reset-view"><i class="fa-solid fa-rotate-left"></i> Reset View</button>
       </div>
+    </section>
+
+    <section class="oscm-card oscm-object-details is-hidden">
+      <div class="oscm-card-title">Selected Object</div>
+      <div class="oscm-selection-row"><span>Name</span><strong data-field="objectName">—</strong></div>
+      <div class="oscm-selection-row"><span>Type</span><strong data-field="objectType">—</strong></div>
+      <div class="oscm-selection-row"><span>Parent</span><strong data-field="objectParent">—</strong></div>
+      <div class="oscm-selection-row"><span>Role</span><strong data-field="objectRole">—</strong></div>
+      <div class="oscm-selection-row"><span>Scale</span><strong data-field="objectScale">—</strong></div>
     </section>
 
     <section class="oscm-card">

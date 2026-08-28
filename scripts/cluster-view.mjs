@@ -32,6 +32,7 @@ export class ClusterView {
     this.extent = options.extent ?? CLUSTER.halfExtentLy;
     this.gridSpacing = options.gridSpacing ?? CLUSTER.defaultGridSpacingLy;
     this.onSelectionChange = options.onSelectionChange ?? (() => {});
+    this.onSystemActivate = options.onSystemActivate ?? (() => {});
 
     this.state = {
       yaw: -0.62,
@@ -47,6 +48,9 @@ export class ClusterView {
     this.pinch = null;
     this.activePointers = new Map();
     this.suppressClickUntil = 0;
+    this.pendingSelectionTimer = null;
+    this.lastActivation = null;
+    this.activationSuppressedUntil = 0;
     this.gridSegments = [];
     this.starNodes = new Map();
 
@@ -56,6 +60,7 @@ export class ClusterView {
   }
 
   destroy() {
+    clearTimeout(this.pendingSelectionTimer);
     this.svg.removeEventListener("pointerdown", this._onPointerDown);
     this.svg.removeEventListener("pointermove", this._onPointerMove);
     this.svg.removeEventListener("pointerup", this._onPointerUp);
@@ -219,7 +224,30 @@ export class ClusterView {
       group.addEventListener("click", (event) => {
         event.stopPropagation();
         if (performance.now() < this.suppressClickUntil) return;
-        this.#selectSystem(system);
+        const now = performance.now();
+        if (this.lastActivation?.systemId === system.id && now - this.lastActivation.at < 330) {
+          clearTimeout(this.pendingSelectionTimer);
+          this.pendingSelectionTimer = null;
+          this.activationSuppressedUntil = now + 400;
+          this.onSystemActivate(system);
+          this.lastActivation = null;
+          return;
+        }
+        this.lastActivation = { systemId: system.id, at: now };
+        clearTimeout(this.pendingSelectionTimer);
+        this.pendingSelectionTimer = setTimeout(() => {
+          this.pendingSelectionTimer = null;
+          this.#selectSystem(system);
+        }, 260);
+      });
+      group.addEventListener("dblclick", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        clearTimeout(this.pendingSelectionTimer);
+        this.pendingSelectionTimer = null;
+        if (performance.now() < this.activationSuppressedUntil) return;
+        this.activationSuppressedUntil = performance.now() + 400;
+        this.onSystemActivate(system);
       });
       group.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
@@ -347,6 +375,11 @@ export class ClusterView {
       event.preventDefault();
       const factor = Math.exp(-event.deltaY * 0.0012);
       this.state.zoom = clamp(this.state.zoom * factor, 0.45, 3.5);
+      if (event.deltaY < 0 && this.state.zoom > 3.42 && this.origin && performance.now() >= this.activationSuppressedUntil) {
+        this.activationSuppressedUntil = performance.now() + 600;
+        this.onSystemActivate(this.origin);
+        return;
+      }
       this.render();
     };
 
