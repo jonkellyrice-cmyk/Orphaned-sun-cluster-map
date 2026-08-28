@@ -14,9 +14,10 @@ function svgElement(name, attrs = {}) {
  * topology and borders; Z-depth is deliberately inferred rather than treated
  * as a surveyed political boundary.
  *
- * zMin/zMax are the nominal depth envelope. The rendered front and rear
- * boundaries are smoothly warped away from inhabited-system anchor points so
- * the territories read as irregular 3D regions rather than flat extrusions.
+ * zMin/zMax are the nominal depth envelope. Front/rear depth is warped
+ * independently, and the footprint is lofted through multiple depth slices so
+ * shared frontiers can wander laterally as Z changes instead of reading as
+ * straight extruded curtains.
  */
 export const FACTION_TERRITORIES = Object.freeze([
   Object.freeze({
@@ -196,7 +197,16 @@ const TERRITORY_DEPTH_WARP = Object.freeze({
 
 const SYSTEM_BY_ID = new Map(SYSTEMS.map((system) => [system.id, system]));
 const ANCHOR_RADIUS_LY = 1.35;
+const LATERAL_ANCHOR_RADIUS_LY = 0.78;
+const LATERAL_EDGE_FADE_LY = 1.25;
+const LATERAL_WARP_AMPLITUDE_LY = 1.10;
 const MIN_DEPTH_THICKNESS_LY = 1.5;
+export const TERRITORY_LOFT_SLICES = 9;
+
+function smoothstep01(value) {
+  const t = Math.max(0, Math.min(1, value));
+  return t * t * (3 - 2 * t);
+}
 
 function anchorWarpDamping(territoryId, x, y) {
   const anchors = TERRITORY_DEPTH_WARP[territoryId]?.anchors ?? [];
@@ -210,9 +220,24 @@ function anchorWarpDamping(territoryId, x, y) {
     strongestInfluence = Math.max(strongestInfluence, influence);
   }
 
-  // At an inhabited anchor, preserve the nominal depth envelope exactly.
-  // The irregularity then grows smoothly with distance from that system.
   return 1 - strongestInfluence;
+}
+
+function allSystemLateralDamping(x, y) {
+  let strongestInfluence = 0;
+
+  for (const system of SYSTEMS) {
+    const distanceSquared = (x - system.x) ** 2 + (y - system.y) ** 2;
+    const influence = Math.exp(-distanceSquared / (2 * LATERAL_ANCHOR_RADIUS_LY ** 2));
+    strongestInfluence = Math.max(strongestInfluence, influence);
+  }
+
+  return 1 - strongestInfluence;
+}
+
+function clusterEdgeDamping(x, y) {
+  const distanceToEdge = Math.min(8 - Math.abs(x), 8 - Math.abs(y));
+  return smoothstep01(distanceToEdge / LATERAL_EDGE_FADE_LY);
 }
 
 function frontDepthWave(x, y, phase) {
@@ -248,21 +273,77 @@ export function territoryDepthAt(territory, x, y) {
   return { zMin: front, zMax: rear, warpDamping: damping };
 }
 
+/**
+ * Shared lateral frontier field. It is deliberately independent of faction id:
+ * two territories that share the same source-map seam receive the same XY
+ * displacement at a given Z, so one polity's bulge is the neighboring polity's
+ * recession rather than a crack between two separately randomized shapes.
+ *
+ * The field is exactly zero on the original z=0 map plane, fades to zero at the
+ * cluster-box exterior, and is strongly suppressed around every Big Ten system.
+ */
+export function territoryLateralOffsetAt(x, y, z) {
+  const damping = allSystemLateralDamping(x, y) * clusterEdgeDamping(x, y);
+  const amplitude = LATERAL_WARP_AMPLITUDE_LY * damping;
+
+  const dx = amplitude * (
+    0.62 * Math.sin(0.72 * z) * Math.sin(0.47 * x + 0.31 * y + 0.35)
+    + 0.38 * Math.sin(1.11 * z) * Math.cos(0.24 * x - 0.63 * y - 0.55)
+  );
+  const dy = amplitude * (
+    0.58 * Math.sin(0.63 * z) * Math.cos(0.29 * x + 0.57 * y - 0.20)
+    + 0.42 * Math.sin(1.03 * z) * Math.sin(0.66 * x - 0.21 * y + 0.80)
+  );
+
+  return { x: dx, y: dy, damping };
+}
+
+function warpedBoundaryPoint(territory, point, fraction) {
+  const depth = territoryDepthAt(territory, point.x, point.y);
+  const z = depth.zMin + (depth.zMax - depth.zMin) * fraction;
+  const offset = territoryLateralOffsetAt(point.x, point.y, z);
+  return {
+    x: Math.max(-8, Math.min(8, point.x + offset.x)),
+    y: Math.max(-8, Math.min(8, point.y + offset.y)),
+    z,
+  };
+}
+
+/**
+ * XY frontier at a specific absolute Z. Primarily useful for containment tests
+ * and diagnostics; it also makes explicit that the same political border is a
+ * different curve at different depths.
+ */
+export function territoryFootprintAtZ(territory, z) {
+  return territory.footprint.map((point) => {
+    const offset = territoryLateralOffsetAt(point.x, point.y, z);
+    return {
+      x: Math.max(-8, Math.min(8, point.x + offset.x)),
+      y: Math.max(-8, Math.min(8, point.y + offset.y)),
+    };
+  });
+}
+
 export function buildTerritoryFaces(territory) {
-  const lower = territory.footprint.map(({ x, y }) => ({ x, y, z: territoryDepthAt(territory, x, y).zMin }));
-  const upper = territory.footprint.map(({ x, y }) => ({ x, y, z: territoryDepthAt(territory, x, y).zMax }));
+  const slices = Array.from({ length: TERRITORY_LOFT_SLICES }, (_, index) => {
+    const fraction = index / (TERRITORY_LOFT_SLICES - 1);
+    return territory.footprint.map((point) => warpedBoundaryPoint(territory, point, fraction));
+  });
+
   const faces = [
-    { kind: "cap", points: lower },
-    { kind: "cap", points: upper },
+    { kind: "cap", points: slices[0] },
+    { kind: "cap", points: slices[slices.length - 1] },
   ];
 
   for (let i = 0; i < territory.footprint.length; i += 1) {
     const next = (i + 1) % territory.footprint.length;
-    faces.push({
-      kind: "side",
-      points: [lower[i], lower[next], upper[next], upper[i]],
-    });
+    const points = slices.map((slice) => slice[i]);
+    for (let sliceIndex = slices.length - 1; sliceIndex >= 0; sliceIndex -= 1) {
+      points.push(slices[sliceIndex][next]);
+    }
+    faces.push({ kind: "side", points });
   }
+
   return faces;
 }
 
@@ -323,7 +404,6 @@ export function attachFactionTerritories(view, territories = FACTION_TERRITORIES
       };
     });
 
-    // Transparent SVG faces still need painter ordering: far faces first.
     projected.sort((a, b) => a.depth - b.depth);
     for (const { polygon } of projected) layer.append(polygon);
   };
