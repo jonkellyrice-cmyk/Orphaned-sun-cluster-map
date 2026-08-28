@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.2.0
+
+- Added interactive three-dimensional system views for all ten major systems, generated from the canonical system-object registry.
+- Double-click/double-tap or zoom into a selected cluster system to enter it; zoom outward or use the explicit cluster-back control to return.
+- Added schematic stars, planets, moons, giants, stations, shipyards, vessels, fleets, belts, installations, blinkgates, and anomalies.
+- Added hierarchical physical reference-epoch coordinates with parent-relative AU/km conversion and separate compressed display coordinates.
+- Added physical point-to-point local navigation using the existing relativistic solver, with useful km, million-km, AU, seconds, and minutes formatting.
+- Added system object details, inclined orbital paths, belt-region rendering, touch targets, keyboard selection, and cluster-only overlay suppression.
+- Added deterministic tests across all ten systems and all 126 catalogued objects.
+- Expanded the canonical inhabited-world registry with deterministic physical-geography, ecology, resource, and settlement metadata for 43 terrestrial worlds.
+
 ## v0.1.8
 
 - Reworked faction-to-faction borders into genuinely three-dimensional frontier surfaces instead of carrying one XY seam straight through the depth axis.
