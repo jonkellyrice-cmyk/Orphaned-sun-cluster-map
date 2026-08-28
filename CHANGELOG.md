@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.1.4
+
+- Extrapolated the 2D Manger faction-control map into approximate three-dimensional territorial volumes.
+- Added very faint translucent control fields for Union, the Signatories of the Accords, XUANJIA Mandate, Adainian Conclave, Eventide, and Grayspace.
+- Territorial footprints preserve the source map's broad borders and adjacency while inferred Z-depth scales with each region's planar dimensions.
+- The faction volumes rotate and zoom with the cluster while remaining behind the white lattice, stars, and route line.
+- Added a compact territorial-control legend and explicit note that Z boundaries are approximate rather than surveyed.
+- Added deterministic tests for faction-volume structure and Big Ten placement against the 2D control map.
+
 ## v0.1.3
 
 - Added canonical stellar configuration, spectral type, and visible-color metadata for all Big Ten systems.
