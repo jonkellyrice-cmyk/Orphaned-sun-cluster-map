@@ -1,0 +1,46 @@
+name: Release Foundry Module
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: contains(github.event.head_commit.message, '[release]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Test
+        run: npm test
+
+      - name: Package module
+        shell: bash
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          ARCHIVE="orphaned-sun-cluster-map-v${VERSION}.zip"
+          zip -r "$ARCHIVE" \
+            module.json scripts templates styles lang README.md docs \
+            -x "*.DS_Store"
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "ARCHIVE=$ARCHIVE" >> "$GITHUB_ENV"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v${VERSION}" \
+            "${ARCHIVE}" \
+            module.json \
+            --repo "${GITHUB_REPOSITORY}" \
+            --target "${GITHUB_SHA}" \
+            --title "v${VERSION}" \
+            --generate-notes
