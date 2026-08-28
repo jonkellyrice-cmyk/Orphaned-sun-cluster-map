@@ -1,0 +1,31 @@
+name: Derive orbital climate and tides
+
+on:
+  push:
+    paths:
+      - 'dev_scripts/derive-orbital-climate-metadata.py'
+
+permissions:
+  contents: write
+
+jobs:
+  derive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Derive orbital, seasonal, and tidal metadata
+        run: python dev_scripts/derive-orbital-climate-metadata.py
+      - name: Commit enriched canonical table
+        run: |
+          if git diff --quiet -- docs/system-orbital-distances.csv; then
+            echo 'No canonical table changes required.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/system-orbital-distances.csv
+          git commit -m 'Derive orbital seasons and tidal metadata'
+          git push
