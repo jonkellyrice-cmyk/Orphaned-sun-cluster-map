@@ -1,0 +1,75 @@
+<div class="oscm-shell">
+  <section class="oscm-view" aria-label="3D Beehive Cluster map">
+    <svg class="oscm-cluster-svg" role="img" aria-label="Interactive three-dimensional star cluster"></svg>
+    <div class="oscm-view-help">
+      <span><i class="fa-solid fa-arrows-rotate"></i> Drag / 1 finger: rotate</span>
+      <span><i class="fa-solid fa-magnifying-glass"></i> Wheel / pinch: zoom</span>
+      <span><i class="fa-solid fa-star"></i> Click / tap two systems: route</span>
+    </div>
+  </section>
+
+  <aside class="oscm-panel">
+    <header class="oscm-panel-header">
+      <div>
+        <div class="oscm-kicker">RA // PRAESEPE TEST VOLUME</div>
+        <h2>Beehive Cluster</h2>
+      </div>
+      <div class="oscm-system-count">{{systemCount}} systems</div>
+    </header>
+
+    <section class="oscm-card oscm-selection-card">
+      <div class="oscm-card-title">Route Selection</div>
+      <div class="oscm-selection-row"><span>Origin</span><strong data-field="origin">—</strong></div>
+      <div class="oscm-selection-row"><span>Destination</span><strong data-field="destination">—</strong></div>
+      <p class="oscm-selection-prompt">Select an origin system, then a destination.</p>
+      <div class="oscm-route-result is-hidden">
+        <dl class="oscm-stats">
+          <div><dt>2D projected</dt><dd data-field="projected">—</dd></div>
+          <div><dt>Depth ΔZ</dt><dd data-field="depth">—</dd></div>
+          <div class="is-primary"><dt>True 3D distance</dt><dd data-field="spatial">—</dd></div>
+          <div><dt>Ship-frame distance</dt><dd data-field="contracted">—</dd></div>
+          <div><dt>Cluster-frame time</dt><dd data-field="clusterTime">—</dd></div>
+          <div class="is-primary"><dt>Shipboard time</dt><dd data-field="shipTime">—</dd></div>
+          <div><dt>Peak velocity</dt><dd data-field="peakSpeed">—</dd></div>
+        </dl>
+        <p class="oscm-profile-line" data-field="profile"></p>
+      </div>
+      <div class="oscm-button-row">
+        <button type="button" data-action="clear-route"><i class="fa-solid fa-xmark"></i> Clear Route</button>
+        <button type="button" data-action="reset-view"><i class="fa-solid fa-rotate-left"></i> Reset View</button>
+      </div>
+    </section>
+
+    <section class="oscm-card">
+      <div class="oscm-card-title">Navigation Profile</div>
+      <div class="oscm-form-grid">
+        <label>
+          <span>Proper acceleration</span>
+          <div class="oscm-input-with-unit"><input name="accelerationG" type="number" min="0.01" step="1" value="{{accelerationG}}" {{#unless isGM}}disabled{{/unless}}><span>g</span></div>
+        </label>
+        <label>
+          <span>Speed cap</span>
+          <div class="oscm-input-with-unit"><input name="cruiseBeta" type="number" min="0.0001" max="0.999999999" step="0.0001" value="{{cruiseBeta}}" {{#unless isGM}}disabled{{/unless}}><span>c</span></div>
+        </label>
+        <label>
+          <span>Grid spacing</span>
+          <select name="gridSpacing" {{#unless isGM}}disabled{{/unless}}>
+            <option value="1" {{#if gridOneSelected}}selected{{/if}}>1 light-year</option>
+            <option value="2" {{#if gridTwoSelected}}selected{{/if}}>2 light-years</option>
+          </select>
+        </label>
+      </div>
+      {{#if isGM}}
+      <button class="oscm-apply" type="button" data-action="apply-profile"><i class="fa-solid fa-check"></i> Apply Profile</button>
+      {{else}}
+      <p class="oscm-muted">The GM controls the shared navigation profile.</p>
+      {{/if}}
+    </section>
+
+    <section class="oscm-legend">
+      <div><span class="oscm-swatch origin"></span> Origin</div>
+      <div><span class="oscm-swatch destination"></span> Destination</div>
+      <p>Reference values use the cluster rest frame. “Shipboard” is elapsed proper time experienced by the crew.</p>
+    </section>
+  </aside>
+</div>
