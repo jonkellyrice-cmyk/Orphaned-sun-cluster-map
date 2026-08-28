@@ -36,3 +36,15 @@ test("very short route flips before reaching cruise cap", () => {
   assert.equal(transit.reachesCruise, false);
   assert.ok(transit.peakBeta < 0.995);
 });
+
+test("Big Ten stellar metadata includes canonical colors and Tanis binary", () => {
+  const tanis = SYSTEMS.find((system) => system.id === "tanis");
+  const memphis = SYSTEMS.find((system) => system.id === "memphis");
+  assert.equal(tanis.configuration, "close-binary");
+  assert.equal(tanis.stars.length, 2);
+  assert.equal(tanis.stars[0].spectralType, "G8V");
+  assert.equal(tanis.stars[1].spectralType, "K4V");
+  assert.equal(memphis.stars[0].spectralType, "K1V (anomalous)");
+  assert.equal(memphis.stars[0].anomalous, true);
+  assert.match(memphis.stars[0].visibleColor, /emerald|viridian/i);
+});
