@@ -2,6 +2,7 @@ import { SYSTEMS, projectedDistanceLy, spatialDistanceLy } from "./cluster-data.
 import { calculateTransit, formatDuration, formatLightYears } from "./relativity.mjs";
 import { ClusterView } from "./cluster-view.mjs";
 import { attachFactionTerritories } from "./faction-territories.mjs";
+import { attachCapitalIcons } from "./capital-icons.mjs";
 
 export const MODULE_ID = "orphaned-sun-cluster-map";
 
@@ -55,6 +56,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       onSelectionChange: (origin, destination) => this.#updateRoutePanel(origin, destination),
     });
     attachFactionTerritories(this._clusterView);
+    attachCapitalIcons(this._clusterView);
 
     root.querySelector('[data-action="reset-view"]')?.addEventListener("click", () => this._clusterView.resetView());
     root.querySelector('[data-action="clear-route"]')?.addEventListener("click", () => this._clusterView.clearSelection());
