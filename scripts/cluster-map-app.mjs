@@ -5,6 +5,10 @@ import { attachFactionTerritories } from "./faction-territories.mjs";
 import { attachCapitalIcons } from "./capital-icons.mjs";
 import { AU_KM, LIGHT_YEAR_KM, buildSystemModel, formatSystemDistance, loadSystemRegistry, physicalDistanceAu, physicalDistanceLy } from "./system-data.mjs";
 import { SystemView } from "./system-view.mjs";
+import { BodyView } from "./body-view.mjs";
+import { naturalBodyKind, buildNaturalBodyModel } from "./natural-body-data.mjs";
+import { artificialBodyKind, buildArtificialBodyModel } from "./artificial-body-data.mjs";
+import { inspectSurfaceFeature } from "./body-layers.mjs";
 
 export const MODULE_ID = "orphaned-sun-cluster-map";
 
@@ -13,6 +17,7 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 export class ClusterMapApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   mode = "cluster";
   activeSystem = null;
+  activeBody = null;
   _registryPromise = null;
   static DEFAULT_OPTIONS = {
     id: "orphaned-sun-cluster-map",
@@ -68,12 +73,15 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     root.querySelector('[data-action="clear-route"]')?.addEventListener("click", () => this._clusterView.clearSelection());
     root.querySelector('[data-action="apply-profile"]')?.addEventListener("click", () => this.#applyProfile(root));
     root.querySelector('[data-action="back-to-cluster"]')?.addEventListener("click", () => this.#showCluster());
+    root.querySelector('[data-action="back-to-system"]')?.addEventListener("click", () => this.#showSystem());
+    for (const control of root.querySelectorAll("[data-body-layer]")) control.addEventListener("change", () => this._clusterView?.setLayerVisibility?.(control.dataset.bodyLayer, control.checked));
 
     this._resizeObserver = new ResizeObserver(() => this._clusterView?.render());
     this._resizeObserver.observe(root);
 
     this.#updateRoutePanel(null, null);
     if (this.mode === "system" && this.activeSystem) this.#enterSystem(this.activeSystem);
+    if (this.mode === "body" && this.activeSystem && this.activeBody) this.#enterBody(this.activeBody);
   }
 
   _onClose(options) {
@@ -97,11 +105,15 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
         model,
         onSelectionChange: (origin, destination) => this.#updateRoutePanel(origin, destination),
         onExitRequested: () => this.#showCluster(),
+        onObjectActivate: (object) => this.#enterBody(object),
       });
       this.mode = "system";
       this.activeSystem = system;
+      this.activeBody = null;
       root.classList.add("is-system-mode");
+      root.classList.remove("is-body-mode");
       root.querySelector('[data-action="back-to-cluster"]')?.classList.remove("is-hidden");
+      root.querySelector('[data-action="back-to-system"]')?.classList.add("is-hidden");
       const title = root.querySelector("[data-map-title]"); if (title) title.textContent = `${system.name} System`;
       const count = root.querySelector("[data-map-count]"); if (count) count.textContent = `${model.objects.length} mapped objects`;
       const help = root.querySelector("[data-map-help]"); if (help) help.textContent = "Click / tap two objects: local route";
@@ -110,6 +122,44 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       console.error(`${MODULE_ID} | Unable to enter system view`, error);
       ui.notifications.error(`Unable to load ${system.name} system data.`);
     }
+  }
+
+  #showSystem() { if (this.activeSystem) this.#enterSystem(this.activeSystem); }
+
+  async #enterBody(object) {
+    const root = this.element?.querySelector?.(".oscm-shell"), svg = root?.querySelector(".oscm-cluster-svg");
+    if (!root || !svg || !object?.selectable || ["star", "barycenter", "belt"].includes(object.objectClass)) return;
+    try {
+      let model;
+      if (naturalBodyKind(object)) model = buildNaturalBodyModel(object);
+      else if (artificialBodyKind(object)) model = buildArtificialBodyModel(object);
+      else return;
+      let geography = null;
+      if (object.geography_seed) {
+        const slug = object.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+        const response = await fetch(`modules/${MODULE_ID}/data/planet-geography/${object.system.toLowerCase()}/${slug}.json`);
+        if (!response.ok) throw new Error(`geography fetch failed (${response.status})`);
+        geography = await response.json();
+      }
+      this._clusterView?.destroy();
+      this._clusterView = new BodyView(svg, { model, geography, onExitRequested: () => this.#showSystem(), onFeatureSelected: (feature) => this.#updateBodyFeature(feature) });
+      this.mode = "body"; this.activeBody = object;
+      root.classList.add("is-system-mode", "is-body-mode");
+      root.querySelector('[data-action="back-to-cluster"]')?.classList.remove("is-hidden");
+      root.querySelector('[data-action="back-to-system"]')?.classList.remove("is-hidden");
+      const title = root.querySelector("[data-map-title]"); if (title) title.textContent = object.name;
+      const count = root.querySelector("[data-map-count]"); if (count) count.textContent = geography ? `${geography.cells.length} surface cells` : object.type;
+      const help = root.querySelector("[data-map-help]"); if (help) help.textContent = "Click / tap a mapped surface feature";
+      this.#updateRoutePanel(null, null);
+    } catch (error) { console.error(`${MODULE_ID} | Unable to enter body view`, error); ui.notifications.error(`Unable to load ${object.name} orbital view.`); }
+  }
+
+  #updateBodyFeature(feature) {
+    const root = this.element?.querySelector?.(".oscm-shell"), card = root?.querySelector(".oscm-object-details"); if (!root || !card) return;
+    card.classList.toggle("is-hidden", !feature); if (!feature) return;
+    const inspected = inspectSurfaceFeature(feature);
+    const values = { objectName: inspected.name, objectType: inspected.type, objectParent: this.activeBody?.name || "—", objectRole: inspected.detail, objectScale: feature.suitability != null ? `Settlement suitability ${feature.suitability}` : "Schematic" };
+    for (const [field, value] of Object.entries(values)) { const element = root.querySelector(`[data-field="${field}"]`); if (element) element.textContent = value; }
   }
 
   #showCluster() {
@@ -126,8 +176,11 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     attachCapitalIcons(this._clusterView);
     this.mode = "cluster";
     this.activeSystem = null;
+    this.activeBody = null;
     root.classList.remove("is-system-mode");
+    root.classList.remove("is-body-mode");
     root.querySelector('[data-action="back-to-cluster"]')?.classList.add("is-hidden");
+    root.querySelector('[data-action="back-to-system"]')?.classList.add("is-hidden");
     const title = root.querySelector("[data-map-title]"); if (title) title.textContent = "Beehive Cluster";
     const count = root.querySelector("[data-map-count]"); if (count) count.textContent = `${SYSTEMS.length} systems`;
     const help = root.querySelector("[data-map-help]"); if (help) help.textContent = "Click / tap two systems: route";
@@ -176,7 +229,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       result?.classList.add("is-hidden");
       hud?.classList.add("is-hidden");
       if (prompt) {
-        const noun = this.mode === "system" ? "object" : "system";
+        const noun = this.mode === "system" ? "object" : this.mode === "body" ? "feature" : "system";
         prompt.textContent = origin ? `Select a destination ${noun}.` : `Select an origin ${noun}, then a destination.`;
       }
       this.#updateObjectDetails(origin, destination);

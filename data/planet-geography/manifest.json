@@ -1,0 +1,1377 @@
+{
+  "schemaVersion": 1,
+  "modelVersion": "orphaned-sun-geography-v1",
+  "status": "accepted-working-canon",
+  "worlds": [
+    {
+      "system": "Abydos",
+      "body": "Ramses",
+      "seed": "8dfaf7db71502f6e",
+      "inputFingerprint": "98728c83432208985073",
+      "path": "data/planet-geography/abydos/ramses.json",
+      "summary": {
+        "waterFraction": 0.1806,
+        "plates": 12,
+        "coastSegments": 274,
+        "rivers": 22,
+        "lakes": 115,
+        "settlements": 18,
+        "biomes": {
+          "open-ocean": 190,
+          "cold-desert": 957,
+          "ice-cap": 462,
+          "hot-desert": 56,
+          "tropical-ocean": 135
+        },
+        "resources": {
+          "marine-biological": 317,
+          "sedimentary-basin": 115,
+          "upland-mineral": 1306,
+          "hydrothermal-seafloor": 8,
+          "orogenic-metallic": 54
+        }
+      }
+    },
+    {
+      "system": "Abydos",
+      "body": "Eventide",
+      "seed": "741343188e552de0",
+      "inputFingerprint": "bcd18cf3da72e6a056e5",
+      "path": "data/planet-geography/abydos/eventide.json",
+      "summary": {
+        "waterFraction": 0.86,
+        "plates": 11,
+        "coastSegments": 152,
+        "rivers": 11,
+        "lakes": 10,
+        "settlements": 16,
+        "biomes": {
+          "sea-ice": 65,
+          "open-ocean": 958,
+          "tropical-ocean": 525,
+          "taiga": 8,
+          "tundra": 74,
+          "temperate-rainforest": 2,
+          "temperate-forest": 28,
+          "ice-cap": 134,
+          "cold-desert": 6
+        },
+        "resources": {
+          "marine-biological": 1478,
+          "hydrothermal-seafloor": 70,
+          "sedimentary-basin": 97,
+          "upland-mineral": 150,
+          "orogenic-metallic": 3,
+          "alluvial-agricultural": 2
+        }
+      }
+    },
+    {
+      "system": "Abydos",
+      "body": "Thraximundus",
+      "seed": "f54bfd702ebbc1db",
+      "inputFingerprint": "bc3ccd2812370dfd00ba",
+      "path": "data/planet-geography/abydos/thraximundus.json",
+      "summary": {
+        "waterFraction": 0.52,
+        "plates": 13,
+        "coastSegments": 156,
+        "rivers": 22,
+        "lakes": 64,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 196,
+          "open-ocean": 686,
+          "cold-desert": 111,
+          "ice-cap": 521,
+          "tundra": 129,
+          "steppe": 40,
+          "temperate-forest": 58,
+          "seasonal-forest": 4,
+          "tropical-ocean": 54,
+          "temperate-rainforest": 1
+        },
+        "resources": {
+          "marine-biological": 891,
+          "hydrothermal-seafloor": 45,
+          "sedimentary-basin": 36,
+          "orogenic-metallic": 36,
+          "upland-mineral": 790,
+          "alluvial-agricultural": 2
+        }
+      }
+    },
+    {
+      "system": "Abydos",
+      "body": "Kandahar",
+      "seed": "58705906c91fcc27",
+      "inputFingerprint": "ee54e5961815f5811ff1",
+      "path": "data/planet-geography/abydos/kandahar.json",
+      "summary": {
+        "waterFraction": 0.2406,
+        "plates": 12,
+        "coastSegments": 136,
+        "rivers": 18,
+        "lakes": 115,
+        "settlements": 7,
+        "biomes": {
+          "sea-ice": 315,
+          "ice-cap": 1276,
+          "cold-desert": 79,
+          "open-ocean": 118,
+          "steppe": 12
+        },
+        "resources": {
+          "marine-biological": 422,
+          "hydrothermal-seafloor": 11,
+          "sedimentary-basin": 19,
+          "orogenic-metallic": 65,
+          "upland-mineral": 1283
+        }
+      }
+    },
+    {
+      "system": "Tanis",
+      "body": "Krasna Brae",
+      "seed": "159d1abb57b4db2b",
+      "inputFingerprint": "ad606ed98dda5f1b6a9a",
+      "path": "data/planet-geography/tanis/krasna-brae.json",
+      "summary": {
+        "waterFraction": 0.1406,
+        "plates": 11,
+        "coastSegments": 149,
+        "rivers": 15,
+        "lakes": 138,
+        "settlements": 18,
+        "biomes": {
+          "open-ocean": 190,
+          "cold-desert": 1023,
+          "ice-cap": 488,
+          "hot-desert": 36,
+          "tropical-ocean": 63
+        },
+        "resources": {
+          "marine-biological": 245,
+          "sedimentary-basin": 54,
+          "upland-mineral": 1457,
+          "orogenic-metallic": 36,
+          "hydrothermal-seafloor": 8
+        }
+      }
+    },
+    {
+      "system": "Tanis",
+      "body": "Novy Skye",
+      "seed": "aabea66712ba4db6",
+      "inputFingerprint": "120c009f4e691f31cd1d",
+      "path": "data/planet-geography/tanis/novy-skye.json",
+      "summary": {
+        "waterFraction": 0.67,
+        "plates": 13,
+        "coastSegments": 464,
+        "rivers": 20,
+        "lakes": 26,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 124,
+          "open-ocean": 775,
+          "tropical-ocean": 307,
+          "temperate-forest": 166,
+          "steppe": 69,
+          "tundra": 79,
+          "seasonal-forest": 55,
+          "temperate-rainforest": 7,
+          "ice-cap": 129,
+          "cold-desert": 89
+        },
+        "resources": {
+          "marine-biological": 1126,
+          "hydrothermal-seafloor": 80,
+          "orogenic-metallic": 31,
+          "upland-mineral": 204,
+          "sedimentary-basin": 357,
+          "alluvial-agricultural": 2
+        }
+      }
+    },
+    {
+      "system": "Tanis",
+      "body": "Muigrad",
+      "seed": "24ccc23b06265d0a",
+      "inputFingerprint": "ab3fac1ae882eacbbc96",
+      "path": "data/planet-geography/tanis/muigrad.json",
+      "summary": {
+        "waterFraction": 0.3706,
+        "plates": 13,
+        "coastSegments": 326,
+        "rivers": 19,
+        "lakes": 88,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 218,
+          "cold-desert": 102,
+          "ice-cap": 948,
+          "open-ocean": 447,
+          "steppe": 37,
+          "tundra": 21,
+          "temperate-forest": 14,
+          "savanna": 2,
+          "seasonal-forest": 9,
+          "tropical-ocean": 2
+        },
+        "resources": {
+          "marine-biological": 635,
+          "sedimentary-basin": 85,
+          "hydrothermal-seafloor": 32,
+          "orogenic-metallic": 61,
+          "upland-mineral": 987
+        }
+      }
+    },
+    {
+      "system": "Tanis",
+      "body": "Moroz Cairn",
+      "seed": "fe0d7b436d181c35",
+      "inputFingerprint": "f0634a9e80493f3b5bbd",
+      "path": "data/planet-geography/tanis/moroz-cairn.json",
+      "summary": {
+        "waterFraction": 0.2206,
+        "plates": 10,
+        "coastSegments": 498,
+        "rivers": 29,
+        "lakes": 105,
+        "settlements": 4,
+        "biomes": {
+          "ice-cap": 1264,
+          "sea-ice": 245,
+          "cold-desert": 109,
+          "open-ocean": 152,
+          "steppe": 30
+        },
+        "resources": {
+          "sedimentary-basin": 352,
+          "marine-biological": 383,
+          "upland-mineral": 1008,
+          "hydrothermal-seafloor": 14,
+          "orogenic-metallic": 43
+        }
+      }
+    },
+    {
+      "system": "Saqqara",
+      "body": "Kilmorov",
+      "seed": "fa0a4a47bb03eb31",
+      "inputFingerprint": "66fc9006ba073918d5f9",
+      "path": "data/planet-geography/saqqara/kilmorov.json",
+      "summary": {
+        "waterFraction": 0.1206,
+        "plates": 9,
+        "coastSegments": 223,
+        "rivers": 29,
+        "lakes": 119,
+        "settlements": 18,
+        "biomes": {
+          "open-ocean": 180,
+          "cold-desert": 754,
+          "ice-cap": 804,
+          "hot-desert": 25,
+          "tropical-ocean": 37
+        },
+        "resources": {
+          "marine-biological": 210,
+          "sedimentary-basin": 115,
+          "hydrothermal-seafloor": 7,
+          "upland-mineral": 1423,
+          "orogenic-metallic": 45
+        }
+      }
+    },
+    {
+      "system": "Saqqara",
+      "body": "Thennaris",
+      "seed": "ccac8c27747592d3",
+      "inputFingerprint": "3f4d3bc7308c4f00dd45",
+      "path": "data/planet-geography/saqqara/thennaris.json",
+      "summary": {
+        "waterFraction": 0.4306,
+        "plates": 8,
+        "coastSegments": 182,
+        "rivers": 16,
+        "lakes": 77,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 132,
+          "open-ocean": 555,
+          "cold-desert": 197,
+          "ice-cap": 507,
+          "steppe": 120,
+          "tundra": 64,
+          "temperate-forest": 116,
+          "tropical-ocean": 88,
+          "seasonal-forest": 18,
+          "savanna": 3
+        },
+        "resources": {
+          "marine-biological": 742,
+          "hydrothermal-seafloor": 33,
+          "sedimentary-basin": 195,
+          "upland-mineral": 807,
+          "orogenic-metallic": 18,
+          "alluvial-agricultural": 5
+        }
+      }
+    },
+    {
+      "system": "Iunu",
+      "body": "Valeth",
+      "seed": "a9e5db13d68d8392",
+      "inputFingerprint": "eac3d551c39ff7174d20",
+      "path": "data/planet-geography/iunu/valeth.json",
+      "summary": {
+        "waterFraction": 0.2006,
+        "plates": 11,
+        "coastSegments": 286,
+        "rivers": 23,
+        "lakes": 115,
+        "settlements": 10,
+        "biomes": {
+          "cold-desert": 857,
+          "open-ocean": 254,
+          "hot-desert": 31,
+          "savanna": 30,
+          "ice-cap": 496,
+          "tropical-ocean": 107,
+          "steppe": 25
+        },
+        "resources": {
+          "sedimentary-basin": 110,
+          "marine-biological": 355,
+          "upland-mineral": 1278,
+          "orogenic-metallic": 51,
+          "hydrothermal-seafloor": 6
+        }
+      }
+    },
+    {
+      "system": "Iunu",
+      "body": "Kyradon",
+      "seed": "72e47b6ac3ca8aa2",
+      "inputFingerprint": "aa76713b85847b357d1c",
+      "path": "data/planet-geography/iunu/kyradon.json",
+      "summary": {
+        "waterFraction": 0.56,
+        "plates": 13,
+        "coastSegments": 461,
+        "rivers": 25,
+        "lakes": 46,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 52,
+          "open-ocean": 664,
+          "tropical-ocean": 292,
+          "cold-desert": 188,
+          "steppe": 232,
+          "temperate-forest": 86,
+          "seasonal-forest": 117,
+          "savanna": 35,
+          "ice-cap": 123,
+          "tundra": 11
+        },
+        "resources": {
+          "marine-biological": 931,
+          "hydrothermal-seafloor": 77,
+          "orogenic-metallic": 31,
+          "upland-mineral": 360,
+          "sedimentary-basin": 399,
+          "alluvial-agricultural": 2
+        }
+      }
+    },
+    {
+      "system": "Iunu",
+      "body": "Pelagos",
+      "seed": "a579768f64e9e61d",
+      "inputFingerprint": "d0f9e567120fe6ff0cf3",
+      "path": "data/planet-geography/iunu/pelagos.json",
+      "summary": {
+        "waterFraction": 0.82,
+        "plates": 13,
+        "coastSegments": 417,
+        "rivers": 15,
+        "lakes": 7,
+        "settlements": 18,
+        "biomes": {
+          "open-ocean": 943,
+          "sea-ice": 101,
+          "tropical-ocean": 432,
+          "tundra": 81,
+          "temperate-rainforest": 16,
+          "temperate-forest": 93,
+          "seasonal-forest": 8,
+          "taiga": 1,
+          "steppe": 20,
+          "ice-cap": 81,
+          "cold-desert": 24
+        },
+        "resources": {
+          "marine-biological": 1394,
+          "hydrothermal-seafloor": 82,
+          "orogenic-metallic": 14,
+          "sedimentary-basin": 207,
+          "upland-mineral": 103
+        }
+      }
+    },
+    {
+      "system": "Iunu",
+      "body": "Beth Aster",
+      "seed": "e122ee274565fbc8",
+      "inputFingerprint": "977cd2fdb4958daff461",
+      "path": "data/planet-geography/iunu/beth-aster.json",
+      "summary": {
+        "waterFraction": 0.4406,
+        "plates": 9,
+        "coastSegments": 190,
+        "rivers": 16,
+        "lakes": 79,
+        "settlements": 11,
+        "biomes": {
+          "sea-ice": 301,
+          "ice-cap": 911,
+          "cold-desert": 71,
+          "open-ocean": 492,
+          "steppe": 14,
+          "temperate-forest": 4,
+          "tundra": 6,
+          "seasonal-forest": 1
+        },
+        "resources": {
+          "marine-biological": 773,
+          "sedimentary-basin": 32,
+          "orogenic-metallic": 32,
+          "hydrothermal-seafloor": 20,
+          "upland-mineral": 943
+        }
+      }
+    },
+    {
+      "system": "Iunu",
+      "body": "Ophira",
+      "seed": "21419585b2eb9b89",
+      "inputFingerprint": "e000b9d85504d1367b31",
+      "path": "data/planet-geography/iunu/ophira.json",
+      "summary": {
+        "waterFraction": 0.74,
+        "plates": 14,
+        "coastSegments": 398,
+        "rivers": 17,
+        "lakes": 20,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 289,
+          "open-ocean": 991,
+          "steppe": 6,
+          "tropical-ocean": 52,
+          "temperate-forest": 103,
+          "tundra": 142,
+          "taiga": 20,
+          "temperate-rainforest": 8,
+          "ice-cap": 178,
+          "cold-desert": 11
+        },
+        "resources": {
+          "marine-biological": 1252,
+          "hydrothermal-seafloor": 80,
+          "orogenic-metallic": 19,
+          "upland-mineral": 143,
+          "geothermal": 303,
+          "alluvial-agricultural": 3
+        }
+      }
+    },
+    {
+      "system": "Iunu",
+      "body": "Mercatia",
+      "seed": "40c9fb2891ec81eb",
+      "inputFingerprint": "d17c8935e4234bdd90ee",
+      "path": "data/planet-geography/iunu/mercatia.json",
+      "summary": {
+        "waterFraction": 0.3206,
+        "plates": 11,
+        "coastSegments": 407,
+        "rivers": 17,
+        "lakes": 108,
+        "settlements": 13,
+        "biomes": {
+          "sea-ice": 338,
+          "ice-cap": 1109,
+          "cold-desert": 62,
+          "open-ocean": 239,
+          "tundra": 3,
+          "steppe": 38,
+          "temperate-forest": 11
+        },
+        "resources": {
+          "marine-biological": 550,
+          "sedimentary-basin": 149,
+          "upland-mineral": 1030,
+          "hydrothermal-seafloor": 27,
+          "orogenic-metallic": 44
+        }
+      }
+    },
+    {
+      "system": "Memphis",
+      "body": "Serapha",
+      "seed": "4a91c598a0fa2d43",
+      "inputFingerprint": "d07961ab640086b78c94",
+      "path": "data/planet-geography/memphis/serapha.json",
+      "summary": {
+        "waterFraction": 0.68,
+        "plates": 13,
+        "coastSegments": 515,
+        "rivers": 22,
+        "lakes": 16,
+        "settlements": 18,
+        "biomes": {
+          "open-ocean": 648,
+          "sea-ice": 2,
+          "tropical-ocean": 574,
+          "seasonal-forest": 98,
+          "temperate-rainforest": 26,
+          "ice-cap": 58,
+          "tundra": 48,
+          "temperate-forest": 168,
+          "steppe": 109,
+          "cold-desert": 68,
+          "savanna": 1
+        },
+        "resources": {
+          "marine-biological": 1142,
+          "hydrothermal-seafloor": 82,
+          "upland-mineral": 220,
+          "sedimentary-basin": 334,
+          "orogenic-metallic": 21,
+          "alluvial-agricultural": 1
+        }
+      }
+    },
+    {
+      "system": "Memphis",
+      "body": "Via Aureth",
+      "seed": "58b8a4c3614aa0ff",
+      "inputFingerprint": "e84c4b882bf35bf1a091",
+      "path": "data/planet-geography/memphis/via-aureth.json",
+      "summary": {
+        "waterFraction": 0.2706,
+        "plates": 11,
+        "coastSegments": 309,
+        "rivers": 21,
+        "lakes": 96,
+        "settlements": 18,
+        "biomes": {
+          "cold-desert": 354,
+          "sea-ice": 61,
+          "open-ocean": 380,
+          "ice-cap": 787,
+          "steppe": 163,
+          "seasonal-forest": 1,
+          "temperate-forest": 3,
+          "savanna": 5,
+          "tropical-ocean": 46
+        },
+        "resources": {
+          "sedimentary-basin": 115,
+          "marine-biological": 470,
+          "hydrothermal-seafloor": 17,
+          "orogenic-metallic": 49,
+          "upland-mineral": 1149
+        }
+      }
+    },
+    {
+      "system": "Memphis",
+      "body": "Melekion",
+      "seed": "db523303b4e59f49",
+      "inputFingerprint": "a87618a06233a29839c0",
+      "path": "data/planet-geography/memphis/melekion.json",
+      "summary": {
+        "waterFraction": 0.52,
+        "plates": 11,
+        "coastSegments": 392,
+        "rivers": 20,
+        "lakes": 64,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 363,
+          "ice-cap": 722,
+          "cold-desert": 73,
+          "open-ocean": 573,
+          "tundra": 6,
+          "steppe": 44,
+          "temperate-forest": 19
+        },
+        "resources": {
+          "marine-biological": 911,
+          "sedimentary-basin": 117,
+          "hydrothermal-seafloor": 25,
+          "orogenic-metallic": 36,
+          "upland-mineral": 711
+        }
+      }
+    },
+    {
+      "system": "Memphis",
+      "body": "Qados",
+      "seed": "a22344d1cfa59d75",
+      "inputFingerprint": "7b9881177f1cc2f59ac4",
+      "path": "data/planet-geography/memphis/qados.json",
+      "summary": {
+        "waterFraction": 0.1406,
+        "plates": 14,
+        "coastSegments": 249,
+        "rivers": 22,
+        "lakes": 133,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 240,
+          "ice-cap": 1489,
+          "cold-desert": 58,
+          "open-ocean": 13
+        },
+        "resources": {
+          "marine-biological": 242,
+          "sedimentary-basin": 142,
+          "hydrothermal-seafloor": 11,
+          "upland-mineral": 1335,
+          "orogenic-metallic": 70
+        }
+      }
+    },
+    {
+      "system": "Nekhen",
+      "body": "Aurelios",
+      "seed": "0f1c84585f671960",
+      "inputFingerprint": "d3a23ea3d29328d2d1ea",
+      "path": "data/planet-geography/nekhen/aurelios.json",
+      "summary": {
+        "waterFraction": 0.0906,
+        "plates": 5,
+        "coastSegments": 462,
+        "rivers": 35,
+        "lakes": 102,
+        "settlements": 18,
+        "biomes": {
+          "cold-desert": 880,
+          "ice-cap": 473,
+          "open-ocean": 64,
+          "hot-desert": 284,
+          "tropical-ocean": 99
+        },
+        "resources": {
+          "upland-mineral": 1264,
+          "marine-biological": 155,
+          "sedimentary-basin": 360,
+          "orogenic-metallic": 13,
+          "hydrothermal-seafloor": 8
+        }
+      }
+    },
+    {
+      "system": "Nekhen",
+      "body": "Hierava",
+      "seed": "2480c318ee25783f",
+      "inputFingerprint": "a9e57f2a1c53ce7b5e20",
+      "path": "data/planet-geography/nekhen/hierava.json",
+      "summary": {
+        "waterFraction": 0.4606,
+        "plates": 13,
+        "coastSegments": 239,
+        "rivers": 19,
+        "lakes": 70,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 74,
+          "open-ocean": 595,
+          "ice-cap": 247,
+          "temperate-forest": 278,
+          "tundra": 84,
+          "steppe": 144,
+          "cold-desert": 120,
+          "tropical-ocean": 160,
+          "seasonal-forest": 87,
+          "temperate-rainforest": 9,
+          "savanna": 2
+        },
+        "resources": {
+          "marine-biological": 765,
+          "hydrothermal-seafloor": 64,
+          "orogenic-metallic": 35,
+          "upland-mineral": 562,
+          "sedimentary-basin": 353,
+          "alluvial-agricultural": 21
+        }
+      }
+    },
+    {
+      "system": "Nekhen",
+      "body": "Thessaron",
+      "seed": "d26cfebfa8847962",
+      "inputFingerprint": "36b7616347d9b3ca0fe9",
+      "path": "data/planet-geography/nekhen/thessaron.json",
+      "summary": {
+        "waterFraction": 0.3106,
+        "plates": 12,
+        "coastSegments": 319,
+        "rivers": 20,
+        "lakes": 102,
+        "settlements": 11,
+        "biomes": {
+          "cold-desert": 151,
+          "sea-ice": 185,
+          "ice-cap": 1033,
+          "open-ocean": 367,
+          "steppe": 54,
+          "savanna": 3,
+          "tropical-ocean": 7
+        },
+        "resources": {
+          "sedimentary-basin": 114,
+          "marine-biological": 536,
+          "hydrothermal-seafloor": 23,
+          "orogenic-metallic": 47,
+          "upland-mineral": 1080
+        }
+      }
+    },
+    {
+      "system": "Nekhen",
+      "body": "Or Qedem",
+      "seed": "cb1ea46925c3ece1",
+      "inputFingerprint": "bf43a9532a44f1595dac",
+      "path": "data/planet-geography/nekhen/or-qedem.json",
+      "summary": {
+        "waterFraction": 0.1606,
+        "plates": 10,
+        "coastSegments": 357,
+        "rivers": 24,
+        "lakes": 123,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 255,
+          "ice-cap": 1444,
+          "cold-desert": 56,
+          "open-ocean": 34,
+          "steppe": 11
+        },
+        "resources": {
+          "marine-biological": 276,
+          "sedimentary-basin": 190,
+          "orogenic-metallic": 48,
+          "upland-mineral": 1273,
+          "hydrothermal-seafloor": 13
+        }
+      }
+    },
+    {
+      "system": "Thebes",
+      "body": "Jinyara",
+      "seed": "64569b5f797c5673",
+      "inputFingerprint": "375d0440032e4c3c4480",
+      "path": "data/planet-geography/thebes/jinyara.json",
+      "summary": {
+        "waterFraction": 0.61,
+        "plates": 14,
+        "coastSegments": 495,
+        "rivers": 23,
+        "lakes": 34,
+        "settlements": 18,
+        "biomes": {
+          "open-ocean": 620,
+          "tropical-ocean": 478,
+          "seasonal-forest": 132,
+          "ice-cap": 52,
+          "savanna": 60,
+          "temperate-forest": 77,
+          "steppe": 268,
+          "cold-desert": 109,
+          "tundra": 4
+        },
+        "resources": {
+          "marine-biological": 1013,
+          "hydrothermal-seafloor": 85,
+          "orogenic-metallic": 21,
+          "geothermal": 344,
+          "upland-mineral": 334,
+          "alluvial-agricultural": 3
+        }
+      }
+    },
+    {
+      "system": "Thebes",
+      "body": "Qingpur",
+      "seed": "26668c67a27ac185",
+      "inputFingerprint": "98531213ed1233b73be8",
+      "path": "data/planet-geography/thebes/qingpur.json",
+      "summary": {
+        "waterFraction": 0.1706,
+        "plates": 11,
+        "coastSegments": 86,
+        "rivers": 16,
+        "lakes": 130,
+        "settlements": 4,
+        "biomes": {
+          "open-ocean": 271,
+          "cold-desert": 925,
+          "ice-cap": 525,
+          "tropical-ocean": 36,
+          "hot-desert": 22,
+          "savanna": 16,
+          "steppe": 5
+        },
+        "resources": {
+          "marine-biological": 297,
+          "upland-mineral": 1429,
+          "hydrothermal-seafloor": 10,
+          "orogenic-metallic": 47,
+          "sedimentary-basin": 17
+        }
+      }
+    },
+    {
+      "system": "Thebes",
+      "body": "Varunhai",
+      "seed": "5124d89217625c93",
+      "inputFingerprint": "836f075fba645c3e0da6",
+      "path": "data/planet-geography/thebes/varunhai.json",
+      "summary": {
+        "waterFraction": 0.69,
+        "plates": 12,
+        "coastSegments": 397,
+        "rivers": 19,
+        "lakes": 22,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 220,
+          "open-ocean": 884,
+          "tropical-ocean": 138,
+          "temperate-forest": 160,
+          "temperate-rainforest": 21,
+          "ice-cap": 156,
+          "tundra": 147,
+          "taiga": 6,
+          "seasonal-forest": 7,
+          "cold-desert": 46,
+          "steppe": 15
+        },
+        "resources": {
+          "marine-biological": 1169,
+          "hydrothermal-seafloor": 73,
+          "upland-mineral": 222,
+          "sedimentary-basin": 315,
+          "orogenic-metallic": 17,
+          "alluvial-agricultural": 4
+        }
+      }
+    },
+    {
+      "system": "Thebes",
+      "body": "Meilong",
+      "seed": "1912e416dfe9fcd6",
+      "inputFingerprint": "cd44cd1e138a12561da9",
+      "path": "data/planet-geography/thebes/meilong.json",
+      "summary": {
+        "waterFraction": 0.0906,
+        "plates": 10,
+        "coastSegments": 335,
+        "rivers": 42,
+        "lakes": 124,
+        "settlements": 18,
+        "biomes": {
+          "ice-cap": 1505,
+          "sea-ice": 103,
+          "cold-desert": 132,
+          "open-ocean": 60
+        },
+        "resources": {
+          "sedimentary-basin": 313,
+          "marine-biological": 155,
+          "upland-mineral": 1293,
+          "hydrothermal-seafloor": 8,
+          "orogenic-metallic": 31
+        }
+      }
+    },
+    {
+      "system": "Sais",
+      "body": "Nalini",
+      "seed": "a5c4023006034858",
+      "inputFingerprint": "1d6f1e7daa8fac1feed8",
+      "path": "data/planet-geography/sais/nalini.json",
+      "summary": {
+        "waterFraction": 0.58,
+        "plates": 9,
+        "coastSegments": 310,
+        "rivers": 24,
+        "lakes": 46,
+        "settlements": 18,
+        "biomes": {
+          "open-ocean": 527,
+          "tropical-ocean": 517,
+          "seasonal-forest": 128,
+          "cold-desert": 132,
+          "savanna": 25,
+          "temperate-forest": 91,
+          "steppe": 234,
+          "tundra": 15,
+          "ice-cap": 131
+        },
+        "resources": {
+          "marine-biological": 1001,
+          "hydrothermal-seafloor": 43,
+          "sedimentary-basin": 310,
+          "upland-mineral": 429,
+          "orogenic-metallic": 12,
+          "alluvial-agricultural": 5
+        }
+      }
+    },
+    {
+      "system": "Sais",
+      "body": "Shanvara",
+      "seed": "027d7142775dcd1d",
+      "inputFingerprint": "bcdf290995f18b3e5e64",
+      "path": "data/planet-geography/sais/shanvara.json",
+      "summary": {
+        "waterFraction": 0.54,
+        "plates": 15,
+        "coastSegments": 236,
+        "rivers": 21,
+        "lakes": 43,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 85,
+          "open-ocean": 612,
+          "temperate-forest": 200,
+          "tropical-ocean": 275,
+          "seasonal-forest": 55,
+          "ice-cap": 289,
+          "tundra": 125,
+          "temperate-rainforest": 11,
+          "steppe": 59,
+          "cold-desert": 89
+        },
+        "resources": {
+          "marine-biological": 903,
+          "hydrothermal-seafloor": 69,
+          "orogenic-metallic": 33,
+          "upland-mineral": 566,
+          "geothermal": 209,
+          "alluvial-agricultural": 20
+        }
+      }
+    },
+    {
+      "system": "Sais",
+      "body": "Longwei",
+      "seed": "7cdcb23408f32783",
+      "inputFingerprint": "9875e99144e8b47df7cd",
+      "path": "data/planet-geography/sais/longwei.json",
+      "summary": {
+        "waterFraction": 0.0706,
+        "plates": 8,
+        "coastSegments": 218,
+        "rivers": 25,
+        "lakes": 143,
+        "settlements": 18,
+        "biomes": {
+          "ice-cap": 1549,
+          "sea-ice": 76,
+          "cold-desert": 124,
+          "open-ocean": 51
+        },
+        "resources": {
+          "sedimentary-basin": 211,
+          "marine-biological": 123,
+          "upland-mineral": 1424,
+          "orogenic-metallic": 38,
+          "hydrothermal-seafloor": 4
+        }
+      }
+    },
+    {
+      "system": "Sais",
+      "body": "Kailashun",
+      "seed": "e4bafddf62f7ac1b",
+      "inputFingerprint": "f6f5260e219c697fc5f5",
+      "path": "data/planet-geography/sais/kailashun.json",
+      "summary": {
+        "waterFraction": 0.2006,
+        "plates": 11,
+        "coastSegments": 445,
+        "rivers": 35,
+        "lakes": 99,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 291,
+          "ice-cap": 1330,
+          "cold-desert": 98,
+          "open-ocean": 70,
+          "steppe": 11
+        },
+        "resources": {
+          "marine-biological": 342,
+          "sedimentary-basin": 253,
+          "hydrothermal-seafloor": 19,
+          "orogenic-metallic": 43,
+          "upland-mineral": 1143
+        }
+      }
+    },
+    {
+      "system": "Amarna",
+      "body": "Nansen",
+      "seed": "c7139dfb659ff718",
+      "inputFingerprint": "cdc3c16b9b9250696465",
+      "path": "data/planet-geography/amarna/nansen.json",
+      "summary": {
+        "waterFraction": 0.0606,
+        "plates": 6,
+        "coastSegments": 257,
+        "rivers": 28,
+        "lakes": 129,
+        "settlements": 18,
+        "biomes": {
+          "cold-desert": 296,
+          "open-ocean": 85,
+          "ice-cap": 1333,
+          "hot-desert": 62,
+          "tropical-ocean": 24
+        },
+        "resources": {
+          "sedimentary-basin": 254,
+          "marine-biological": 108,
+          "upland-mineral": 1409,
+          "orogenic-metallic": 28,
+          "hydrothermal-seafloor": 1
+        }
+      }
+    },
+    {
+      "system": "Amarna",
+      "body": "Samarkand",
+      "seed": "84e5541414f661e5",
+      "inputFingerprint": "b447e11d477956195299",
+      "path": "data/planet-geography/amarna/samarkand.json",
+      "summary": {
+        "waterFraction": 0.64,
+        "plates": 14,
+        "coastSegments": 430,
+        "rivers": 21,
+        "lakes": 34,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 51,
+          "open-ocean": 685,
+          "tropical-ocean": 416,
+          "tundra": 53,
+          "ice-cap": 153,
+          "temperate-forest": 164,
+          "seasonal-forest": 72,
+          "steppe": 113,
+          "cold-desert": 82,
+          "temperate-rainforest": 11
+        },
+        "resources": {
+          "marine-biological": 1089,
+          "hydrothermal-seafloor": 63,
+          "upland-mineral": 320,
+          "orogenic-metallic": 25,
+          "sedimentary-basin": 301,
+          "alluvial-agricultural": 2
+        }
+      }
+    },
+    {
+      "system": "Amarna",
+      "body": "Aoraki",
+      "seed": "ccb41174f7d40f3a",
+      "inputFingerprint": "1bfd18cea863af20bdc6",
+      "path": "data/planet-geography/amarna/aoraki.json",
+      "summary": {
+        "waterFraction": 0.52,
+        "plates": 10,
+        "coastSegments": 196,
+        "rivers": 15,
+        "lakes": 64,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 109,
+          "open-ocean": 626,
+          "tropical-ocean": 201,
+          "steppe": 163,
+          "temperate-forest": 141,
+          "cold-desert": 160,
+          "savanna": 9,
+          "seasonal-forest": 27,
+          "tundra": 68,
+          "ice-cap": 296
+        },
+        "resources": {
+          "marine-biological": 891,
+          "hydrothermal-seafloor": 45,
+          "sedimentary-basin": 254,
+          "upland-mineral": 588,
+          "orogenic-metallic": 12,
+          "alluvial-agricultural": 10
+        }
+      }
+    },
+    {
+      "system": "Amarna",
+      "body": "Tlaloc",
+      "seed": "e0f6517a71cbeafa",
+      "inputFingerprint": "d5ae7d1fe29608a9d09b",
+      "path": "data/planet-geography/amarna/tlaloc.json",
+      "summary": {
+        "waterFraction": 0.79,
+        "plates": 11,
+        "coastSegments": 483,
+        "rivers": 17,
+        "lakes": 8,
+        "settlements": 18,
+        "biomes": {
+          "open-ocean": 862,
+          "sea-ice": 87,
+          "tropical-ocean": 473,
+          "taiga": 12,
+          "temperate-rainforest": 32,
+          "temperate-forest": 157,
+          "seasonal-forest": 14,
+          "tundra": 68,
+          "ice-cap": 57,
+          "steppe": 18,
+          "cold-desert": 20
+        },
+        "resources": {
+          "marine-biological": 1357,
+          "hydrothermal-seafloor": 65,
+          "sedimentary-basin": 267,
+          "upland-mineral": 100,
+          "orogenic-metallic": 11
+        }
+      }
+    },
+    {
+      "system": "Amarna",
+      "body": "Córdoba",
+      "seed": "e9c3f8b439597348",
+      "inputFingerprint": "4f7cd8f74ac3fb52992c",
+      "path": "data/planet-geography/amarna/c-rdoba.json",
+      "summary": {
+        "waterFraction": 0.0806,
+        "plates": 8,
+        "coastSegments": 263,
+        "rivers": 16,
+        "lakes": 138,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 100,
+          "ice-cap": 1558,
+          "cold-desert": 97,
+          "open-ocean": 45
+        },
+        "resources": {
+          "marine-biological": 138,
+          "sedimentary-basin": 198,
+          "upland-mineral": 1421,
+          "orogenic-metallic": 36,
+          "hydrothermal-seafloor": 7
+        }
+      }
+    },
+    {
+      "system": "Amarna",
+      "body": "Saraswati",
+      "seed": "bca49360be8c8139",
+      "inputFingerprint": "6c672b020caabaa3a2cd",
+      "path": "data/planet-geography/amarna/saraswati.json",
+      "summary": {
+        "waterFraction": 0.7,
+        "plates": 12,
+        "coastSegments": 186,
+        "rivers": 13,
+        "lakes": 40,
+        "settlements": 15,
+        "biomes": {
+          "sea-ice": 356,
+          "open-ocean": 904,
+          "temperate-forest": 29,
+          "cold-desert": 23,
+          "tundra": 83,
+          "steppe": 7,
+          "ice-cap": 398
+        },
+        "resources": {
+          "marine-biological": 1193,
+          "hydrothermal-seafloor": 67,
+          "orogenic-metallic": 8,
+          "upland-mineral": 300,
+          "sedimentary-basin": 228,
+          "alluvial-agricultural": 4
+        }
+      }
+    },
+    {
+      "system": "Amarna",
+      "body": "Kilimanjaro",
+      "seed": "18e378f6db9096b1",
+      "inputFingerprint": "91ea3454d0cf8d51627e",
+      "path": "data/planet-geography/amarna/kilimanjaro.json",
+      "summary": {
+        "waterFraction": 0.1306,
+        "plates": 10,
+        "coastSegments": 350,
+        "rivers": 26,
+        "lakes": 123,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 205,
+          "ice-cap": 1496,
+          "cold-desert": 69,
+          "open-ocean": 30
+        },
+        "resources": {
+          "marine-biological": 231,
+          "sedimentary-basin": 243,
+          "upland-mineral": 1280,
+          "orogenic-metallic": 42,
+          "hydrothermal-seafloor": 4
+        }
+      }
+    },
+    {
+      "system": "Seti",
+      "body": "Tianvara",
+      "seed": "14fd64c046cb88a2",
+      "inputFingerprint": "8ab66471ee8aa4cfeec8",
+      "path": "data/planet-geography/seti/tianvara.json",
+      "summary": {
+        "waterFraction": 0.3406,
+        "plates": 12,
+        "coastSegments": 250,
+        "rivers": 23,
+        "lakes": 94,
+        "settlements": 18,
+        "biomes": {
+          "open-ocean": 354,
+          "steppe": 438,
+          "cold-desert": 338,
+          "savanna": 60,
+          "tropical-ocean": 259,
+          "ice-cap": 346,
+          "seasonal-forest": 5
+        },
+        "resources": {
+          "marine-biological": 597,
+          "sedimentary-basin": 63,
+          "orogenic-metallic": 47,
+          "hydrothermal-seafloor": 16,
+          "upland-mineral": 1077
+        }
+      }
+    },
+    {
+      "system": "Seti",
+      "body": "Chandrao",
+      "seed": "2565cba531272ed0",
+      "inputFingerprint": "23f1f089d62cb9f73f1b",
+      "path": "data/planet-geography/seti/chandrao.json",
+      "summary": {
+        "waterFraction": 0.2106,
+        "plates": 11,
+        "coastSegments": 251,
+        "rivers": 15,
+        "lakes": 117,
+        "settlements": 14,
+        "biomes": {
+          "sea-ice": 67,
+          "cold-desert": 332,
+          "open-ocean": 303,
+          "ice-cap": 990,
+          "steppe": 90,
+          "savanna": 9,
+          "tropical-ocean": 9
+        },
+        "resources": {
+          "marine-biological": 367,
+          "sedimentary-basin": 78,
+          "hydrothermal-seafloor": 12,
+          "orogenic-metallic": 45,
+          "upland-mineral": 1298
+        }
+      }
+    },
+    {
+      "system": "Seti",
+      "body": "Rudrashen",
+      "seed": "48fa0003cecf54db",
+      "inputFingerprint": "df05e4bd9d52dcba686f",
+      "path": "data/planet-geography/seti/rudrashen.json",
+      "summary": {
+        "waterFraction": 0.4106,
+        "plates": 9,
+        "coastSegments": 229,
+        "rivers": 17,
+        "lakes": 79,
+        "settlements": 18,
+        "biomes": {
+          "sea-ice": 333,
+          "open-ocean": 406,
+          "ice-cap": 595,
+          "cold-desert": 153,
+          "steppe": 75,
+          "tundra": 137,
+          "temperate-forest": 97,
+          "seasonal-forest": 4
+        },
+        "resources": {
+          "marine-biological": 709,
+          "hydrothermal-seafloor": 30,
+          "upland-mineral": 713,
+          "orogenic-metallic": 21,
+          "sedimentary-basin": 319,
+          "alluvial-agricultural": 8
+        }
+      }
+    },
+    {
+      "system": "Seti",
+      "body": "Keshun",
+      "seed": "f2744ee4d0f9a94a",
+      "inputFingerprint": "d9b733819e34bc8d651f",
+      "path": "data/planet-geography/seti/keshun.json",
+      "summary": {
+        "waterFraction": 0.0606,
+        "plates": 6,
+        "coastSegments": 221,
+        "rivers": 37,
+        "lakes": 131,
+        "settlements": 18,
+        "biomes": {
+          "ice-cap": 1612,
+          "sea-ice": 90,
+          "cold-desert": 79,
+          "open-ocean": 19
+        },
+        "resources": {
+          "sedimentary-basin": 303,
+          "marine-biological": 108,
+          "upland-mineral": 1355,
+          "orogenic-metallic": 33,
+          "hydrothermal-seafloor": 1
+        }
+      }
+    }
+  ]
+}

@@ -69,6 +69,7 @@ export class SystemView {
     this.model = options.model;
     this.onSelectionChange = options.onSelectionChange ?? (() => {});
     this.onExitRequested = options.onExitRequested ?? (() => {});
+    this.onObjectActivate = options.onObjectActivate ?? (() => {});
     this.state = { yaw: -0.62, pitch: 0.82, zoom: 1, panX: 0, panY: 0 };
     this.origin = null;
     this.destination = null;
@@ -77,6 +78,9 @@ export class SystemView {
     this.pinch = null;
     this.suppressClickUntil = 0;
     this.exitTriggered = false;
+    this.pendingSelectionTimer = null;
+    this.lastActivation = null;
+    this.activationSuppressedUntil = 0;
     this.displayPositions = new Map(this.model.objects.map((object) => [object.id, displayPosition(object, this.model)]));
     this.#buildScene();
     this.#attachEvents();
@@ -84,6 +88,7 @@ export class SystemView {
   }
 
   destroy() {
+    clearTimeout(this.pendingSelectionTimer);
     for (const [name, handler] of Object.entries(this._listeners ?? {})) this.svg.removeEventListener(name, handler);
     this.svg.replaceChildren();
   }
@@ -150,7 +155,21 @@ export class SystemView {
       group.append(hit, selection, glyph, label, type, title); this.objectLayer.append(group);
       this.objectNodes.set(object.id, { group, glyph, label, type, selection, object });
       if (object.selectable) {
-        group.addEventListener("click", (event) => { event.stopPropagation(); if (performance.now() >= this.suppressClickUntil) this.#select(object); });
+        group.addEventListener("click", (event) => {
+          event.stopPropagation(); if (performance.now() < this.suppressClickUntil) return;
+          const now = performance.now();
+          if (this.lastActivation?.id === object.id && now - this.lastActivation.at < 330) {
+            clearTimeout(this.pendingSelectionTimer); this.pendingSelectionTimer = null; this.lastActivation = null;
+            this.activationSuppressedUntil = now + 450; this.onObjectActivate(object); return;
+          }
+          this.lastActivation = { id: object.id, at: now };
+          clearTimeout(this.pendingSelectionTimer); this.pendingSelectionTimer = setTimeout(() => { this.pendingSelectionTimer = null; this.#select(object); }, 260);
+        });
+        group.addEventListener("dblclick", (event) => {
+          event.preventDefault(); event.stopPropagation(); clearTimeout(this.pendingSelectionTimer); this.pendingSelectionTimer = null;
+          if (performance.now() < this.activationSuppressedUntil) return;
+          this.activationSuppressedUntil = performance.now() + 450; this.onObjectActivate(object);
+        });
         group.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); this.#select(object); } });
       }
     }
@@ -197,7 +216,11 @@ export class SystemView {
         event.preventDefault();
         const requestedZoom = this.state.zoom * Math.exp(-event.deltaY * .0012);
         if (event.deltaY > 0 && requestedZoom < .34 && !this.exitTriggered) { this.exitTriggered = true; this.onExitRequested(); return; }
-        this.state.zoom = clamp(requestedZoom, .38, 4.2); this.render();
+        this.state.zoom = clamp(requestedZoom, .38, 4.2);
+        if (event.deltaY < 0 && this.state.zoom > 4.1 && this.origin && performance.now() >= this.activationSuppressedUntil) {
+          this.activationSuppressedUntil = performance.now() + 600; this.onObjectActivate(this.origin); return;
+        }
+        this.render();
       },
       dblclick: (event) => { if (!event.target.closest?.(".oscm-system-object")) this.resetView(); },
     };

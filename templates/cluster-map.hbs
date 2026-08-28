@@ -31,6 +31,7 @@
       <div>
         <div class="oscm-kicker">RA // PRAESEPE TEST VOLUME</div>
         <button class="oscm-back-button is-hidden" type="button" data-action="back-to-cluster">← Beehive Cluster</button>
+        <button class="oscm-back-button is-hidden" type="button" data-action="back-to-system">← System</button>
         <h2 data-map-title>Beehive Cluster</h2>
       </div>
       <div class="oscm-system-count" data-map-count>{{systemCount}} systems</div>
@@ -66,6 +67,15 @@
       <div class="oscm-selection-row"><span>Parent</span><strong data-field="objectParent">—</strong></div>
       <div class="oscm-selection-row"><span>Role</span><strong data-field="objectRole">—</strong></div>
       <div class="oscm-selection-row"><span>Scale</span><strong data-field="objectScale">—</strong></div>
+    </section>
+
+    <section class="oscm-card oscm-body-layer-controls">
+      <div class="oscm-card-title">Orbital Survey Layers</div>
+      <label><input type="checkbox" data-body-layer="terrain" checked> Terrain &amp; biomes</label>
+      <label><input type="checkbox" data-body-layer="hydrology" checked> Rivers &amp; lakes</label>
+      <label><input type="checkbox" data-body-layer="resources"> Resources &amp; soils</label>
+      <label><input type="checkbox" data-body-layer="settlements" checked> Cities &amp; capital</label>
+      <label><input type="checkbox" data-body-layer="transport" checked> Transport corridors</label>
     </section>
 
     <section class="oscm-card">

@@ -1,0 +1,24 @@
+.oscm-body-view { touch-action: none; background: radial-gradient(circle at center, #102126 0, #050b0e 68%); }
+.oscm-body-disc { fill: #536d68; stroke: #b9d9d2; stroke-width: 1.5; }
+.oscm-body-disc.is-giant-globe { fill: #8d765f; }
+.oscm-body-disc.is-moon-globe,.oscm-body-disc.is-minor-world-globe { fill: #596266; }
+.oscm-body-disc.is-station-structure,.oscm-body-disc.is-shipyard-structure,.oscm-body-disc.is-vessel-structure,.oscm-body-disc.is-fleet-structure,.oscm-body-disc.is-blinkgate-structure,.oscm-body-disc.is-megastructure-structure { fill: #102126; stroke: #63d9df; stroke-dasharray: 4 3; }
+.oscm-body-atmosphere { fill: none; stroke: rgba(117,218,232,.35); stroke-width: 8; pointer-events: none; }
+.oscm-body-night { fill: rgba(0,0,0,.48); pointer-events: none; clip-path: url(#oscm-body-disc-clip); }
+.oscm-body-cell { stroke: rgba(0,0,0,.12); stroke-width: .4; }
+.oscm-body-cell[class*="ocean"],.oscm-body-cell.biome-sea-ice { fill: #36738c; }
+.oscm-body-cell[class*="forest"],.oscm-body-cell.biome-taiga { fill: #3f7051; }
+.oscm-body-cell[class*="desert"],.oscm-body-cell.biome-steppe { fill: #a47e4d; }
+.oscm-body-cell.biome-tundra,.oscm-body-cell.biome-ice-cap { fill: #c6d8d7; }
+.oscm-body-settlement { fill: #ffe18a; stroke: #1b2426; stroke-width: 1; cursor: pointer; }
+.oscm-body-settlement.is-capital { fill: #fff3b0; stroke: #f1b84b; stroke-width: 2; }
+.oscm-body-region { fill: rgba(193,219,210,.25); stroke: #c1dbd2; }
+.oscm-body-docking-node { fill: #63d9df; stroke: #d2ffff; cursor: pointer; }
+.oscm-body-river { stroke: #72c9e8; stroke-width: 2; }
+.oscm-body-lake { fill: #72c9e8; }
+.oscm-body-transport { stroke: #ffe18a; stroke-width: 1.6; stroke-dasharray: 5 3; }
+.oscm-body-resource { fill: #d58cff; stroke: #271331; stroke-width: .7; cursor: pointer; }
+.oscm-body-layer.is-hidden { display: none; }
+.oscm-body-layer-controls { display: none; }
+.oscm-shell.is-body-mode .oscm-body-layer-controls { display: grid; gap: .35rem; }
+.oscm-shell.is-body-mode .oscm-selection-card,.oscm-shell.is-body-mode .oscm-territory-legend,.oscm-shell.is-body-mode .oscm-legend { display: none; }
