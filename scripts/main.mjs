@@ -41,15 +41,35 @@ Hooks.once("init", () => {
   if (module) module.api = Object.freeze({ open: openClusterMap });
 });
 
-Hooks.on("getSceneControlButtons", (controls) => {
-  const tokenControl = controls.tokens;
-  if (!tokenControl?.tools) return;
+function getMeasurementControl(controls) {
+  if (controls.measure?.tools) return controls.measure;
+  if (controls.templates?.tools) return controls.templates;
 
-  tokenControl.tools.orphanedSunClusterMap = {
+  return Object.values(controls).find((control) => {
+    const tools = Object.values(control?.tools ?? {});
+    return tools.some((tool) => {
+      const name = String(tool?.name ?? "").toLowerCase();
+      const icon = String(tool?.icon ?? "").toLowerCase();
+      return name.includes("clear") && name.includes("template") || icon.includes("fa-trash");
+    });
+  });
+}
+
+Hooks.on("getSceneControlButtons", (controls) => {
+  const measurementControl = getMeasurementControl(controls);
+  if (!measurementControl?.tools) return;
+
+  const existingTools = Object.values(measurementControl.tools);
+  const lastOrder = existingTools.reduce((max, tool) => {
+    const order = Number(tool?.order);
+    return Number.isFinite(order) ? Math.max(max, order) : max;
+  }, existingTools.length - 1);
+
+  measurementControl.tools.orphanedSunClusterMap = {
     name: "orphanedSunClusterMap",
-    title: "Orphaned Sun Cluster Map",
-    icon: "fa-solid fa-star",
-    order: Object.keys(tokenControl.tools).length,
+    title: "Cluster Map",
+    icon: "fa-solid fa-map",
+    order: lastOrder + 1,
     button: true,
     visible: true,
     onChange: () => openClusterMap(),
