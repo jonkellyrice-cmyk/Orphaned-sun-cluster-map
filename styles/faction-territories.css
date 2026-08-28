@@ -1,0 +1,59 @@
+.oscm-territory-layer {
+  pointer-events: none;
+}
+
+.oscm-territory-face {
+  fill: var(--oscm-territory-color);
+  stroke: var(--oscm-territory-color);
+  stroke-width: 0.6;
+  stroke-opacity: 0.10;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+/* Deliberately ghost-light: the grid, stars, and route line remain dominant. */
+.oscm-territory-face.is-cap {
+  fill-opacity: 0.022;
+}
+
+.oscm-territory-face.is-side {
+  fill-opacity: 0.040;
+}
+
+.oscm-territory-legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 10px;
+}
+
+.oscm-territory-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  color: var(--oscm-muted);
+  font-size: 10px;
+}
+
+.oscm-territory-swatch {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border: 1px solid color-mix(in srgb, var(--territory-color) 65%, white 35%);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--territory-color) 30%, transparent);
+  box-shadow: inset 0 0 5px color-mix(in srgb, var(--territory-color) 35%, transparent);
+}
+
+.oscm-territory-note {
+  margin: 9px 0 0;
+  color: var(--oscm-muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .oscm-territory-legend-grid {
+    grid-template-columns: 1fr;
+  }
+}
