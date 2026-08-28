@@ -1,6 +1,24 @@
 <div class="oscm-shell">
   <section class="oscm-view" aria-label="3D Beehive Cluster map">
     <svg class="oscm-cluster-svg" role="img" aria-label="Interactive three-dimensional star cluster"></svg>
+
+    <section class="oscm-route-hud is-hidden" aria-live="polite" aria-label="Selected route travel time">
+      <div class="oscm-route-hud-kicker">SELECTED ROUTE</div>
+      <div class="oscm-route-hud-route" data-hud-field="route">—</div>
+      <div class="oscm-route-hud-distance" data-hud-field="spatial">—</div>
+      <div class="oscm-route-hud-times">
+        <div>
+          <span>REFERENCE FRAME</span>
+          <strong data-hud-field="clusterTime">—</strong>
+        </div>
+        <div class="is-subjective">
+          <span>SHIPBOARD / SUBJECTIVE</span>
+          <strong data-hud-field="shipTime">—</strong>
+        </div>
+      </div>
+      <div class="oscm-route-hud-profile" data-hud-field="profile">—</div>
+    </section>
+
     <div class="oscm-view-help">
       <span><i class="fa-solid fa-arrows-rotate"></i> Drag / 1 finger: rotate</span>
       <span><i class="fa-solid fa-magnifying-glass"></i> Wheel / pinch: zoom</span>
