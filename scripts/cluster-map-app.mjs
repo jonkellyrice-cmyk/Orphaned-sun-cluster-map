@@ -108,6 +108,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     const destinationEl = root.querySelector('[data-field="destination"]');
     const prompt = root.querySelector(".oscm-selection-prompt");
     const result = root.querySelector(".oscm-route-result");
+    const hud = root.querySelector(".oscm-route-hud");
 
     if (originEl) originEl.textContent = origin?.name ?? "—";
     if (destinationEl) destinationEl.textContent = destination?.name ?? "—";
@@ -115,12 +116,14 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     if (!origin || !destination) {
       prompt?.classList.remove("is-hidden");
       result?.classList.add("is-hidden");
+      hud?.classList.add("is-hidden");
       if (prompt) prompt.textContent = origin ? "Select a destination system." : "Select an origin system, then a destination.";
       return;
     }
 
     prompt?.classList.add("is-hidden");
     result?.classList.remove("is-hidden");
+    hud?.classList.remove("is-hidden");
 
     const projected = projectedDistanceLy(origin, destination);
     const depth = Math.abs(destination.z - origin.z);
@@ -145,6 +148,18 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     // Avoid language/template rerenders during rapid route selection.
     for (const [field, value] of Object.entries(values)) {
       const el = root.querySelector(`[data-field="${field}"]`);
+      if (el) el.textContent = value;
+    }
+
+    const hudValues = {
+      route: `${origin.name} → ${destination.name}`,
+      spatial: `${values.spatial} true distance`,
+      clusterTime: values.clusterTime,
+      shipTime: values.shipTime,
+      profile: values.profile,
+    };
+    for (const [field, value] of Object.entries(hudValues)) {
+      const el = root.querySelector(`[data-hud-field="${field}"]`);
       if (el) el.textContent = value;
     }
   }
