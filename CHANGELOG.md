@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.3.0
+
+- Added a third orbital/body zoom level for terrestrial planets, moons, dwarf worlds, giants, stations, shipyards, vessels, fleets, blinkgates, megastructures, and anomalies.
+- Added gesture-safe cluster → system → body navigation with double-click/double-tap, selected-object inward zoom, outward-zoom return, and explicit breadcrumbs.
+- Materialized deterministic accepted-working-canon surface geometry for all 43 inhabited terrestrial worlds from the canonical CSV metadata and permanent seeds.
+- Added tectonic plates, elevation and sea-level fitting, climate, rainfall, rivers, lakes, biomes, soils, resource provinces, settlement sites, capitals, and transport corridors.
+- Added inspectable orbital survey layers and distinct natural/artificial approach presentation contracts.
+- Preserved the canonical object registry byte-for-byte and added exact-regeneration, coverage, interaction, and asset-budget validation; 64 tests now pass.
+
 ## v0.2.0
 
 - Added interactive three-dimensional system views for all ten major systems, generated from the canonical system-object registry.
