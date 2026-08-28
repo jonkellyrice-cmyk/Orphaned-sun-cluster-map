@@ -1,6 +1,26 @@
 {
   "base_sha": "eb5e06ab4aab732572e6e46aafcfba5acea9b6bc",
   "branch": "planet-cartography-refinement",
-  "completed": [],
+  "completed": [
+    1,
+    2
+  ],
+  "phase_1": {
+    "collision_audit": true,
+    "deterministic": true,
+    "profiles": [
+      "Aurethic",
+      "Vostrann",
+      "Xu\u0101nhari",
+      "Vadan",
+      "Union cosmopolitan"
+    ]
+  },
+  "phase_2": {
+    "closed_land_polygons": true,
+    "sampling_degrees": 2,
+    "seed_stable": true,
+    "smooth_coastlines": true
+  },
   "target_release": "0.5.0"
 }
