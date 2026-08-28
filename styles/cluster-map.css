@@ -85,16 +85,28 @@
   stroke: none;
   pointer-events: all;
 }
+.oscm-star-selection-ring {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
 .oscm-star-halo {
-  fill: rgba(214, 248, 251, 0.15);
+  fill: var(--oscm-stellar-color, #d6f8fb);
+  opacity: 0.20;
   filter: url(#oscm-star-glow);
-  transition: fill 120ms ease;
+  transition: opacity 120ms ease;
 }
 .oscm-star-core {
-  fill: #eaffff;
-  stroke: rgba(255,255,255,0.85);
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
+}
+.oscm-star-inner-core {
+  pointer-events: none;
+}
+.oscm-stellar-component.is-anomalous .oscm-star-halo {
+  opacity: 0.28;
 }
 .oscm-star-label {
   fill: #ecfbfc;
@@ -113,11 +125,15 @@
   stroke-width: 2.5px;
 }
 .oscm-star:hover .oscm-star-halo,
-.oscm-star:focus .oscm-star-halo { fill: rgba(214, 248, 251, 0.35); }
-.oscm-star.is-origin .oscm-star-core { fill: var(--oscm-origin); }
-.oscm-star.is-origin .oscm-star-halo { fill: rgba(244, 211, 94, 0.32); }
-.oscm-star.is-destination .oscm-star-core { fill: var(--oscm-destination); }
-.oscm-star.is-destination .oscm-star-halo { fill: rgba(120, 220, 232, 0.34); }
+.oscm-star:focus .oscm-star-halo { opacity: 0.42; }
+.oscm-star.is-origin .oscm-star-selection-ring {
+  stroke: var(--oscm-origin);
+  filter: url(#oscm-star-glow);
+}
+.oscm-star.is-destination .oscm-star-selection-ring {
+  stroke: var(--oscm-destination);
+  filter: url(#oscm-star-glow);
+}
 
 .oscm-route-line-shadow,
 .oscm-route-line {
