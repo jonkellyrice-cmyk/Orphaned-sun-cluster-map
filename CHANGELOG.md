@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.1.8
+
+- Reworked faction-to-faction borders into genuinely three-dimensional frontier surfaces instead of carrying one XY seam straight through the depth axis.
+- Territorial footprints are now lofted through multiple Z slices, allowing a shared border to wander laterally as depth changes: one polity can bulge into a region at one depth while its neighbor regains that space at another.
+- The lateral deformation field is shared across factions, so adjacent territories move along the same seam rather than developing arbitrary cracks between independently randomized borders.
+- The original 2D faction-control map remains the exact Z=0 cross-section, preserving the established campaign-map topology.
+- Lateral warping fades to zero at the cluster-box exterior and is strongly suppressed around every Big Ten system, keeping inhabited systems as hard political anchors.
+- Added deterministic tests for lofted side surfaces, changing seam position across depth, Z=0 map preservation, Big Ten anchor stability, and system containment in warped 3D cross-sections.
+
 ## v0.1.7
 
 - Reworked faction-control volumes so the inferred Z dimension is no longer a constant flat extrusion.
