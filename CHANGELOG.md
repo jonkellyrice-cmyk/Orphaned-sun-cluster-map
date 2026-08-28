@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.1.7
+
+- Reworked faction-control volumes so the inferred Z dimension is no longer a constant flat extrusion.
+- Front and rear depth boundaries now vary smoothly across each faction footprint, allowing territorial influence to bulge forward in some regions and recede in others.
+- The front and rear surfaces use independent depth variation, so territories can shift and taper rather than simply becoming uniformly thicker or thinner.
+- Political-system locations remain hard anchor regions: depth warping is smoothly suppressed around each faction's owned Big Ten systems so those systems remain securely inside their established territory.
+- Grayspace receives the strongest unconstrained depth variation, helping the unclaimed region read as an irregular volume rather than another fitted block.
+- Added deterministic tests for non-flat front/rear depth boundaries and anchor-system containment.
+
 ## v0.1.6
 
 - Added a compact route-travel HUD directly over the upper-right corner of the 3D cluster view.
