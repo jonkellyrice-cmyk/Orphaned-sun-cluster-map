@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.4.0
+
+- Replaced placeholder non-habitable body discs with deterministic metadata-driven SVG renderers.
+- Added cratered, icy, volatile-rich and mineral-bearing moon/minor-world surfaces plus banded gas giants and storm systems.
+- Added substantive station, ring-station, shipyard, vessel, fleet, blinkgate, tether/ring megastructure and anomaly silhouettes.
+- Added asteroid-belt fly-through views without treating distributed belt centroids as route endpoints.
+- Structure color accents now follow canonical visual palettes, and docking approaches remain inspectable.
+- Hid planetary survey-layer controls when viewing ships, stations and other non-geographic bodies.
+
 ## v0.3.1
 
 - Fixed Forge orbital-body views failing to load because the v0.3.0 release archive omitted `data/planet-geography`.

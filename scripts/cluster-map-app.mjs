@@ -112,6 +112,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       this.activeBody = null;
       root.classList.add("is-system-mode");
       root.classList.remove("is-body-mode");
+      root.classList.remove("has-geography");
       root.querySelector('[data-action="back-to-cluster"]')?.classList.remove("is-hidden");
       root.querySelector('[data-action="back-to-system"]')?.classList.add("is-hidden");
       const title = root.querySelector("[data-map-title]"); if (title) title.textContent = `${system.name} System`;
@@ -128,7 +129,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
 
   async #enterBody(object) {
     const root = this.element?.querySelector?.(".oscm-shell"), svg = root?.querySelector(".oscm-cluster-svg");
-    if (!root || !svg || !object?.selectable || ["star", "barycenter", "belt"].includes(object.objectClass)) return;
+    if (!root || !svg || ["star", "barycenter"].includes(object.objectClass)) return;
     try {
       let model;
       if (naturalBodyKind(object)) model = buildNaturalBodyModel(object);
@@ -145,20 +146,39 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       this._clusterView = new BodyView(svg, { model, geography, onExitRequested: () => this.#showSystem(), onFeatureSelected: (feature) => this.#updateBodyFeature(feature) });
       this.mode = "body"; this.activeBody = object;
       root.classList.add("is-system-mode", "is-body-mode");
+      root.classList.toggle("has-geography", Boolean(geography));
       root.querySelector('[data-action="back-to-cluster"]')?.classList.remove("is-hidden");
       root.querySelector('[data-action="back-to-system"]')?.classList.remove("is-hidden");
       const title = root.querySelector("[data-map-title]"); if (title) title.textContent = object.name;
       const count = root.querySelector("[data-map-count]"); if (count) count.textContent = geography ? `${geography.cells.length} surface cells` : object.type;
-      const help = root.querySelector("[data-map-help]"); if (help) help.textContent = "Click / tap a mapped surface feature";
+      const help = root.querySelector("[data-map-help]"); if (help) help.textContent = geography
+        ? "Click / tap a mapped surface feature"
+        : model.kind === "asteroid-field" ? "Click / tap a mapped belt body"
+        : "Click / tap docking approaches; drag to inspect";
       this.#updateRoutePanel(null, null);
+      this.#updateBodyMetadata(object, model);
     } catch (error) { console.error(`${MODULE_ID} | Unable to enter body view`, error); ui.notifications.error(`Unable to load ${object.name} orbital view.`); }
   }
 
   #updateBodyFeature(feature) {
     const root = this.element?.querySelector?.(".oscm-shell"), card = root?.querySelector(".oscm-object-details"); if (!root || !card) return;
-    card.classList.toggle("is-hidden", !feature); if (!feature) return;
+    if (!feature) { this.#updateBodyMetadata(this.activeBody, this._clusterView?.model); return; }
+    card.classList.remove("is-hidden");
     const inspected = inspectSurfaceFeature(feature);
     const values = { objectName: inspected.name, objectType: inspected.type, objectParent: this.activeBody?.name || "—", objectRole: inspected.detail, objectScale: feature.suitability != null ? `Settlement suitability ${feature.suitability}` : "Schematic" };
+    for (const [field, value] of Object.entries(values)) { const element = root.querySelector(`[data-field="${field}"]`); if (element) element.textContent = value; }
+  }
+
+  #updateBodyMetadata(object, model) {
+    const root = this.element?.querySelector?.(".oscm-shell"), card = root?.querySelector(".oscm-object-details"); if (!root || !card || !object || !model) return;
+    card.classList.remove("is-hidden");
+    const values = {
+      objectName: object.name,
+      objectType: model.structureClass || object.type,
+      objectParent: object.parent || "—",
+      objectRole: model.function || model.resourceProfile || object.hz_or_role || "Mapped orbital body",
+      objectScale: model.dimensions || (model.radiusKm ? `${model.radiusKm.toLocaleString()} km radius` : "Distributed mapped region"),
+    };
     for (const [field, value] of Object.entries(values)) { const element = root.querySelector(`[data-field="${field}"]`); if (element) element.textContent = value; }
   }
 
@@ -179,6 +199,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     this.activeBody = null;
     root.classList.remove("is-system-mode");
     root.classList.remove("is-body-mode");
+    root.classList.remove("has-geography");
     root.querySelector('[data-action="back-to-cluster"]')?.classList.add("is-hidden");
     root.querySelector('[data-action="back-to-system"]')?.classList.add("is-hidden");
     const title = root.querySelector("[data-map-title]"); if (title) title.textContent = "Beehive Cluster";

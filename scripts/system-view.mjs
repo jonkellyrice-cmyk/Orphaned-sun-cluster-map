@@ -171,6 +171,13 @@ export class SystemView {
           this.activationSuppressedUntil = performance.now() + 450; this.onObjectActivate(object);
         });
         group.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); this.#select(object); } });
+      } else if (object.objectClass === "belt") {
+        group.addEventListener("click", (event) => {
+          event.stopPropagation(); const now = performance.now();
+          if (this.lastActivation?.id === object.id && now - this.lastActivation.at < 330) { this.lastActivation = null; this.activationSuppressedUntil = now + 450; this.onObjectActivate(object); }
+          else this.lastActivation = { id: object.id, at: now };
+        });
+        group.addEventListener("dblclick", (event) => { event.preventDefault(); event.stopPropagation(); if (performance.now() >= this.activationSuppressedUntil) this.onObjectActivate(object); });
       }
     }
   }

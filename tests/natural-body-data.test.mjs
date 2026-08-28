@@ -6,10 +6,10 @@ import { buildNaturalBodyModel, buildNaturalBodyModels, naturalBodyKind } from "
 
 const rows = parseCsv(readFileSync(new URL("../docs/system-orbital-distances.csv", import.meta.url), "utf8"));
 
-test("natural body models cover terrestrial, moon, minor-world, and giant families", () => {
+test("natural body models cover terrestrial, moon, minor-world, giant, and asteroid-field families", () => {
   const models = buildNaturalBodyModels(rows);
   const kinds = new Set(models.map((model) => model.kind));
-  assert.deepEqual(kinds, new Set(["terrestrial", "moon", "minor-world", "giant"]));
+  assert.deepEqual(kinds, new Set(["terrestrial", "moon", "minor-world", "giant", "asteroid-field"]));
   assert.equal(models.length, rows.filter((row) => naturalBodyKind(row)).length);
 });
 

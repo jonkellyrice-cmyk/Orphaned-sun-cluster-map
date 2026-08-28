@@ -1,7 +1,8 @@
 .oscm-body-view { touch-action: none; background: radial-gradient(circle at center, #102126 0, #050b0e 68%); }
 .oscm-body-disc { fill: #536d68; stroke: #b9d9d2; stroke-width: 1.5; }
-.oscm-body-disc.is-giant-globe { fill: #8d765f; }
-.oscm-body-disc.is-moon-globe,.oscm-body-disc.is-minor-world-globe { fill: #596266; }
+.oscm-body-disc.is-solid-world.is-rocky { fill: url(#oscm-rocky-gradient); }
+.oscm-body-disc.is-solid-world.is-icy { fill: url(#oscm-icy-gradient); }
+.oscm-body-disc.is-giant { fill: #8d765f; }
 .oscm-body-disc.is-station-structure,.oscm-body-disc.is-shipyard-structure,.oscm-body-disc.is-vessel-structure,.oscm-body-disc.is-fleet-structure,.oscm-body-disc.is-blinkgate-structure,.oscm-body-disc.is-megastructure-structure { fill: #102126; stroke: #63d9df; stroke-dasharray: 4 3; }
 .oscm-body-atmosphere { fill: none; stroke: rgba(117,218,232,.35); stroke-width: 8; pointer-events: none; }
 .oscm-body-night { fill: rgba(0,0,0,.48); pointer-events: none; clip-path: url(#oscm-body-disc-clip); }
@@ -14,11 +15,60 @@
 .oscm-body-settlement.is-capital { fill: #fff3b0; stroke: #f1b84b; stroke-width: 2; }
 .oscm-body-region { fill: rgba(193,219,210,.25); stroke: #c1dbd2; }
 .oscm-body-docking-node { fill: #63d9df; stroke: #d2ffff; cursor: pointer; }
+.oscm-body-disc.is-hidden,.oscm-body-surface.is-hidden,.oscm-body-night.is-hidden,.oscm-body-atmosphere.is-hidden { display: none; }
+.oscm-body-structure { transform-origin: center; filter: drop-shadow(0 0 9px rgba(82,209,221,.18)); }
+.oscm-solid-crater .oscm-crater-rim { fill: rgba(30,37,39,.28); stroke: rgba(226,236,230,.32); stroke-width: 1.5; }
+.oscm-solid-crater .oscm-crater-floor { fill: rgba(12,19,21,.36); }
+.oscm-volatile-deposit { fill: rgba(207,244,250,.76); stroke: rgba(255,255,255,.58); stroke-width: 1; }
+.oscm-giant-band { fill: #a98b67; opacity: .8; }
+.oscm-giant-band.band-1 { fill: #715c55; }
+.oscm-giant-band.band-2 { fill: #d1b685; }
+.oscm-giant-band.band-3 { fill: #887270; }
+.oscm-giant-storm { fill: #d5c5a6; stroke: #674d48; stroke-width: 2; }
+.oscm-structure-line,.oscm-station-spoke,.oscm-yard-truss-minor { stroke: #65878e; stroke-width: 4; }
+.oscm-station-ring { fill: none; stroke: #8bbdc0; stroke-width: 13; }
+.oscm-station-ring:nth-of-type(even) { stroke: #54777c; stroke-width: 8; }
+.oscm-station-spoke { stroke-width: 5; }
+.oscm-station-hub,.oscm-yard-reactor { fill: url(#oscm-metal-gradient); stroke: #b8dad8; stroke-width: 3; }
+.oscm-station-core { fill: #e5c56a; stroke: #fff1b0; stroke-width: 2; }
+.oscm-structure-module,.oscm-habitat-module,.oscm-service-module,.oscm-vessel-deck,.oscm-tether-crossbar { fill: #48646a; stroke: #a8c9c9; stroke-width: 2; }
+.oscm-habitat-module { fill: #806e50; }
+.oscm-solar-array { fill: #245071; stroke: #6eb6de; stroke-width: 2; }
+.oscm-yard-truss { stroke: #b0c8c8; stroke-width: 12; }
+.oscm-yard-truss-minor { stroke-width: 5; }
+.oscm-yard-gantry { fill: none; stroke: #72b9bd; stroke-width: 9; }
+.oscm-vessel-hull,.oscm-docked-hull,.oscm-escort-hull { fill: url(#oscm-metal-gradient); stroke: #d5e4df; stroke-width: 3; }
+.oscm-docked-hull { fill: #3b555b; stroke-width: 2; }
+.oscm-escort-hull { fill: #4c686e; stroke-width: 2; }
+.oscm-vessel-deck { fill: #365159; }
+.oscm-vessel-keel { stroke: #e5c56a; stroke-width: 4; }
+.oscm-engine-bell { fill: #67dff0; stroke: #d6ffff; stroke-width: 3; filter: drop-shadow(0 0 8px #49cde2); }
+.oscm-gate-segment { fill: #365e63; stroke: #83e7e8; stroke-width: 2; }
+.oscm-gate-horizon { fill: none; stroke: #d8ffff; stroke-width: 5; stroke-dasharray: 3 8; }
+.oscm-gate-core { fill: rgba(118,69,160,.25); stroke: #b87de3; stroke-width: 2; filter: drop-shadow(0 0 16px #9258bd); }
+.oscm-megastructure-tether { stroke: #b9d9d2; stroke-width: 10; }
+.oscm-tether-node { fill: url(#oscm-metal-gradient); stroke: #7de2e1; stroke-width: 3; }
+.oscm-tether-crossbar { fill: #354e53; }
+.oscm-anomaly-loop { fill: none; stroke: #c681ef; stroke-width: 5; filter: drop-shadow(0 0 8px #a658d3); }
+.oscm-asteroid-rock { fill: #77736b; stroke: #b5aaa0; stroke-width: 1.5; cursor: pointer; }
+.oscm-asteroid-rock.mineral-1 { fill: #765b4c; }
+.oscm-asteroid-rock.mineral-2 { fill: #4f6667; }
+.oscm-asteroid-rock.mineral-3 { fill: #8a805e; }
+.oscm-belt-reference-orbit { fill: none; stroke: rgba(121,184,188,.28); stroke-width: 2; stroke-dasharray: 5 8; }
+.oscm-body-structure.palette-gold { color: #e5c56a; }
+.oscm-body-structure.palette-red { color: #da6d64; }
+.oscm-body-structure.palette-jade { color: #64c89b; }
+.oscm-body-structure.palette-gold .oscm-station-core,.oscm-body-structure.palette-gold .oscm-vessel-keel { fill: currentColor; stroke: currentColor; }
+.oscm-body-structure.palette-red .oscm-station-core,.oscm-body-structure.palette-red .oscm-vessel-keel { fill: currentColor; stroke: currentColor; }
+.oscm-body-structure.palette-jade .oscm-station-core,.oscm-body-structure.palette-jade .oscm-vessel-keel { fill: currentColor; stroke: currentColor; }
+.oscm-docking-approach { cursor: pointer; color: #78e3e2; }
+.oscm-docking-approach path { fill: #102126; stroke: currentColor; stroke-width: 3; }
+.oscm-docking-approach text { fill: #bceceb; font-size: 12px; font-family: var(--font-mono, monospace); text-transform: uppercase; }
 .oscm-body-river { stroke: #72c9e8; stroke-width: 2; }
 .oscm-body-lake { fill: #72c9e8; }
 .oscm-body-transport { stroke: #ffe18a; stroke-width: 1.6; stroke-dasharray: 5 3; }
 .oscm-body-resource { fill: #d58cff; stroke: #271331; stroke-width: .7; cursor: pointer; }
 .oscm-body-layer.is-hidden { display: none; }
 .oscm-body-layer-controls { display: none; }
-.oscm-shell.is-body-mode .oscm-body-layer-controls { display: grid; gap: .35rem; }
+.oscm-shell.is-body-mode.has-geography .oscm-body-layer-controls { display: grid; gap: .35rem; }
 .oscm-shell.is-body-mode .oscm-selection-card,.oscm-shell.is-body-mode .oscm-territory-legend,.oscm-shell.is-body-mode .oscm-legend { display: none; }

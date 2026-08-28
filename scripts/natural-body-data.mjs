@@ -11,6 +11,7 @@ function hashUnit(text) {
 
 export function naturalBodyKind(row) {
   const type = row.type.toLowerCase();
+  if (type.includes("asteroid") && (type.includes("belt") || type.includes("field"))) return "asteroid-field";
   if (type.includes("gas giant") || type.includes("ice/gas giant")) return "giant";
   if (type.includes("moon")) return "moon";
   if (type.includes("dwarf") || type.includes("planetoid")) return "minor-world";
@@ -21,12 +22,15 @@ export function naturalBodyKind(row) {
 export function buildNaturalBodyModel(row) {
   const kind = naturalBodyKind(row);
   if (!kind) throw new TypeError(`${row.object} is not a natural body`);
-  const radiusRe = number(row, "radius_re", kind === "giant" ? 7 : kind === "moon" ? .25 : .6);
+  const radiusRe = number(row, "radius_re", kind === "giant" ? 7 : kind === "moon" ? .25 : kind === "asteroid-field" ? .001 : .6);
   const identity = `${row.system}/${row.object}/${row.type}`;
   const volatile = number(row, "water_ice_pct_est", number(row, "water_pct", 0));
   const temperatureC = number(row, "mean_surface_temp_c", number(row, "operational_temperature_profile", -80));
   const giant = kind === "giant";
-  const regions = giant ? [
+  const regions = kind === "asteroid-field" ? [
+    { type: "asteroid-population", count: 32 + Math.floor(hashUnit(identity) * 25) },
+    { type: "extraction-regions", profile: row.resource_profile || row.resources_hazards || "mixed belt resources" },
+  ] : giant ? [
     { type: "atmospheric-bands", count: 7 + Math.floor(hashUnit(identity) * 5) },
     { type: "storm-systems", count: 2 + Math.floor(hashUnit(`${identity}/storms`) * 7) },
     { type: "radiation-zone", severity: row.radiation_hazard_level || row.magnetosphere_radiation || "elevated" },
