@@ -1,0 +1,44 @@
+{
+  "id": "orphaned-sun-cluster-map",
+  "title": "Orphaned Sun Cluster Map",
+  "description": "An interactive 3D SVG map and relativistic navigation calculator for the Orphaned Sun campaign's Beehive Cluster.",
+  "version": "0.1.1",
+  "authors": [
+    {
+      "name": "Jon Rice"
+    }
+  ],
+  "compatibility": {
+    "minimum": 13,
+    "verified": 13,
+    "maximum": 13
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "lancer",
+        "type": "system",
+        "compatibility": {
+          "minimum": "3.1.3",
+          "verified": "3.1.3"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/cluster-map.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://github.com/jonkellyrice-cmyk/Orphaned-sun-cluster-map",
+  "manifest": "https://github.com/jonkellyrice-cmyk/Orphaned-sun-cluster-map/releases/latest/download/module.json",
+  "download": "https://github.com/jonkellyrice-cmyk/Orphaned-sun-cluster-map/releases/download/v0.1.1/orphaned-sun-cluster-map-v0.1.1.zip"
+}
