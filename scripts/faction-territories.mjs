@@ -1,3 +1,5 @@
+import { SYSTEMS } from "./cluster-data.mjs";
+
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 function svgElement(name, attrs = {}) {
@@ -12,9 +14,9 @@ function svgElement(name, attrs = {}) {
  * topology and borders; Z-depth is deliberately inferred rather than treated
  * as a surveyed political boundary.
  *
- * Depths are centered near the campaign-map plane and sized to be comparable
- * to each territory's planar dimensions while still containing the known
- * systems shown inside that territory on the source map.
+ * zMin/zMax are the nominal depth envelope. The rendered front and rear
+ * boundaries are smoothly warped away from inhabited-system anchor points so
+ * the territories read as irregular 3D regions rather than flat extrusions.
  */
 export const FACTION_TERRITORIES = Object.freeze([
   Object.freeze({
@@ -183,9 +185,72 @@ export const FACTION_TERRITORIES = Object.freeze([
   }),
 ]);
 
+const TERRITORY_DEPTH_WARP = Object.freeze({
+  eventide: Object.freeze({ frontAmplitude: 1.15, rearAmplitude: 1.25, phase: 0.25, anchors: ["abydos"] }),
+  accords: Object.freeze({ frontAmplitude: 1.30, rearAmplitude: 1.15, phase: 1.10, anchors: ["tanis", "iunu", "saqqara"] }),
+  conclave: Object.freeze({ frontAmplitude: 1.00, rearAmplitude: 1.20, phase: 2.15, anchors: ["memphis", "nekhen", "seti"] }),
+  mandate: Object.freeze({ frontAmplitude: 1.55, rearAmplitude: 1.45, phase: 3.05, anchors: ["thebes", "sais"] }),
+  union: Object.freeze({ frontAmplitude: 1.35, rearAmplitude: 1.50, phase: 4.20, anchors: ["amarna"] }),
+  grayspace: Object.freeze({ frontAmplitude: 1.80, rearAmplitude: 1.70, phase: 5.10, anchors: [] }),
+});
+
+const SYSTEM_BY_ID = new Map(SYSTEMS.map((system) => [system.id, system]));
+const ANCHOR_RADIUS_LY = 1.35;
+const MIN_DEPTH_THICKNESS_LY = 1.5;
+
+function anchorWarpDamping(territoryId, x, y) {
+  const anchors = TERRITORY_DEPTH_WARP[territoryId]?.anchors ?? [];
+  let strongestInfluence = 0;
+
+  for (const systemId of anchors) {
+    const system = SYSTEM_BY_ID.get(systemId);
+    if (!system) continue;
+    const distanceSquared = (x - system.x) ** 2 + (y - system.y) ** 2;
+    const influence = Math.exp(-distanceSquared / (2 * ANCHOR_RADIUS_LY ** 2));
+    strongestInfluence = Math.max(strongestInfluence, influence);
+  }
+
+  // At an inhabited anchor, preserve the nominal depth envelope exactly.
+  // The irregularity then grows smoothly with distance from that system.
+  return 1 - strongestInfluence;
+}
+
+function frontDepthWave(x, y, phase) {
+  return 0.62 * Math.sin(0.72 * x + 0.43 * y + phase)
+    + 0.38 * Math.cos(-0.31 * x + 0.81 * y - phase * 0.60);
+}
+
+function rearDepthWave(x, y, phase) {
+  return 0.55 * Math.cos(0.59 * x - 0.47 * y + phase * 1.17)
+    + 0.45 * Math.sin(0.36 * x + 0.77 * y - phase * 0.40);
+}
+
+/**
+ * Returns the local front/rear Z boundary at an XY point. Independent smooth
+ * waves move the two depth surfaces so a territory can bulge farther forward
+ * in one area and recede in another. Warp is suppressed around owned systems,
+ * keeping those systems as stable political anchor points.
+ */
+export function territoryDepthAt(territory, x, y) {
+  const warp = TERRITORY_DEPTH_WARP[territory.id]
+    ?? { frontAmplitude: 0, rearAmplitude: 0, phase: 0, anchors: [] };
+  const damping = anchorWarpDamping(territory.id, x, y);
+
+  let front = territory.zMin + warp.frontAmplitude * damping * frontDepthWave(x, y, warp.phase);
+  let rear = territory.zMax + warp.rearAmplitude * damping * rearDepthWave(x, y, warp.phase);
+
+  if (rear - front < MIN_DEPTH_THICKNESS_LY) {
+    const midpoint = (front + rear) / 2;
+    front = midpoint - MIN_DEPTH_THICKNESS_LY / 2;
+    rear = midpoint + MIN_DEPTH_THICKNESS_LY / 2;
+  }
+
+  return { zMin: front, zMax: rear, warpDamping: damping };
+}
+
 export function buildTerritoryFaces(territory) {
-  const lower = territory.footprint.map(({ x, y }) => ({ x, y, z: territory.zMin }));
-  const upper = territory.footprint.map(({ x, y }) => ({ x, y, z: territory.zMax }));
+  const lower = territory.footprint.map(({ x, y }) => ({ x, y, z: territoryDepthAt(territory, x, y).zMin }));
+  const upper = territory.footprint.map(({ x, y }) => ({ x, y, z: territoryDepthAt(territory, x, y).zMax }));
   const faces = [
     { kind: "cap", points: lower },
     { kind: "cap", points: upper },
