@@ -16,9 +16,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: feature/body-operations-v0.6.0
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+
       - name: Install accepted renderer wrapper and runtime seams
         shell: bash
         run: |
@@ -31,14 +33,6 @@ jobs:
             return source.replace(before, after);
           };
 
-          let generator = readFileSync("tools/generate-body-operations.mjs", "utf8");
-          generator = mustReplace(generator, "canonicalSourceFingerprint, coordinateFrameForKind", "canonicalRowFingerprint, coordinateFrameForKind", "row fingerprint import");
-          generator = mustReplace(generator,
-            "canonicalType:operationalKind, operationalKind, permanentOperationalSeed:operationSeed(row.system,row.object,operationalKind), operationalModelVersion:BODY_OPERATIONS_MODEL_VERSION, canonicalSourceFingerprint:canonicalSourceFingerprint(row.system,row.object,operationalKind)",
-            "canonicalType:row.type, operationalKind, permanentOperationalSeed:operationSeed(row.system,row.object,row.type), operationalModelVersion:BODY_OPERATIONS_MODEL_VERSION, canonicalSourceFingerprint:canonicalRowFingerprint(row)",
-            "canonical provenance generation");
-          writeFileSync("tools/generate-body-operations.mjs", generator);
-
           let app = readFileSync("scripts/cluster-map-app.mjs", "utf8");
           app = mustReplace(app,
             'import { inspectSurfaceFeature } from "./body-layers.mjs";',
@@ -50,7 +44,7 @@ jobs:
             "body asset declarations");
           app = mustReplace(app,
             "        geography = await response.json();\n      }\n      this._clusterView?.destroy();\n      this._clusterView = new BodyView(svg, { model, geography, onExitRequested:",
-            "        geography = await response.json();\n      } else {\n        operations = await loadBodyOperationAsset(object.system, object.name).catch((error) => { console.warn(`${MODULE_ID} | Body operations unavailable for ${object.system}/${object.name}`, error); return null; });\n        if (operations && artificialBodyKind(object)) model = buildArtificialBodyModel(object, operations);\n      }\n      this._clusterView?.destroy();\n      this._clusterView = new BodyView(svg, { model, geography, operations, onExitRequested:",
+            "        geography = await response.json();\n      } else {\n        operations = await loadBodyOperationAsset(object.system, object.name, MODULE_ID).catch((error) => { console.warn(`${MODULE_ID} | Body operations unavailable for ${object.system}/${object.name}`, error); return null; });\n        if (operations && artificialBodyKind(object)) model = buildArtificialBodyModel(object, operations);\n      }\n      this._clusterView?.destroy();\n      this._clusterView = new BodyView(svg, { model, geography, operations, onExitRequested:",
             "runtime body asset load");
           app = mustReplace(app,
             '      root.classList.toggle("has-geography", Boolean(geography));',
@@ -66,21 +60,15 @@ jobs:
             "inspection scale");
           app = app.replace(/root\.classList\.remove\("has-geography"\);/g, 'root.classList.remove("has-geography");\n      root.classList.remove("has-operations");');
           writeFileSync("scripts/cluster-map-app.mjs", app);
-
-          let main = readFileSync("scripts/main.mjs", "utf8");
-          main = main.replace('import { OperationalClusterMapApplication } from "./cluster-map-operations-app.mjs";\nimport { MODULE_ID } from "./cluster-map-app.mjs";', 'import { ClusterMapApplication, MODULE_ID } from "./cluster-map-app.mjs";');
-          main = main.replace("new OperationalClusterMapApplication()", "new ClusterMapApplication()");
-          writeFileSync("scripts/main.mjs", main);
-
-          const moduleJson = JSON.parse(readFileSync("module.json", "utf8"));
-          moduleJson.styles = moduleJson.styles.filter((style) => style !== "styles/body-operations.css");
-          writeFileSync("module.json", `${JSON.stringify(moduleJson, null, 2)}\n`);
           NODE
-          rm -f tools/body-view-wrapper.mjs scripts/cluster-map-operations-app.mjs scripts/body-operations-renderer.mjs styles/body-operations.css
+          rm -f tools/body-view-wrapper.mjs scripts/cluster-map-operations-app.mjs scripts/body-operations-renderer.mjs
+
       - name: Generate accepted operational canon
         run: npm run body-operations:generate
+
       - name: Full regression and deterministic validation
         run: npm test && npm run body-operations:validate && npm run body-operations:check
+
       - name: Commit generated canon
         shell: bash
         run: |
