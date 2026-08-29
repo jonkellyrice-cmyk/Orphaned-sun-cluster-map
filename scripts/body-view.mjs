@@ -5,6 +5,34 @@ import { createFactionEmblem, factionPresentationForOwner } from "../scripts/cap
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 const el = (name, attrs = {}) => { const node = document.createElementNS(SVG_NS, name); for (const [key, value] of Object.entries(attrs)) node.setAttribute(key, String(value)); return node; };
+const NATURAL_OPERATION_KINDS = new Set(["natural-solid", "giant"]);
+const DEG = Math.PI / 180;
+
+/**
+ * Keep operational annotations in the exact camera frame used by the body model.
+ * Natural bodies share the globe's orthographic projection and full zoom radius.
+ * Artificial/belt/anomaly schematics share the structure renderer's rotate/skew transform.
+ */
+export function projectOperationAnchor(asset, feature, yaw = 0, pitch = 0, zoom = 1) {
+  const scale = Number.isFinite(Number(zoom)) ? Number(zoom) : 1;
+  if (NATURAL_OPERATION_KINDS.has(asset.operationalKind)) return projectOperationPosition(asset, feature, yaw, pitch, 250 * scale);
+
+  const max = Math.max(1, ...asset.features.flatMap((candidate) => [
+    Math.abs(Number(candidate.position.x) || 0),
+    Math.abs(Number(candidate.position.y) || 0),
+    Math.abs(Number(candidate.position.z) || 0),
+  ]));
+  const localX = (Number(feature.position.x) || 0) / max * 235;
+  const localY = -(Number(feature.position.y) || 0) / max * 235;
+  const skewedX = localX + Math.tan(pitch * 7 * DEG) * localY;
+  const angle = yaw * 28 * DEG, cos = Math.cos(angle), sin = Math.sin(angle);
+  return {
+    x: 450 + (skewedX * cos - localY * sin) * scale,
+    y: 340 + (skewedX * sin + localY * cos) * scale,
+    depth: (Number(feature.position.z) || 0) / max,
+    visible: true,
+  };
+}
 
 /**
  * Operational wrapper around the accepted v0.4/v0.5 body renderer.
@@ -122,7 +150,7 @@ export class BodyView extends CoreBodyView {
     const plan = buildBodyOperationsRenderPlan(this.operations, this.state?.zoom ?? 1, mobile), visible = new Set(plan.features.map((feature) => feature.id)), labelIds = new Set(plan.labels.map((feature) => feature.id));
     const positions = new Map();
     for (const item of this.operationFeatureNodes) {
-      const projected = projectOperationPosition(this.operations, item.feature, this.state?.yaw ?? 0, this.state?.pitch ?? 0, 235 * Math.min(1.18, Math.max(.72, this.state?.zoom ?? 1)));
+      const projected = projectOperationAnchor(this.operations, item.feature, this.state?.yaw ?? 0, this.state?.pitch ?? 0, this.state?.zoom ?? 1);
       positions.set(item.feature.id, projected);
       const show = visible.has(item.feature.id) && projected.visible; item.node.hidden = !show; item.label.hidden = !(show && labelIds.has(item.feature.id));
       if (show) item.node.setAttribute("transform", `translate(${projected.x.toFixed(2)} ${projected.y.toFixed(2)})`);
