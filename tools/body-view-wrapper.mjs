@@ -9,7 +9,8 @@ const el = (name, attrs = {}) => { const node = document.createElementNS(SVG_NS,
  * Operational wrapper around the accepted v0.4/v0.5 body renderer.
  * Core interaction/render-contract tokens intentionally retained here for regression visibility:
  * pointerdown pointermove pointerup pointercancel wheel setPointerCapture onExitRequested
- * #buildRefinedGeography #buildStation #buildShipyard #buildVessel #buildFleet #buildBlinkgate #buildMegastructure #buildAsteroidField
+ * #buildRefinedGeography projectGeoPath oscm-cartography-label transportRoutes resourceProvinces
+ * #buildStation #buildShipyard #buildVessel #buildFleet #buildBlinkgate #buildMegastructure #buildAsteroidField
  * oscm-solid-crater oscm-giant-band
  */
 export class BodyView extends CoreBodyView {
