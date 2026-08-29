@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "system": "Saqqara",
+  "body": "Bannoch Vost",
+  "canonicalType": "warm gas giant",
+  "operationalKind": "giant",
+  "permanentOperationalSeed": "2bd7dea255944d2d",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "685c0d9f32867f0e8c65",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "atmospheric-spherical",
+    "axes": "+lat north; +lon east; altitude by pressure level",
+    "origin": "planet center / adopted reference meridian",
+    "units": {
+      "latitude": "deg",
+      "longitude": "deg",
+      "pressure": "bar"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "vostrann",
+  "layers": [
+    {
+      "id": "atmosphere",
+      "label": "Atmosphere",
+      "defaultVisible": true
+    },
+    {
+      "id": "storms",
+      "label": "Storms",
+      "defaultVisible": true
+    },
+    {
+      "id": "radiation",
+      "label": "Radiation",
+      "defaultVisible": true
+    },
+    {
+      "id": "operations",
+      "label": "Operations",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "giant-band-01",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 1",
+      "position": {
+        "lat": 18.127,
+        "lon": -73.32,
+        "elevation": 1.32,
+        "pressure": 0.4
+      },
+      "dimensions": {
+        "widthDeg": 9,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-02",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 2",
+      "position": {
+        "lat": 18.612,
+        "lon": -71.913,
+        "elevation": 1.29,
+        "pressure": 1.1
+      },
+      "dimensions": {
+        "widthDeg": 9,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-03",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 3",
+      "position": {
+        "lat": 19.096,
+        "lon": -70.507,
+        "elevation": 1.39,
+        "pressure": 1.8
+      },
+      "dimensions": {
+        "widthDeg": 9,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-04",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 4",
+      "position": {
+        "lat": 19.58,
+        "lon": -69.101,
+        "elevation": 1.36,
+        "pressure": 2.5
+      },
+      "dimensions": {
+        "widthDeg": 9,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-05",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 5",
+      "position": {
+        "lat": 16.19,
+        "lon": -67.695,
+        "elevation": 1.2,
+        "pressure": 3.2
+      },
+      "dimensions": {
+        "widthDeg": 9,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-06",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 6",
+      "position": {
+        "lat": 16.674,
+        "lon": -66.288,
+        "elevation": 1.17,
+        "pressure": 3.9
+      },
+      "dimensions": {
+        "widthDeg": 9,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-storm-07",
+      "type": "storm",
+      "layer": "storms",
+      "name": "Braereach Storm",
+      "position": {
+        "lat": 52.276,
+        "lon": -64.384,
+        "elevation": 0.97,
+        "pressure": 1.09
+      },
+      "dimensions": {
+        "radius": 10290.93,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-vortex-08",
+      "type": "vortex",
+      "layer": "storms",
+      "name": "Blackwakeova Vortex",
+      "position": {
+        "lat": 51.792,
+        "lon": -65.791,
+        "elevation": 1,
+        "pressure": 1.1
+      },
+      "dimensions": {
+        "radius": 10235.46,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-storm-09",
+      "type": "storm",
+      "layer": "storms",
+      "name": "Vostgrad Storm",
+      "position": {
+        "lat": 51.308,
+        "lon": -67.197,
+        "elevation": 1.03,
+        "pressure": 1.08
+      },
+      "dimensions": {
+        "radius": 10179.99,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-vortex-10",
+      "type": "vortex",
+      "layer": "storms",
+      "name": "Cairngrad Vortex",
+      "position": {
+        "lat": 50.823,
+        "lon": -68.603,
+        "elevation": 1.07,
+        "pressure": 1.09
+      },
+      "dimensions": {
+        "radius": 10124.52,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-hazard-11",
+      "type": "hazard",
+      "layer": "radiation",
+      "name": "Exclusion 11",
+      "position": {
+        "lat": 39.687,
+        "lon": -55.934,
+        "elevation": 1.54,
+        "pressure": 0.05
+      },
+      "dimensions": null,
+      "operationalRole": "inner radiation exclusion latitude band",
+      "resource": null,
+      "hazard": "magnetospheric particle flux",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "inner radiation exclusion latitude band. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-corridor-12",
+      "type": "corridor",
+      "layer": "operations",
+      "name": "Corridor 12",
+      "position": {
+        "lat": 40.171,
+        "lon": -54.528,
+        "elevation": 1.5,
+        "pressure": 0.8
+      },
+      "dimensions": null,
+      "operationalRole": "robotic atmospheric sampling corridor",
+      "resource": null,
+      "hazard": "weather-dependent access",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "robotic atmospheric sampling corridor. Accepted operational survey feature for Bannoch Vost.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-platform-13",
+      "type": "platform",
+      "layer": "operations",
+      "name": "Platform 13",
+      "position": {
+        "lat": 38.718,
+        "lon": -58.747,
+        "elevation": 1.6,
+        "pressure": 0.02
+      },
+      "dimensions": null,
+      "operationalRole": "high-atmosphere observation reference",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Survey marker for high-altitude operations; not a solid-surface installation.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 13,
+    "layerCounts": {
+      "atmosphere": 6,
+      "operations": 2,
+      "radiation": 1,
+      "storms": 4
+    },
+    "keyFeatures": [
+      "giant-band-01",
+      "giant-band-02",
+      "giant-band-03",
+      "giant-storm-07",
+      "giant-vortex-08",
+      "giant-hazard-11",
+      "giant-corridor-12"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Atmospheric survey; no solid traversable surface."
+  }
+}

@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "system": "Tanis",
+  "body": "Dun Varya",
+  "canonicalType": "moon",
+  "operationalKind": "natural-solid",
+  "permanentOperationalSeed": "c925e996fe64a54f",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "8ec909acdf55c0eb0c5d",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "body-fixed-spherical",
+    "axes": "+lat north; +lon east",
+    "origin": "body center / IAU-style reference meridian",
+    "units": {
+      "latitude": "deg",
+      "longitude": "deg",
+      "elevation": "km"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "vostrann",
+  "layers": [
+    {
+      "id": "terrain",
+      "label": "Terrain",
+      "defaultVisible": true
+    },
+    {
+      "id": "landmarks",
+      "label": "Named landmarks",
+      "defaultVisible": true
+    },
+    {
+      "id": "resources",
+      "label": "Resources",
+      "defaultVisible": false
+    },
+    {
+      "id": "installations",
+      "label": "Installations",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Hazards",
+      "defaultVisible": true
+    },
+    {
+      "id": "routes",
+      "label": "Surface routes",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "natural-solid-crater-01",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Vostova Crater",
+      "position": {
+        "lat": 4.495,
+        "lon": -120.323,
+        "elevation": 5.63
+      },
+      "dimensions": {
+        "radius": 57.06,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named navigational landmark. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-02",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Blackwakebrae Crater",
+      "position": {
+        "lat": 4.011,
+        "lon": -121.729,
+        "elevation": 5.66
+      },
+      "dimensions": {
+        "radius": 57.88,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named navigational landmark. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-03",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Krasgrad Crater",
+      "position": {
+        "lat": 5.464,
+        "lon": -117.51,
+        "elevation": 5.57
+      },
+      "dimensions": {
+        "radius": 58.7,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named navigational landmark. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-04",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Dungrad Crater",
+      "position": {
+        "lat": 4.98,
+        "lon": -118.917,
+        "elevation": 5.6
+      },
+      "dimensions": {
+        "radius": 59.52,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named navigational landmark. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-basin-05",
+      "type": "basin",
+      "layer": "landmarks",
+      "name": "Volnask Basin",
+      "position": {
+        "lat": 6.433,
+        "lon": -114.698,
+        "elevation": 5.51
+      },
+      "dimensions": {
+        "radius": 60.34,
+        "unit": "km"
+      },
+      "operationalRole": "regional impact basin",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "regional impact basin. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-ridge-06",
+      "type": "ridge",
+      "layer": "terrain",
+      "name": "Blackwakebrae Ridge",
+      "position": {
+        "lat": 6.917,
+        "lon": -113.292,
+        "elevation": 5.48
+      },
+      "dimensions": {
+        "radius": 193.72,
+        "unit": "km"
+      },
+      "operationalRole": "regional traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "regional traverse landmark. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-rift-07",
+      "type": "rift",
+      "layer": "terrain",
+      "name": "Gannetova Chasma",
+      "position": {
+        "lat": 8.371,
+        "lon": -109.073,
+        "elevation": 5.88
+      },
+      "dimensions": {
+        "radius": 147.24,
+        "unit": "km"
+      },
+      "operationalRole": "geotechnical boundary",
+      "resource": null,
+      "hazard": "unstable slopes and regolith",
+      "refs": [],
+      "lodPriority": 3,
+      "description": "geotechnical boundary. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-ice-08",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 8",
+      "position": {
+        "lat": 69.189,
+        "lon": -110.479,
+        "elevation": 5.91
+      },
+      "dimensions": {
+        "radius": 76.08,
+        "unit": "km"
+      },
+      "operationalRole": "volatile reserve and extraction zone",
+      "resource": "water/ammonia cold-trap volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-mine-09",
+      "type": "mine",
+      "layer": "resources",
+      "name": "Claim 9",
+      "position": {
+        "lat": -3.272,
+        "lon": -96.877,
+        "elevation": -1.64
+      },
+      "dimensions": null,
+      "operationalRole": "automated or lightly crewed extraction site",
+      "resource": "metals, silicates and construction feedstock",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-habitat-10",
+      "type": "habitat",
+      "layer": "installations",
+      "name": "Habitat 10",
+      "position": {
+        "lat": -2.788,
+        "lon": -95.471,
+        "elevation": -1.67
+      },
+      "dimensions": null,
+      "operationalRole": "sealed surface habitat and logistics node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-mine-09"
+      ],
+      "lodPriority": 1,
+      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-landing-11",
+      "type": "landing",
+      "layer": "installations",
+      "name": "Field 11",
+      "position": {
+        "lat": -2.303,
+        "lon": -94.065,
+        "elevation": -1.57
+      },
+      "dimensions": null,
+      "operationalRole": "landing field and cargo transfer pad",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10"
+      ],
+      "lodPriority": 1,
+      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-observatory-12",
+      "type": "observatory",
+      "layer": "installations",
+      "name": "Array 12",
+      "position": {
+        "lat": -1.819,
+        "lon": -92.658,
+        "elevation": -1.6
+      },
+      "dimensions": null,
+      "operationalRole": "survey and navigation observatory",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "survey and navigation observatory. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-hazard-13",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Exclusion 13",
+      "position": {
+        "lat": -1.334,
+        "lon": -91.252,
+        "elevation": -1.76
+      },
+      "dimensions": {
+        "radius": 149.28,
+        "unit": "km"
+      },
+      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "resource": null,
+      "hazard": "radiation, ejecta and unstable regolith",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-corridor-14",
+      "type": "corridor",
+      "layer": "routes",
+      "name": "Corridor 14",
+      "position": {
+        "lat": -0.85,
+        "lon": -89.846,
+        "elevation": -1.79
+      },
+      "dimensions": null,
+      "operationalRole": "pressurized-rover and cargo traverse",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10",
+        "natural-solid-landing-11",
+        "natural-solid-mine-09"
+      ],
+      "lodPriority": 2,
+      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-corridor-15",
+      "type": "corridor",
+      "layer": "routes",
+      "name": "Corridor 15",
+      "position": {
+        "lat": -0.366,
+        "lon": -88.439,
+        "elevation": -1.7
+      },
+      "dimensions": null,
+      "operationalRole": "survey traverse to volatile field",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10",
+        "natural-solid-ice-08"
+      ],
+      "lodPriority": 3,
+      "description": "survey traverse to volatile field. Accepted operational survey feature for Dun Varya.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 15,
+    "layerCounts": {
+      "hazards": 1,
+      "installations": 3,
+      "landmarks": 5,
+      "resources": 2,
+      "routes": 2,
+      "terrain": 2
+    },
+    "keyFeatures": [
+      "natural-solid-crater-01",
+      "natural-solid-crater-02",
+      "natural-solid-ice-08",
+      "natural-solid-mine-09",
+      "natural-solid-habitat-10",
+      "natural-solid-landing-11",
+      "natural-solid-hazard-13"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  }
+}

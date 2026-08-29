@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "system": "Thebes",
+  "body": "Cloud-Tiger Carrier Group",
+  "canonicalType": "carrier/fleet group",
+  "operationalKind": "fleet",
+  "permanentOperationalSeed": "b4f352b1f114c918",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "05083922e968c5ffcdb4",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "fleet-reference-cartesian",
+    "axes": "+X formation forward; +Y starboard; +Z dorsal",
+    "origin": "flagship reference point",
+    "units": {
+      "x": "km",
+      "y": "km",
+      "z": "km"
+    },
+    "geometryKind": "physical reference-epoch snapshot",
+    "epoch": "accepted body-operations reference epoch"
+  },
+  "namingProfile": "xuanhari",
+  "layers": [
+    {
+      "id": "structure",
+      "label": "Formation",
+      "defaultVisible": true
+    },
+    {
+      "id": "docking",
+      "label": "Formation nodes",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Safety zones",
+      "defaultVisible": true
+    },
+    {
+      "id": "approaches",
+      "label": "Identification corridor",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "fleet-ship-01",
+      "type": "ship",
+      "layer": "structure",
+      "name": "Flagship",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "length": 18,
+        "unit": "km"
+      },
+      "operationalRole": "flagship / formation reference",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "flagship / formation reference. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "fleet-ship-02",
+      "type": "ship",
+      "layer": "structure",
+      "name": "Carrier 1",
+      "position": {
+        "x": -40,
+        "y": -35,
+        "z": -8
+      },
+      "dimensions": {
+        "length": 14,
+        "unit": "km"
+      },
+      "operationalRole": "carrier or principal combatant",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "fleet-ship-01"
+      ],
+      "lodPriority": 1,
+      "description": "carrier or principal combatant. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "fleet-ship-03",
+      "type": "ship",
+      "layer": "structure",
+      "name": "Carrier 2",
+      "position": {
+        "x": -68,
+        "y": 35,
+        "z": 8
+      },
+      "dimensions": {
+        "length": 17,
+        "unit": "km"
+      },
+      "operationalRole": "carrier or principal combatant",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "fleet-ship-01"
+      ],
+      "lodPriority": 1,
+      "description": "carrier or principal combatant. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "fleet-ship-04",
+      "type": "ship",
+      "layer": "docking",
+      "name": "Escort 1",
+      "position": {
+        "x": -72,
+        "y": 63,
+        "z": -28
+      },
+      "dimensions": {
+        "length": 3.9,
+        "unit": "km"
+      },
+      "operationalRole": "escort element",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "fleet-ship-01"
+      ],
+      "lodPriority": 1,
+      "description": "escort element. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "fleet-ship-05",
+      "type": "ship",
+      "layer": "docking",
+      "name": "Escort 2",
+      "position": {
+        "x": -73,
+        "y": 64,
+        "z": -29
+      },
+      "dimensions": {
+        "length": 3.9,
+        "unit": "km"
+      },
+      "operationalRole": "escort element",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "fleet-ship-01"
+      ],
+      "lodPriority": 1,
+      "description": "escort element. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "fleet-ship-06",
+      "type": "ship",
+      "layer": "docking",
+      "name": "Escort 3",
+      "position": {
+        "x": -71,
+        "y": 62,
+        "z": -29
+      },
+      "dimensions": {
+        "length": 4,
+        "unit": "km"
+      },
+      "operationalRole": "escort element",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "fleet-ship-01"
+      ],
+      "lodPriority": 2,
+      "description": "escort element. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "fleet-ship-07",
+      "type": "ship",
+      "layer": "docking",
+      "name": "Escort 4",
+      "position": {
+        "x": -72,
+        "y": 63,
+        "z": -29
+      },
+      "dimensions": {
+        "length": 4,
+        "unit": "km"
+      },
+      "operationalRole": "escort element",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "fleet-ship-01"
+      ],
+      "lodPriority": 2,
+      "description": "escort element. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "fleet-ship-08",
+      "type": "ship",
+      "layer": "docking",
+      "name": "Picket 5",
+      "position": {
+        "x": -70,
+        "y": 60,
+        "z": -30
+      },
+      "dimensions": {
+        "length": 3.9,
+        "unit": "km"
+      },
+      "operationalRole": "tender/picket element",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "fleet-ship-01"
+      ],
+      "lodPriority": 2,
+      "description": "tender/picket element. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "fleet-ship-09",
+      "type": "ship",
+      "layer": "docking",
+      "name": "Picket 6",
+      "position": {
+        "x": -70,
+        "y": 61,
+        "z": -30
+      },
+      "dimensions": {
+        "length": 3.9,
+        "unit": "km"
+      },
+      "operationalRole": "tender/picket element",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "fleet-ship-01"
+      ],
+      "lodPriority": 2,
+      "description": "tender/picket element. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "fleet-approach-10",
+      "type": "approach",
+      "layer": "approaches",
+      "name": "IFF Approach Axis",
+      "position": {
+        "x": 180,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "length": 280,
+        "unit": "km"
+      },
+      "operationalRole": "formation identification and approach corridor",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "fleet-ship-01"
+      ],
+      "lodPriority": 1,
+      "description": "formation identification and approach corridor. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "fleet-hazard-11",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Stern Weapons-Clear Zone",
+      "position": {
+        "x": -150,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 110,
+        "unit": "km"
+      },
+      "operationalRole": "formation drive-plume and weapons-clearance region",
+      "resource": null,
+      "hazard": "engine plumes and active-defense arcs",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "formation drive-plume and weapons-clearance region. Accepted operational survey feature for Cloud-Tiger Carrier Group.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 11,
+    "layerCounts": {
+      "approaches": 1,
+      "docking": 6,
+      "hazards": 1,
+      "structure": 3
+    },
+    "keyFeatures": [
+      "fleet-ship-01",
+      "fleet-ship-02",
+      "fleet-ship-03",
+      "fleet-ship-04",
+      "fleet-ship-05",
+      "fleet-approach-10",
+      "fleet-hazard-11"
+    ],
+    "geometryStatement": "physical reference-epoch snapshot",
+    "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  }
+}

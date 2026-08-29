@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 1,
+  "system": "Tanis",
+  "body": "Outer Debris Belt",
+  "canonicalType": "asteroid/debris belt",
+  "operationalKind": "belt",
+  "permanentOperationalSeed": "c1ac2f54656536b1",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "d6a5d9f82ddd3cbf37b7",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "belt-reference-cartesian",
+    "axes": "+X prograde tangent; +Y radial-outward; +Z orbital north",
+    "origin": "canonical belt centroid",
+    "units": {
+      "x": "km",
+      "y": "km",
+      "z": "km"
+    },
+    "geometryKind": "physical reference-epoch snapshot",
+    "epoch": "accepted body-operations reference epoch"
+  },
+  "namingProfile": "vostrann",
+  "layers": [
+    {
+      "id": "mapped-bodies",
+      "label": "Mapped bodies",
+      "defaultVisible": true
+    },
+    {
+      "id": "resources",
+      "label": "Resources",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Hazards",
+      "defaultVisible": true
+    },
+    {
+      "id": "traffic",
+      "label": "Traffic",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "belt-asteroid-01",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Skyesk Rock",
+      "position": {
+        "x": 102619,
+        "y": -25129,
+        "z": -75765
+      },
+      "dimensions": {
+        "radius": 24.83,
+        "unit": "km"
+      },
+      "operationalRole": "major mapped asteroid / habitat rock",
+      "resource": "metal-rich",
+      "hazard": "hazardous tumble / debris envelope",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "major mapped asteroid / habitat rock. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-02",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Cairnova Rock",
+      "position": {
+        "x": 104025,
+        "y": -26536,
+        "z": -74992
+      },
+      "dimensions": {
+        "radius": 25,
+        "unit": "km"
+      },
+      "operationalRole": "major mapped asteroid / habitat rock",
+      "resource": "volatile-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "major mapped asteroid / habitat rock. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-03",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Skyeova Rock",
+      "position": {
+        "x": 105431,
+        "y": -22317,
+        "z": -77312
+      },
+      "dimensions": {
+        "radius": 24.49,
+        "unit": "km"
+      },
+      "operationalRole": "major mapped asteroid / habitat rock",
+      "resource": "mixed silicate/carbonaceous",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "major mapped asteroid / habitat rock. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-04",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Cairngrad Rock",
+      "position": {
+        "x": 106838,
+        "y": -23723,
+        "z": -76539
+      },
+      "dimensions": {
+        "radius": 24.66,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "metal-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-05",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Gannetreach Rock",
+      "position": {
+        "x": 96994,
+        "y": -30754,
+        "z": -72671
+      },
+      "dimensions": {
+        "radius": 24.16,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "volatile-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-06",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Cairngrad Rock",
+      "position": {
+        "x": 98400,
+        "y": -32161,
+        "z": -71898
+      },
+      "dimensions": {
+        "radius": 24.33,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "mixed silicate/carbonaceous",
+      "hazard": "hazardous tumble / debris envelope",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-07",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Cairnsk Rock",
+      "position": {
+        "x": 99806,
+        "y": -27942,
+        "z": -74218
+      },
+      "dimensions": {
+        "radius": 23.82,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "metal-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-08",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Glensk Rock",
+      "position": {
+        "x": 101213,
+        "y": -29348,
+        "z": -73445
+      },
+      "dimensions": {
+        "radius": 23.99,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "volatile-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-09",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Skyegrad Rock",
+      "position": {
+        "x": 113869,
+        "y": -36380,
+        "z": -69578
+      },
+      "dimensions": {
+        "radius": 23.49,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "mixed silicate/carbonaceous",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-10",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Vostbrae Rock",
+      "position": {
+        "x": 115275,
+        "y": -37786,
+        "z": -68804
+      },
+      "dimensions": {
+        "radius": 23.65,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "metal-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-11",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Blackwakesk Rock",
+      "position": {
+        "x": 138225,
+        "y": 44308,
+        "z": -7379
+      },
+      "dimensions": {
+        "radius": 43.77,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "volatile-rich",
+      "hazard": "hazardous tumble / debris envelope",
+      "refs": [],
+      "lodPriority": 3,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-12",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Morozova Rock",
+      "position": {
+        "x": 136819,
+        "y": 45714,
+        "z": -8153
+      },
+      "dimensions": {
+        "radius": 43.6,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "mixed silicate/carbonaceous",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-13",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Glenreach Rock",
+      "position": {
+        "x": 135413,
+        "y": 47120,
+        "z": -5832
+      },
+      "dimensions": {
+        "radius": 44.1,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "metal-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-14",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Blackwakegrad Rock",
+      "position": {
+        "x": 134007,
+        "y": 48527,
+        "z": -6606
+      },
+      "dimensions": {
+        "radius": 43.94,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "volatile-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-module-15",
+      "type": "module",
+      "layer": "resources",
+      "name": "Processing Cluster A",
+      "position": {
+        "x": 68720,
+        "y": -74496,
+        "z": 52300
+      },
+      "dimensions": null,
+      "operationalRole": "processing and transshipment cluster",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "belt-asteroid-01",
+        "belt-asteroid-02",
+        "belt-asteroid-03"
+      ],
+      "lodPriority": 1,
+      "description": "processing and transshipment cluster. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-hazard-16",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Red Scatter",
+      "position": {
+        "x": 87877,
+        "y": -95578,
+        "z": 70420
+      },
+      "dimensions": {
+        "radius": 18000,
+        "unit": "km"
+      },
+      "operationalRole": "dense debris concentration",
+      "resource": null,
+      "hazard": "collision and untracked fragment risk",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "dense debris concentration. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-corridor-17",
+      "type": "corridor",
+      "layer": "traffic",
+      "name": "Belt Traffic Lane Alpha",
+      "position": {
+        "x": 83557,
+        "y": -90776,
+        "z": 66664
+      },
+      "dimensions": null,
+      "operationalRole": "controlled traffic corridor through mapped sample",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "belt-asteroid-03",
+        "belt-asteroid-04",
+        "belt-asteroid-05",
+        "belt-asteroid-06"
+      ],
+      "lodPriority": 1,
+      "description": "controlled traffic corridor through mapped sample. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-hazard-18",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Claim Exclusion 7",
+      "position": {
+        "x": 77494,
+        "y": -83751,
+        "z": 58334
+      },
+      "dimensions": null,
+      "operationalRole": "extraction exclusion zone around unstable rubble-pile",
+      "resource": null,
+      "hazard": "spin-shedding fragments",
+      "refs": [
+        "belt-asteroid-08"
+      ],
+      "lodPriority": 2,
+      "description": "extraction exclusion zone around unstable rubble-pile. Accepted operational survey feature for Outer Debris Belt.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 18,
+    "layerCounts": {
+      "hazards": 2,
+      "mapped-bodies": 14,
+      "resources": 1,
+      "traffic": 1
+    },
+    "keyFeatures": [
+      "belt-asteroid-01",
+      "belt-asteroid-02",
+      "belt-asteroid-03",
+      "belt-asteroid-04",
+      "belt-module-15",
+      "belt-hazard-16",
+      "belt-corridor-17"
+    ],
+    "geometryStatement": "physical reference-epoch snapshot",
+    "note": "Distributed reference-epoch sample; centroid is not an asteroid or route endpoint."
+  }
+}

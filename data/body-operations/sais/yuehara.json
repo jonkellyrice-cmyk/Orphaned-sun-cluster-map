@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "system": "Sais",
+  "body": "Yuehara",
+  "canonicalType": "moon",
+  "operationalKind": "natural-solid",
+  "permanentOperationalSeed": "e973ccaa42ee99d9",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "5fcf09a42e7568b10f4e",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "body-fixed-spherical",
+    "axes": "+lat north; +lon east",
+    "origin": "body center / IAU-style reference meridian",
+    "units": {
+      "latitude": "deg",
+      "longitude": "deg",
+      "elevation": "km"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "xuanhari",
+  "layers": [
+    {
+      "id": "terrain",
+      "label": "Terrain",
+      "defaultVisible": true
+    },
+    {
+      "id": "landmarks",
+      "label": "Named landmarks",
+      "defaultVisible": true
+    },
+    {
+      "id": "resources",
+      "label": "Resources",
+      "defaultVisible": false
+    },
+    {
+      "id": "installations",
+      "label": "Installations",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Hazards",
+      "defaultVisible": true
+    },
+    {
+      "id": "routes",
+      "label": "Surface routes",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "natural-solid-crater-01",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Longling Crater",
+      "position": {
+        "lat": -38.461,
+        "lon": -176.835,
+        "elevation": -1.07
+      },
+      "dimensions": {
+        "radius": 174.58,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named navigational landmark. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-02",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Yuepur Crater",
+      "position": {
+        "lat": -38.946,
+        "lon": -178.241,
+        "elevation": -1.04
+      },
+      "dimensions": {
+        "radius": 175.4,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named navigational landmark. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-03",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Navavara Crater",
+      "position": {
+        "lat": -39.43,
+        "lon": -179.648,
+        "elevation": -1.01
+      },
+      "dimensions": {
+        "radius": 172.93,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named navigational landmark. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-04",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Shanshan Crater",
+      "position": {
+        "lat": -39.914,
+        "lon": 178.946,
+        "elevation": -0.98
+      },
+      "dimensions": {
+        "radius": 173.76,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named navigational landmark. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-basin-05",
+      "type": "basin",
+      "layer": "landmarks",
+      "name": "Jinpur Basin",
+      "position": {
+        "lat": -36.524,
+        "lon": -171.21,
+        "elevation": -0.95
+      },
+      "dimensions": {
+        "radius": 177.86,
+        "unit": "km"
+      },
+      "operationalRole": "regional impact basin",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "regional impact basin. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-ridge-06",
+      "type": "ridge",
+      "layer": "terrain",
+      "name": "Shanyuan Ridge",
+      "position": {
+        "lat": -37.977,
+        "lon": -175.429,
+        "elevation": -0.85
+      },
+      "dimensions": {
+        "radius": 520.1,
+        "unit": "km"
+      },
+      "operationalRole": "regional traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "regional traverse landmark. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-rift-07",
+      "type": "rift",
+      "layer": "terrain",
+      "name": "Yueling Chasma",
+      "position": {
+        "lat": -42.336,
+        "lon": -165.585,
+        "elevation": -1.32
+      },
+      "dimensions": {
+        "radius": 356.03,
+        "unit": "km"
+      },
+      "operationalRole": "geotechnical boundary",
+      "resource": null,
+      "hazard": "unstable slopes and regolith",
+      "refs": [],
+      "lodPriority": 3,
+      "description": "geotechnical boundary. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-ice-08",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 8",
+      "position": {
+        "lat": -72.158,
+        "lon": -166.991,
+        "elevation": -1.29
+      },
+      "dimensions": {
+        "radius": 185.44,
+        "unit": "km"
+      },
+      "operationalRole": "volatile reserve and extraction zone",
+      "resource": "water/ammonia cold-trap volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-mine-09",
+      "type": "mine",
+      "layer": "resources",
+      "name": "Claim 9",
+      "position": {
+        "lat": -56.597,
+        "lon": 154.621,
+        "elevation": -1.74
+      },
+      "dimensions": null,
+      "operationalRole": "automated or lightly crewed extraction site",
+      "resource": "metals, silicates and construction feedstock",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-habitat-10",
+      "type": "habitat",
+      "layer": "installations",
+      "name": "Habitat 10",
+      "position": {
+        "lat": -56.112,
+        "lon": 156.027,
+        "elevation": -1.77
+      },
+      "dimensions": null,
+      "operationalRole": "sealed surface habitat and logistics node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-mine-09"
+      ],
+      "lodPriority": 1,
+      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-landing-11",
+      "type": "landing",
+      "layer": "installations",
+      "name": "Field 11",
+      "position": {
+        "lat": -57.565,
+        "lon": 151.808,
+        "elevation": -1.8
+      },
+      "dimensions": null,
+      "operationalRole": "landing field and cargo transfer pad",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10"
+      ],
+      "lodPriority": 1,
+      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-observatory-12",
+      "type": "observatory",
+      "layer": "installations",
+      "name": "Array 12",
+      "position": {
+        "lat": -57.081,
+        "lon": 153.215,
+        "elevation": -1.83
+      },
+      "dimensions": null,
+      "operationalRole": "survey and navigation observatory",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "survey and navigation observatory. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-hazard-13",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Exclusion 13",
+      "position": {
+        "lat": -58.534,
+        "lon": 148.996,
+        "elevation": -1.62
+      },
+      "dimensions": {
+        "radius": 177.04,
+        "unit": "km"
+      },
+      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "resource": null,
+      "hazard": "radiation, ejecta and unstable regolith",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-corridor-14",
+      "type": "corridor",
+      "layer": "routes",
+      "name": "Corridor 14",
+      "position": {
+        "lat": -58.05,
+        "lon": 150.402,
+        "elevation": -1.65
+      },
+      "dimensions": null,
+      "operationalRole": "pressurized-rover and cargo traverse",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10",
+        "natural-solid-landing-11",
+        "natural-solid-mine-09"
+      ],
+      "lodPriority": 2,
+      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-corridor-15",
+      "type": "corridor",
+      "layer": "routes",
+      "name": "Corridor 15",
+      "position": {
+        "lat": -59.503,
+        "lon": 146.183,
+        "elevation": -1.68
+      },
+      "dimensions": null,
+      "operationalRole": "survey traverse to volatile field",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10",
+        "natural-solid-ice-08"
+      ],
+      "lodPriority": 3,
+      "description": "survey traverse to volatile field. Accepted operational survey feature for Yuehara.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 15,
+    "layerCounts": {
+      "hazards": 1,
+      "installations": 3,
+      "landmarks": 5,
+      "resources": 2,
+      "routes": 2,
+      "terrain": 2
+    },
+    "keyFeatures": [
+      "natural-solid-crater-01",
+      "natural-solid-crater-02",
+      "natural-solid-ice-08",
+      "natural-solid-mine-09",
+      "natural-solid-habitat-10",
+      "natural-solid-landing-11",
+      "natural-solid-hazard-13"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  }
+}

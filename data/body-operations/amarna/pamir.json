@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "system": "Amarna",
+  "body": "Pamir",
+  "canonicalType": "moon",
+  "operationalKind": "natural-solid",
+  "permanentOperationalSeed": "7600f7603e7a3de7",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "5d0143b064737d094990",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "body-fixed-spherical",
+    "axes": "+lat north; +lon east",
+    "origin": "body center / IAU-style reference meridian",
+    "units": {
+      "latitude": "deg",
+      "longitude": "deg",
+      "elevation": "km"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "union",
+  "layers": [
+    {
+      "id": "terrain",
+      "label": "Terrain",
+      "defaultVisible": true
+    },
+    {
+      "id": "landmarks",
+      "label": "Named landmarks",
+      "defaultVisible": true
+    },
+    {
+      "id": "resources",
+      "label": "Resources",
+      "defaultVisible": false
+    },
+    {
+      "id": "installations",
+      "label": "Installations",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Hazards",
+      "defaultVisible": true
+    },
+    {
+      "id": "routes",
+      "label": "Surface routes",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "natural-solid-crater-01",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Orinoco Ward",
+      "position": {
+        "lat": 22.995,
+        "lon": -107.169,
+        "elevation": 0.59
+      },
+      "dimensions": {
+        "radius": 80.47,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named navigational landmark. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-02",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Okavango Ward",
+      "position": {
+        "lat": 22.511,
+        "lon": -108.575,
+        "elevation": 0.62
+      },
+      "dimensions": {
+        "radius": 81.29,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named navigational landmark. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-03",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Atacama Rise",
+      "position": {
+        "lat": 23.964,
+        "lon": -104.356,
+        "elevation": 0.52
+      },
+      "dimensions": {
+        "radius": 82.11,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named navigational landmark. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-04",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Tasman Ward",
+      "position": {
+        "lat": 23.48,
+        "lon": -105.763,
+        "elevation": 0.56
+      },
+      "dimensions": {
+        "radius": 82.93,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named navigational landmark. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-basin-05",
+      "type": "basin",
+      "layer": "landmarks",
+      "name": "Basin Serengeti",
+      "position": {
+        "lat": 24.933,
+        "lon": -101.544,
+        "elevation": 0.46
+      },
+      "dimensions": {
+        "radius": 83.75,
+        "unit": "km"
+      },
+      "operationalRole": "regional impact basin",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "regional impact basin. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-ridge-06",
+      "type": "ridge",
+      "layer": "terrain",
+      "name": "Ridge Atacama Rise",
+      "position": {
+        "lat": 25.417,
+        "lon": -100.137,
+        "elevation": 0.43
+      },
+      "dimensions": {
+        "radius": 260.6,
+        "unit": "km"
+      },
+      "operationalRole": "regional traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "regional traverse landmark. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-rift-07",
+      "type": "rift",
+      "layer": "terrain",
+      "name": "Chasma Serengeti Reach",
+      "position": {
+        "lat": 26.87,
+        "lon": -95.919,
+        "elevation": 0.84
+      },
+      "dimensions": {
+        "radius": 194.06,
+        "unit": "km"
+      },
+      "operationalRole": "geotechnical boundary",
+      "resource": null,
+      "hazard": "unstable slopes and regolith",
+      "refs": [],
+      "lodPriority": 3,
+      "description": "geotechnical boundary. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-ice-08",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 8",
+      "position": {
+        "lat": 75.018,
+        "lon": -97.325,
+        "elevation": 0.87
+      },
+      "dimensions": {
+        "radius": 100.6,
+        "unit": "km"
+      },
+      "operationalRole": "volatile reserve and extraction zone",
+      "resource": "water/ammonia cold-trap volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-mine-09",
+      "type": "mine",
+      "layer": "resources",
+      "name": "Claim 9",
+      "position": {
+        "lat": -11.116,
+        "lon": -38.293,
+        "elevation": 0.21
+      },
+      "dimensions": null,
+      "operationalRole": "automated or lightly crewed extraction site",
+      "resource": "metals, silicates and construction feedstock",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-habitat-10",
+      "type": "habitat",
+      "layer": "installations",
+      "name": "Habitat 10",
+      "position": {
+        "lat": -10.632,
+        "lon": -36.886,
+        "elevation": 0.18
+      },
+      "dimensions": null,
+      "operationalRole": "sealed surface habitat and logistics node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-mine-09"
+      ],
+      "lodPriority": 1,
+      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-landing-11",
+      "type": "landing",
+      "layer": "installations",
+      "name": "Field 11",
+      "position": {
+        "lat": -10.147,
+        "lon": -35.48,
+        "elevation": 0.27
+      },
+      "dimensions": null,
+      "operationalRole": "landing field and cargo transfer pad",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10"
+      ],
+      "lodPriority": 1,
+      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-observatory-12",
+      "type": "observatory",
+      "layer": "installations",
+      "name": "Array 12",
+      "position": {
+        "lat": -9.663,
+        "lon": -34.074,
+        "elevation": 0.24
+      },
+      "dimensions": null,
+      "operationalRole": "survey and navigation observatory",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "survey and navigation observatory. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-hazard-13",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Exclusion 13",
+      "position": {
+        "lat": -9.178,
+        "lon": -32.667,
+        "elevation": 0.09
+      },
+      "dimensions": {
+        "radius": 129.01,
+        "unit": "km"
+      },
+      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "resource": null,
+      "hazard": "radiation, ejecta and unstable regolith",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-corridor-14",
+      "type": "corridor",
+      "layer": "routes",
+      "name": "Corridor 14",
+      "position": {
+        "lat": -8.694,
+        "lon": -31.261,
+        "elevation": 0.05
+      },
+      "dimensions": null,
+      "operationalRole": "pressurized-rover and cargo traverse",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10",
+        "natural-solid-landing-11",
+        "natural-solid-mine-09"
+      ],
+      "lodPriority": 2,
+      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-corridor-15",
+      "type": "corridor",
+      "layer": "routes",
+      "name": "Corridor 15",
+      "position": {
+        "lat": -8.21,
+        "lon": -29.855,
+        "elevation": 0.15
+      },
+      "dimensions": null,
+      "operationalRole": "survey traverse to volatile field",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10",
+        "natural-solid-ice-08"
+      ],
+      "lodPriority": 3,
+      "description": "survey traverse to volatile field. Accepted operational survey feature for Pamir.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 15,
+    "layerCounts": {
+      "hazards": 1,
+      "installations": 3,
+      "landmarks": 5,
+      "resources": 2,
+      "routes": 2,
+      "terrain": 2
+    },
+    "keyFeatures": [
+      "natural-solid-crater-01",
+      "natural-solid-crater-02",
+      "natural-solid-ice-08",
+      "natural-solid-mine-09",
+      "natural-solid-habitat-10",
+      "natural-solid-landing-11",
+      "natural-solid-hazard-13"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  }
+}

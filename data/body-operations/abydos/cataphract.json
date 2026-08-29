@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "system": "Abydos",
+  "body": "Cataphract",
+  "canonicalType": "rocky planet",
+  "operationalKind": "natural-solid",
+  "permanentOperationalSeed": "a3505837e24554ca",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "f401c47d8afef3005ac6",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "body-fixed-spherical",
+    "axes": "+lat north; +lon east",
+    "origin": "body center / IAU-style reference meridian",
+    "units": {
+      "latitude": "deg",
+      "longitude": "deg",
+      "elevation": "km"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "vadan",
+  "layers": [
+    {
+      "id": "terrain",
+      "label": "Terrain",
+      "defaultVisible": true
+    },
+    {
+      "id": "landmarks",
+      "label": "Named landmarks",
+      "defaultVisible": true
+    },
+    {
+      "id": "resources",
+      "label": "Resources",
+      "defaultVisible": false
+    },
+    {
+      "id": "installations",
+      "label": "Installations",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Hazards",
+      "defaultVisible": true
+    },
+    {
+      "id": "routes",
+      "label": "Surface routes",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "natural-solid-crater-01",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Mariner Reach",
+      "position": {
+        "lat": 4.886,
+        "lon": -159.744,
+        "elevation": 2.31
+      },
+      "dimensions": {
+        "radius": 118.04,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named navigational landmark. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-02",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Halcyon Rise",
+      "position": {
+        "lat": 4.402,
+        "lon": -161.15,
+        "elevation": 2.35
+      },
+      "dimensions": {
+        "radius": 118.86,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named navigational landmark. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-03",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Nacre Reach",
+      "position": {
+        "lat": 5.855,
+        "lon": -156.931,
+        "elevation": 2.25
+      },
+      "dimensions": {
+        "radius": 119.68,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named navigational landmark. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-04",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Orison",
+      "position": {
+        "lat": 5.371,
+        "lon": -158.338,
+        "elevation": 2.28
+      },
+      "dimensions": {
+        "radius": 120.5,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named navigational landmark. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-basin-05",
+      "type": "basin",
+      "layer": "landmarks",
+      "name": "Basin Caldera Crown",
+      "position": {
+        "lat": 6.824,
+        "lon": -154.119,
+        "elevation": 2.19
+      },
+      "dimensions": {
+        "radius": 121.33,
+        "unit": "km"
+      },
+      "operationalRole": "regional impact basin",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "regional impact basin. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-ridge-06",
+      "type": "ridge",
+      "layer": "terrain",
+      "name": "Ridge Sundown Rise",
+      "position": {
+        "lat": 7.308,
+        "lon": -152.712,
+        "elevation": 2.16
+      },
+      "dimensions": {
+        "radius": 367.96,
+        "unit": "km"
+      },
+      "operationalRole": "regional traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "regional traverse landmark. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-rift-07",
+      "type": "rift",
+      "layer": "terrain",
+      "name": "Chasma Caldera Rise",
+      "position": {
+        "lat": 8.761,
+        "lon": -148.494,
+        "elevation": 2.56
+      },
+      "dimensions": {
+        "radius": 269.21,
+        "unit": "km"
+      },
+      "operationalRole": "geotechnical boundary",
+      "resource": null,
+      "hazard": "unstable slopes and regolith",
+      "refs": [],
+      "lodPriority": 3,
+      "description": "geotechnical boundary. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-ice-08",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 8",
+      "position": {
+        "lat": 82.504,
+        "lon": -149.9,
+        "elevation": 2.6
+      },
+      "dimensions": {
+        "radius": 139.97,
+        "unit": "km"
+      },
+      "operationalRole": "volatile reserve and extraction zone",
+      "resource": "water/ammonia cold-trap volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-mine-09",
+      "type": "mine",
+      "layer": "resources",
+      "name": "Claim 9",
+      "position": {
+        "lat": 22.398,
+        "lon": -120.999,
+        "elevation": 5.62
+      },
+      "dimensions": null,
+      "operationalRole": "automated or lightly crewed extraction site",
+      "resource": "metals, silicates and construction feedstock",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-habitat-10",
+      "type": "habitat",
+      "layer": "installations",
+      "name": "Habitat 10",
+      "position": {
+        "lat": 22.882,
+        "lon": -119.592,
+        "elevation": 5.59
+      },
+      "dimensions": null,
+      "operationalRole": "sealed surface habitat and logistics node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-mine-09"
+      ],
+      "lodPriority": 1,
+      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-landing-11",
+      "type": "landing",
+      "layer": "installations",
+      "name": "Field 11",
+      "position": {
+        "lat": 23.367,
+        "lon": -118.186,
+        "elevation": 5.68
+      },
+      "dimensions": null,
+      "operationalRole": "landing field and cargo transfer pad",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10"
+      ],
+      "lodPriority": 1,
+      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-observatory-12",
+      "type": "observatory",
+      "layer": "installations",
+      "name": "Array 12",
+      "position": {
+        "lat": 23.851,
+        "lon": -116.78,
+        "elevation": 5.65
+      },
+      "dimensions": null,
+      "operationalRole": "survey and navigation observatory",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "survey and navigation observatory. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-hazard-13",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Exclusion 13",
+      "position": {
+        "lat": 24.335,
+        "lon": -115.373,
+        "elevation": 5.5
+      },
+      "dimensions": {
+        "radius": 162.38,
+        "unit": "km"
+      },
+      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "resource": null,
+      "hazard": "radiation, ejecta and unstable regolith",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-corridor-14",
+      "type": "corridor",
+      "layer": "routes",
+      "name": "Corridor 14",
+      "position": {
+        "lat": 24.82,
+        "lon": -113.967,
+        "elevation": 5.46
+      },
+      "dimensions": null,
+      "operationalRole": "pressurized-rover and cargo traverse",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10",
+        "natural-solid-landing-11",
+        "natural-solid-mine-09"
+      ],
+      "lodPriority": 2,
+      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-corridor-15",
+      "type": "corridor",
+      "layer": "routes",
+      "name": "Corridor 15",
+      "position": {
+        "lat": 25.304,
+        "lon": -112.561,
+        "elevation": 5.56
+      },
+      "dimensions": null,
+      "operationalRole": "survey traverse to volatile field",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10",
+        "natural-solid-ice-08"
+      ],
+      "lodPriority": 3,
+      "description": "survey traverse to volatile field. Accepted operational survey feature for Cataphract.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 15,
+    "layerCounts": {
+      "hazards": 1,
+      "installations": 3,
+      "landmarks": 5,
+      "resources": 2,
+      "routes": 2,
+      "terrain": 2
+    },
+    "keyFeatures": [
+      "natural-solid-crater-01",
+      "natural-solid-crater-02",
+      "natural-solid-ice-08",
+      "natural-solid-mine-09",
+      "natural-solid-habitat-10",
+      "natural-solid-landing-11",
+      "natural-solid-hazard-13"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  }
+}

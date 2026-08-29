@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "system": "Abydos",
+  "body": "Thornfield",
+  "canonicalType": "spatial anomaly region",
+  "operationalKind": "anomaly",
+  "permanentOperationalSeed": "a6cf79d88a117aa5",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "84c03b14b8448e677a95",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "uncertain-observation-volume",
+    "axes": "+X approach reference; +Y transverse; +Z orbital north",
+    "origin": "observational centroid only",
+    "units": {
+      "x": "km",
+      "y": "km",
+      "z": "km"
+    },
+    "geometryKind": "uncertain observation volume",
+    "uncertainty": "boundaries and internal contours are observational, not solid geometry"
+  },
+  "namingProfile": "vadan",
+  "layers": [
+    {
+      "id": "observation",
+      "label": "Observation perimeter",
+      "defaultVisible": true
+    },
+    {
+      "id": "instability",
+      "label": "Instability",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Exclusion boundary",
+      "defaultVisible": true
+    },
+    {
+      "id": "sensors",
+      "label": "Sensor corridors",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "anomaly-beacon-01",
+      "type": "beacon",
+      "layer": "observation",
+      "name": "Thornwatch Perimeter 1",
+      "position": {
+        "x": 25259,
+        "y": -66372,
+        "z": 48617
+      },
+      "dimensions": null,
+      "operationalRole": "observation-perimeter marker",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "observation-perimeter marker. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-beacon-02",
+      "type": "beacon",
+      "layer": "observation",
+      "name": "Thornwatch Perimeter 2",
+      "position": {
+        "x": 26001,
+        "y": -67114,
+        "z": 49025
+      },
+      "dimensions": null,
+      "operationalRole": "observation-perimeter marker",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "observation-perimeter marker. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-beacon-03",
+      "type": "beacon",
+      "layer": "observation",
+      "name": "Thornwatch Perimeter 3",
+      "position": {
+        "x": 26743,
+        "y": -64887,
+        "z": 47801
+      },
+      "dimensions": null,
+      "operationalRole": "observation-perimeter marker",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "observation-perimeter marker. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-beacon-04",
+      "type": "beacon",
+      "layer": "observation",
+      "name": "Thornwatch Perimeter 4",
+      "position": {
+        "x": 27486,
+        "y": -65630,
+        "z": 48209
+      },
+      "dimensions": null,
+      "operationalRole": "observation-perimeter marker",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "observation-perimeter marker. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-beacon-05",
+      "type": "beacon",
+      "layer": "observation",
+      "name": "Thornwatch Perimeter 5",
+      "position": {
+        "x": 28228,
+        "y": -63403,
+        "z": 46984
+      },
+      "dimensions": null,
+      "operationalRole": "observation-perimeter marker",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "observation-perimeter marker. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-beacon-06",
+      "type": "beacon",
+      "layer": "observation",
+      "name": "Thornwatch Perimeter 6",
+      "position": {
+        "x": 28970,
+        "y": -64145,
+        "z": 47393
+      },
+      "dimensions": null,
+      "operationalRole": "observation-perimeter marker",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "observation-perimeter marker. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-contour-07",
+      "type": "contour",
+      "layer": "instability",
+      "name": "Instability Contour A",
+      "position": {
+        "x": -31803,
+        "y": 35467,
+        "z": 23890
+      },
+      "dimensions": {
+        "radius": 18000,
+        "unit": "km"
+      },
+      "operationalRole": "observed instability/intensity contour",
+      "resource": null,
+      "hazard": "spacetime distortion; boundary location uncertain",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "observed instability/intensity contour. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-contour-08",
+      "type": "contour",
+      "layer": "instability",
+      "name": "Instability Contour B",
+      "position": {
+        "x": -32311,
+        "y": 35975,
+        "z": 23611
+      },
+      "dimensions": {
+        "radius": 27000,
+        "unit": "km"
+      },
+      "operationalRole": "observed instability/intensity contour",
+      "resource": null,
+      "hazard": "spacetime distortion; boundary location uncertain",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "observed instability/intensity contour. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-contour-09",
+      "type": "contour",
+      "layer": "instability",
+      "name": "Instability Contour C",
+      "position": {
+        "x": -32819,
+        "y": 36482,
+        "z": 24449
+      },
+      "dimensions": {
+        "radius": 36000,
+        "unit": "km"
+      },
+      "operationalRole": "observed instability/intensity contour",
+      "resource": null,
+      "hazard": "spacetime distortion; boundary location uncertain",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "observed instability/intensity contour. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-contour-10",
+      "type": "contour",
+      "layer": "instability",
+      "name": "Instability Contour D",
+      "position": {
+        "x": -33327,
+        "y": 36990,
+        "z": 24170
+      },
+      "dimensions": {
+        "radius": 45000,
+        "unit": "km"
+      },
+      "operationalRole": "observed instability/intensity contour",
+      "resource": null,
+      "hazard": "spacetime distortion; boundary location uncertain",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "observed instability/intensity contour. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-hazard-11",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Thornfield Core Exclusion",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 72000,
+        "unit": "km"
+      },
+      "operationalRole": "non-dockable exclusion boundary",
+      "resource": null,
+      "hazard": "severe spacetime/gravitational distortion",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Uncertain observational exclusion volume. It is not a solid surface and provides no docking node.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "anomaly-corridor-12",
+      "type": "corridor",
+      "layer": "sensors",
+      "name": "Vada Sensor Corridor",
+      "position": {
+        "x": 125000,
+        "y": 22000,
+        "z": 5000
+      },
+      "dimensions": null,
+      "operationalRole": "remote sensor ingress corridor",
+      "resource": null,
+      "hazard": "specialized navigation required",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "remote sensor ingress corridor. Accepted operational survey feature for Thornfield.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 12,
+    "layerCounts": {
+      "hazards": 1,
+      "instability": 4,
+      "observation": 6,
+      "sensors": 1
+    },
+    "keyFeatures": [
+      "anomaly-beacon-01",
+      "anomaly-beacon-02",
+      "anomaly-beacon-03",
+      "anomaly-contour-07",
+      "anomaly-contour-08",
+      "anomaly-hazard-11",
+      "anomaly-corridor-12"
+    ],
+    "geometryStatement": "uncertain observation volume",
+    "note": "Uncertain observation volume; no docking geometry asserted."
+  }
+}

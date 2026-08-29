@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "system": "Thebes",
+  "body": "Nine Banners Yard",
+  "canonicalType": "shipyard",
+  "operationalKind": "shipyard",
+  "permanentOperationalSeed": "880511da8792abc9",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "ff76ad66bf2ac473745c",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "body-local-cartesian",
+    "axes": "+X forward/primary approach; +Y starboard; +Z dorsal",
+    "origin": "structural survey datum",
+    "units": {
+      "x": "m",
+      "y": "m",
+      "z": "m"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "xuanhari",
+  "layers": [
+    {
+      "id": "structure",
+      "label": "Structure",
+      "defaultVisible": true
+    },
+    {
+      "id": "habitation",
+      "label": "Habitation",
+      "defaultVisible": true
+    },
+    {
+      "id": "industry",
+      "label": "Industry",
+      "defaultVisible": true
+    },
+    {
+      "id": "docking",
+      "label": "Docking",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Hazards",
+      "defaultVisible": true
+    },
+    {
+      "id": "approaches",
+      "label": "Approaches",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "shipyard-hub-01",
+      "type": "hub",
+      "layer": "structure",
+      "name": "Primary Hub",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 2400,
+        "unit": "m"
+      },
+      "operationalRole": "primary structural datum and command/logistics hub",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "primary structural datum and command/logistics hub. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-reactor-02",
+      "type": "reactor",
+      "layer": "industry",
+      "name": "Reactor 2",
+      "position": {
+        "x": -7200,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "reactor and power distribution section",
+      "resource": null,
+      "hazard": "restricted power-system envelope",
+      "refs": [
+        "shipyard-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "reactor and power distribution section. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-module-03",
+      "type": "module",
+      "layer": "habitation",
+      "name": "Habitation Arc",
+      "position": {
+        "x": 3600,
+        "y": 5400,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "principal habitation section",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "shipyard-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "principal habitation section. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-dock-04",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock A",
+      "position": {
+        "x": 7620,
+        "y": 4848,
+        "z": -1694
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "shipyard-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "external docking/transfer node. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-dock-05",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock B",
+      "position": {
+        "x": 7540,
+        "y": 4928,
+        "z": -1738
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "shipyard-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "external docking/transfer node. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-dock-06",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock C",
+      "position": {
+        "x": 7779,
+        "y": 4688,
+        "z": -1782
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "shipyard-hub-01"
+      ],
+      "lodPriority": 2,
+      "description": "external docking/transfer node. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-dock-07",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock D",
+      "position": {
+        "x": 7700,
+        "y": 4768,
+        "z": -1826
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "shipyard-hub-01"
+      ],
+      "lodPriority": 2,
+      "description": "external docking/transfer node. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-approach-08",
+      "type": "approach",
+      "layer": "approaches",
+      "name": "Approach Alpha",
+      "position": {
+        "x": 21600,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "length": 16500,
+        "unit": "m"
+      },
+      "operationalRole": "primary controlled approach corridor",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "shipyard-dock-04"
+      ],
+      "lodPriority": 1,
+      "description": "primary controlled approach corridor. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-hazard-09",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Restricted Stern Volume",
+      "position": {
+        "x": -18600,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 5400,
+        "unit": "m"
+      },
+      "operationalRole": "reactor/drive/service exclusion volume",
+      "resource": null,
+      "hazard": "radiation, thermal and service traffic",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "reactor/drive/service exclusion volume. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-gantry-10",
+      "type": "gantry",
+      "layer": "industry",
+      "name": "Fabrication Spine",
+      "position": {
+        "x": -6000,
+        "y": 8400,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "fabrication gantry",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "shipyard-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "fabrication gantry. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-berth-11",
+      "type": "berth",
+      "layer": "industry",
+      "name": "Berth D",
+      "position": {
+        "x": 0,
+        "y": 8400,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "construction/refit berth",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "shipyard-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "construction/refit berth. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-berth-12",
+      "type": "berth",
+      "layer": "industry",
+      "name": "Berth E",
+      "position": {
+        "x": 6000,
+        "y": 8400,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "construction/refit berth",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "shipyard-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "construction/refit berth. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "shipyard-hull-13",
+      "type": "hull",
+      "layer": "industry",
+      "name": "Hull 14 Incomplete",
+      "position": {
+        "x": 2400,
+        "y": 9300,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "incomplete hull under construction",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "incomplete hull under construction. Accepted operational survey feature for Nine Banners Yard.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 13,
+    "layerCounts": {
+      "approaches": 1,
+      "docking": 4,
+      "habitation": 1,
+      "hazards": 1,
+      "industry": 5,
+      "structure": 1
+    },
+    "keyFeatures": [
+      "shipyard-hub-01",
+      "shipyard-reactor-02",
+      "shipyard-module-03",
+      "shipyard-dock-04",
+      "shipyard-dock-05",
+      "shipyard-approach-08",
+      "shipyard-hazard-09",
+      "shipyard-gantry-10"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  }
+}

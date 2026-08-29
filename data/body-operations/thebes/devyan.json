@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "system": "Thebes",
+  "body": "Devyan",
+  "canonicalType": "moon",
+  "operationalKind": "natural-solid",
+  "permanentOperationalSeed": "6dc455f7f58ce91e",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "44f28e7da13be32802a4",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "body-fixed-spherical",
+    "axes": "+lat north; +lon east",
+    "origin": "body center / IAU-style reference meridian",
+    "units": {
+      "latitude": "deg",
+      "longitude": "deg",
+      "elevation": "km"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "xuanhari",
+  "layers": [
+    {
+      "id": "terrain",
+      "label": "Terrain",
+      "defaultVisible": true
+    },
+    {
+      "id": "landmarks",
+      "label": "Named landmarks",
+      "defaultVisible": true
+    },
+    {
+      "id": "resources",
+      "label": "Resources",
+      "defaultVisible": false
+    },
+    {
+      "id": "installations",
+      "label": "Installations",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Hazards",
+      "defaultVisible": true
+    },
+    {
+      "id": "routes",
+      "label": "Surface routes",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "natural-solid-crater-01",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Rudrashan Crater",
+      "position": {
+        "lat": -39.624,
+        "lon": -80.19,
+        "elevation": 0.42
+      },
+      "dimensions": {
+        "radius": 86.07,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named navigational landmark. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-02",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Rudravara Crater",
+      "position": {
+        "lat": -39.14,
+        "lon": -78.783,
+        "elevation": 0.39
+      },
+      "dimensions": {
+        "radius": 85.25,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named navigational landmark. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-03",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Rudraling Crater",
+      "position": {
+        "lat": -38.655,
+        "lon": -77.377,
+        "elevation": 0.48
+      },
+      "dimensions": {
+        "radius": 84.43,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named navigational landmark. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-crater-04",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Shanling Crater",
+      "position": {
+        "lat": -38.171,
+        "lon": -75.971,
+        "elevation": 0.45
+      },
+      "dimensions": {
+        "radius": 83.61,
+        "unit": "km"
+      },
+      "operationalRole": "named navigational landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named navigational landmark. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-basin-05",
+      "type": "basin",
+      "layer": "landmarks",
+      "name": "Navashan Basin",
+      "position": {
+        "lat": -37.687,
+        "lon": -85.815,
+        "elevation": 0.54
+      },
+      "dimensions": {
+        "radius": 89.35,
+        "unit": "km"
+      },
+      "operationalRole": "regional impact basin",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "regional impact basin. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-ridge-06",
+      "type": "ridge",
+      "layer": "terrain",
+      "name": "Shanling Ridge",
+      "position": {
+        "lat": -36.233,
+        "lon": -81.596,
+        "elevation": 0.57
+      },
+      "dimensions": {
+        "radius": 262.54,
+        "unit": "km"
+      },
+      "operationalRole": "regional traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "regional traverse landmark. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-rift-07",
+      "type": "rift",
+      "layer": "terrain",
+      "name": "Qingvara Chasma",
+      "position": {
+        "lat": -43.499,
+        "lon": -91.44,
+        "elevation": 0.17
+      },
+      "dimensions": {
+        "radius": 179.01,
+        "unit": "km"
+      },
+      "operationalRole": "geotechnical boundary",
+      "resource": null,
+      "hazard": "unstable slopes and regolith",
+      "refs": [],
+      "lodPriority": 3,
+      "description": "geotechnical boundary. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-ice-08",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 8",
+      "position": {
+        "lat": -85.342,
+        "lon": -90.034,
+        "elevation": 0.14
+      },
+      "dimensions": {
+        "radius": 91.01,
+        "unit": "km"
+      },
+      "operationalRole": "volatile reserve and extraction zone",
+      "resource": "water/ammonia cold-trap volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-mine-09",
+      "type": "mine",
+      "layer": "resources",
+      "name": "Claim 9",
+      "position": {
+        "lat": 18.773,
+        "lon": 52.598,
+        "elevation": 5.29
+      },
+      "dimensions": null,
+      "operationalRole": "automated or lightly crewed extraction site",
+      "resource": "metals, silicates and construction feedstock",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-habitat-10",
+      "type": "habitat",
+      "layer": "installations",
+      "name": "Habitat 10",
+      "position": {
+        "lat": 18.288,
+        "lon": 51.192,
+        "elevation": 5.32
+      },
+      "dimensions": null,
+      "operationalRole": "sealed surface habitat and logistics node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-mine-09"
+      ],
+      "lodPriority": 1,
+      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-landing-11",
+      "type": "landing",
+      "layer": "installations",
+      "name": "Field 11",
+      "position": {
+        "lat": 17.804,
+        "lon": 49.785,
+        "elevation": 5.35
+      },
+      "dimensions": null,
+      "operationalRole": "landing field and cargo transfer pad",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10"
+      ],
+      "lodPriority": 1,
+      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-observatory-12",
+      "type": "observatory",
+      "layer": "installations",
+      "name": "Array 12",
+      "position": {
+        "lat": 17.319,
+        "lon": 48.379,
+        "elevation": 5.38
+      },
+      "dimensions": null,
+      "operationalRole": "survey and navigation observatory",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "survey and navigation observatory. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-hazard-13",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Exclusion 13",
+      "position": {
+        "lat": 20.71,
+        "lon": 46.973,
+        "elevation": 5.41
+      },
+      "dimensions": {
+        "radius": 75.44,
+        "unit": "km"
+      },
+      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "resource": null,
+      "hazard": "radiation, ejecta and unstable regolith",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-corridor-14",
+      "type": "corridor",
+      "layer": "routes",
+      "name": "Corridor 14",
+      "position": {
+        "lat": 20.226,
+        "lon": 45.567,
+        "elevation": 5.44
+      },
+      "dimensions": null,
+      "operationalRole": "pressurized-rover and cargo traverse",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10",
+        "natural-solid-landing-11",
+        "natural-solid-mine-09"
+      ],
+      "lodPriority": 2,
+      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "natural-solid-corridor-15",
+      "type": "corridor",
+      "layer": "routes",
+      "name": "Corridor 15",
+      "position": {
+        "lat": 19.741,
+        "lon": 44.16,
+        "elevation": 5.48
+      },
+      "dimensions": null,
+      "operationalRole": "survey traverse to volatile field",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "natural-solid-habitat-10",
+        "natural-solid-ice-08"
+      ],
+      "lodPriority": 3,
+      "description": "survey traverse to volatile field. Accepted operational survey feature for Devyan.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 15,
+    "layerCounts": {
+      "hazards": 1,
+      "installations": 3,
+      "landmarks": 5,
+      "resources": 2,
+      "routes": 2,
+      "terrain": 2
+    },
+    "keyFeatures": [
+      "natural-solid-crater-01",
+      "natural-solid-crater-02",
+      "natural-solid-ice-08",
+      "natural-solid-mine-09",
+      "natural-solid-habitat-10",
+      "natural-solid-landing-11",
+      "natural-solid-hazard-13"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  }
+}

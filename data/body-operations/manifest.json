@@ -1,0 +1,720 @@
+{
+  "schemaVersion": 1,
+  "status": "accepted-generated-canon",
+  "modelVersion": "orphaned-sun-body-operations-v1",
+  "sourceRegistry": "docs/system-orbital-distances.csv",
+  "sourceCartographyManifest": "data/planet-cartography/manifest.json",
+  "targetCount": 71,
+  "assets": [
+    {
+      "system": "Abydos",
+      "body": "Cataphract",
+      "canonicalType": "rocky planet",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/abydos/cataphract.json",
+      "seed": "a3505837e24554ca",
+      "fingerprint": "f401c47d8afef3005ac6",
+      "featureCount": 15
+    },
+    {
+      "system": "Abydos",
+      "body": "Enoch",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/abydos/enoch.json",
+      "seed": "44a24b1e71c53369",
+      "fingerprint": "7b71ab4e215b0e6b6d4f",
+      "featureCount": 15
+    },
+    {
+      "system": "Abydos",
+      "body": "Sumatra",
+      "canonicalType": "ice/gas giant",
+      "operationalKind": "giant",
+      "path": "data/body-operations/abydos/sumatra.json",
+      "seed": "3b965b31f6172ec0",
+      "fingerprint": "1e40b72db38a6682b407",
+      "featureCount": 13
+    },
+    {
+      "system": "Abydos",
+      "body": "Thornfield",
+      "canonicalType": "spatial anomaly region",
+      "operationalKind": "anomaly",
+      "path": "data/body-operations/abydos/thornfield.json",
+      "seed": "a6cf79d88a117aa5",
+      "fingerprint": "84c03b14b8448e677a95",
+      "featureCount": 12
+    },
+    {
+      "system": "Abydos",
+      "body": "Thornwatch Array",
+      "canonicalType": "installation array",
+      "operationalKind": "station",
+      "path": "data/body-operations/abydos/thornwatch-array.json",
+      "seed": "e7ea2378070f4979",
+      "fingerprint": "65fb157e4d2baac74bc1",
+      "featureCount": 11
+    },
+    {
+      "system": "Abydos",
+      "body": "Tribune",
+      "canonicalType": "gas giant",
+      "operationalKind": "giant",
+      "path": "data/body-operations/abydos/tribune.json",
+      "seed": "6da71cef11d5534a",
+      "fingerprint": "e41f63dd723b0dc24152",
+      "featureCount": 13
+    },
+    {
+      "system": "Abydos",
+      "body": "Vada Anchorage",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/abydos/vada-anchorage.json",
+      "seed": "b8e5e73572bce132",
+      "fingerprint": "2e4d16163775da09b631",
+      "featureCount": 11
+    },
+    {
+      "system": "Abydos",
+      "body": "Ventus",
+      "canonicalType": "outer icy/dwarf world",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/abydos/ventus.json",
+      "seed": "92e4fbaa636c3585",
+      "fingerprint": "23c6573ae6eff68525b9",
+      "featureCount": 15
+    },
+    {
+      "system": "Amarna",
+      "body": "Akhetan",
+      "canonicalType": "blinkgate complex",
+      "operationalKind": "blinkgate",
+      "path": "data/body-operations/amarna/akhetan.json",
+      "seed": "843ad27943b39ef8",
+      "fingerprint": "db4d425949ca020cb962",
+      "featureCount": 13
+    },
+    {
+      "system": "Amarna",
+      "body": "Atacama",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/amarna/atacama.json",
+      "seed": "06f5d2058182e476",
+      "fingerprint": "492159ec9586ed47d5e9",
+      "featureCount": 15
+    },
+    {
+      "system": "Amarna",
+      "body": "Caliburn Yard",
+      "canonicalType": "shipyard",
+      "operationalKind": "shipyard",
+      "path": "data/body-operations/amarna/caliburn-yard.json",
+      "seed": "57ab5b1245695efd",
+      "fingerprint": "e1c2b871fe6380587dd1",
+      "featureCount": 13
+    },
+    {
+      "system": "Amarna",
+      "body": "Cholula",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/amarna/cholula.json",
+      "seed": "d452a9733d448944",
+      "fingerprint": "e8a6b1f2f5c692e759cf",
+      "featureCount": 15
+    },
+    {
+      "system": "Amarna",
+      "body": "Far Lantern",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/amarna/far-lantern.json",
+      "seed": "e5497132156b6013",
+      "fingerprint": "7924ac258d1bf1fa31ea",
+      "featureCount": 11
+    },
+    {
+      "system": "Amarna",
+      "body": "Nalanda",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/amarna/nalanda.json",
+      "seed": "bb9c8b068214b6c9",
+      "fingerprint": "6469c9c033d29d6f6678",
+      "featureCount": 15
+    },
+    {
+      "system": "Amarna",
+      "body": "Pamir",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/amarna/pamir.json",
+      "seed": "7600f7603e7a3de7",
+      "fingerprint": "5d0143b064737d094990",
+      "featureCount": 15
+    },
+    {
+      "system": "Amarna",
+      "body": "Serengeti",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/amarna/serengeti.json",
+      "seed": "2abb402525fec616",
+      "fingerprint": "e87d99a67e61f861d571",
+      "featureCount": 15
+    },
+    {
+      "system": "Amarna",
+      "body": "Svalbard",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/amarna/svalbard.json",
+      "seed": "21a172de340bac8b",
+      "fingerprint": "6337d53cb1f8a89bea30",
+      "featureCount": 15
+    },
+    {
+      "system": "Amarna",
+      "body": "Tasman",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/amarna/tasman.json",
+      "seed": "9402777b5d0fc386",
+      "fingerprint": "51f5198a592c0f89f37c",
+      "featureCount": 15
+    },
+    {
+      "system": "Amarna",
+      "body": "Union Gateway Station",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/amarna/union-gateway-station.json",
+      "seed": "59a917be8b3db207",
+      "fingerprint": "5bbd0c8c162b8d018b4c",
+      "featureCount": 11
+    },
+    {
+      "system": "Iunu",
+      "body": "Asterion Crown",
+      "canonicalType": "major vessel",
+      "operationalKind": "vessel",
+      "path": "data/body-operations/iunu/asterion-crown.json",
+      "seed": "b52d4e9c3c21f4d9",
+      "fingerprint": "f547bcc79d681044a53d",
+      "featureCount": 12
+    },
+    {
+      "system": "Iunu",
+      "body": "Braemir",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/iunu/braemir.json",
+      "seed": "d418d85819fc3e4b",
+      "fingerprint": "5e20045e9988da2b5d8a",
+      "featureCount": 15
+    },
+    {
+      "system": "Iunu",
+      "body": "Cairnov",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/iunu/cairnov.json",
+      "seed": "2a88b53091144d4f",
+      "fingerprint": "4e2b8599a117c7beaf25",
+      "featureCount": 15
+    },
+    {
+      "system": "Iunu",
+      "body": "Celestial Exchange",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/iunu/celestial-exchange.json",
+      "seed": "22ffe635bc7b606e",
+      "fingerprint": "cba952e1184d8bba219e",
+      "featureCount": 11
+    },
+    {
+      "system": "Iunu",
+      "body": "Dunova",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/iunu/dunova.json",
+      "seed": "3955f7afe0ee085a",
+      "fingerprint": "b6aac143c7af7ffe3af6",
+      "featureCount": 15
+    },
+    {
+      "system": "Iunu",
+      "body": "Eilevost",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/iunu/eilevost.json",
+      "seed": "8985b19b42de660e",
+      "fingerprint": "d5d412d87c113431135c",
+      "featureCount": 15
+    },
+    {
+      "system": "Iunu",
+      "body": "Muirka",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/iunu/muirka.json",
+      "seed": "b613848b36f6f7c6",
+      "fingerprint": "4d5dcfa729ea51eed973",
+      "featureCount": 15
+    },
+    {
+      "system": "Iunu",
+      "body": "Volnaskye",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/iunu/volnaskye.json",
+      "seed": "18bebd0697316e6d",
+      "fingerprint": "a4788c6e7f09d22b7b33",
+      "featureCount": 15
+    },
+    {
+      "system": "Iunu",
+      "body": "Vostara",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/iunu/vostara.json",
+      "seed": "675b2348221aa827",
+      "fingerprint": "bc90d3c0fc9cc0878d78",
+      "featureCount": 15
+    },
+    {
+      "system": "Memphis",
+      "body": "Aurema",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/memphis/aurema.json",
+      "seed": "84b24649343da382",
+      "fingerprint": "a952efc26c055e1ba3cd",
+      "featureCount": 15
+    },
+    {
+      "system": "Memphis",
+      "body": "Aureth Gatehouse",
+      "canonicalType": "major installation",
+      "operationalKind": "station",
+      "path": "data/body-operations/memphis/aureth-gatehouse.json",
+      "seed": "a108020e4af23751",
+      "fingerprint": "cd52da6518ae3f12c43c",
+      "featureCount": 11
+    },
+    {
+      "system": "Memphis",
+      "body": "Elyon",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/memphis/elyon.json",
+      "seed": "60c10cdb956e4d4e",
+      "fingerprint": "21818dfb932ca2bca1e1",
+      "featureCount": 15
+    },
+    {
+      "system": "Memphis",
+      "body": "Kedrion",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/memphis/kedrion.json",
+      "seed": "3309e1e4cfa478b9",
+      "fingerprint": "6aca11796338bc065d50",
+      "featureCount": 15
+    },
+    {
+      "system": "Memphis",
+      "body": "Long Journey Anchorage",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/memphis/long-journey-anchorage.json",
+      "seed": "52f61926cca1e14b",
+      "fingerprint": "8dcf80e45e8733efc426",
+      "featureCount": 11
+    },
+    {
+      "system": "Memphis",
+      "body": "Nereth",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/memphis/nereth.json",
+      "seed": "fa49f456dae849f9",
+      "fingerprint": "001e4d7def41202e10b6",
+      "featureCount": 15
+    },
+    {
+      "system": "Memphis",
+      "body": "Pilgrim's Lantern",
+      "canonicalType": "major vessel",
+      "operationalKind": "vessel",
+      "path": "data/body-operations/memphis/pilgrim-s-lantern.json",
+      "seed": "ea8a55a85bd70481",
+      "fingerprint": "f6b22097129e181218ed",
+      "featureCount": 12
+    },
+    {
+      "system": "Nekhen",
+      "body": "Halo of Hierava",
+      "canonicalType": "orbital installation ring",
+      "operationalKind": "megastructure",
+      "path": "data/body-operations/nekhen/halo-of-hierava.json",
+      "seed": "f26737790e395f88",
+      "fingerprint": "119bcc7d4cde43ae93d6",
+      "featureCount": 16
+    },
+    {
+      "system": "Nekhen",
+      "body": "Ninth Choir Yard",
+      "canonicalType": "shipyard",
+      "operationalKind": "shipyard",
+      "path": "data/body-operations/nekhen/ninth-choir-yard.json",
+      "seed": "b743f62f49a3665e",
+      "fingerprint": "7d9a7032afd92d0b5451",
+      "featureCount": 13
+    },
+    {
+      "system": "Nekhen",
+      "body": "Throne of Heaven",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/nekhen/throne-of-heaven.json",
+      "seed": "8c0be70246996e29",
+      "fingerprint": "5e2c68af8172f9ba887a",
+      "featureCount": 11
+    },
+    {
+      "system": "Sais",
+      "body": "Celestial Registry",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/sais/celestial-registry.json",
+      "seed": "88e80c1293275005",
+      "fingerprint": "55e7229b8b6649624b4c",
+      "featureCount": 11
+    },
+    {
+      "system": "Sais",
+      "body": "Chandri",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/sais/chandri.json",
+      "seed": "f1b88b5412eba723",
+      "fingerprint": "fb1bb5a1eb9c4ee4133e",
+      "featureCount": 15
+    },
+    {
+      "system": "Sais",
+      "body": "Golden Chariot",
+      "canonicalType": "major vessel",
+      "operationalKind": "vessel",
+      "path": "data/body-operations/sais/golden-chariot.json",
+      "seed": "00b4306cbd5ea301",
+      "fingerprint": "58e242fb018660628c57",
+      "featureCount": 12
+    },
+    {
+      "system": "Sais",
+      "body": "Mandate Meridian",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/sais/mandate-meridian.json",
+      "seed": "42daa2dc8fcbd4cf",
+      "fingerprint": "7e0a1536948cb021bcec",
+      "featureCount": 11
+    },
+    {
+      "system": "Sais",
+      "body": "Ranjin",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/sais/ranjin.json",
+      "seed": "9241782da41a6ee8",
+      "fingerprint": "bc9d14a0d592500b95ee",
+      "featureCount": 15
+    },
+    {
+      "system": "Sais",
+      "body": "Tianesh",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/sais/tianesh.json",
+      "seed": "4c541c8f5b6e3240",
+      "fingerprint": "5a46fd2cdc719cb10842",
+      "featureCount": 15
+    },
+    {
+      "system": "Sais",
+      "body": "Yuehara",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/sais/yuehara.json",
+      "seed": "e973ccaa42ee99d9",
+      "fingerprint": "5fcf09a42e7568b10f4e",
+      "featureCount": 15
+    },
+    {
+      "system": "Saqqara",
+      "body": "Bannoch Vost",
+      "canonicalType": "warm gas giant",
+      "operationalKind": "giant",
+      "path": "data/body-operations/saqqara/bannoch-vost.json",
+      "seed": "2bd7dea255944d2d",
+      "fingerprint": "685c0d9f32867f0e8c65",
+      "featureCount": 13
+    },
+    {
+      "system": "Saqqara",
+      "body": "Cairnreach",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/saqqara/cairnreach.json",
+      "seed": "e0de34e9173f3abc",
+      "fingerprint": "544bb46f227e9ebcde34",
+      "featureCount": 11
+    },
+    {
+      "system": "Saqqara",
+      "body": "Eilean Volna",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/saqqara/eilean-volna.json",
+      "seed": "ab58009552edfb82",
+      "fingerprint": "6dcff50aa5684881b6bd",
+      "featureCount": 17
+    },
+    {
+      "system": "Saqqara",
+      "body": "Gannet Mobile Yard",
+      "canonicalType": "mobile shipyard",
+      "operationalKind": "shipyard",
+      "path": "data/body-operations/saqqara/gannet-mobile-yard.json",
+      "seed": "e9559bdd5d00c9e0",
+      "fingerprint": "4e318ecf77c7c5e47708",
+      "featureCount": 13
+    },
+    {
+      "system": "Saqqara",
+      "body": "Hammerfall Yards",
+      "canonicalType": "shipyard",
+      "operationalKind": "shipyard",
+      "path": "data/body-operations/saqqara/hammerfall-yards.json",
+      "seed": "688b7d7e9bdb1f85",
+      "fingerprint": "39f48f690b06335e9c35",
+      "featureCount": 13
+    },
+    {
+      "system": "Saqqara",
+      "body": "Industrial Belt",
+      "canonicalType": "asteroid/industrial belt",
+      "operationalKind": "belt",
+      "path": "data/body-operations/saqqara/industrial-belt.json",
+      "seed": "86ca20845b2066b5",
+      "fingerprint": "8c356320d1c3f16b7775",
+      "featureCount": 18
+    },
+    {
+      "system": "Saqqara",
+      "body": "Old Kestrel",
+      "canonicalType": "industrialized planetoid/habitat",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/saqqara/old-kestrel.json",
+      "seed": "01dc078460b606d5",
+      "fingerprint": "96db90d23b4e41c19fc1",
+      "featureCount": 19
+    },
+    {
+      "system": "Saqqara",
+      "body": "The Long Hook",
+      "canonicalType": "linear megastructure/tether",
+      "operationalKind": "megastructure",
+      "path": "data/body-operations/saqqara/the-long-hook.json",
+      "seed": "c8cd57b376717a70",
+      "fingerprint": "1f409b11b7620566c429",
+      "featureCount": 16
+    },
+    {
+      "system": "Seti",
+      "body": "Arrowfall Range",
+      "canonicalType": "military range / installation field",
+      "operationalKind": "station",
+      "path": "data/body-operations/seti/arrowfall-range.json",
+      "seed": "7630ee65e7efb160",
+      "fingerprint": "48b8e8a1e03c2e20153b",
+      "featureCount": 14
+    },
+    {
+      "system": "Seti",
+      "body": "Kalong",
+      "canonicalType": "anomalous super-Jovian gas giant",
+      "operationalKind": "giant",
+      "path": "data/body-operations/seti/kalong.json",
+      "seed": "0e6c80d9465e68c8",
+      "fingerprint": "7921c54923d9ccfcd271",
+      "featureCount": 15
+    },
+    {
+      "system": "Seti",
+      "body": "Navira",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/seti/navira.json",
+      "seed": "e670d01bede69fea",
+      "fingerprint": "49af8393a11107547549",
+      "featureCount": 15
+    },
+    {
+      "system": "Seti",
+      "body": "Shenpur",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/seti/shenpur.json",
+      "seed": "096459e7ba2f04bc",
+      "fingerprint": "d50ada171a2f2adab98e",
+      "featureCount": 15
+    },
+    {
+      "system": "Seti",
+      "body": "Yuelin",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/seti/yuelin.json",
+      "seed": "627bdcc4845424ad",
+      "fingerprint": "c81a92140f4419a567a6",
+      "featureCount": 15
+    },
+    {
+      "system": "Tanis",
+      "body": "Blackwake Yard",
+      "canonicalType": "shipyard",
+      "operationalKind": "shipyard",
+      "path": "data/body-operations/tanis/blackwake-yard.json",
+      "seed": "0f2d8bb43f7c5f0b",
+      "fingerprint": "0b9465192b26a3f67853",
+      "featureCount": 13
+    },
+    {
+      "system": "Tanis",
+      "body": "Dun Varya",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/tanis/dun-varya.json",
+      "seed": "c925e996fe64a54f",
+      "fingerprint": "8ec909acdf55c0eb0c5d",
+      "featureCount": 15
+    },
+    {
+      "system": "Tanis",
+      "body": "Outer Debris Belt",
+      "canonicalType": "asteroid/debris belt",
+      "operationalKind": "belt",
+      "path": "data/body-operations/tanis/outer-debris-belt.json",
+      "seed": "c1ac2f54656536b1",
+      "fingerprint": "d6a5d9f82ddd3cbf37b7",
+      "featureCount": 18
+    },
+    {
+      "system": "Tanis",
+      "body": "The Exchange",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/tanis/the-exchange.json",
+      "seed": "00f46efa97bf41eb",
+      "fingerprint": "919cebc08ba561b13064",
+      "featureCount": 11
+    },
+    {
+      "system": "Tanis",
+      "body": "Three Lanterns",
+      "canonicalType": "carrier/fleet group",
+      "operationalKind": "fleet",
+      "path": "data/body-operations/tanis/three-lanterns.json",
+      "seed": "07f2cbe671d09607",
+      "fingerprint": "d5ca8693de7424426805",
+      "featureCount": 11
+    },
+    {
+      "system": "Thebes",
+      "body": "Cloud-Tiger Carrier Group",
+      "canonicalType": "carrier/fleet group",
+      "operationalKind": "fleet",
+      "path": "data/body-operations/thebes/cloud-tiger-carrier-group.json",
+      "seed": "b4f352b1f114c918",
+      "fingerprint": "05083922e968c5ffcdb4",
+      "featureCount": 11
+    },
+    {
+      "system": "Thebes",
+      "body": "Devyan",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/thebes/devyan.json",
+      "seed": "6dc455f7f58ce91e",
+      "fingerprint": "44f28e7da13be32802a4",
+      "featureCount": 15
+    },
+    {
+      "system": "Thebes",
+      "body": "Jade Spear Station",
+      "canonicalType": "major station",
+      "operationalKind": "station",
+      "path": "data/body-operations/thebes/jade-spear-station.json",
+      "seed": "70adc9b94c0e5f4a",
+      "fingerprint": "3c2fea08fffd9a3b0977",
+      "featureCount": 11
+    },
+    {
+      "system": "Thebes",
+      "body": "Kiranwei",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/thebes/kiranwei.json",
+      "seed": "eed936b4671c1651",
+      "fingerprint": "5456557bc420afaefb7d",
+      "featureCount": 15
+    },
+    {
+      "system": "Thebes",
+      "body": "Lianesh",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/thebes/lianesh.json",
+      "seed": "4eee770ab9247581",
+      "fingerprint": "bc498c5cf1a3e5136135",
+      "featureCount": 15
+    },
+    {
+      "system": "Thebes",
+      "body": "Mingvara",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/thebes/mingvara.json",
+      "seed": "9ad94ec32732f3da",
+      "fingerprint": "149f9d9f8891d5fc6d2f",
+      "featureCount": 15
+    },
+    {
+      "system": "Thebes",
+      "body": "Nine Banners Yard",
+      "canonicalType": "shipyard",
+      "operationalKind": "shipyard",
+      "path": "data/body-operations/thebes/nine-banners-yard.json",
+      "seed": "880511da8792abc9",
+      "fingerprint": "ff76ad66bf2ac473745c",
+      "featureCount": 13
+    },
+    {
+      "system": "Thebes",
+      "body": "Suryin",
+      "canonicalType": "moon",
+      "operationalKind": "natural-solid",
+      "path": "data/body-operations/thebes/suryin.json",
+      "seed": "b705af1e98003a87",
+      "fingerprint": "d678150d63f8208e760b",
+      "featureCount": 15
+    }
+  ]
+}

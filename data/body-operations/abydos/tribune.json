@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "system": "Abydos",
+  "body": "Tribune",
+  "canonicalType": "gas giant",
+  "operationalKind": "giant",
+  "permanentOperationalSeed": "6da71cef11d5534a",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "e41f63dd723b0dc24152",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "atmospheric-spherical",
+    "axes": "+lat north; +lon east; altitude by pressure level",
+    "origin": "planet center / adopted reference meridian",
+    "units": {
+      "latitude": "deg",
+      "longitude": "deg",
+      "pressure": "bar"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "vadan",
+  "layers": [
+    {
+      "id": "atmosphere",
+      "label": "Atmosphere",
+      "defaultVisible": true
+    },
+    {
+      "id": "storms",
+      "label": "Storms",
+      "defaultVisible": true
+    },
+    {
+      "id": "radiation",
+      "label": "Radiation",
+      "defaultVisible": true
+    },
+    {
+      "id": "operations",
+      "label": "Operations",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "giant-band-01",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 1",
+      "position": {
+        "lat": 56.427,
+        "lon": 30.446,
+        "elevation": 0.2,
+        "pressure": 0.4
+      },
+      "dimensions": {
+        "widthDeg": 17,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-02",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 2",
+      "position": {
+        "lat": 55.943,
+        "lon": 29.04,
+        "elevation": 0.23,
+        "pressure": 1.1
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-03",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 3",
+      "position": {
+        "lat": 57.396,
+        "lon": 33.259,
+        "elevation": 0.13,
+        "pressure": 1.8
+      },
+      "dimensions": {
+        "widthDeg": 17,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-04",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 4",
+      "position": {
+        "lat": 56.911,
+        "lon": 31.852,
+        "elevation": 0.16,
+        "pressure": 2.5
+      },
+      "dimensions": {
+        "widthDeg": 17,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-05",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 5",
+      "position": {
+        "lat": 58.365,
+        "lon": 36.071,
+        "elevation": 0.07,
+        "pressure": 3.2
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-06",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 6",
+      "position": {
+        "lat": 57.88,
+        "lon": 34.665,
+        "elevation": 0.1,
+        "pressure": 3.9
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-storm-07",
+      "type": "storm",
+      "layer": "storms",
+      "name": "Storm Vada Reach",
+      "position": {
+        "lat": -46.377,
+        "lon": -42.016,
+        "elevation": 2.3,
+        "pressure": 1.39
+      },
+      "dimensions": {
+        "radius": 7150.92,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-vortex-08",
+      "type": "vortex",
+      "layer": "storms",
+      "name": "Vortex Mariner Rise",
+      "position": {
+        "lat": -45.892,
+        "lon": -40.61,
+        "elevation": 2.27,
+        "pressure": 1.38
+      },
+      "dimensions": {
+        "radius": 7206.39,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-storm-09",
+      "type": "storm",
+      "layer": "storms",
+      "name": "Storm Tide Reach",
+      "position": {
+        "lat": -45.408,
+        "lon": -39.203,
+        "elevation": 2.36,
+        "pressure": 1.38
+      },
+      "dimensions": {
+        "radius": 7039.98,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-vortex-10",
+      "type": "vortex",
+      "layer": "storms",
+      "name": "Vortex Halcyon Crown",
+      "position": {
+        "lat": -44.924,
+        "lon": -37.797,
+        "elevation": 2.33,
+        "pressure": 1.37
+      },
+      "dimensions": {
+        "radius": 7095.45,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-hazard-11",
+      "type": "hazard",
+      "layer": "radiation",
+      "name": "Exclusion 11",
+      "position": {
+        "lat": 24.356,
+        "lon": 163.339,
+        "elevation": -1.26,
+        "pressure": 0.05
+      },
+      "dimensions": null,
+      "operationalRole": "inner radiation exclusion latitude band",
+      "resource": null,
+      "hazard": "magnetospheric particle flux",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "inner radiation exclusion latitude band. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-corridor-12",
+      "type": "corridor",
+      "layer": "operations",
+      "name": "Corridor 12",
+      "position": {
+        "lat": 23.872,
+        "lon": 161.932,
+        "elevation": -1.23,
+        "pressure": 0.8
+      },
+      "dimensions": null,
+      "operationalRole": "robotic atmospheric sampling corridor",
+      "resource": null,
+      "hazard": "weather-dependent access",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "robotic atmospheric sampling corridor. Accepted operational survey feature for Tribune.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-platform-13",
+      "type": "platform",
+      "layer": "operations",
+      "name": "Platform 13",
+      "position": {
+        "lat": 25.325,
+        "lon": 166.151,
+        "elevation": -1.2,
+        "pressure": 0.02
+      },
+      "dimensions": null,
+      "operationalRole": "high-atmosphere observation reference",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Survey marker for high-altitude operations; not a solid-surface installation.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 13,
+    "layerCounts": {
+      "atmosphere": 6,
+      "operations": 2,
+      "radiation": 1,
+      "storms": 4
+    },
+    "keyFeatures": [
+      "giant-band-01",
+      "giant-band-02",
+      "giant-band-03",
+      "giant-storm-07",
+      "giant-vortex-08",
+      "giant-hazard-11",
+      "giant-corridor-12"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Atmospheric survey; no solid traversable surface."
+  }
+}

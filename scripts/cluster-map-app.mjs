@@ -9,6 +9,7 @@ import { BodyView } from "./body-view.mjs";
 import { naturalBodyKind, buildNaturalBodyModel } from "./natural-body-data.mjs";
 import { artificialBodyKind, buildArtificialBodyModel } from "./artificial-body-data.mjs";
 import { inspectSurfaceFeature } from "./body-layers.mjs";
+import { loadBodyOperationAsset } from "./body-operations.mjs";
 
 export const MODULE_ID = "orphaned-sun-cluster-map";
 const assetSlug = (value) => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -114,6 +115,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       root.classList.add("is-system-mode");
       root.classList.remove("is-body-mode");
       root.classList.remove("has-geography");
+      root.classList.remove("has-operations");
       root.querySelector('[data-action="back-to-cluster"]')?.classList.remove("is-hidden");
       root.querySelector('[data-action="back-to-system"]')?.classList.add("is-hidden");
       const title = root.querySelector("[data-map-title]"); if (title) title.textContent = `${system.name} System`;
@@ -136,23 +138,27 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       if (naturalBodyKind(object)) model = buildNaturalBodyModel(object);
       else if (artificialBodyKind(object)) model = buildArtificialBodyModel(object);
       else return;
-      let geography = null;
+      let geography = null, operations = null;
       if (object.geography_seed) {
         const slug = assetSlug(object.name), base = `modules/${MODULE_ID}/data`;
         let response = await fetch(`${base}/planet-cartography/${object.system.toLowerCase()}/${slug}.json`);
         if (!response.ok) response = await fetch(`${base}/planet-geography/${object.system.toLowerCase()}/${slug}.json`);
         if (!response.ok) throw new Error(`cartography fetch failed (${response.status})`);
         geography = await response.json();
+      } else {
+        operations = await loadBodyOperationAsset(object.system, object.name, MODULE_ID).catch((error) => { console.warn(`${MODULE_ID} | Body operations unavailable for ${object.system}/${object.name}`, error); return null; });
+        if (operations && artificialBodyKind(object)) model = buildArtificialBodyModel(object, operations);
       }
       this._clusterView?.destroy();
-      this._clusterView = new BodyView(svg, { model, geography, onExitRequested: () => this.#showSystem(), onFeatureSelected: (feature) => this.#updateBodyFeature(feature) });
+      this._clusterView = new BodyView(svg, { model, geography, operations, onExitRequested: () => this.#showSystem(), onFeatureSelected: (feature) => this.#updateBodyFeature(feature) });
       this.mode = "body"; this.activeBody = object;
       root.classList.add("is-system-mode", "is-body-mode");
       root.classList.toggle("has-geography", Boolean(geography));
+      root.classList.toggle("has-operations", Boolean(operations));
       root.querySelector('[data-action="back-to-cluster"]')?.classList.remove("is-hidden");
       root.querySelector('[data-action="back-to-system"]')?.classList.remove("is-hidden");
       const title = root.querySelector("[data-map-title]"); if (title) title.textContent = object.name;
-      const count = root.querySelector("[data-map-count]"); if (count) count.textContent = geography ? geography.schemaVersion === 2 ? `${geography.gazetteer.length} named features · 2° survey` : `${geography.cells.length} surface cells` : object.type;
+      const count = root.querySelector("[data-map-count]"); if (count) count.textContent = geography ? geography.schemaVersion === 2 ? `${geography.gazetteer.length} named features · 2° survey` : `${geography.cells.length} surface cells` : operations ? `${operations.operationalSummary.featureCount} operational features` : object.type;
       const help = root.querySelector("[data-map-help]"); if (help) help.textContent = geography
         ? "Click / tap a mapped surface feature"
         : model.kind === "asteroid-field" ? "Click / tap a mapped belt body"
@@ -167,7 +173,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     if (!feature) { this.#updateBodyMetadata(this.activeBody, this._clusterView?.model); return; }
     card.classList.remove("is-hidden");
     const inspected = inspectSurfaceFeature(feature);
-    const values = { objectName: inspected.name, objectType: inspected.type, objectParent: this.activeBody?.name || "—", objectRole: inspected.detail, objectScale: feature.suitability != null ? `Settlement suitability ${feature.suitability}` : "Schematic" };
+    const values = { objectName: inspected.name, objectType: inspected.type, objectParent: this.activeBody?.name || "—", objectRole: inspected.detail, objectScale: inspected.scale ?? (feature.suitability != null ? `Settlement suitability ${feature.suitability}` : "Survey extent not fixed") };
     for (const [field, value] of Object.entries(values)) { const element = root.querySelector(`[data-field="${field}"]`); if (element) element.textContent = value; }
   }
 
@@ -202,6 +208,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     root.classList.remove("is-system-mode");
     root.classList.remove("is-body-mode");
     root.classList.remove("has-geography");
+      root.classList.remove("has-operations");
     root.querySelector('[data-action="back-to-cluster"]')?.classList.add("is-hidden");
     root.querySelector('[data-action="back-to-system"]')?.classList.add("is-hidden");
     const title = root.querySelector("[data-map-title]"); if (title) title.textContent = "Beehive Cluster";

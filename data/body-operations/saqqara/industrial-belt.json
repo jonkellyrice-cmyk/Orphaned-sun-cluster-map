@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 1,
+  "system": "Saqqara",
+  "body": "Industrial Belt",
+  "canonicalType": "asteroid/industrial belt",
+  "operationalKind": "belt",
+  "permanentOperationalSeed": "86ca20845b2066b5",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "8c356320d1c3f16b7775",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "belt-reference-cartesian",
+    "axes": "+X prograde tangent; +Y radial-outward; +Z orbital north",
+    "origin": "canonical belt centroid",
+    "units": {
+      "x": "km",
+      "y": "km",
+      "z": "km"
+    },
+    "geometryKind": "physical reference-epoch snapshot",
+    "epoch": "accepted body-operations reference epoch"
+  },
+  "namingProfile": "vostrann",
+  "layers": [
+    {
+      "id": "mapped-bodies",
+      "label": "Mapped bodies",
+      "defaultVisible": true
+    },
+    {
+      "id": "resources",
+      "label": "Resources",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Hazards",
+      "defaultVisible": true
+    },
+    {
+      "id": "traffic",
+      "label": "Traffic",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "belt-asteroid-01",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Glensk Rock",
+      "position": {
+        "x": -62250,
+        "y": -69935,
+        "z": -1988
+      },
+      "dimensions": {
+        "radius": 23.74,
+        "unit": "km"
+      },
+      "operationalRole": "major mapped asteroid / habitat rock",
+      "resource": "metal-rich",
+      "hazard": "hazardous tumble / debris envelope",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "major mapped asteroid / habitat rock. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-02",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Braereach Rock",
+      "position": {
+        "x": -63657,
+        "y": -68528,
+        "z": -2761
+      },
+      "dimensions": {
+        "radius": 23.57,
+        "unit": "km"
+      },
+      "operationalRole": "major mapped asteroid / habitat rock",
+      "resource": "volatile-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "major mapped asteroid / habitat rock. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-03",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Glenova Rock",
+      "position": {
+        "x": -65063,
+        "y": -72747,
+        "z": -441
+      },
+      "dimensions": {
+        "radius": 23.41,
+        "unit": "km"
+      },
+      "operationalRole": "major mapped asteroid / habitat rock",
+      "resource": "mixed silicate/carbonaceous",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "major mapped asteroid / habitat rock. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-04",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Braesk Rock",
+      "position": {
+        "x": -66469,
+        "y": -71341,
+        "z": -1215
+      },
+      "dimensions": {
+        "radius": 23.24,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "metal-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-05",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Krasreach Rock",
+      "position": {
+        "x": -56625,
+        "y": -64309,
+        "z": -5082
+      },
+      "dimensions": {
+        "radius": 24.41,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "volatile-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-06",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Skyeova Rock",
+      "position": {
+        "x": -58031,
+        "y": -62903,
+        "z": -5855
+      },
+      "dimensions": {
+        "radius": 24.25,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "mixed silicate/carbonaceous",
+      "hazard": "hazardous tumble / debris envelope",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-07",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Vostgrad Rock",
+      "position": {
+        "x": -59438,
+        "y": -67122,
+        "z": -3535
+      },
+      "dimensions": {
+        "radius": 24.08,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "metal-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-08",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Glengrad Rock",
+      "position": {
+        "x": -60844,
+        "y": -65716,
+        "z": -4308
+      },
+      "dimensions": {
+        "radius": 23.91,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "volatile-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-09",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Muirgrad Rock",
+      "position": {
+        "x": -51000,
+        "y": -81185,
+        "z": 4200
+      },
+      "dimensions": {
+        "radius": 25.09,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "mixed silicate/carbonaceous",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-10",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Braeova Rock",
+      "position": {
+        "x": -52406,
+        "y": -79779,
+        "z": 3426
+      },
+      "dimensions": {
+        "radius": 24.92,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "metal-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-11",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Braesk Rock",
+      "position": {
+        "x": 27327,
+        "y": -143002,
+        "z": 10175
+      },
+      "dimensions": {
+        "radius": 32.69,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "volatile-rich",
+      "hazard": "hazardous tumble / debris envelope",
+      "refs": [],
+      "lodPriority": 3,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-12",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Krasova Rock",
+      "position": {
+        "x": 28733,
+        "y": -144409,
+        "z": 10949
+      },
+      "dimensions": {
+        "radius": 32.86,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "mixed silicate/carbonaceous",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-13",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Gannetova Rock",
+      "position": {
+        "x": 24514,
+        "y": -140190,
+        "z": 11722
+      },
+      "dimensions": {
+        "radius": 32.35,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "metal-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-asteroid-14",
+      "type": "asteroid",
+      "layer": "mapped-bodies",
+      "name": "Volnagrad Rock",
+      "position": {
+        "x": 25921,
+        "y": -141596,
+        "z": 12496
+      },
+      "dimensions": {
+        "radius": 32.52,
+        "unit": "km"
+      },
+      "operationalRole": "reference-epoch tracked body",
+      "resource": "volatile-rich",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "reference-epoch tracked body. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-module-15",
+      "type": "module",
+      "layer": "resources",
+      "name": "Processing Cluster A",
+      "position": {
+        "x": 11647,
+        "y": 38700,
+        "z": 65064
+      },
+      "dimensions": null,
+      "operationalRole": "processing and transshipment cluster",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "belt-asteroid-01",
+        "belt-asteroid-02",
+        "belt-asteroid-03"
+      ],
+      "lodPriority": 1,
+      "description": "processing and transshipment cluster. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-hazard-16",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Red Scatter",
+      "position": {
+        "x": 14279,
+        "y": 52851,
+        "z": -87185
+      },
+      "dimensions": {
+        "radius": 18000,
+        "unit": "km"
+      },
+      "operationalRole": "dense debris concentration",
+      "resource": null,
+      "hazard": "collision and untracked fragment risk",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "dense debris concentration. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-corridor-17",
+      "type": "corridor",
+      "layer": "traffic",
+      "name": "Belt Traffic Lane Alpha",
+      "position": {
+        "x": 12215,
+        "y": 50719,
+        "z": -82381
+      },
+      "dimensions": null,
+      "operationalRole": "controlled traffic corridor through mapped sample",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "belt-asteroid-03",
+        "belt-asteroid-04",
+        "belt-asteroid-05",
+        "belt-asteroid-06"
+      ],
+      "lodPriority": 1,
+      "description": "controlled traffic corridor through mapped sample. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "belt-hazard-18",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Claim Exclusion 7",
+      "position": {
+        "x": 17696,
+        "y": 44972,
+        "z": 68810
+      },
+      "dimensions": null,
+      "operationalRole": "extraction exclusion zone around unstable rubble-pile",
+      "resource": null,
+      "hazard": "spin-shedding fragments",
+      "refs": [
+        "belt-asteroid-08"
+      ],
+      "lodPriority": 2,
+      "description": "extraction exclusion zone around unstable rubble-pile. Accepted operational survey feature for Industrial Belt.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 18,
+    "layerCounts": {
+      "hazards": 2,
+      "mapped-bodies": 14,
+      "resources": 1,
+      "traffic": 1
+    },
+    "keyFeatures": [
+      "belt-asteroid-01",
+      "belt-asteroid-02",
+      "belt-asteroid-03",
+      "belt-asteroid-04",
+      "belt-module-15",
+      "belt-hazard-16",
+      "belt-corridor-17"
+    ],
+    "geometryStatement": "physical reference-epoch snapshot",
+    "note": "Distributed reference-epoch sample; centroid is not an asteroid or route endpoint."
+  }
+}

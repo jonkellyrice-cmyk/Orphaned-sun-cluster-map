@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "system": "Abydos",
+  "body": "Sumatra",
+  "canonicalType": "ice/gas giant",
+  "operationalKind": "giant",
+  "permanentOperationalSeed": "3b965b31f6172ec0",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "1e40b72db38a6682b407",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "atmospheric-spherical",
+    "axes": "+lat north; +lon east; altitude by pressure level",
+    "origin": "planet center / adopted reference meridian",
+    "units": {
+      "latitude": "deg",
+      "longitude": "deg",
+      "pressure": "bar"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "vadan",
+  "layers": [
+    {
+      "id": "atmosphere",
+      "label": "Atmosphere",
+      "defaultVisible": true
+    },
+    {
+      "id": "storms",
+      "label": "Storms",
+      "defaultVisible": true
+    },
+    {
+      "id": "radiation",
+      "label": "Radiation",
+      "defaultVisible": true
+    },
+    {
+      "id": "operations",
+      "label": "Operations",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "giant-band-01",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 1",
+      "position": {
+        "lat": 54.033,
+        "lon": -32.56,
+        "elevation": 2.44,
+        "pressure": 0.4
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-02",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 2",
+      "position": {
+        "lat": 53.549,
+        "lon": -33.966,
+        "elevation": 2.47,
+        "pressure": 1.1
+      },
+      "dimensions": {
+        "widthDeg": 15,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-03",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 3",
+      "position": {
+        "lat": 55.002,
+        "lon": -29.747,
+        "elevation": 2.38,
+        "pressure": 1.8
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-04",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 4",
+      "position": {
+        "lat": 54.518,
+        "lon": -31.154,
+        "elevation": 2.41,
+        "pressure": 2.5
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-05",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 5",
+      "position": {
+        "lat": 52.096,
+        "lon": -38.185,
+        "elevation": 2.57,
+        "pressure": 3.2
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-06",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 6",
+      "position": {
+        "lat": 51.611,
+        "lon": -39.591,
+        "elevation": 2.6,
+        "pressure": 3.9
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-storm-07",
+      "type": "storm",
+      "layer": "storms",
+      "name": "Storm Tide",
+      "position": {
+        "lat": 13.93,
+        "lon": 8.494,
+        "elevation": 4.54,
+        "pressure": 1.25
+      },
+      "dimensions": {
+        "radius": 3518.93,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-vortex-08",
+      "type": "vortex",
+      "layer": "storms",
+      "name": "Vortex Vada Rise",
+      "position": {
+        "lat": 14.414,
+        "lon": 9.9,
+        "elevation": 4.51,
+        "pressure": 1.25
+      },
+      "dimensions": {
+        "radius": 3574.4,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-storm-09",
+      "type": "storm",
+      "layer": "storms",
+      "name": "Storm Tide",
+      "position": {
+        "lat": 14.899,
+        "lon": 11.306,
+        "elevation": 4.6,
+        "pressure": 1.24
+      },
+      "dimensions": {
+        "radius": 3407.98,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-vortex-10",
+      "type": "vortex",
+      "layer": "storms",
+      "name": "Vortex Orison",
+      "position": {
+        "lat": 15.383,
+        "lon": 12.713,
+        "elevation": 4.57,
+        "pressure": 1.23
+      },
+      "dimensions": {
+        "radius": 3463.46,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-hazard-11",
+      "type": "hazard",
+      "layer": "radiation",
+      "name": "Exclusion 11",
+      "position": {
+        "lat": -39.337,
+        "lon": 168.847,
+        "elevation": 0.98,
+        "pressure": 0.05
+      },
+      "dimensions": null,
+      "operationalRole": "inner radiation exclusion latitude band",
+      "resource": null,
+      "hazard": "magnetospheric particle flux",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "inner radiation exclusion latitude band. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-corridor-12",
+      "type": "corridor",
+      "layer": "operations",
+      "name": "Corridor 12",
+      "position": {
+        "lat": -39.821,
+        "lon": 167.441,
+        "elevation": 1.01,
+        "pressure": 0.8
+      },
+      "dimensions": null,
+      "operationalRole": "robotic atmospheric sampling corridor",
+      "resource": null,
+      "hazard": "weather-dependent access",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "robotic atmospheric sampling corridor. Accepted operational survey feature for Sumatra.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-platform-13",
+      "type": "platform",
+      "layer": "operations",
+      "name": "Platform 13",
+      "position": {
+        "lat": -38.368,
+        "lon": 171.66,
+        "elevation": 1.04,
+        "pressure": 0.02
+      },
+      "dimensions": null,
+      "operationalRole": "high-atmosphere observation reference",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Survey marker for high-altitude operations; not a solid-surface installation.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 13,
+    "layerCounts": {
+      "atmosphere": 6,
+      "operations": 2,
+      "radiation": 1,
+      "storms": 4
+    },
+    "keyFeatures": [
+      "giant-band-01",
+      "giant-band-02",
+      "giant-band-03",
+      "giant-storm-07",
+      "giant-vortex-08",
+      "giant-hazard-11",
+      "giant-corridor-12"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Atmospheric survey; no solid traversable surface."
+  }
+}

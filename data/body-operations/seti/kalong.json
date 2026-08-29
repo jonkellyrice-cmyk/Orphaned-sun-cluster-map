@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "system": "Seti",
+  "body": "Kalong",
+  "canonicalType": "anomalous super-Jovian gas giant",
+  "operationalKind": "giant",
+  "permanentOperationalSeed": "0e6c80d9465e68c8",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "7921c54923d9ccfcd271",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "atmospheric-spherical",
+    "axes": "+lat north; +lon east; altitude by pressure level",
+    "origin": "planet center / adopted reference meridian",
+    "units": {
+      "latitude": "deg",
+      "longitude": "deg",
+      "pressure": "bar"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "xuanhari",
+  "layers": [
+    {
+      "id": "atmosphere",
+      "label": "Atmosphere",
+      "defaultVisible": true
+    },
+    {
+      "id": "storms",
+      "label": "Storms",
+      "defaultVisible": true
+    },
+    {
+      "id": "radiation",
+      "label": "Radiation",
+      "defaultVisible": true
+    },
+    {
+      "id": "operations",
+      "label": "Operations",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "giant-band-01",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 1",
+      "position": {
+        "lat": 58.661,
+        "lon": -40.966,
+        "elevation": 1.96,
+        "pressure": 0.4
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-02",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 2",
+      "position": {
+        "lat": 59.146,
+        "lon": -39.559,
+        "elevation": 1.93,
+        "pressure": 1.1
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-03",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 3",
+      "position": {
+        "lat": 57.693,
+        "lon": -43.778,
+        "elevation": 1.9,
+        "pressure": 1.8
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-04",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 4",
+      "position": {
+        "lat": 58.177,
+        "lon": -42.372,
+        "elevation": 1.87,
+        "pressure": 2.5
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-05",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 5",
+      "position": {
+        "lat": 60.599,
+        "lon": -46.591,
+        "elevation": 2.08,
+        "pressure": 3.2
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-band-06",
+      "type": "band",
+      "layer": "atmosphere",
+      "name": "Belt 6",
+      "position": {
+        "lat": 61.083,
+        "lon": -45.185,
+        "elevation": 2.05,
+        "pressure": 3.9
+      },
+      "dimensions": {
+        "widthDeg": 16,
+        "unit": "deg"
+      },
+      "operationalRole": "named atmospheric circulation band",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "named atmospheric circulation band. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-storm-07",
+      "type": "storm",
+      "layer": "storms",
+      "name": "Jinpur Storm",
+      "position": {
+        "lat": 16.615,
+        "lon": -129.178,
+        "elevation": -0.55,
+        "pressure": 0.91
+      },
+      "dimensions": {
+        "radius": 9411.65,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-vortex-08",
+      "type": "vortex",
+      "layer": "storms",
+      "name": "Yueshan Vortex",
+      "position": {
+        "lat": 16.131,
+        "lon": -130.584,
+        "elevation": -0.52,
+        "pressure": 0.92
+      },
+      "dimensions": {
+        "radius": 9356.18,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-storm-09",
+      "type": "storm",
+      "layer": "storms",
+      "name": "Navayuan Storm",
+      "position": {
+        "lat": 17.584,
+        "lon": -126.365,
+        "elevation": -0.61,
+        "pressure": 0.93
+      },
+      "dimensions": {
+        "radius": 9522.59,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-vortex-10",
+      "type": "vortex",
+      "layer": "storms",
+      "name": "Navayuan Vortex",
+      "position": {
+        "lat": 17.1,
+        "lon": -127.772,
+        "elevation": -0.58,
+        "pressure": 0.94
+      },
+      "dimensions": {
+        "radius": 9467.12,
+        "unit": "km"
+      },
+      "operationalRole": "persistent major atmospheric system",
+      "resource": null,
+      "hazard": "extreme winds and pressure gradients",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "persistent major atmospheric system. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-hazard-11",
+      "type": "hazard",
+      "layer": "radiation",
+      "name": "Exclusion 11",
+      "position": {
+        "lat": -54.118,
+        "lon": 25.468,
+        "elevation": -0.74,
+        "pressure": 0.05
+      },
+      "dimensions": null,
+      "operationalRole": "inner radiation exclusion latitude band",
+      "resource": null,
+      "hazard": "magnetospheric particle flux",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "inner radiation exclusion latitude band. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-corridor-12",
+      "type": "corridor",
+      "layer": "operations",
+      "name": "Corridor 12",
+      "position": {
+        "lat": -53.633,
+        "lon": 26.874,
+        "elevation": -0.77,
+        "pressure": 0.8
+      },
+      "dimensions": null,
+      "operationalRole": "robotic atmospheric sampling corridor",
+      "resource": null,
+      "hazard": "weather-dependent access",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "robotic atmospheric sampling corridor. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-platform-13",
+      "type": "platform",
+      "layer": "operations",
+      "name": "Platform 13",
+      "position": {
+        "lat": -53.149,
+        "lon": 28.28,
+        "elevation": -0.8,
+        "pressure": 0.02
+      },
+      "dimensions": null,
+      "operationalRole": "high-atmosphere observation reference",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Survey marker for high-altitude operations; not a solid-surface installation.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-storm-14",
+      "type": "storm",
+      "layer": "storms",
+      "name": "Ember Crown",
+      "position": {
+        "lat": -18.5,
+        "lon": 33,
+        "pressure": 1.4
+      },
+      "dimensions": {
+        "radius": 22000,
+        "unit": "km"
+      },
+      "operationalRole": "anomalous luminous thermal-bloom system",
+      "resource": null,
+      "hazard": "thermal bloom, auroral discharge and extreme gravity",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "anomalous luminous thermal-bloom system. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "giant-corridor-15",
+      "type": "corridor",
+      "layer": "operations",
+      "name": "Jade-Ember Survey Arc",
+      "position": {
+        "lat": 41.2,
+        "lon": -72,
+        "pressure": 0.12
+      },
+      "dimensions": null,
+      "operationalRole": "heavy-element aerosol sampling corridor",
+      "resource": "anomalous heavy-element aerosols",
+      "hazard": "extreme radiation",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "heavy-element aerosol sampling corridor. Accepted operational survey feature for Kalong.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 15,
+    "layerCounts": {
+      "atmosphere": 6,
+      "operations": 3,
+      "radiation": 1,
+      "storms": 5
+    },
+    "keyFeatures": [
+      "giant-band-01",
+      "giant-band-02",
+      "giant-band-03",
+      "giant-storm-07",
+      "giant-vortex-08",
+      "giant-hazard-11",
+      "giant-corridor-12",
+      "giant-storm-14"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Atmospheric survey; no solid traversable surface."
+  }
+}

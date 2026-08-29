@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "system": "Abydos",
+  "body": "Vada Anchorage",
+  "canonicalType": "major station",
+  "operationalKind": "station",
+  "permanentOperationalSeed": "b8e5e73572bce132",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "2e4d16163775da09b631",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "body-local-cartesian",
+    "axes": "+X forward/primary approach; +Y starboard; +Z dorsal",
+    "origin": "structural survey datum",
+    "units": {
+      "x": "m",
+      "y": "m",
+      "z": "m"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "vadan",
+  "layers": [
+    {
+      "id": "structure",
+      "label": "Structure",
+      "defaultVisible": true
+    },
+    {
+      "id": "habitation",
+      "label": "Habitation",
+      "defaultVisible": true
+    },
+    {
+      "id": "industry",
+      "label": "Industry",
+      "defaultVisible": false
+    },
+    {
+      "id": "docking",
+      "label": "Docking",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Hazards",
+      "defaultVisible": true
+    },
+    {
+      "id": "approaches",
+      "label": "Approaches",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "station-hub-01",
+      "type": "hub",
+      "layer": "structure",
+      "name": "Primary Hub",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 1760,
+        "unit": "m"
+      },
+      "operationalRole": "primary structural datum and command/logistics hub",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "primary structural datum and command/logistics hub. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "station-reactor-02",
+      "type": "reactor",
+      "layer": "industry",
+      "name": "Reactor 2",
+      "position": {
+        "x": -5280,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "reactor and power distribution section",
+      "resource": null,
+      "hazard": "restricted power-system envelope",
+      "refs": [
+        "station-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "reactor and power distribution section. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "station-module-03",
+      "type": "module",
+      "layer": "habitation",
+      "name": "Habitation Arc",
+      "position": {
+        "x": 2640,
+        "y": 3960,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "principal habitation section",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "station-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "principal habitation section. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "station-dock-04",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock A",
+      "position": {
+        "x": 2476,
+        "y": -4742,
+        "z": -2104
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "station-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "external docking/transfer node. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "station-dock-05",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock B",
+      "position": {
+        "x": 2418,
+        "y": -4684,
+        "z": -2136
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "station-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "external docking/transfer node. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "station-dock-06",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock C",
+      "position": {
+        "x": 2359,
+        "y": -4626,
+        "z": -2040
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "station-hub-01"
+      ],
+      "lodPriority": 2,
+      "description": "external docking/transfer node. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "station-dock-07",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock D",
+      "position": {
+        "x": 2301,
+        "y": -4567,
+        "z": -2072
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "station-hub-01"
+      ],
+      "lodPriority": 2,
+      "description": "external docking/transfer node. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "station-approach-08",
+      "type": "approach",
+      "layer": "approaches",
+      "name": "Approach Alpha",
+      "position": {
+        "x": 15840,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "length": 12100,
+        "unit": "m"
+      },
+      "operationalRole": "primary controlled approach corridor",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "station-dock-04"
+      ],
+      "lodPriority": 1,
+      "description": "primary controlled approach corridor. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "station-hazard-09",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Restricted Stern Volume",
+      "position": {
+        "x": -13640,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 3960,
+        "unit": "m"
+      },
+      "operationalRole": "reactor/drive/service exclusion volume",
+      "resource": null,
+      "hazard": "radiation, thermal and service traffic",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "reactor/drive/service exclusion volume. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "station-ring-10",
+      "type": "ring",
+      "layer": "structure",
+      "name": "Transit Ring",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 6160,
+        "unit": "m"
+      },
+      "operationalRole": "primary transit/habitation ring",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "station-dock-04",
+        "station-dock-05",
+        "station-dock-06",
+        "station-dock-07"
+      ],
+      "lodPriority": 1,
+      "description": "primary transit/habitation ring. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "station-module-11",
+      "type": "module",
+      "layer": "industry",
+      "name": "Cargo Works",
+      "position": {
+        "x": 0,
+        "y": -5500,
+        "z": 1760
+      },
+      "dimensions": null,
+      "operationalRole": "cargo and industrial module cluster",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "cargo and industrial module cluster. Accepted operational survey feature for Vada Anchorage.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 11,
+    "layerCounts": {
+      "approaches": 1,
+      "docking": 4,
+      "habitation": 1,
+      "hazards": 1,
+      "industry": 2,
+      "structure": 2
+    },
+    "keyFeatures": [
+      "station-hub-01",
+      "station-reactor-02",
+      "station-module-03",
+      "station-dock-04",
+      "station-dock-05",
+      "station-approach-08",
+      "station-hazard-09",
+      "station-ring-10"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  }
+}

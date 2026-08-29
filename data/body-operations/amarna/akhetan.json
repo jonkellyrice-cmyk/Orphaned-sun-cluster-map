@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "system": "Amarna",
+  "body": "Akhetan",
+  "canonicalType": "blinkgate complex",
+  "operationalKind": "blinkgate",
+  "permanentOperationalSeed": "843ad27943b39ef8",
+  "operationalModelVersion": "orphaned-sun-body-operations-v1",
+  "canonicalSourceFingerprint": "db4d425949ca020cb962",
+  "acceptedCanonStatus": "accepted-generated-canon",
+  "coordinateFrame": {
+    "id": "body-local-cartesian",
+    "axes": "+X forward/primary approach; +Y starboard; +Z dorsal",
+    "origin": "structural survey datum",
+    "units": {
+      "x": "m",
+      "y": "m",
+      "z": "m"
+    },
+    "geometryKind": "constrained estimate"
+  },
+  "namingProfile": "union",
+  "layers": [
+    {
+      "id": "structure",
+      "label": "Gate structure",
+      "defaultVisible": true
+    },
+    {
+      "id": "habitation",
+      "label": "Control stations",
+      "defaultVisible": true
+    },
+    {
+      "id": "industry",
+      "label": "Power systems",
+      "defaultVisible": true
+    },
+    {
+      "id": "docking",
+      "label": "Support docks",
+      "defaultVisible": true
+    },
+    {
+      "id": "hazards",
+      "label": "Transit exclusion",
+      "defaultVisible": true
+    },
+    {
+      "id": "approaches",
+      "label": "Transit vectors",
+      "defaultVisible": true
+    }
+  ],
+  "features": [
+    {
+      "id": "blinkgate-hub-01",
+      "type": "hub",
+      "layer": "structure",
+      "name": "Primary Hub",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 9600,
+        "unit": "m"
+      },
+      "operationalRole": "primary structural datum and command/logistics hub",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "primary structural datum and command/logistics hub. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-reactor-02",
+      "type": "reactor",
+      "layer": "industry",
+      "name": "Reactor 2",
+      "position": {
+        "x": -28800,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "reactor and power distribution section",
+      "resource": null,
+      "hazard": "restricted power-system envelope",
+      "refs": [
+        "blinkgate-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "reactor and power distribution section. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-module-03",
+      "type": "module",
+      "layer": "habitation",
+      "name": "Habitation Arc",
+      "position": {
+        "x": 14400,
+        "y": 21600,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "principal habitation section",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "blinkgate-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "principal habitation section. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-dock-04",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock A",
+      "position": {
+        "x": 37282,
+        "y": -4548,
+        "z": 12023
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "blinkgate-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "external docking/transfer node. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-dock-05",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock B",
+      "position": {
+        "x": 37601,
+        "y": -4866,
+        "z": 12198
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "blinkgate-hub-01"
+      ],
+      "lodPriority": 1,
+      "description": "external docking/transfer node. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-dock-06",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock C",
+      "position": {
+        "x": 36645,
+        "y": -3910,
+        "z": 12373
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "blinkgate-hub-01"
+      ],
+      "lodPriority": 2,
+      "description": "external docking/transfer node. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-dock-07",
+      "type": "dock",
+      "layer": "docking",
+      "name": "Dock D",
+      "position": {
+        "x": 36963,
+        "y": -4229,
+        "z": 12549
+      },
+      "dimensions": null,
+      "operationalRole": "external docking/transfer node",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "blinkgate-hub-01"
+      ],
+      "lodPriority": 2,
+      "description": "external docking/transfer node. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-approach-08",
+      "type": "approach",
+      "layer": "approaches",
+      "name": "Approach Alpha",
+      "position": {
+        "x": 86400,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "length": 66000,
+        "unit": "m"
+      },
+      "operationalRole": "primary controlled approach corridor",
+      "resource": null,
+      "hazard": null,
+      "refs": [
+        "blinkgate-dock-04"
+      ],
+      "lodPriority": 1,
+      "description": "primary controlled approach corridor. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-hazard-09",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Restricted Stern Volume",
+      "position": {
+        "x": -74400,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 21600,
+        "unit": "m"
+      },
+      "operationalRole": "reactor/drive/service exclusion volume",
+      "resource": null,
+      "hazard": "radiation, thermal and service traffic",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "reactor/drive/service exclusion volume. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-aperture-10",
+      "type": "aperture",
+      "layer": "structure",
+      "name": "Akhetan Transit Aperture",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 115000,
+        "unit": "m"
+      },
+      "operationalRole": "blink transit aperture",
+      "resource": null,
+      "hazard": "no conventional occupancy inside active transit volume",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "blink transit aperture. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-control-11",
+      "type": "control",
+      "layer": "habitation",
+      "name": "Manger Control Crown",
+      "position": {
+        "x": 0,
+        "y": 95000,
+        "z": 15000
+      },
+      "dimensions": null,
+      "operationalRole": "gate traffic-control station",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "gate traffic-control station. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-power-12",
+      "type": "power",
+      "layer": "industry",
+      "name": "Heliostat Power Arc",
+      "position": {
+        "x": -105000,
+        "y": -50000,
+        "z": 0
+      },
+      "dimensions": null,
+      "operationalRole": "stellar collection and gate-power segment",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "stellar collection and gate-power segment. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    },
+    {
+      "id": "blinkgate-hazard-13",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Gate Event Clear Zone",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dimensions": {
+        "radius": 145000,
+        "unit": "m"
+      },
+      "operationalRole": "active transit exclusion volume",
+      "resource": null,
+      "hazard": "blink transit and paracausal field effects",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "active transit exclusion volume. Accepted operational survey feature for Akhetan.",
+      "provenance": "accepted-generated-canon"
+    }
+  ],
+  "operationalSummary": {
+    "featureCount": 13,
+    "layerCounts": {
+      "approaches": 1,
+      "docking": 4,
+      "habitation": 2,
+      "hazards": 2,
+      "industry": 2,
+      "structure": 2
+    },
+    "keyFeatures": [
+      "blinkgate-hub-01",
+      "blinkgate-reactor-02",
+      "blinkgate-module-03",
+      "blinkgate-dock-04",
+      "blinkgate-dock-05",
+      "blinkgate-approach-08",
+      "blinkgate-hazard-09",
+      "blinkgate-aperture-10"
+    ],
+    "geometryStatement": "constrained estimate",
+    "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  }
+}
