@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { BODY_OPERATIONS_MODEL_VERSION, bodyOperationsLod, buildBodyOperationsRenderPlan, canonicalSourceFingerprint, coordinateFrameForKind, inspectBodyOperationFeature, operationSeed, operationalKindForRow, validateBodyOperationsAsset } from "../scripts/body-operations.mjs";
+import { BODY_OPERATIONS_MODEL_VERSION, bodyOperationsLod, buildBodyOperationsRenderPlan, canonicalRowFingerprint, canonicalSourceFingerprint, coordinateFrameForKind, inspectBodyOperationFeature, operationSeed, operationalKindForRow, validateBodyOperationsAsset } from "../scripts/body-operations.mjs";
 import { generateBodyOperationAsset } from "../tools/generate-body-operations.mjs";
 
 test("operational target classifier covers natural, distributed, artificial and anomalous families", () => {
@@ -15,6 +15,9 @@ test("operational target classifier covers natural, distributed, artificial and 
 test("seeds, fingerprints and frames are permanent deterministic contracts", () => {
   const a = operationSeed("Amarna", "Akhetan", "blinkgate complex"), b = operationSeed("Amarna", "Akhetan", "blinkgate complex");
   assert.equal(a, b); assert.equal(a.length, 16); assert.equal(canonicalSourceFingerprint("Amarna", "Akhetan", "blinkgate complex").length, 20);
+  const row = { system: "Amarna", object: "Akhetan", type: "blinkgate complex", strategic_role: "gateway" };
+  assert.equal(canonicalRowFingerprint(row), canonicalRowFingerprint({ ...row }));
+  assert.notEqual(canonicalRowFingerprint(row), canonicalRowFingerprint({ ...row, strategic_role: "changed" }));
   assert.equal(BODY_OPERATIONS_MODEL_VERSION, "orphaned-sun-body-operations-v1");
   assert.equal(coordinateFrameForKind("belt").geometryKind, "physical reference-epoch snapshot");
   assert.equal(coordinateFrameForKind("anomaly").geometryKind, "uncertain observation volume");
