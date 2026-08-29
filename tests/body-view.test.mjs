@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { bodyVisualContract, orthographicProject, schematicVisualProfile } from "../scripts/body-view.mjs";
+import { bodyVisualContract, orthographicProject, projectOperationAnchor, schematicVisualProfile } from "../scripts/body-view.mjs";
 
 test("orthographic projection hides the far hemisphere and responds to rotation", () => {
   assert.equal(orthographicProject(0, 0).visible, true);
@@ -13,6 +13,28 @@ test("renderer contracts distinguish literal globes and orbital structures", () 
   assert.equal(bodyVisualContract({ kind: "terrestrial", regions: [] }, { cells: [1, 2] }).kind, "geographic-globe");
   assert.equal(bodyVisualContract({ kind: "giant", atmosphere: "dense", regions: [{}] }).kind, "giant-globe");
   assert.equal(bodyVisualContract({ kind: "station", approach: { dockingNodes: [{}] } }).kind, "station-structure");
+});
+
+test("operational overlays stay in the same camera frame as their body models", () => {
+  const stationFeature = { id: "dock", position: { x: 100, y: 50, z: 80 } };
+  const station = { operationalKind: "station", features: [stationFeature] };
+  const base = projectOperationAnchor(station, stationFeature, .55, .3, 1);
+  const zoomed = projectOperationAnchor(station, stationFeature, .55, .3, 2);
+  assert.ok(Math.abs((zoomed.x - 450) - (base.x - 450) * 2) < 1e-9);
+  assert.ok(Math.abs((zoomed.y - 340) - (base.y - 340) * 2) < 1e-9);
+
+  const samePlanarPoint = { id: "dock-z", position: { x: 100, y: 50, z: -80 } };
+  const stationWithDepth = { operationalKind: "station", features: [stationFeature, samePlanarPoint] };
+  const front = projectOperationAnchor(stationWithDepth, stationFeature, .55, .3, 1);
+  const back = projectOperationAnchor(stationWithDepth, samePlanarPoint, .55, .3, 1);
+  assert.equal(front.x, back.x);
+  assert.equal(front.y, back.y);
+
+  const moonFeature = { id: "site", position: { lat: 0, lon: 90 } };
+  const moon = { operationalKind: "natural-solid", features: [moonFeature] };
+  const moonPoint = projectOperationAnchor(moon, moonFeature, 0, 0, 2);
+  assert.equal(moonPoint.x, 950, "natural-body operations use the globe's full 250px radius at current zoom");
+  assert.equal(moonPoint.y, 340);
 });
 
 test("body renderer preserves SVG pointer, pinch, wheel, and outward-exit language", () => {
