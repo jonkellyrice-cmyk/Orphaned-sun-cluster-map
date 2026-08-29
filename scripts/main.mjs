@@ -1,4 +1,5 @@
-import { ClusterMapApplication, MODULE_ID } from "./cluster-map-app.mjs";
+import { OperationalClusterMapApplication } from "./cluster-map-operations-app.mjs";
+import { MODULE_ID } from "./cluster-map-app.mjs";
 
 let app = null;
 
@@ -7,7 +8,7 @@ export function openClusterMap() {
     app.bringToFront();
     return app;
   }
-  app = new ClusterMapApplication();
+  app = new OperationalClusterMapApplication();
   app.render({ force: true });
   return app;
 }
