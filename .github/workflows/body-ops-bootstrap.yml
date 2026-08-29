@@ -61,13 +61,22 @@ jobs:
             '      const count = root.querySelector("[data-map-count]"); if (count) count.textContent = geography ? geography.schemaVersion === 2 ? `${geography.gazetteer.length} named features · 2° survey` : `${geography.cells.length} surface cells` : operations ? `${operations.operationalSummary.featureCount} operational features` : object.type;',
             "body operation count");
           app = mustReplace(app,
-            '      objectScale: feature.suitability != null ? `Settlement suitability ${feature.suitability}` : "Schematic"',
-            '      objectScale: inspected.scale ?? (feature.suitability != null ? `Settlement suitability ${feature.suitability}` : "Survey extent not fixed")',
+            'objectScale: feature.suitability != null ? `Settlement suitability ${feature.suitability}` : "Schematic"',
+            'objectScale: inspected.scale ?? (feature.suitability != null ? `Settlement suitability ${feature.suitability}` : "Survey extent not fixed")',
             "inspection scale");
           app = app.replace(/root\.classList\.remove\("has-geography"\);/g, 'root.classList.remove("has-geography");\n      root.classList.remove("has-operations");');
           writeFileSync("scripts/cluster-map-app.mjs", app);
+
+          let main = readFileSync("scripts/main.mjs", "utf8");
+          main = main.replace('import { OperationalClusterMapApplication } from "./cluster-map-operations-app.mjs";\nimport { MODULE_ID } from "./cluster-map-app.mjs";', 'import { ClusterMapApplication, MODULE_ID } from "./cluster-map-app.mjs";');
+          main = main.replace("new OperationalClusterMapApplication()", "new ClusterMapApplication()");
+          writeFileSync("scripts/main.mjs", main);
+
+          const moduleJson = JSON.parse(readFileSync("module.json", "utf8"));
+          moduleJson.styles = moduleJson.styles.filter((style) => style !== "styles/body-operations.css");
+          writeFileSync("module.json", `${JSON.stringify(moduleJson, null, 2)}\n`);
           NODE
-          rm tools/body-view-wrapper.mjs
+          rm -f tools/body-view-wrapper.mjs scripts/cluster-map-operations-app.mjs scripts/body-operations-renderer.mjs styles/body-operations.css
       - name: Generate accepted operational canon
         run: npm run body-operations:generate
       - name: Full regression and deterministic validation
@@ -77,6 +86,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/body-view.mjs scripts/body-view-core.mjs scripts/cluster-map-app.mjs tools/generate-body-operations.mjs tools/body-view-wrapper.mjs data/body-operations
+          git add -A scripts tools data/body-operations module.json styles/body-operations.css
           git commit -m "Build accepted local operational canon [body-ops-bootstrap]"
           git push origin HEAD:feature/body-operations-v0.6.0
