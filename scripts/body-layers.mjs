@@ -19,6 +19,13 @@ export function buildBodyLayers(geography) {
 
 export function inspectSurfaceFeature(feature) {
   if (!feature) return null;
+  if (feature.inspection) return feature.inspection;
+  if (feature.operationalRole) return {
+    name: feature.name || feature.properName || feature.label || feature.id || "Operational feature",
+    type: feature.type || feature.role || "operational feature",
+    detail: [feature.operationalRole, feature.resource, feature.hazard].filter(Boolean).join(" · ") || feature.description || "Operational survey feature",
+    provenance: feature.provenance || "accepted-generated-canon",
+  };
   return {
     name: feature.properName || feature.label || feature.id || feature.biome || feature.type || "Mapped feature",
     type: feature.role || feature.kind || feature.featureClass || feature.biome || feature.type || "surface feature",
