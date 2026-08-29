@@ -57,6 +57,8 @@ export function classifySystemObject(type) {
 export function buildSystemModel(rows, systemName) {
   const source = rows.filter((row) => row.system === systemName);
   if (!source.length) throw new RangeError(`Unknown system: ${systemName}`);
+  const ownerFactions = [...new Set(source.map((row) => row.owner_faction).filter(Boolean))];
+  if (ownerFactions.length > 1) throw new Error(`Conflicting canonical ownership in ${systemName}: ${ownerFactions.join(", ")}`);
   const byName = new Map();
   const objects = source.map((row) => {
     const object = {
@@ -89,7 +91,7 @@ export function buildSystemModel(rows, systemName) {
   }
   for (const object of objects) resolve(object);
   const maxAu = Math.max(...objects.map((object) => Math.hypot(object.physical.x, object.physical.y, object.physical.z)), 1);
-  return { name: systemName, objects, byName, maxAu };
+  return { name: systemName, ownerFaction: ownerFactions[0] ?? "", objects, byName, maxAu };
 }
 
 export function physicalDistanceAu(a, b) {

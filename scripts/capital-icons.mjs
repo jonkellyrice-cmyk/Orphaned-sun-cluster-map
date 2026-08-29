@@ -14,6 +14,25 @@ export const CAPITAL_MARKERS = Object.freeze([
   Object.freeze({ systemId: "amarna", factionId: "union", factionName: "Union", emblem: "union" }),
 ]);
 
+export const FACTION_PRESENTATIONS = Object.freeze({
+  eventide: Object.freeze({ factionId: "eventide", factionName: "Eventide", emblem: "eventide" }),
+  mandate: Object.freeze({ factionId: "mandate", factionName: "XUANJIA Mandate", emblem: "mandate" }),
+  conclave: Object.freeze({ factionId: "conclave", factionName: "Adainian Conclave", emblem: "conclave" }),
+  accords: Object.freeze({ factionId: "accords", factionName: "Signatories of the Accords Paramount", emblem: "accords" }),
+  union: Object.freeze({ factionId: "union", factionName: "Union", emblem: "union" }),
+});
+
+/** Resolve canonical CSV ownership names to the existing faction-emblem contract. */
+export function factionPresentationForOwner(ownerFaction) {
+  const owner = String(ownerFaction ?? "").trim().toLowerCase();
+  if (owner.includes("eventide")) return FACTION_PRESENTATIONS.eventide;
+  if (owner.includes("accords")) return FACTION_PRESENTATIONS.accords;
+  if (owner.includes("mandate")) return FACTION_PRESENTATIONS.mandate;
+  if (owner.includes("conclave")) return FACTION_PRESENTATIONS.conclave;
+  if (owner.includes("union")) return FACTION_PRESENTATIONS.union;
+  return null;
+}
+
 function project(view, point) {
   const { yaw, pitch, zoom, panX, panY } = view.state;
   const cosY = Math.cos(yaw);
@@ -148,6 +167,20 @@ function drawEmblem(group, emblem) {
   if (emblem === "conclave") return drawConclave(group);
   if (emblem === "accords") return drawAccords(group);
   if (emblem === "union") return drawUnion(group);
+}
+
+/** Create one screen-upright emblem group for cluster, system, or body views. */
+export function createFactionEmblem(ownerOrPresentation, className = "oscm-faction-emblem") {
+  const presentation = typeof ownerOrPresentation === "string"
+    ? factionPresentationForOwner(ownerOrPresentation)
+    : ownerOrPresentation;
+  if (!presentation) return null;
+  const group = svgElement("g", {
+    class: `${className} is-${presentation.factionId}`,
+    "data-faction-id": presentation.factionId,
+  });
+  drawEmblem(group, presentation.emblem);
+  return group;
 }
 
 /**

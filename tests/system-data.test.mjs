@@ -25,6 +25,12 @@ test("Akhetan infrastructure resolves through its parent hierarchy", () => {
   assert.ok(Math.abs(physicalDistanceAu(akhetan, gateway) - 70_000 / AU_KM) < 1e-12);
 });
 
+test("system models preserve canonical ownership, including Mandate-controlled Seti", () => {
+  assert.equal(buildSystemModel(rows, "Seti").ownerFaction, "Xuanjia Mandate");
+  assert.equal(buildSystemModel(rows, "Memphis").ownerFaction, "Adanian Conclave");
+  assert.equal(buildSystemModel(rows, "Nekhen").ownerFaction, "Adanian Conclave");
+});
+
 test("display compression does not alter physical route coordinates", () => {
   const model = buildSystemModel(rows, "Abydos");
   const eventide = model.byName.get("Eventide");
@@ -38,6 +44,7 @@ test("display compression does not alter physical route coordinates", () => {
 test("Tanis preserves two stars around the barycenter", () => {
   const model = buildSystemModel(rows, "Tanis");
   assert.equal(model.objects.filter((object) => object.objectClass === "star").length, 2);
+  assert.equal(model.ownerFaction, "Signatories of the Accords");
   assert.equal(model.byName.get("Tanis A").parent, "Tanis barycenter");
   assert.equal(model.byName.get("Tanis B").parent, "Tanis barycenter");
 });

@@ -22,3 +22,8 @@ test("system renderer uses display positions but retains physical model objects"
   assert.match(source, /this\.origin = object/);
   assert.match(source, /this\.destination = object/);
 });
+
+test("system jurisdiction emblem stays screen-upright above the canonical star anchor", () => {
+  for (const token of ["factionPresentationForOwner", "oscm-faction-context-marker", "factionAnchorObjects", "ownerFaction"]) assert.match(source, new RegExp(token));
+  assert.equal([...source.matchAll(/class: `oscm-faction-context-marker/g)].length, 1, "system view must construct exactly one jurisdiction marker");
+});

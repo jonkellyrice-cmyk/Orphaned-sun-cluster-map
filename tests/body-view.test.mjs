@@ -32,3 +32,9 @@ test("renderer contains distinct station, yard, vessel, fleet, gate, megastructu
   const source = readFileSync(new URL("../scripts/body-view.mjs", import.meta.url), "utf8");
   for (const token of ["#buildStation", "#buildShipyard", "#buildVessel", "#buildFleet", "#buildBlinkgate", "#buildMegastructure", "#buildAsteroidField", "oscm-solid-crater", "oscm-giant-band"]) assert.match(source, new RegExp(token));
 });
+
+test("body views propagate canonical jurisdiction emblems above every entered body", () => {
+  const source = readFileSync(new URL("../scripts/body-view.mjs", import.meta.url), "utf8");
+  for (const token of ["ownerFaction", "#buildFactionContext", "oscm-faction-context-marker", "createFactionEmblem"]) assert.match(source, new RegExp(token));
+  assert.equal([...source.matchAll(/class: `oscm-faction-context-marker/g)].length, 1, "body view must construct exactly one jurisdiction marker");
+});

@@ -1,4 +1,5 @@
 import { displayPosition, vectorFromOrbit } from "./system-data.mjs";
+import { createFactionEmblem, factionPresentationForOwner } from "./capital-icons.mjs";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
@@ -118,7 +119,20 @@ export class SystemView {
     this.orbitLayer = svgElement("g", { class: "oscm-system-orbit-layer" });
     this.routeLayer = svgElement("g", { class: "oscm-system-route-layer" });
     this.objectLayer = svgElement("g", { class: "oscm-system-object-layer" });
-    this.svg.append(this.orbitLayer, this.routeLayer, this.objectLayer);
+    this.factionLayer = svgElement("g", { class: "oscm-faction-context-layer is-system", "aria-hidden": "true" });
+    this.svg.append(this.orbitLayer, this.routeLayer, this.objectLayer, this.factionLayer);
+
+    const faction = factionPresentationForOwner(this.model.ownerFaction);
+    this.factionAnchorObjects = this.model.objects.filter((object) => object.objectClass === "star");
+    this.factionMarker = null;
+    if (faction && this.factionAnchorObjects.length) {
+      const marker = svgElement("g", { class: `oscm-faction-context-marker is-${faction.factionId}` });
+      marker.append(svgElement("line", { class: "oscm-faction-context-leader", x1: 0, y1: 18, x2: 0, y2: 35 }));
+      marker.append(createFactionEmblem(faction));
+      const title = svgElement("title");
+      title.textContent = `${faction.factionName} jurisdiction — ${this.model.name} System`;
+      marker.append(title); this.factionLayer.append(marker); this.factionMarker = marker;
+    }
 
     this.orbitNodes = [];
     for (const object of this.model.objects) {
@@ -272,6 +286,12 @@ export class SystemView {
       node.glyph.setAttribute("transform", `scale(${clamp(point.scale, .72, 1.3)})`);
     }
     projected.sort((a, b) => a.point.z - b.point.z).forEach((node) => this.objectLayer.append(node.group));
+    if (this.factionMarker && this.factionAnchorObjects.length) {
+      const anchors = this.factionAnchorObjects.map((object) => this.#project(this.displayPositions.get(object.id)));
+      const x = anchors.reduce((sum, point) => sum + point.x, 0) / anchors.length;
+      const y = Math.min(...anchors.map((point) => point.y));
+      this.factionMarker.setAttribute("transform", `translate(${x.toFixed(2)} ${(y - 46).toFixed(2)})`);
+    }
     this.routeLayer.replaceChildren();
     if (this.origin && this.destination) {
       const a = this.#project(this.displayPositions.get(this.origin.id)), b = this.#project(this.displayPositions.get(this.destination.id));

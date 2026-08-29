@@ -150,7 +150,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
         if (operations && artificialBodyKind(object)) model = buildArtificialBodyModel(object, operations);
       }
       this._clusterView?.destroy();
-      this._clusterView = new BodyView(svg, { model, geography, operations, onExitRequested: () => this.#showSystem(), onFeatureSelected: (feature) => this.#updateBodyFeature(feature) });
+      this._clusterView = new BodyView(svg, { model, geography, operations, ownerFaction: object.owner_faction, onExitRequested: () => this.#showSystem(), onFeatureSelected: (feature) => this.#updateBodyFeature(feature) });
       this.mode = "body"; this.activeBody = object;
       root.classList.add("is-system-mode", "is-body-mode");
       root.classList.toggle("has-geography", Boolean(geography));

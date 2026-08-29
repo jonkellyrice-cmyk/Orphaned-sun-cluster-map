@@ -1,6 +1,7 @@
 import { BodyView as CoreBodyView } from "../scripts/body-view-core.mjs";
 export { schematicVisualProfile, orthographicProject, bodyVisualContract } from "../scripts/body-view-core.mjs";
 import { buildBodyOperationsRenderPlan, inspectBodyOperationFeature, loadBodyOperationAsset, projectOperationPosition } from "../scripts/body-operations.mjs";
+import { createFactionEmblem, factionPresentationForOwner } from "../scripts/capital-icons.mjs";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 const el = (name, attrs = {}) => { const node = document.createElementNS(SVG_NS, name); for (const [key, value] of Object.entries(attrs)) node.setAttribute(key, String(value)); return node; };
@@ -14,8 +15,9 @@ const el = (name, attrs = {}) => { const node = document.createElementNS(SVG_NS,
  * oscm-solid-crater oscm-giant-band
  */
 export class BodyView extends CoreBodyView {
-  constructor(svgRoot, { operations = null, ...options }) {
+  constructor(svgRoot, { operations = null, ownerFaction = "", ...options }) {
     super(svgRoot, options);
+    this.ownerFaction = ownerFaction;
     this.operations = operations;
     this.operationLayerGroups = new Map();
     this.operationFeatureNodes = [];
@@ -24,6 +26,8 @@ export class BodyView extends CoreBodyView {
     else if (!options.geography && this.model?.system && this.model?.body) loadBodyOperationAsset(this.model.system, this.model.body).then((asset) => {
       if (!asset || this._destroyed) return; this.operations = asset; this.#buildOperations();
     }).catch((error) => console.warn(`orphaned-sun-cluster-map | body operations unavailable for ${this.model.system}/${this.model.body}`, error));
+    this.#buildFactionContext();
+    this.render();
   }
 
   destroy() {
@@ -43,6 +47,21 @@ export class BodyView extends CoreBodyView {
   render() {
     super.render();
     if (this.operations && this.operationRoot) this.#renderOperations();
+    if (this.factionContextMarker) {
+      const radius = Math.min(275, 250 * Math.max(.46, this.state?.zoom ?? 1));
+      this.factionContextMarker.setAttribute("transform", `translate(450 ${Math.max(28, 340 - radius - 32).toFixed(2)})`);
+    }
+  }
+
+  #buildFactionContext() {
+    const faction = factionPresentationForOwner(this.ownerFaction);
+    if (!faction) return;
+    this.factionContextLayer = el("g", { class: "oscm-faction-context-layer is-body", "aria-hidden": "true" });
+    const marker = el("g", { class: `oscm-faction-context-marker is-${faction.factionId}` });
+    marker.append(el("line", { class: "oscm-faction-context-leader", x1: 0, y1: 18, x2: 0, y2: 34 }));
+    marker.append(createFactionEmblem(faction));
+    const title = el("title"); title.textContent = `${faction.factionName} jurisdiction — ${this.model.body}`; marker.append(title);
+    this.factionContextLayer.append(marker); this.svg.append(this.factionContextLayer); this.factionContextMarker = marker;
   }
 
   #buildOperations() {

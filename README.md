@@ -58,7 +58,7 @@ npm run body-operations:check
 
 ## Forge / manifest installation
 
-Release `v0.6.0` is packaged with both `module.json` and `orphaned-sun-cluster-map-v0.6.0.zip`. Foundry/Forge updates use the manifest URL declared in `module.json`.
+Release `v0.6.1` is packaged with both `module.json` and `orphaned-sun-cluster-map-v0.6.1.zip`. Foundry/Forge updates use the manifest URL declared in `module.json`.
 
 ## Coordinate model
 

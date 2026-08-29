@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.6.1
+
+- Propagated the existing faction emblems into system view, anchored above each system's canonical star or binary-star midpoint.
+- Added the controlling faction emblem above every entered planet, moon, station, ship, fleet, belt, megastructure and other body-level view.
+- Resolved system and body emblems from canonical `owner_faction` metadata rather than inferred territory geometry, preserving Mandate control of Seti and Conclave control of only Memphis and Nekhen.
+- Kept all propagated emblems screen-upright, constant-size and non-interactive across rotation and zoom.
+
 ## v0.6.0
 
 - Added accepted deterministic local operational surveys for all 71 eligible non-cartographic canonical objects, including the canonically present Arrowfall Range distributed installation field.
