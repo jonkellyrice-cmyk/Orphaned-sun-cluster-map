@@ -1,0 +1,82 @@
+name: Bootstrap Body Operations
+
+on:
+  push:
+    branches:
+      - feature/body-operations-v0.6.0
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    if: ${{ !contains(github.event.head_commit.message, '[body-ops-bootstrap]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/body-operations-v0.6.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install accepted renderer wrapper and runtime seams
+        shell: bash
+        run: |
+          cp scripts/body-view.mjs scripts/body-view-core.mjs
+          cp tools/body-view-wrapper.mjs scripts/body-view.mjs
+          node <<'NODE'
+          import { readFileSync, writeFileSync } from "node:fs";
+          const mustReplace = (source, before, after, label) => {
+            if (!source.includes(before)) throw new Error(`Missing bootstrap seam: ${label}`);
+            return source.replace(before, after);
+          };
+
+          let generator = readFileSync("tools/generate-body-operations.mjs", "utf8");
+          generator = mustReplace(generator, "canonicalSourceFingerprint, coordinateFrameForKind", "canonicalRowFingerprint, coordinateFrameForKind", "row fingerprint import");
+          generator = mustReplace(generator,
+            "canonicalType:operationalKind, operationalKind, permanentOperationalSeed:operationSeed(row.system,row.object,operationalKind), operationalModelVersion:BODY_OPERATIONS_MODEL_VERSION, canonicalSourceFingerprint:canonicalSourceFingerprint(row.system,row.object,operationalKind)",
+            "canonicalType:row.type, operationalKind, permanentOperationalSeed:operationSeed(row.system,row.object,row.type), operationalModelVersion:BODY_OPERATIONS_MODEL_VERSION, canonicalSourceFingerprint:canonicalRowFingerprint(row)",
+            "canonical provenance generation");
+          writeFileSync("tools/generate-body-operations.mjs", generator);
+
+          let app = readFileSync("scripts/cluster-map-app.mjs", "utf8");
+          app = mustReplace(app,
+            'import { inspectSurfaceFeature } from "./body-layers.mjs";',
+            'import { inspectSurfaceFeature } from "./body-layers.mjs";\nimport { loadBodyOperationAsset } from "./body-operations.mjs";',
+            "operations import");
+          app = mustReplace(app,
+            "      let geography = null;\n      if (object.geography_seed) {",
+            "      let geography = null, operations = null;\n      if (object.geography_seed) {",
+            "body asset declarations");
+          app = mustReplace(app,
+            "        geography = await response.json();\n      }\n      this._clusterView?.destroy();\n      this._clusterView = new BodyView(svg, { model, geography, onExitRequested:",
+            "        geography = await response.json();\n      } else {\n        operations = await loadBodyOperationAsset(object.system, object.name).catch((error) => { console.warn(`${MODULE_ID} | Body operations unavailable for ${object.system}/${object.name}`, error); return null; });\n        if (operations && artificialBodyKind(object)) model = buildArtificialBodyModel(object, operations);\n      }\n      this._clusterView?.destroy();\n      this._clusterView = new BodyView(svg, { model, geography, operations, onExitRequested:",
+            "runtime body asset load");
+          app = mustReplace(app,
+            '      root.classList.toggle("has-geography", Boolean(geography));',
+            '      root.classList.toggle("has-geography", Boolean(geography));\n      root.classList.toggle("has-operations", Boolean(operations));',
+            "operations class");
+          app = mustReplace(app,
+            '      const count = root.querySelector("[data-map-count]"); if (count) count.textContent = geography ? geography.schemaVersion === 2 ? `${geography.gazetteer.length} named features · 2° survey` : `${geography.cells.length} surface cells` : object.type;',
+            '      const count = root.querySelector("[data-map-count]"); if (count) count.textContent = geography ? geography.schemaVersion === 2 ? `${geography.gazetteer.length} named features · 2° survey` : `${geography.cells.length} surface cells` : operations ? `${operations.operationalSummary.featureCount} operational features` : object.type;',
+            "body operation count");
+          app = mustReplace(app,
+            '      objectScale: feature.suitability != null ? `Settlement suitability ${feature.suitability}` : "Schematic"',
+            '      objectScale: inspected.scale ?? (feature.suitability != null ? `Settlement suitability ${feature.suitability}` : "Survey extent not fixed")',
+            "inspection scale");
+          app = app.replace(/root\.classList\.remove\("has-geography"\);/g, 'root.classList.remove("has-geography");\n      root.classList.remove("has-operations");');
+          writeFileSync("scripts/cluster-map-app.mjs", app);
+          NODE
+          rm tools/body-view-wrapper.mjs
+      - name: Generate accepted operational canon
+        run: npm run body-operations:generate
+      - name: Full regression and deterministic validation
+        run: npm test && npm run body-operations:validate && npm run body-operations:check
+      - name: Commit generated canon
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/body-view.mjs scripts/body-view-core.mjs scripts/cluster-map-app.mjs tools/generate-body-operations.mjs tools/body-view-wrapper.mjs data/body-operations
+          git commit -m "Build accepted local operational canon [body-ops-bootstrap]"
+          git push origin HEAD:feature/body-operations-v0.6.0
