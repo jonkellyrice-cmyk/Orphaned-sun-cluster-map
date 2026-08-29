@@ -20,8 +20,8 @@ export function buildBodyLayers(geography) {
 export function inspectSurfaceFeature(feature) {
   if (!feature) return null;
   return {
-    name: feature.label || feature.id || feature.biome || feature.type || "Mapped feature",
-    type: feature.kind || feature.biome || feature.type || "surface feature",
-    detail: feature.resource || feature.soil || feature.mode || (feature.elevationM != null ? `${feature.elevationM} m elevation` : "Orbital survey feature"),
+    name: feature.properName || feature.label || feature.id || feature.biome || feature.type || "Mapped feature",
+    type: feature.role || feature.kind || feature.featureClass || feature.biome || feature.type || "surface feature",
+    detail: feature.scientificClassification || feature.resource || feature.soil || feature.mode || (feature.elevationM != null ? `${feature.elevationM} m elevation` : "Orbital survey feature"),
   };
 }

@@ -11,6 +11,7 @@ import { artificialBodyKind, buildArtificialBodyModel } from "./artificial-body-
 import { inspectSurfaceFeature } from "./body-layers.mjs";
 
 export const MODULE_ID = "orphaned-sun-cluster-map";
+const assetSlug = (value) => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
@@ -137,9 +138,10 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       else return;
       let geography = null;
       if (object.geography_seed) {
-        const slug = object.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-        const response = await fetch(`modules/${MODULE_ID}/data/planet-geography/${object.system.toLowerCase()}/${slug}.json`);
-        if (!response.ok) throw new Error(`geography fetch failed (${response.status})`);
+        const slug = assetSlug(object.name), base = `modules/${MODULE_ID}/data`;
+        let response = await fetch(`${base}/planet-cartography/${object.system.toLowerCase()}/${slug}.json`);
+        if (!response.ok) response = await fetch(`${base}/planet-geography/${object.system.toLowerCase()}/${slug}.json`);
+        if (!response.ok) throw new Error(`cartography fetch failed (${response.status})`);
         geography = await response.json();
       }
       this._clusterView?.destroy();
@@ -150,7 +152,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       root.querySelector('[data-action="back-to-cluster"]')?.classList.remove("is-hidden");
       root.querySelector('[data-action="back-to-system"]')?.classList.remove("is-hidden");
       const title = root.querySelector("[data-map-title]"); if (title) title.textContent = object.name;
-      const count = root.querySelector("[data-map-count]"); if (count) count.textContent = geography ? `${geography.cells.length} surface cells` : object.type;
+      const count = root.querySelector("[data-map-count]"); if (count) count.textContent = geography ? geography.schemaVersion === 2 ? `${geography.gazetteer.length} named features · 2° survey` : `${geography.cells.length} surface cells` : object.type;
       const help = root.querySelector("[data-map-help]"); if (help) help.textContent = geography
         ? "Click / tap a mapped surface feature"
         : model.kind === "asteroid-field" ? "Click / tap a mapped belt body"

@@ -33,6 +33,9 @@ jobs:
           unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-geography/manifest.json"
           unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-geography/sais/nalini.json"
           unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-geography/sais/shanvara.json"
+          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-cartography/manifest.json"
+          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-cartography/abydos/eventide.json"
+          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-cartography/amarna/cordoba.json"
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "ARCHIVE=$ARCHIVE" >> "$GITHUB_ENV"
 

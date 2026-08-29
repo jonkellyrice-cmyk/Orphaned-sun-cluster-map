@@ -1,5 +1,6 @@
 const SVG_NS = "http://www.w3.org/2000/svg";
 import { buildBodyLayers } from "./body-layers.mjs";
+import { projectGeoPath, selectCartographyLabels } from "./body-cartography.mjs";
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 const svg = (name, attrs = {}) => {
   const node = document.createElementNS(SVG_NS, name);
@@ -43,7 +44,7 @@ export function orthographicProject(latDeg, lonDeg, yaw = 0, pitch = 0, radius =
 }
 
 export function bodyVisualContract(model, geography = null) {
-  if (geography) return { kind: "geographic-globe", atmosphere: true, features: geography.cells.length };
+  if (geography) return { kind: geography.schemaVersion === 2 ? "refined-cartographic-globe" : "geographic-globe", atmosphere: true, features: geography.schemaVersion === 2 ? geography.gazetteer.length + geography.settlements.length : geography.cells.length };
   if (["terrestrial", "moon", "minor-world", "giant"].includes(model.kind)) return { kind: `${model.kind}-globe`, atmosphere: model.kind === "giant" || model.atmosphere !== "none or negligible", features: model.regions.length };
   return { kind: `${model.kind}-structure`, atmosphere: false, features: model.approach?.dockingNodes?.length ?? 0 };
 }
@@ -79,6 +80,7 @@ export class BodyView {
   }
 
   buildGeography() {
+    if (this.geography.schemaVersion === 2) { this.#buildRefinedGeography(); return; }
     const layers = buildBodyLayers(this.geography); this.layerGroups = new Map();
     for (const id of ["terrain", "hydrology", "resources", "settlements", "transport"]) { const group = svg("g", { class: `oscm-body-layer is-${id}` }); this.surface.append(group); this.layerGroups.set(id, group); }
     const step = this.geography.resolutionDeg;
@@ -102,6 +104,34 @@ export class BodyView {
       if (!route.fromSite || !route.toSite) continue;
       const node = svg("line", { class: `oscm-body-transport is-${route.mode}`, "data-feature": route.id }); this.layerGroups.get("transport").append(node);
       this.featureNodes.push({ node, lat: route.fromSite.lat, lon: route.fromSite.lon, lat2: route.toSite.lat, lon2: route.toSite.lon, feature: route });
+    }
+    this.layerGroups.get("resources").classList.add("is-hidden");
+  }
+
+  #buildRefinedGeography() {
+    const asset = this.geography, namedByRef = new Map(asset.gazetteer.filter((feature) => feature.geometryRef).map((feature) => [feature.geometryRef, feature]));
+    this.cartography = true; this.disc.classList.add("is-refined-ocean"); this.layerGroups = new Map();
+    for (const id of ["terrain", "hydrology", "resources", "settlements", "transport", "labels"]) { const group = svg("g", { class: `oscm-body-layer is-${id}` }); (id === "labels" ? this.labels : this.surface).append(group); this.layerGroups.set(id, group); }
+    const addPath = (group, feature, rings, className, { minZoom = .46, closed = false } = {}) => {
+      const node = svg("path", { class: className, "data-feature": feature.id ?? feature.properName });
+      node.addEventListener("click", () => this.onFeatureSelected(feature)); group.append(node); this.featureNodes.push({ node, rings, feature, minZoom, closed, cartographicPath: true }); return node;
+    };
+    for (const region of asset.regions.ecoregions.slice(0, 700)) {
+      const feature = { ...region, ...(namedByRef.get(region.id) ?? {}), type: "ecoregion", scientificClassification: region.category };
+      addPath(this.layerGroups.get("terrain"), feature, region.polygons, `oscm-cartography-region biome-${region.category}`, { minZoom: region.cellCount >= 42 ? .46 : region.cellCount >= 10 ? 1.15 : 2.15, closed: true });
+    }
+    for (const coast of asset.terrain.coastlines) addPath(this.layerGroups.get("terrain"), namedByRef.get(coast.id) ?? { ...coast, type: "coastline" }, [coast.points], "oscm-cartography-coast", { closed: true });
+    for (const river of asset.hydrology.rivers) addPath(this.layerGroups.get("hydrology"), namedByRef.get(river.id) ?? { ...river, type: "river" }, [river.points], "oscm-cartography-river");
+    for (const [kind, features] of [["lake", asset.hydrology.lakes], ["wetland", asset.hydrology.wetlands], ["glacier", asset.hydrology.glaciers]]) for (const feature of features) addPath(this.layerGroups.get("hydrology"), namedByRef.get(feature.id) ?? { ...feature, type: kind }, [feature.polygon], `oscm-cartography-${kind}`, { minZoom: kind === "lake" ? 1.05 : 1.35, closed: true });
+    for (const region of asset.regions.resourceProvinces.slice(0, 240)) addPath(this.layerGroups.get("resources"), { ...region, type: "resource province", scientificClassification: region.category }, region.polygons, `oscm-cartography-resource resource-${region.category}`, { minZoom: region.cellCount >= 10 ? 1.15 : 2.15, closed: true });
+    for (const site of asset.settlements) {
+      const node = svg("circle", { class: `oscm-body-settlement is-${site.kind}`, r: site.kind === "capital" ? 5 : 3, "data-feature": site.id }); node.addEventListener("click", () => this.onFeatureSelected(site)); this.layerGroups.get("settlements").append(node); this.featureNodes.push({ node, lat: site.lat, lon: site.lon, feature: site, minZoom: site.kind === "capital" ? .46 : .85 });
+    }
+    for (const route of asset.transportRoutes) addPath(this.layerGroups.get("transport"), route, [route.points], `oscm-body-transport is-${route.mode}`, { minZoom: route.kind?.includes("primary") ? 1.05 : 1.35 });
+    for (const feature of selectCartographyLabels(asset, 4.5, false)) {
+      const node = svg("text", { class: `oscm-cartography-label is-${feature.featureClass}`, "data-feature": feature.id }); node.textContent = feature.properName; node.addEventListener("click", () => this.onFeatureSelected(feature)); this.layerGroups.get("labels").append(node);
+      const minZoom = ["capital", "continent", "ocean"].includes(feature.featureClass) ? .46 : ["city", "port", "sea", "range"].includes(feature.featureClass) ? 1.15 : 2.15;
+      this.featureNodes.push({ node, lat: feature.at[0], lon: feature.at[1], feature, minZoom, label: true });
     }
     this.layerGroups.get("resources").classList.add("is-hidden");
   }
@@ -215,8 +245,13 @@ export class BodyView {
     const radius = 250 * this.state.zoom; for (const node of [this.disc, this.atmosphere]) node.setAttribute("r", radius + (node === this.atmosphere ? 6 : 0));
     if (this.structure) this.structure.setAttribute("transform", `translate(450 340) scale(${this.state.zoom}) rotate(${this.state.yaw * 28}) skewX(${this.state.pitch * 7})`);
     for (const item of this.featureNodes) {
+      const lodVisible = this.state.zoom >= (item.minZoom ?? .46) && this.state.zoom <= (item.maxZoom ?? Infinity);
+      if (item.cartographicPath) {
+        const paths = item.rings.map((ring) => projectGeoPath(ring, this.state.yaw, this.state.pitch, radius, [450, 340], item.closed)).filter(Boolean);
+        item.node.setAttribute("d", paths.join(" ")); item.node.hidden = !lodVisible || !paths.length; item.node.style.opacity = item.node.hidden ? "0" : "1"; continue;
+      }
       const point = item.schematic ? { x: item.x * this.state.zoom, y: item.y * this.state.zoom, visible: true, z: 1 } : orthographicProject(item.lat, item.lon, this.state.yaw, this.state.pitch, radius);
-      item.node.setAttribute("transform", `translate(${450 + point.x} ${340 + point.y})`); item.node.hidden = !point.visible; item.node.style.opacity = point.visible ? String(clamp(.35 + point.z * .65, .35, 1)) : "0";
+      item.node.setAttribute("transform", `translate(${450 + point.x} ${340 + point.y})`); item.node.hidden = !lodVisible || !point.visible; item.node.style.opacity = item.node.hidden ? "0" : String(clamp(.35 + point.z * .65, .35, 1));
       if (item.lat2 != null) { const end = orthographicProject(item.lat2, item.lon2, this.state.yaw, this.state.pitch, radius); item.node.removeAttribute("transform"); item.node.setAttribute("x1", 450 + point.x); item.node.setAttribute("y1", 340 + point.y); item.node.setAttribute("x2", 450 + end.x); item.node.setAttribute("y2", 340 + end.y); item.node.hidden = !point.visible || !end.visible; }
     }
   }

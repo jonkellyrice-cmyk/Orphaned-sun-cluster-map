@@ -1,5 +1,6 @@
 .oscm-body-view { touch-action: none; background: radial-gradient(circle at center, #102126 0, #050b0e 68%); }
 .oscm-body-disc { fill: #536d68; stroke: #b9d9d2; stroke-width: 1.5; }
+.oscm-body-disc.is-refined-ocean { fill: #173b50; stroke: #9bd4dc; stroke-width: 1.8; }
 .oscm-body-disc.is-solid-world.is-rocky { fill: url(#oscm-rocky-gradient); }
 .oscm-body-disc.is-solid-world.is-icy { fill: url(#oscm-icy-gradient); }
 .oscm-body-disc.is-giant { fill: #8d765f; }
@@ -69,6 +70,24 @@
 .oscm-body-transport { stroke: #ffe18a; stroke-width: 1.6; stroke-dasharray: 5 3; }
 .oscm-body-resource { fill: #d58cff; stroke: #271331; stroke-width: .7; cursor: pointer; }
 .oscm-body-layer.is-hidden { display: none; }
+.oscm-cartography-region { stroke: rgba(8,19,22,.22); stroke-width: .45; fill: #6e8b69; cursor: pointer; }
+.oscm-cartography-region[class*="ocean"],.oscm-cartography-region.biome-sea-ice { fill: #2d6681; }
+.oscm-cartography-region[class*="forest"],.oscm-cartography-region.biome-taiga { fill: #3b704c; }
+.oscm-cartography-region[class*="desert"],.oscm-cartography-region.biome-steppe { fill: #9b784a; }
+.oscm-cartography-region.biome-tundra { fill: #899d91; }
+.oscm-cartography-region.biome-ice-cap,.oscm-cartography-region.biome-sea-ice { fill: #c6e2e5; }
+.oscm-cartography-region.biome-savanna { fill: #84905a; }
+.oscm-cartography-coast { fill: none; stroke: rgba(210,241,235,.82); stroke-width: 1.25; pointer-events: stroke; }
+.oscm-cartography-river { fill: none; stroke: #61bde3; stroke-width: 1.35; pointer-events: stroke; }
+.oscm-cartography-lake { fill: #4e9dc3; stroke: #9edbf2; stroke-width: .8; }
+.oscm-cartography-wetland { fill: rgba(82,145,117,.7); stroke: #9ad1ad; stroke-width: .7; }
+.oscm-cartography-glacier { fill: #d8f2f4; stroke: #fff; stroke-width: .7; }
+.oscm-cartography-resource { fill: rgba(196,104,220,.16); stroke: rgba(225,154,244,.75); stroke-width: .8; cursor: pointer; }
+.oscm-cartography-label { fill: #e8fbf7; stroke: rgba(2,10,12,.9); stroke-width: 2.4; paint-order: stroke; font-size: 10px; font-family: var(--font-mono, monospace); text-anchor: middle; cursor: pointer; pointer-events: visiblePainted; }
+.oscm-cartography-label.is-capital { fill: #ffe9a3; font-size: 13px; font-weight: 700; }
+.oscm-cartography-label.is-continent,.oscm-cartography-label.is-ocean { font-size: 12px; letter-spacing: .08em; opacity: .78; }
+.oscm-cartography-label.is-city,.oscm-cartography-label.is-port { fill: #fff1b5; }
+.oscm-body-view path[hidden],.oscm-body-view text[hidden],.oscm-body-view circle[hidden] { display: none; }
 .oscm-body-layer-controls { display: none; }
 .oscm-shell.is-body-mode.has-geography .oscm-body-layer-controls { display: grid; gap: .35rem; }
 .oscm-shell.is-body-mode .oscm-selection-card,.oscm-shell.is-body-mode .oscm-territory-legend,.oscm-shell.is-body-mode .oscm-legend { display: none; }

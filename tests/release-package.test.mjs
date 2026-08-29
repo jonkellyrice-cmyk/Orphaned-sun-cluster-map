@@ -11,13 +11,16 @@ test("release workflow packages runtime planetary geography assets", () => {
     "data/planet-geography/manifest.json",
     "data/planet-geography/sais/nalini.json",
     "data/planet-geography/sais/shanvara.json",
+    "data/planet-cartography/manifest.json",
+    "data/planet-cartography/abydos/eventide.json",
+    "data/planet-cartography/amarna/cordoba.json",
   ]) assert.match(workflow, new RegExp(required.replace(/[./-]/g, "\\$&")));
 });
 
-test("Foundry and package versions agree on the v0.4.0 release archive", () => {
+test("Foundry and package versions agree on the v0.5.0 release archive", () => {
   const manifest = JSON.parse(readFileSync(new URL("module.json", root), "utf8"));
   const packageJson = JSON.parse(readFileSync(new URL("package.json", root), "utf8"));
   assert.equal(manifest.version, packageJson.version);
-  assert.equal(manifest.version, "0.4.0");
-  assert.match(manifest.download, /v0\.4\.0\/orphaned-sun-cluster-map-v0\.4\.0\.zip$/);
+  assert.equal(manifest.version, "0.5.0");
+  assert.match(manifest.download, /v0\.5\.0\/orphaned-sun-cluster-map-v0\.5\.0\.zip$/);
 });

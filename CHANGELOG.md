@@ -100,3 +100,9 @@
 - Interactive 3D SVG cluster view with ten Orphaned Sun systems.
 - Mouse and mobile controls: drag/one-finger rotate, wheel/pinch zoom, click/tap route selection.
 - Relativistic route calculator using configurable proper acceleration and cruise speed.
+# v0.5.0
+
+- Added accepted high-resolution deterministic cartography for all 43 inhabited terrestrial worlds.
+- Added smooth coastlines, terrain meshes, contours, routed hydrology, ecoregions, soils, resource provinces, settlements, and exact transport geometry.
+- Added culture-aware permanent gazetteers and city/route names for every controlling polity.
+- Added zoom-dependent SVG cartography to the existing orbital body viewer while retaining mobile gestures and outward navigation.

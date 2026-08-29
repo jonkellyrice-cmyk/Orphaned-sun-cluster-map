@@ -7,6 +7,10 @@ A small Foundry VTT v13 module for the **Orphaned Sun** LANCER campaign. It open
 - 16 × 16 × 16 light-year wireframe cluster volume.
 - 1 ly or 2 ly cubic lattice.
 - Ten campaign systems at canonical X/Y/Z coordinates.
+- Double-click/tap a system to enter its interactive AU-scale 3D system map, then enter mapped planets, moons, stations, ships, fleets, yards, gates, belts, and anomalies.
+- Forty-three inhabited worlds with accepted deterministic 2° cartography: smooth coastlines, elevation/contours, rivers, lakes, wetlands, glaciers, biomes, soils, resource provinces, and literal feature geometry.
+- Culture-aware permanent names for physical geography, capitals, cities, ports, and transport corridors using Aurethic, Vostrann, Xuānhari, Vadan, or Union naming traditions.
+- Orbital, regional, and surface detail levels on planetary globes with selectable survey layers and exact road/sea-lane geometry.
 - Desktop: drag to rotate, mouse wheel to zoom, double-click empty space to reset the camera.
 - Mobile/touch: one-finger drag rotates around the cluster center; pinch inward zooms out; pinch outward zooms in; tap two systems to draw a route.
 - Click an origin and destination to draw a route line.
@@ -53,7 +57,7 @@ npm test
 
 The `module.json` is already prepared for this GitHub repository.
 
-Once release `v0.1.1` contains both `module.json` and `orphaned-sun-cluster-map-v0.1.1.zip`, Foundry/Forge can install from the manifest URL declared in `module.json`.
+Release `v0.5.0` contains both `module.json` and `orphaned-sun-cluster-map-v0.5.0.zip`, so Foundry/Forge can update from the manifest URL declared in `module.json`.
 
 ## Coordinate model
 
