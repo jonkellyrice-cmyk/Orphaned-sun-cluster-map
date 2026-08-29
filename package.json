@@ -1,9 +1,12 @@
 {
   "name": "orphaned-sun-cluster-map",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "body-operations:generate": "node tools/generate-body-operations.mjs",
+    "body-operations:check": "node tools/generate-body-operations.mjs --check",
+    "body-operations:validate": "node tools/validate-body-operations.mjs"
   }
 }
