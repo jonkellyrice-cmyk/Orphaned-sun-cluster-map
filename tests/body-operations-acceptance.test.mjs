@@ -14,7 +14,9 @@ test("all accepted assets regenerate byte-for-byte from the current canonical re
 
 test("special natural worlds retain their constrained operational identities", () => {
   const eilean = assetFor("Eilean Volna"), kestrel = assetFor("Old Kestrel"), kalong = assetFor("Kalong");
-  assert.ok(eilean.features.some((feature) => feature.name === "Volna Thaw Enclave")); assert.ok(!eilean.features.some((feature) => /forest|highway|open-air city/i.test(`${feature.name} ${feature.description}`)));
+  assert.ok(eilean.features.some((feature) => feature.name === "Volna Thaw Enclave"));
+  assert.ok(!eilean.features.some((feature) => /\bforest\b|\bhighway\b/i.test(`${feature.name} ${feature.description}`)));
+  assert.ok(!eilean.features.some((feature) => feature.type === "city"));
   assert.ok(kestrel.features.some((feature) => feature.name === "Black Kestrel Cut")); assert.ok(kestrel.features.some((feature) => /mass driver/i.test(feature.name)));
   assert.equal(kalong.operationalKind, "giant"); assert.ok(kalong.features.some((feature) => feature.name === "Ember Crown")); assert.ok(!kalong.features.some((feature) => feature.layer === "routes"));
 });
