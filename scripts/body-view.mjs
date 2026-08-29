@@ -65,7 +65,16 @@ export class BodyView extends CoreBodyView {
       else if (["module", "hub", "reactor", "dock", "hangar", "gantry", "berth", "hull", "bridge", "engineering", "deck", "control", "power", "aperture", "ring", "segment", "ship", "platform"].includes(feature.type)) node = el("rect", { class: `oscm-operation-feature is-${feature.type}`, x: -6, y: -4, width: 12, height: 8, rx: 2 });
       else node = el("circle", { class: `oscm-operation-feature is-${feature.type}`, r: feature.lodPriority === 1 ? 5 : 3.4 });
       node.setAttribute("data-operation-feature", feature.id); node.setAttribute("tabindex", "0"); node.setAttribute("role", "button");
-      const select = (event) => { event?.stopPropagation?.(); this.onFeatureSelected({ ...feature, inspection: inspectBodyOperationFeature(feature), operationalAsset: this.operations.body }); };
+      const select = (event) => {
+        event?.stopPropagation?.();
+        const inspection = inspectBodyOperationFeature(feature);
+        const provenance = inspection?.provenance ? `Provenance: ${inspection.provenance}` : null;
+        this.onFeatureSelected({
+          ...feature,
+          inspection: { ...inspection, detail: [inspection?.detail, provenance].filter(Boolean).join(" · ") },
+          operationalAsset: this.operations.body,
+        });
+      };
       node.addEventListener("click", select); node.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); select(event); } });
       const title = el("title"); title.textContent = `${feature.name} — ${feature.operationalRole}`; node.append(title); group.append(node);
       const label = el("text", { class: `oscm-operation-label priority-${feature.lodPriority ?? 2}` }); label.textContent = feature.name; label.addEventListener("click", select); this.operationLabels.append(label);
