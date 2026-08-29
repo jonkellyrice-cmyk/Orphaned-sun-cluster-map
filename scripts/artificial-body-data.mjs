@@ -51,5 +51,5 @@ export function buildArtificialBodyModel(row, operations = null) {
 }
 
 export function buildArtificialBodyModels(rows) {
-  return rows.filter((row) => artificialBodyKind(row)).map(buildArtificialBodyModel);
+  return rows.filter((row) => artificialBodyKind(row)).map((row) => buildArtificialBodyModel(row));
 }
