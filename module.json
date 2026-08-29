@@ -34,7 +34,8 @@
     "styles/capital-icons.css",
     "styles/route-hud.css",
     "styles/system-map.css",
-    "styles/body-map.css"
+    "styles/body-map.css",
+    "styles/body-operations.css"
   ],
   "languages": [
     {
