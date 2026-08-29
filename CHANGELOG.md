@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.6.0
+
+- Added accepted deterministic local operational surveys for all 71 eligible non-cartographic canonical objects, including the canonically present Arrowfall Range distributed installation field.
+- Added named craters, basins, ridges, volatile fields, mines, habitats, landing fields, hazards and traverse routes to barren/marginal natural bodies without promoting them into Earthlike worlds.
+- Added atmospheric bands, storms, vortices, radiation zones and sampling corridors to gas/ice giants without inventing solid traversable surfaces.
+- Added reference-epoch mapped asteroid samples, resource claims, processing clusters, debris hazards and traffic corridors while preserving belt centroids as distributed regions rather than literal asteroids.
+- Added inspectable superstructure surveys for stations, installations, yards, vessels, fleets, Akhetan, megastructures and Thornfield, including docks, modules, approaches, structural segments, formation elements and uncertainty/exclusion volumes.
+- Added culture-aware deterministic local names, stable feature IDs, permanent seeds, canonical-row fingerprints and explicit coordinate-frame/geometry-status declarations.
+- Added adaptive operational survey layers and zoom-dependent mobile-safe SVG LOD while preserving all existing cluster/system navigation and the 43 accepted inhabited-world cartography assets.
+- Added exact-regeneration, coverage, coordinate/reference, special-world, packaging and performance validation for the body-operation corpus.
+- Bumped Foundry/package release metadata and archive URL to v0.6.0.
+
+## v0.5.0
+
+- Added accepted high-resolution deterministic cartography for all 43 inhabited terrestrial worlds.
+- Added smooth coastlines, terrain meshes, contours, routed hydrology, ecoregions, soils, resource provinces, settlements, and exact transport geometry.
+- Added culture-aware permanent gazetteers and city/route names for every controlling polity.
+- Added zoom-dependent SVG cartography to the existing orbital body viewer while retaining mobile gestures and outward navigation.
+
 ## v0.4.0
 
 - Replaced placeholder non-habitable body discs with deterministic metadata-driven SVG renderers.
@@ -100,9 +119,3 @@
 - Interactive 3D SVG cluster view with ten Orphaned Sun systems.
 - Mouse and mobile controls: drag/one-finger rotate, wheel/pinch zoom, click/tap route selection.
 - Relativistic route calculator using configurable proper acceleration and cruise speed.
-# v0.5.0
-
-- Added accepted high-resolution deterministic cartography for all 43 inhabited terrestrial worlds.
-- Added smooth coastlines, terrain meshes, contours, routed hydrology, ecoregions, soils, resource provinces, settlements, and exact transport geometry.
-- Added culture-aware permanent gazetteers and city/route names for every controlling polity.
-- Added zoom-dependent SVG cartography to the existing orbital body viewer while retaining mobile gestures and outward navigation.
