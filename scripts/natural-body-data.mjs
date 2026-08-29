@@ -12,11 +12,22 @@ function hashUnit(text) {
 export function naturalBodyKind(row) {
   const type = row.type.toLowerCase();
   if (type.includes("asteroid") && (type.includes("belt") || type.includes("field"))) return "asteroid-field";
-  if (type.includes("gas giant") || type.includes("ice/gas giant")) return "giant";
+  if (type.includes("gas giant") || type.includes("ice/gas giant") || type.includes("super-jovian")) return "giant";
   if (type.includes("moon")) return "moon";
   if (type.includes("dwarf") || type.includes("planetoid")) return "minor-world";
   if (type.includes("terrestrial") || type.includes("rocky planet")) return "terrestrial";
   return null;
+}
+
+export function naturalOperationalParameters(row) {
+  const kind = naturalBodyKind(row); if (!kind) return null;
+  return {
+    coordinateFamily: kind === "giant" ? "atmospheric-spherical" : kind === "asteroid-field" ? "belt-reference-cartesian" : "body-fixed-spherical",
+    resourceProfile: row.resource_profile || row.strategic_resource_geography || row.resources_hazards || "canonically unspecified",
+    hazardProfile: row.radiation_hazard_level || row.magnetosphere_radiation || row.resources_hazards || "nominal",
+    infrastructureProfile: row.resource_operations_infrastructure || row.settlement_pattern || "no dedicated infrastructure established by source map",
+    referenceEpochOnly: kind === "asteroid-field",
+  };
 }
 
 export function buildNaturalBodyModel(row) {
@@ -56,6 +67,7 @@ export function buildNaturalBodyModel(row) {
     resourceProfile: row.resource_profile || row.strategic_resource_geography || row.resources_hazards || "no major mapped province",
     radiationProfile: row.radiation_hazard_level || row.magnetosphere_radiation || "nominal",
     operationalNotes: row.resource_operations_notes || "Reference-epoch orbital approach model.",
+    operationalParameters: naturalOperationalParameters(row),
   };
 }
 
