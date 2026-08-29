@@ -20,6 +20,7 @@ export function operationalKindForRow(row) {
   if (type.includes("station") || type.includes("installation") || type.includes("range")) return "station";
   if (type.includes("gas giant") || type.includes("ice/gas giant") || type.includes("super-jovian")) return "giant";
   if (type.includes("moon") || type.includes("dwarf") || type.includes("planetoid") || type.includes("rocky planet")) return "natural-solid";
+  // Inhabited terrestrial rows are deliberately classifiable here; target derivation excludes them via cartography manifest.
   if (type.includes("terrestrial")) return "natural-solid";
   return null;
 }
@@ -37,6 +38,10 @@ export function operationSeed(system, body, canonicalType) {
 }
 export function canonicalSourceFingerprint(system, body, canonicalType) {
   return stableHex(`registry-v1\u0000${system}\u0000${body}\u0000${canonicalType}`, 20);
+}
+export function canonicalRowFingerprint(row) {
+  const serialized = Object.keys(row ?? {}).sort().map((key) => `${key}=${row[key] ?? ""}`).join("\u001f");
+  return stableHex(`canonical-row-v1\u0000${serialized}`, 20);
 }
 export function bodyOperationAssetPath(system, body) {
   return `data/body-operations/${assetSlug(system)}/${assetSlug(body)}.json`;
@@ -80,11 +85,14 @@ export function featureLookup(asset) { return new Map(asset.features.map((featur
 
 export function inspectBodyOperationFeature(feature) {
   if (!feature) return null;
+  const unit = feature.dimensions?.unit ?? "";
+  const scale = feature.dimensions ? Object.entries(feature.dimensions).filter(([key]) => key !== "unit").map(([key, value]) => `${key.replace(/([A-Z])/g, " $1").toLowerCase()} ${value}${unit ? ` ${unit}` : ""}`).join(" · ") : null;
   return {
     name: feature.name || feature.id,
     type: feature.type || "operational feature",
     detail: [feature.operationalRole, feature.resource, feature.hazard].filter(Boolean).join(" · ") || feature.description || "Operational survey feature",
     provenance: feature.provenance || BODY_OPERATIONS_STATUS,
+    scale,
   };
 }
 
