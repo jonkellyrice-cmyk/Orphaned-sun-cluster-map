@@ -19,7 +19,15 @@ function approachGeometry(kind) {
   return { mode: "orbital-docking", dockingNodes: [{ id: "port", bearingDeg: 90 }, { id: "starboard", bearingDeg: 270 }], exclusionRadius: .4 };
 }
 
-export function buildArtificialBodyModel(row) {
+export function operationalApproachGeometry(asset, fallbackKind) {
+  if (!asset) return approachGeometry(fallbackKind);
+  if (asset.operationalKind === "anomaly") return { mode: "observation-perimeter", dockingNodes: [], exclusionRadius: 1, source: "body-operations" };
+  const docks = asset.features.filter((feature) => feature.type === "dock").map((feature, index) => ({ id: feature.id, label: feature.name, position: feature.position, bearingDeg: (90 + index * 72) % 360 }));
+  const approaches = asset.features.filter((feature) => feature.type === "approach" || feature.type === "corridor").map((feature) => ({ id: feature.id, label: feature.name, position: feature.position, refs: feature.refs ?? [] }));
+  return { mode: asset.operationalKind === "blinkgate" ? "gate-traffic-vector" : asset.operationalKind === "fleet" || asset.operationalKind === "vessel" ? "formation-intercept" : asset.operationalKind === "shipyard" ? "yard-approach" : "orbital-docking", dockingNodes: docks.length ? docks : approachGeometry(fallbackKind).dockingNodes, approaches, exclusionRadius: approachGeometry(fallbackKind).exclusionRadius, source: "body-operations" };
+}
+
+export function buildArtificialBodyModel(row, operations = null) {
   const kind = artificialBodyKind(row);
   if (!kind) throw new TypeError(`${row.object} is not an artificial or anomalous body`);
   return {
@@ -37,7 +45,8 @@ export function buildArtificialBodyModel(row) {
     mobility: row.mobility || "fixed reference-epoch position",
     function: row.primary_function || row.resource_profile || "mapped infrastructure",
     strategicRole: row.strategic_role || row.resource_value || "local operations",
-    approach: approachGeometry(kind),
+    approach: operationalApproachGeometry(operations, kind),
+    operationsSource: operations ? `${operations.operationalModelVersion}/${operations.permanentOperationalSeed}` : "schematic fallback",
   };
 }
 
