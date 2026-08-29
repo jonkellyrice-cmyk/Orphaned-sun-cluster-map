@@ -1,0 +1,16 @@
+.oscm-operation-layer-controls { display: none; }
+.oscm-shell.is-body-mode.has-operations .oscm-operation-layer-controls { display: grid; gap: .35rem; }
+.oscm-operation-layer-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .3rem .6rem; }
+.oscm-operation-layer-list label { color: var(--oscm-muted); font-size: 10px; white-space: nowrap; }
+.oscm-operation-layer.is-hidden { display: none; }
+.oscm-operation-feature { cursor: pointer; fill: #9fcfd0; stroke: #e6ffff; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.oscm-operation-feature.is-resources,.oscm-operation-feature.is-industry { fill: #d3a160; }
+.oscm-operation-feature.is-installations,.oscm-operation-feature.is-habitation,.oscm-operation-feature.is-structure { fill: #ffe18a; }
+.oscm-operation-feature.is-docking,.oscm-operation-feature.is-approaches,.oscm-operation-feature.is-routes,.oscm-operation-feature.is-traffic { fill: #65dfe4; }
+.oscm-operation-feature.is-hazards,.oscm-operation-feature.is-radiation,.oscm-operation-feature.is-instability { fill: rgba(210,77,93,.24); stroke: #f08b98; stroke-dasharray: 3 2; }
+.oscm-operation-feature.is-storms { fill: rgba(235,201,139,.65); stroke: #fff0c0; }
+.oscm-operation-feature.is-observation,.oscm-operation-feature.is-sensors { fill: rgba(192,117,230,.24); stroke: #d9a4f0; }
+.oscm-operation-feature.is-major { stroke-width: 2; filter: drop-shadow(0 0 4px rgba(180,255,255,.42)); }
+.oscm-operation-feature:hover { stroke-width: 2.6; }
+.oscm-body-view .oscm-operation-feature[hidden] { display: none; }
+@media (max-width: 640px) { .oscm-operation-layer-list { grid-template-columns: 1fr; } }
