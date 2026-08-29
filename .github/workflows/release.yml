@@ -1,6 +1,7 @@
 name: Release Foundry Module
 
 on:
+  pull_request:
   push:
     branches:
       - main
@@ -9,19 +10,27 @@ permissions:
   contents: write
 
 jobs:
-  release:
-    if: contains(github.event.head_commit.message, '[release]')
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-
       - name: Test
         run: npm test
+      - name: Validate accepted body operations
+        run: npm run body-operations:validate && npm run body-operations:check
 
+  release:
+    needs: validate
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, '[release]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - name: Package module
         shell: bash
         run: |
@@ -30,12 +39,19 @@ jobs:
           zip -r "$ARCHIVE" \
             module.json scripts templates styles lang README.md docs data \
             -x "*.DS_Store"
-          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-geography/manifest.json"
-          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-geography/sais/nalini.json"
-          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-geography/sais/shanvara.json"
-          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-cartography/manifest.json"
-          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-cartography/abydos/eventide.json"
-          unzip -Z1 "$ARCHIVE" | grep -Fx "data/planet-cartography/amarna/cordoba.json"
+          for required in \
+            data/planet-geography/manifest.json \
+            data/planet-geography/sais/nalini.json \
+            data/planet-geography/sais/shanvara.json \
+            data/planet-cartography/manifest.json \
+            data/planet-cartography/abydos/eventide.json \
+            data/planet-cartography/amarna/cordoba.json \
+            data/body-operations/manifest.json \
+            data/body-operations/abydos/cataphract.json \
+            data/body-operations/amarna/akhetan.json \
+            data/body-operations/seti/arrowfall-range.json; do
+            unzip -Z1 "$ARCHIVE" | grep -Fx "$required"
+          done
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "ARCHIVE=$ARCHIVE" >> "$GITHUB_ENV"
 
