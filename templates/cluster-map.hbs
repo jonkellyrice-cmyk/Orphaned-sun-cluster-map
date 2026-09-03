@@ -37,6 +37,41 @@
       <div class="oscm-system-count" data-map-count>{{systemCount}} systems</div>
     </header>
 
+    <section class="oscm-card oscm-universal-clock" aria-live="polite" aria-label="Current Union time">
+      <div class="oscm-clock-heading">
+        <div class="oscm-card-title">Current Time</div>
+        <span class="oscm-clock-status" data-universal-clock-status>RUNNING</span>
+      </div>
+      <div class="oscm-clock-date" data-universal-date>Friday, September 3, 5016 U</div>
+      <div class="oscm-clock-time" data-universal-clock>10:38:00</div>
+      <div class="oscm-clock-standard">Cradle Standard Reckoning</div>
+      {{#if isGM}}
+      <div class="oscm-clock-gm-controls">
+        <div class="oscm-clock-transport">
+          <button type="button" data-action="toggle-universal-clock"><i class="fa-solid fa-pause"></i> Pause</button>
+        </div>
+        <div class="oscm-clock-step-grid" aria-label="Adjust universal time">
+          <button type="button" data-clock-delta-minutes="-1">−1 min</button>
+          <button type="button" data-clock-delta-minutes="1">+1 min</button>
+          <button type="button" data-clock-delta-minutes="-60">−1 hr</button>
+          <button type="button" data-clock-delta-minutes="60">+1 hr</button>
+          <button type="button" data-clock-delta-minutes="-1440">−1 day</button>
+          <button type="button" data-clock-delta-minutes="1440">+1 day</button>
+        </div>
+        <div class="oscm-clock-set">
+          <div class="oscm-clock-set-label">Set date / time</div>
+          <div class="oscm-clock-date-inputs">
+            <label><span>Month</span><input name="universalMonth" type="number" min="1" max="12" step="1" value="9"></label>
+            <label><span>Day</span><input name="universalDay" type="number" min="1" max="31" step="1" value="3"></label>
+            <label><span>Year U</span><input name="universalYear" type="number" min="1" step="1" value="5016"></label>
+          </div>
+          <label class="oscm-clock-time-input"><span>24-hour time</span><input name="universalTime" type="time" step="60" value="10:38"></label>
+          <button class="oscm-apply" type="button" data-action="set-universal-clock"><i class="fa-solid fa-clock"></i> Set Current Time</button>
+        </div>
+      </div>
+      {{/if}}
+    </section>
+
     <section class="oscm-card oscm-selection-card">
       <div class="oscm-card-title">Route Selection</div>
       <div class="oscm-selection-row"><span>Origin</span><strong data-field="origin">—</strong></div>
