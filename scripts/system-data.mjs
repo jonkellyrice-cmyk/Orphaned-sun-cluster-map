@@ -1,4 +1,5 @@
 import { normalizeDegrees, orbitalPeriodDays, orbitalStateAt, rotationStateAt } from "./astronomy.mjs";
+import { deriveAtmosphereMetadata } from "./atmosphere.mjs";
 import { UNION_EPOCH_MS } from "./universal-time.mjs";
 
 export const AU_KM = 149_597_870.7;
@@ -76,6 +77,7 @@ export function buildSystemModel(rows, systemName, { referenceTimestampMs = UNIO
       phaseDeg: numeric(row.reference_phase_deg) ?? 0,
       inclinationDeg: numeric(row.inclination_deg) ?? 0,
       radiusRe: numeric(row.radius_re),
+      atmosphere: deriveAtmosphereMetadata(row),
       referenceTimestampMs,
     };
     byName.set(object.name, object);
