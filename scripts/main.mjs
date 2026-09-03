@@ -8,15 +8,21 @@ import {
   formatUniversalDate,
   formatUniversalTimeInput,
   normalizeUniversalTimeState,
+  resumeUniversalTimeSession,
   setUniversalDateTime,
   setUniversalTimeRunning,
+  settleUniversalTimeState,
   universalTimeParts,
 } from "./universal-time.mjs";
 
 let app = null;
 let universalClockObserver = null;
+let universalClockHeartbeat = null;
+let universalClockLifecycleBound = false;
 
 const MINUTE_MS = 60_000;
+const UNIVERSAL_CLOCK_CHECKPOINT_MS = 30_000;
+const UNIVERSAL_CLOCK_SESSION_STARTED_REAL_MS = Date.now();
 
 export function openClusterMap() {
   if (app?.rendered) {
@@ -28,14 +34,55 @@ export function openClusterMap() {
   return app;
 }
 
-function getUniversalTimeState() {
+function readUniversalTimeState() {
   return normalizeUniversalTimeState(game.settings.get(MODULE_ID, UNIVERSAL_TIME_SETTING));
+}
+
+function getUniversalTimeState() {
+  const state = readUniversalTimeState();
+  if (state.running && state.anchorRealMs > 0 && state.anchorRealMs < UNIVERSAL_CLOCK_SESSION_STARTED_REAL_MS) {
+    return resumeUniversalTimeSession(state, UNIVERSAL_CLOCK_SESSION_STARTED_REAL_MS);
+  }
+  return state;
 }
 
 async function saveUniversalTimeState(state) {
   if (!game.user.isGM) return false;
   await game.settings.set(MODULE_ID, UNIVERSAL_TIME_SETTING, state);
   return true;
+}
+
+function isUniversalClockAuthority() {
+  if (!game.user?.isGM) return false;
+  const activeGM = game.users?.activeGM;
+  return !activeGM || activeGM.id === game.user.id;
+}
+
+async function checkpointUniversalClock() {
+  if (!isUniversalClockAuthority()) return;
+  const state = getUniversalTimeState();
+  if (!state.running) return;
+  await saveUniversalTimeState(settleUniversalTimeState(state, Date.now()));
+}
+
+function startUniversalClockSessionMaintenance() {
+  if (!isUniversalClockAuthority()) return;
+
+  if (!universalClockHeartbeat) {
+    universalClockHeartbeat = window.setInterval(() => {
+      void checkpointUniversalClock();
+    }, UNIVERSAL_CLOCK_CHECKPOINT_MS);
+  }
+
+  if (!universalClockLifecycleBound) {
+    universalClockLifecycleBound = true;
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") void checkpointUniversalClock();
+    });
+    window.addEventListener("pagehide", () => {
+      void checkpointUniversalClock();
+    });
+  }
 }
 
 function populateClockInputs(root, ms) {
@@ -167,11 +214,10 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("ready", async () => {
-  if (game.user.isGM) {
-    const state = getUniversalTimeState();
-    if (state.anchorRealMs <= 0) {
-      await saveUniversalTimeState({ ...state, anchorRealMs: Date.now() });
-    }
+  if (isUniversalClockAuthority()) {
+    const resumed = resumeUniversalTimeSession(readUniversalTimeState(), Date.now());
+    await saveUniversalTimeState(resumed);
+    startUniversalClockSessionMaintenance();
   }
   installUniversalClockObserver();
 });
