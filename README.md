@@ -17,6 +17,7 @@ A Foundry VTT v13 module for the **Orphaned Sun** LANCER campaign. It provides a
 - Route calculations use physical coordinates only. Display compression and operational schematics are never treated as navigation distances.
 - Configurable shared navigation profile, defaulting to **200 g** proper acceleration and **0.995c** maximum cruise speed, with automatic midpoint flips on short routes.
 - Dual persistent campaign clocks distinguish **Cradle reference-frame time** from **crew proper time**; selected routes can be engaged as analytical relativistic voyages with live phase, velocity, transition markers, and ship position.
+- System views resolve deterministic Keplerian planet/moon positions and body rotations from **Cradle reference time** on demand; no offscreen or frame-by-frame astronomy simulation runs.
 - No runtime third-party libraries or CDN calls.
 
 ## Operational survey canon
@@ -55,11 +56,13 @@ Operational canon can also be audited directly:
 ```bash
 npm run body-operations:validate
 npm run body-operations:check
+npm run astronomy:check
+npm run astronomy:validate
 ```
 
 ## Forge / manifest installation
 
-Release `v0.6.2` is packaged with both `module.json` and `orphaned-sun-cluster-map-v0.6.2.zip`. Foundry/Forge updates use the manifest URL declared in `module.json`.
+Release `v0.9.0` is packaged with both `module.json` and `orphaned-sun-cluster-map-v0.9.0.zip`. Foundry/Forge updates use the manifest URL declared in `module.json`.
 
 ## Coordinate model
 

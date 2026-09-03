@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 1,
+  "epoch": "5016-09-03T10:38:00.000Z Cradle Standard Reckoning",
+  "modelVersion": "kepler-snapshot-v1",
+  "note": "Only genuinely unconstrained epoch orientations are generated. Registry periods, tilts, reference orbital phases, and tidal locks remain authoritative.",
+  "orientations": {
+    "abydos-cataphract": {
+      "spinPhaseAtEpochDeg": 137.03642101,
+      "axialSeasonPhaseAtEpochDeg": 3.425500179,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "abydos-ramses": {
+      "spinPhaseAtEpochDeg": 358.016386908,
+      "axialSeasonPhaseAtEpochDeg": 11.191187035,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "abydos-eventide": {
+      "spinPhaseAtEpochDeg": 197.888869643,
+      "axialSeasonPhaseAtEpochDeg": 271.632948797,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "abydos-thraximundus": {
+      "spinPhaseAtEpochDeg": 231.143557085,
+      "axialSeasonPhaseAtEpochDeg": 3.072074298,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "abydos-kandahar": {
+      "spinPhaseAtEpochDeg": 354.322064761,
+      "axialSeasonPhaseAtEpochDeg": 34.413292017,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "abydos-tribune": {
+      "spinPhaseAtEpochDeg": 58.819210734,
+      "axialSeasonPhaseAtEpochDeg": 319.116285508,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "abydos-enoch": {
+      "axialSeasonPhaseAtEpochDeg": 345.290174,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "abydos-sumatra": {
+      "spinPhaseAtEpochDeg": 253.344750199,
+      "axialSeasonPhaseAtEpochDeg": 310.392350061,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "abydos-ventus": {
+      "spinPhaseAtEpochDeg": 128.864421397,
+      "axialSeasonPhaseAtEpochDeg": 264.109074315,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "tanis-krasna-brae": {
+      "spinPhaseAtEpochDeg": 262.203202453,
+      "axialSeasonPhaseAtEpochDeg": 178.908868153,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "tanis-novy-skye": {
+      "spinPhaseAtEpochDeg": 12.111554202,
+      "axialSeasonPhaseAtEpochDeg": 113.29785157,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "tanis-dun-varya": {
+      "axialSeasonPhaseAtEpochDeg": 229.111942258,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "tanis-muigrad": {
+      "spinPhaseAtEpochDeg": 65.830327319,
+      "axialSeasonPhaseAtEpochDeg": 66.478917226,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "tanis-moroz-cairn": {
+      "spinPhaseAtEpochDeg": 328.233818952,
+      "axialSeasonPhaseAtEpochDeg": 206.724372664,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "saqqara-kilmorov": {
+      "spinPhaseAtEpochDeg": 260.658396576,
+      "axialSeasonPhaseAtEpochDeg": 92.466215082,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "saqqara-thennaris": {
+      "spinPhaseAtEpochDeg": 59.836845864,
+      "axialSeasonPhaseAtEpochDeg": 319.174774513,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "saqqara-bannoch-vost": {
+      "spinPhaseAtEpochDeg": 230.758428667,
+      "axialSeasonPhaseAtEpochDeg": 8.201367203,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "saqqara-eilean-volna": {
+      "axialSeasonPhaseAtEpochDeg": 279.9134125,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "saqqara-old-kestrel": {
+      "spinPhaseAtEpochDeg": 277.10775448,
+      "axialSeasonPhaseAtEpochDeg": 36.66292551,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "iunu-valeth": {
+      "spinPhaseAtEpochDeg": 177.21793008,
+      "axialSeasonPhaseAtEpochDeg": 214.289250579,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "iunu-vostara": {
+      "axialSeasonPhaseAtEpochDeg": 143.500529146,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "iunu-kyradon": {
+      "spinPhaseAtEpochDeg": 102.932371683,
+      "axialSeasonPhaseAtEpochDeg": 326.563701946,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "iunu-dunova": {
+      "axialSeasonPhaseAtEpochDeg": 26.312834714,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "iunu-pelagos": {
+      "spinPhaseAtEpochDeg": 324.055776671,
+      "axialSeasonPhaseAtEpochDeg": 96.493854336,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "iunu-braemir": {
+      "axialSeasonPhaseAtEpochDeg": 350.865642233,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "iunu-beth-aster": {
+      "spinPhaseAtEpochDeg": 178.384301579,
+      "axialSeasonPhaseAtEpochDeg": 305.612901365,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "iunu-volnaskye": {
+      "axialSeasonPhaseAtEpochDeg": 14.839802915,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "iunu-ophira": {
+      "spinPhaseAtEpochDeg": 165.469301976,
+      "axialSeasonPhaseAtEpochDeg": 112.868656637,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "iunu-muirka": {
+      "axialSeasonPhaseAtEpochDeg": 101.968857246,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "iunu-cairnov": {
+      "axialSeasonPhaseAtEpochDeg": 73.607169315,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "iunu-mercatia": {
+      "spinPhaseAtEpochDeg": 359.232453872,
+      "axialSeasonPhaseAtEpochDeg": 312.714084936,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "iunu-eilevost": {
+      "axialSeasonPhaseAtEpochDeg": 63.003429305,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "memphis-serapha": {
+      "spinPhaseAtEpochDeg": 225.001495499,
+      "axialSeasonPhaseAtEpochDeg": 214.301439626,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "memphis-elyon": {
+      "axialSeasonPhaseAtEpochDeg": 223.633681219,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "memphis-via-aureth": {
+      "spinPhaseAtEpochDeg": 316.471056528,
+      "axialSeasonPhaseAtEpochDeg": 197.916706866,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "memphis-nereth": {
+      "axialSeasonPhaseAtEpochDeg": 12.117635859,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "memphis-melekion": {
+      "spinPhaseAtEpochDeg": 245.818459885,
+      "axialSeasonPhaseAtEpochDeg": 312.444583029,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "memphis-kedrion": {
+      "axialSeasonPhaseAtEpochDeg": 156.220777743,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "memphis-qados": {
+      "spinPhaseAtEpochDeg": 344.63413652,
+      "axialSeasonPhaseAtEpochDeg": 16.274962854,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "memphis-aurema": {
+      "axialSeasonPhaseAtEpochDeg": 266.696314774,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "nekhen-aurelios": {
+      "spinPhaseAtEpochDeg": 121.909176065,
+      "axialSeasonPhaseAtEpochDeg": 119.204252595,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "nekhen-hierava": {
+      "spinPhaseAtEpochDeg": 40.135941189,
+      "axialSeasonPhaseAtEpochDeg": 268.995157247,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "nekhen-thessaron": {
+      "spinPhaseAtEpochDeg": 78.110047309,
+      "axialSeasonPhaseAtEpochDeg": 103.417023215,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "nekhen-or-qedem": {
+      "spinPhaseAtEpochDeg": 340.546922637,
+      "axialSeasonPhaseAtEpochDeg": 261.248995783,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "thebes-jinyara": {
+      "spinPhaseAtEpochDeg": 146.219153842,
+      "axialSeasonPhaseAtEpochDeg": 135.21591858,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "thebes-suryin": {
+      "axialSeasonPhaseAtEpochDeg": 48.572036801,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "thebes-mingvara": {
+      "axialSeasonPhaseAtEpochDeg": 10.370887807,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "thebes-qingpur": {
+      "spinPhaseAtEpochDeg": 129.357362045,
+      "axialSeasonPhaseAtEpochDeg": 275.058610076,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "thebes-devyan": {
+      "axialSeasonPhaseAtEpochDeg": 321.937633278,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "thebes-varunhai": {
+      "spinPhaseAtEpochDeg": 336.601567436,
+      "axialSeasonPhaseAtEpochDeg": 16.132273357,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "thebes-lianesh": {
+      "axialSeasonPhaseAtEpochDeg": 248.420807719,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "thebes-meilong": {
+      "spinPhaseAtEpochDeg": 68.346869694,
+      "axialSeasonPhaseAtEpochDeg": 9.171929732,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "thebes-kiranwei": {
+      "axialSeasonPhaseAtEpochDeg": 11.519012572,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "sais-nalini": {
+      "spinPhaseAtEpochDeg": 11.471888926,
+      "axialSeasonPhaseAtEpochDeg": 94.480200503,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "sais-chandri": {
+      "axialSeasonPhaseAtEpochDeg": 83.398367632,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "sais-shanvara": {
+      "spinPhaseAtEpochDeg": 78.005488347,
+      "axialSeasonPhaseAtEpochDeg": 42.744744597,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "sais-yuehara": {
+      "axialSeasonPhaseAtEpochDeg": 272.713068416,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "sais-longwei": {
+      "spinPhaseAtEpochDeg": 48.424007781,
+      "axialSeasonPhaseAtEpochDeg": 106.194602698,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "sais-ranjin": {
+      "axialSeasonPhaseAtEpochDeg": 243.833723282,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "sais-kailashun": {
+      "spinPhaseAtEpochDeg": 58.937623138,
+      "axialSeasonPhaseAtEpochDeg": 163.303471422,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "sais-tianesh": {
+      "axialSeasonPhaseAtEpochDeg": 46.493540565,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "amarna-nansen": {
+      "spinPhaseAtEpochDeg": 77.341630384,
+      "axialSeasonPhaseAtEpochDeg": 174.099878194,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "amarna-svalbard": {
+      "axialSeasonPhaseAtEpochDeg": 198.536280552,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "amarna-samarkand": {
+      "spinPhaseAtEpochDeg": 197.168303328,
+      "axialSeasonPhaseAtEpochDeg": 66.542589013,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "amarna-pamir": {
+      "axialSeasonPhaseAtEpochDeg": 21.617404204,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "amarna-aoraki": {
+      "spinPhaseAtEpochDeg": 64.680487616,
+      "axialSeasonPhaseAtEpochDeg": 267.587774852,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "amarna-tasman": {
+      "axialSeasonPhaseAtEpochDeg": 175.236937674,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "amarna-tlaloc": {
+      "spinPhaseAtEpochDeg": 48.075063536,
+      "axialSeasonPhaseAtEpochDeg": 76.865073172,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "amarna-cholula": {
+      "axialSeasonPhaseAtEpochDeg": 117.614666149,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "amarna-c-rdoba": {
+      "spinPhaseAtEpochDeg": 18.773515318,
+      "axialSeasonPhaseAtEpochDeg": 30.321891708,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "amarna-atacama": {
+      "axialSeasonPhaseAtEpochDeg": 354.957251921,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "amarna-saraswati": {
+      "spinPhaseAtEpochDeg": 194.827963812,
+      "axialSeasonPhaseAtEpochDeg": 358.107415633,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "amarna-nalanda": {
+      "axialSeasonPhaseAtEpochDeg": 135.114666615,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "amarna-kilimanjaro": {
+      "spinPhaseAtEpochDeg": 172.286304412,
+      "axialSeasonPhaseAtEpochDeg": 282.543035718,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "amarna-serengeti": {
+      "axialSeasonPhaseAtEpochDeg": 145.191119537,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "seti-tianvara": {
+      "spinPhaseAtEpochDeg": 39.296893403,
+      "axialSeasonPhaseAtEpochDeg": 228.580224998,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "seti-navira": {
+      "axialSeasonPhaseAtEpochDeg": 343.333703354,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "seti-chandrao": {
+      "spinPhaseAtEpochDeg": 122.256516432,
+      "axialSeasonPhaseAtEpochDeg": 105.57159151,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "seti-shenpur": {
+      "axialSeasonPhaseAtEpochDeg": 250.503992457,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "seti-rudrashen": {
+      "spinPhaseAtEpochDeg": 7.918850295,
+      "axialSeasonPhaseAtEpochDeg": 332.438022578,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "seti-yuelin": {
+      "axialSeasonPhaseAtEpochDeg": 283.060137453,
+      "spinPhaseProvenance": "DERIVED: synchronous tidal lock to orbital geometry",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    },
+    "seti-keshun": {
+      "spinPhaseAtEpochDeg": 268.770989366,
+      "axialSeasonPhaseAtEpochDeg": 199.283800973,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "ESTABLISHED: geography_seed"
+    },
+    "seti-kalong": {
+      "spinPhaseAtEpochDeg": 315.503274025,
+      "axialSeasonPhaseAtEpochDeg": 110.377836479,
+      "spinPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + rotation-epoch-phase-v1",
+      "axialSeasonPhaseProvenance": "DETERMINISTIC WORKING CANON: stable body seed + axial-season-phase-v1",
+      "seedBasis": "DERIVED: immutable canonical identity fingerprint"
+    }
+  }
+}

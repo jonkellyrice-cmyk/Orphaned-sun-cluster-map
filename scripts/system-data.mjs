@@ -1,3 +1,6 @@
+import { normalizeDegrees, orbitalPeriodDays, orbitalStateAt, rotationStateAt } from "./astronomy.mjs";
+import { UNION_EPOCH_MS } from "./universal-time.mjs";
+
 export const AU_KM = 149_597_870.7;
 export const LIGHT_YEAR_KM = 9_460_730_472_580.8;
 
@@ -54,7 +57,7 @@ export function classifySystemObject(type) {
   return "planet";
 }
 
-export function buildSystemModel(rows, systemName) {
+export function buildSystemModel(rows, systemName, { referenceTimestampMs = UNION_EPOCH_MS, orientations = {} } = {}) {
   const source = rows.filter((row) => row.system === systemName);
   if (!source.length) throw new RangeError(`Unknown system: ${systemName}`);
   const ownerFactions = [...new Set(source.map((row) => row.owner_faction).filter(Boolean))];
@@ -68,30 +71,63 @@ export function buildSystemModel(rows, systemName) {
       objectClass: classifySystemObject(row.type),
       selectable: String(row.selectable).toLowerCase() === "yes",
       distanceAu: distanceToAu(row.distance_from_parent || 0, row.distance_unit || "AU"),
+      semiMajorAxisAu: distanceToAu(row.distance_from_parent || 0, row.distance_unit || "AU"),
+      referencePhaseDeg: numeric(row.reference_phase_deg) ?? 0,
       phaseDeg: numeric(row.reference_phase_deg) ?? 0,
       inclinationDeg: numeric(row.inclination_deg) ?? 0,
       radiusRe: numeric(row.radius_re),
+      referenceTimestampMs,
     };
     byName.set(object.name, object);
     return object;
   });
+
+  // Preserve established binary barycentric opposition (currently Tanis A/B)
+  // without inventing independent stellar trajectories around the barycenter.
+  const binaryPrimaryFor = new Map();
+  for (const parent of objects.filter((object) => object.objectClass === "barycenter")) {
+    const stars = objects.filter((object) => object.parent === parent.name && object.objectClass === "star" && orbitalPeriodDays(object) > 0);
+    if (stars.length !== 2 || Math.abs(orbitalPeriodDays(stars[0]) - orbitalPeriodDays(stars[1])) > 1e-9) continue;
+    const phaseSeparation = normalizeDegrees(stars[1].referencePhaseDeg - stars[0].referencePhaseDeg);
+    if (Math.abs(phaseSeparation - 180) <= 1e-6) binaryPrimaryFor.set(stars[1], stars[0]);
+  }
 
   const resolving = new Set();
   function resolve(object) {
     if (object.physical) return object.physical;
     if (resolving.has(object.name)) throw new Error(`Orbital parent cycle at ${object.name}`);
     resolving.add(object.name);
+    const binaryPrimary = binaryPrimaryFor.get(object);
+    if (binaryPrimary) {
+      resolve(binaryPrimary);
+      const primaryState = binaryPrimary.orbitalState;
+      const radialFactor = primaryState.radiusAu / binaryPrimary.semiMajorAxisAu;
+      object.orbitalState = {
+        ...primaryState,
+        trueAnomalyDeg: normalizeDegrees(primaryState.trueAnomalyDeg + 180),
+        meanAnomalyDeg: normalizeDegrees(primaryState.meanAnomalyDeg + 180),
+        eccentricAnomalyDeg: normalizeDegrees(primaryState.eccentricAnomalyDeg + 180),
+        radiusAu: object.semiMajorAxisAu * radialFactor,
+        semiMajorAxisAu: object.semiMajorAxisAu,
+        orbitalVelocityKmS: primaryState.orbitalVelocityKmS * object.semiMajorAxisAu / binaryPrimary.semiMajorAxisAu,
+        binaryCompanionOf: binaryPrimary.name,
+      };
+    } else object.orbitalState = orbitalStateAt(object, referenceTimestampMs);
+    object.distanceAu = object.orbitalState.radiusAu;
+    object.phaseDeg = object.orbitalState.trueAnomalyDeg;
     const local = vectorFromOrbit(object.distanceAu, object.phaseDeg, object.inclinationDeg);
     const parent = byName.get(object.parent);
     const parentPosition = parent ? resolve(parent) : { x: 0, y: 0, z: 0 };
     object.physical = { x: parentPosition.x + local.x, y: parentPosition.y + local.y, z: parentPosition.z + local.z };
     object.parentObject = parent ?? null;
+    const orientation = orientations[object.id] ?? orientations[`${object.system}:${object.name}`] ?? {};
+    object.rotationState = rotationStateAt(object, referenceTimestampMs, orientation, object.orbitalState);
     resolving.delete(object.name);
     return object.physical;
   }
   for (const object of objects) resolve(object);
   const maxAu = Math.max(...objects.map((object) => Math.hypot(object.physical.x, object.physical.y, object.physical.z)), 1);
-  return { name: systemName, ownerFaction: ownerFactions[0] ?? "", objects, byName, maxAu };
+  return { name: systemName, ownerFaction: ownerFactions[0] ?? "", objects, byName, maxAu, referenceTimestampMs };
 }
 
 export function physicalDistanceAu(a, b) {

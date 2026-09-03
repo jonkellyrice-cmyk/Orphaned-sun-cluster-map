@@ -10,11 +10,12 @@ test("canonical registry parses all 126 objects and ten systems", () => {
   assert.equal(new Set(rows.map((row) => row.system)).size, 10);
 });
 
-test("parent-relative moon positions convert km to AU", () => {
+test("parent-relative moon positions convert canonical semi-major axes and apply the epoch radial solution", () => {
   const model = buildSystemModel(rows, "Amarna");
   const nansen = model.byName.get("Nansen");
   const svalbard = model.byName.get("Svalbard");
-  assert.ok(Math.abs(physicalDistanceAu(nansen, svalbard) - 190_000 / AU_KM) < 1e-12);
+  assert.ok(Math.abs(svalbard.semiMajorAxisAu - 190_000 / AU_KM) < 1e-12);
+  assert.ok(Math.abs(physicalDistanceAu(nansen, svalbard) - svalbard.orbitalState.radiusAu) < 1e-12);
 });
 
 test("Akhetan infrastructure resolves through its parent hierarchy", () => {
@@ -38,7 +39,8 @@ test("display compression does not alter physical route coordinates", () => {
   const physical = physicalDistanceAu(eventide, station);
   const a = displayPosition(eventide, model), b = displayPosition(station, model);
   assert.ok(Math.hypot(b.x - a.x, b.y - a.y, b.z - a.z) > physical * 100);
-  assert.ok(Math.abs(physical - 180_000 / AU_KM) < 1e-12);
+  assert.ok(Math.abs(station.semiMajorAxisAu - 180_000 / AU_KM) < 1e-12);
+  assert.ok(Math.abs(physical - station.orbitalState.radiusAu) < 1e-12);
 });
 
 test("Tanis preserves two stars around the barycenter", () => {
