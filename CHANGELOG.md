@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.1
+
+- Moved solver-derived speed-cap and braking/thrust-flip dots into a dedicated upper SVG layer so endpoint system/body markers cannot obscure them.
+- Increased transition dots from 4 px to 6.5 px radius with dark outlines and restrained green/red glow while preserving their exact solved route positions.
+
 ## 0.8.0
 
 - Added an authoritative-GM-only draggable ship control constrained to the selected route rail.

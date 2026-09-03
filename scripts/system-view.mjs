@@ -140,8 +140,9 @@ export class SystemView {
     this.routeLayer = svgElement("g", { class: "oscm-system-route-layer" });
     this.objectLayer = svgElement("g", { class: "oscm-system-object-layer" });
     this.factionLayer = svgElement("g", { class: "oscm-faction-context-layer is-system", "aria-hidden": "true" });
+    this.transitionLayer = svgElement("g", { class: "oscm-trajectory-transition-layer" });
     this.shipLayer = svgElement("g", { class: "oscm-ship-layer" });
-    this.svg.append(this.orbitLayer, this.routeLayer, this.objectLayer, this.factionLayer, this.shipLayer);
+    this.svg.append(this.orbitLayer, this.routeLayer, this.objectLayer, this.factionLayer, this.transitionLayer, this.shipLayer);
 
     const faction = factionPresentationForOwner(this.model.ownerFaction);
     this.factionAnchorObjects = this.model.objects.filter((object) => object.objectClass === "star");
@@ -314,6 +315,7 @@ export class SystemView {
       this.factionMarker.setAttribute("transform", `translate(${x.toFixed(2)} ${(y - 46).toFixed(2)})`);
     }
     this.routeLayer.replaceChildren();
+    this.transitionLayer.replaceChildren();
     this.shipLayer.replaceChildren();
     const routeOrigin = this.routeVisualization?.origin ?? this.origin;
     const routeDestination = this.routeVisualization?.destination ?? this.destination;
@@ -322,8 +324,8 @@ export class SystemView {
       this.routeLayer.append(svgElement("line", { class: "oscm-system-route-line", x1: a.x, y1: a.y, x2: b.x, y2: b.y }));
       const pointAt = (fraction) => ({ x: a.x + (b.x - a.x) * fraction, y: a.y + (b.y - a.y) * fraction });
       for (const marker of this.routeVisualization?.markers ?? []) {
-        const point = pointAt(marker.routeFraction), dot = svgElement("circle", { class: `oscm-trajectory-marker is-${marker.kind}`, cx: point.x, cy: point.y, r: 4 });
-        const title = svgElement("title"); title.textContent = marker.label; dot.append(title); this.routeLayer.append(dot);
+        const point = pointAt(marker.routeFraction), dot = svgElement("circle", { class: `oscm-trajectory-marker is-${marker.kind}`, cx: point.x, cy: point.y, r: 6.5 });
+        const title = svgElement("title"); title.textContent = marker.label; dot.append(title); this.transitionLayer.append(dot);
       }
       if (Number.isFinite(this.routeVisualization?.shipFraction)) {
         const point = pointAt(this.routeVisualization.shipFraction), angle = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;

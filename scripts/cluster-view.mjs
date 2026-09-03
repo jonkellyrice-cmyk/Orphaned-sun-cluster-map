@@ -156,8 +156,9 @@ export class ClusterView {
     this.axisLayer = svgElement("g", { class: "oscm-axis-layer" });
     this.routeLayer = svgElement("g", { class: "oscm-route-layer" });
     this.starLayer = svgElement("g", { class: "oscm-star-layer" });
+    this.transitionLayer = svgElement("g", { class: "oscm-trajectory-transition-layer" });
     this.shipLayer = svgElement("g", { class: "oscm-ship-layer" });
-    this.svg.append(this.gridLayer, this.axisLayer, this.routeLayer, this.starLayer, this.shipLayer);
+    this.svg.append(this.gridLayer, this.axisLayer, this.routeLayer, this.starLayer, this.transitionLayer, this.shipLayer);
 
     this.#rebuildGrid();
     this.#buildAxes();
@@ -535,6 +536,7 @@ export class ClusterView {
     for (const { node } of projectedStars) this.starLayer.append(node.group);
 
     this.routeLayer.replaceChildren();
+    this.transitionLayer.replaceChildren();
     this.shipLayer.replaceChildren();
     const routeOrigin = this.routeVisualization?.origin ?? this.origin;
     const routeDestination = this.routeVisualization?.destination ?? this.destination;
@@ -553,8 +555,8 @@ export class ClusterView {
       const pointAt = (fraction) => ({ x: a.x + (b.x - a.x) * fraction, y: a.y + (b.y - a.y) * fraction });
       for (const marker of this.routeVisualization?.markers ?? []) {
         const point = pointAt(marker.routeFraction);
-        const dot = svgElement("circle", { class: `oscm-trajectory-marker is-${marker.kind}`, cx: point.x.toFixed(2), cy: point.y.toFixed(2), r: 4 });
-        const title = svgElement("title"); title.textContent = marker.label; dot.append(title); this.routeLayer.append(dot);
+        const dot = svgElement("circle", { class: `oscm-trajectory-marker is-${marker.kind}`, cx: point.x.toFixed(2), cy: point.y.toFixed(2), r: 6.5 });
+        const title = svgElement("title"); title.textContent = marker.label; dot.append(title); this.transitionLayer.append(dot);
       }
       if (Number.isFinite(this.routeVisualization?.shipFraction)) {
         const fraction = this.routeVisualization.shipFraction, point = pointAt(fraction);

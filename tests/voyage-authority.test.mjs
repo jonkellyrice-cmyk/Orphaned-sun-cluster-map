@@ -24,8 +24,12 @@ test("both route renderers consume the same solver-derived markers and ship frac
     assert.match(source, /oscm-active-ship-marker/);
     assert.match(source, /this\.shipLayer\.append\(ship\)/);
   }
-  assert.match(clusterView, /this\.svg\.append\(this\.gridLayer, this\.axisLayer, this\.routeLayer, this\.starLayer, this\.shipLayer\)/);
-  assert.match(systemView, /this\.svg\.append\(this\.orbitLayer, this\.routeLayer, this\.objectLayer, this\.factionLayer, this\.shipLayer\)/);
+  assert.match(clusterView, /this\.svg\.append\(this\.gridLayer, this\.axisLayer, this\.routeLayer, this\.starLayer, this\.transitionLayer, this\.shipLayer\)/);
+  assert.match(systemView, /this\.svg\.append\(this\.orbitLayer, this\.routeLayer, this\.objectLayer, this\.factionLayer, this\.transitionLayer, this\.shipLayer\)/);
+  for (const source of [clusterView, systemView]) {
+    assert.match(source, /this\.transitionLayer\.append\(dot\)/);
+    assert.match(source, /r: 6\.5/);
+  }
   assert.match(app, /markers: trajectoryMarkers\(transit\)/);
   assert.match(app, /shipFraction: evaluated\.routeFraction/);
   assert.match(app, /!game\.user\.isGM \|\| !api\?\.isClockAuthority/);
