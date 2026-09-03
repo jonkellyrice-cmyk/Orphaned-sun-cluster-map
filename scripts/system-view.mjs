@@ -123,7 +123,8 @@ export class SystemView {
     this.routeLayer = svgElement("g", { class: "oscm-system-route-layer" });
     this.objectLayer = svgElement("g", { class: "oscm-system-object-layer" });
     this.factionLayer = svgElement("g", { class: "oscm-faction-context-layer is-system", "aria-hidden": "true" });
-    this.svg.append(this.orbitLayer, this.routeLayer, this.objectLayer, this.factionLayer);
+    this.shipLayer = svgElement("g", { class: "oscm-ship-layer" });
+    this.svg.append(this.orbitLayer, this.routeLayer, this.objectLayer, this.factionLayer, this.shipLayer);
 
     const faction = factionPresentationForOwner(this.model.ownerFaction);
     this.factionAnchorObjects = this.model.objects.filter((object) => object.objectClass === "star");
@@ -296,6 +297,7 @@ export class SystemView {
       this.factionMarker.setAttribute("transform", `translate(${x.toFixed(2)} ${(y - 46).toFixed(2)})`);
     }
     this.routeLayer.replaceChildren();
+    this.shipLayer.replaceChildren();
     const routeOrigin = this.routeVisualization?.origin ?? this.origin;
     const routeDestination = this.routeVisualization?.destination ?? this.destination;
     if (routeOrigin && routeDestination) {
@@ -309,7 +311,7 @@ export class SystemView {
       if (Number.isFinite(this.routeVisualization?.shipFraction)) {
         const point = pointAt(this.routeVisualization.shipFraction), angle = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
         const ship = svgElement("polygon", { class: "oscm-active-ship-marker", points: "8,0 -6,-5 -4,0 -6,5", transform: `translate(${point.x} ${point.y}) rotate(${angle})` });
-        this.routeLayer.append(ship);
+        this.shipLayer.append(ship);
       }
     }
   }

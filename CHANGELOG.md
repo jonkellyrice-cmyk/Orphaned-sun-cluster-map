@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.1
+
+- Rendered the active party-vessel triangle in a dedicated top SVG layer so it remains visible over its origin marker during the visually negligible opening portion of a voyage.
+
 ## 0.7.0
 
 - Split campaign chronology into visible Cradle reference-frame and shipboard proper-time clocks while preserving offline pause semantics and authoritative-GM persistence.

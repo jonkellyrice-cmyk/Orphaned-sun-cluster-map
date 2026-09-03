@@ -22,7 +22,10 @@ test("both route renderers consume the same solver-derived markers and ship frac
     assert.match(source, /routeVisualization\?\.shipFraction/);
     assert.match(source, /oscm-trajectory-marker/);
     assert.match(source, /oscm-active-ship-marker/);
+    assert.match(source, /this\.shipLayer\.append\(ship\)/);
   }
+  assert.match(clusterView, /this\.svg\.append\(this\.gridLayer, this\.axisLayer, this\.routeLayer, this\.starLayer, this\.shipLayer\)/);
+  assert.match(systemView, /this\.svg\.append\(this\.orbitLayer, this\.routeLayer, this\.objectLayer, this\.factionLayer, this\.shipLayer\)/);
   assert.match(app, /markers: trajectoryMarkers\(transit\)/);
   assert.match(app, /shipFraction: evaluated\.routeFraction/);
 });

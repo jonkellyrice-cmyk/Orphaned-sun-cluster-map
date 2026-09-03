@@ -116,7 +116,8 @@ export class ClusterView {
     this.axisLayer = svgElement("g", { class: "oscm-axis-layer" });
     this.routeLayer = svgElement("g", { class: "oscm-route-layer" });
     this.starLayer = svgElement("g", { class: "oscm-star-layer" });
-    this.svg.append(this.gridLayer, this.axisLayer, this.routeLayer, this.starLayer);
+    this.shipLayer = svgElement("g", { class: "oscm-ship-layer" });
+    this.svg.append(this.gridLayer, this.axisLayer, this.routeLayer, this.starLayer, this.shipLayer);
 
     this.#rebuildGrid();
     this.#buildAxes();
@@ -494,6 +495,7 @@ export class ClusterView {
     for (const { node } of projectedStars) this.starLayer.append(node.group);
 
     this.routeLayer.replaceChildren();
+    this.shipLayer.replaceChildren();
     const routeOrigin = this.routeVisualization?.origin ?? this.origin;
     const routeDestination = this.routeVisualization?.destination ?? this.destination;
     if (routeOrigin && routeDestination) {
@@ -518,7 +520,7 @@ export class ClusterView {
         const fraction = this.routeVisualization.shipFraction, point = pointAt(fraction);
         const angle = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
         const ship = svgElement("polygon", { class: "oscm-active-ship-marker", points: "8,0 -6,-5 -4,0 -6,5", transform: `translate(${point.x.toFixed(2)} ${point.y.toFixed(2)}) rotate(${angle.toFixed(2)})` });
-        const title = svgElement("title"); title.textContent = "Party vessel"; ship.append(title); this.routeLayer.append(ship);
+        const title = svgElement("title"); title.textContent = "Party vessel"; ship.append(title); this.shipLayer.append(ship);
       }
     }
   }
