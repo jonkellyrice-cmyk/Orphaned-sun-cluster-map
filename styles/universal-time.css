@@ -1,0 +1,130 @@
+.oscm-universal-clock {
+  position: relative;
+  overflow: hidden;
+}
+
+.oscm-universal-clock::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 80% 16%, rgba(169, 243, 242, 0.08), transparent 42%);
+}
+
+.oscm-clock-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.oscm-clock-heading .oscm-card-title { margin-bottom: 0; }
+
+.oscm-clock-status {
+  padding: 2px 5px;
+  border: 1px solid rgba(169, 243, 242, 0.2);
+  border-radius: 3px;
+  color: #8fb8bc;
+  font: 700 8px/1.2 monospace;
+  letter-spacing: 0.08em;
+}
+
+.oscm-clock-date {
+  position: relative;
+  margin-top: 8px;
+  color: #eafafb;
+  font: 700 13px/1.35 "Orbitron", "Arial Narrow", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.oscm-clock-time {
+  position: relative;
+  margin-top: 4px;
+  color: var(--oscm-accent);
+  font: 700 28px/1.1 monospace;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 12px rgba(169, 243, 242, 0.18);
+}
+
+.oscm-clock-standard {
+  position: relative;
+  margin-top: 3px;
+  color: #71979b;
+  font: 9px/1.3 monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.oscm-clock-gm-controls {
+  position: relative;
+  margin-top: 11px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(151, 220, 225, 0.1);
+}
+
+.oscm-clock-transport button,
+.oscm-clock-step-grid button {
+  min-height: 27px;
+  border: 1px solid rgba(155, 222, 226, 0.2);
+  background: rgba(19, 42, 47, 0.72);
+  color: #cce7e9;
+  font-size: 10px;
+}
+
+.oscm-clock-transport button:hover,
+.oscm-clock-step-grid button:hover {
+  border-color: rgba(170, 242, 243, 0.52);
+  background: rgba(25, 55, 61, 0.88);
+}
+
+.oscm-clock-transport button { width: 100%; }
+
+.oscm-clock-step-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.oscm-clock-set {
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px solid rgba(151, 220, 225, 0.08);
+}
+
+.oscm-clock-set-label {
+  margin-bottom: 6px;
+  color: #9fbfc2;
+  font: 700 9px/1.2 monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.oscm-clock-date-inputs {
+  display: grid;
+  grid-template-columns: 0.8fr 0.8fr 1.3fr;
+  gap: 5px;
+}
+
+.oscm-clock-date-inputs label,
+.oscm-clock-time-input {
+  display: grid;
+  gap: 3px;
+  color: #789da1;
+  font: 9px/1.2 monospace;
+}
+
+.oscm-clock-date-inputs input,
+.oscm-clock-time-input input {
+  width: 100%;
+  height: 27px;
+  padding: 2px 5px;
+  border: 1px solid rgba(151, 220, 225, 0.18);
+  background: #091417;
+  color: #dceef0;
+  font: 11px/1 monospace;
+}
+
+.oscm-clock-time-input { margin-top: 6px; }
+.oscm-clock-set .oscm-apply { margin-top: 7px; }

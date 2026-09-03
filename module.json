@@ -30,6 +30,7 @@
   ],
   "styles": [
     "styles/cluster-map.css",
+    "styles/universal-time.css",
     "styles/faction-territories.css",
     "styles/capital-icons.css",
     "styles/route-hud.css",
