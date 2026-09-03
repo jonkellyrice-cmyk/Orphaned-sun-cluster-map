@@ -12,6 +12,13 @@
   color: #dff7f8;
   pointer-events: none;
 }
+.oscm-route-hud-title-row { display:flex; align-items:center; gap:8px; }
+.oscm-route-hud-title-row .oscm-route-hud-route { flex:1; }
+.oscm-route-hud button { pointer-events:auto; border:1px solid rgba(169,243,242,.4); background:#17353a; color:#cfffff; font:700 8px/1 monospace; padding:5px 7px; }
+.oscm-voyage-live { display:grid; grid-template-columns:1fr auto; align-items:center; gap:3px 8px; margin-top:7px; padding-top:7px; border-top:1px solid rgba(169,243,242,.18); }
+.oscm-voyage-live span { color:#83bec2; font:700 8px/1.2 monospace; letter-spacing:.09em; }
+.oscm-voyage-live strong { color:#eaffff; font:700 13px/1 monospace; }
+.oscm-voyage-live button { grid-column:1/-1; margin-top:3px; color:#ff9da0; border-color:rgba(255,93,98,.35); }
 
 .oscm-route-hud-kicker {
   margin-bottom: 2px;

@@ -142,6 +142,10 @@
 }
 .oscm-route-line-shadow { stroke: rgba(0,0,0,0.8); stroke-width: 6; }
 .oscm-route-line { stroke: #dffcff; stroke-width: 2.2; stroke-dasharray: 7 5; }
+.oscm-trajectory-marker { stroke: rgba(1,8,10,.95); stroke-width: 1.5; pointer-events: auto; }
+.oscm-trajectory-marker.is-speed-cap { fill: #52dc79; }
+.oscm-trajectory-marker.is-braking { fill: #ff5d62; }
+.oscm-active-ship-marker { fill: #f4f8f8; stroke: #071316; stroke-width: 1.2; filter: drop-shadow(0 0 3px rgba(169,243,242,.8)); pointer-events: auto; }
 
 .oscm-view-help {
   position: absolute;

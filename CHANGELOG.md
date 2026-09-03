@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0
+
+- Split campaign chronology into visible Cradle reference-frame and shipboard proper-time clocks while preserving offline pause semantics and authoritative-GM persistence.
+- Added GM-engaged deterministic voyages with immutable departure profiles, live velocity/phase readouts, arrival clamping, abort support, and permanent relativistic clock divergence.
+- Added solver-derived green speed-cap and red braking/thrust-flip route markers plus a trajectory-correct triangular party-vessel marker at cluster and system scales.
+- Added analytical trajectory evaluation and deterministic tests for clock advancement, voyage persistence, phase transitions, marker agreement, authority, and post-arrival offsets.
+
 ## v0.6.1
 
 - Propagated the existing faction emblems into system view, anchored above each system's canonical star or binary-star midpoint.

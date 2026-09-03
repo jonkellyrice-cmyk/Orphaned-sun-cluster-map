@@ -55,6 +55,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.oscm-clock-readout-divider { position:relative; height:1px; margin:11px 0 9px; background:rgba(151,220,225,.12); }
 
 .oscm-clock-gm-controls {
   position: relative;

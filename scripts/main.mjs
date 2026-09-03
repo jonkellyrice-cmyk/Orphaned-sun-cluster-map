@@ -2,18 +2,18 @@ import { ClusterMapApplication, MODULE_ID } from "./cluster-map-app.mjs";
 import {
   DEFAULT_UNIVERSAL_TIME_STATE,
   UNIVERSAL_TIME_SETTING,
-  adjustUniversalTime,
-  currentUniversalTimeMs,
   formatUniversalClock,
   formatUniversalDate,
   formatUniversalTimeInput,
+  makeUniversalTimeMs,
   normalizeUniversalTimeState,
-  resumeUniversalTimeSession,
-  setUniversalDateTime,
-  setUniversalTimeRunning,
-  settleUniversalTimeState,
   universalTimeParts,
 } from "./universal-time.mjs";
+import {
+  CAMPAIGN_TIME_SETTING, DEFAULT_CAMPAIGN_TIME_STATE, adjustCampaignProperTime,
+  currentCampaignTime, normalizeCampaignTimeState, resumeCampaignTimeSession,
+  setCampaignProperTimestamp, setCampaignTimeRunning, settleCampaignTime,
+} from "./campaign-time.mjs";
 
 let app = null;
 let universalClockObserver = null;
@@ -35,20 +35,21 @@ export function openClusterMap() {
 }
 
 function readUniversalTimeState() {
-  return normalizeUniversalTimeState(game.settings.get(MODULE_ID, UNIVERSAL_TIME_SETTING));
+  return normalizeCampaignTimeState(game.settings.get(MODULE_ID, CAMPAIGN_TIME_SETTING));
 }
 
 function getUniversalTimeState() {
   const state = readUniversalTimeState();
   if (state.running && state.anchorRealMs > 0 && state.anchorRealMs < UNIVERSAL_CLOCK_SESSION_STARTED_REAL_MS) {
-    return resumeUniversalTimeSession(state, UNIVERSAL_CLOCK_SESSION_STARTED_REAL_MS);
+    return resumeCampaignTimeSession(state, UNIVERSAL_CLOCK_SESSION_STARTED_REAL_MS);
   }
   return state;
 }
 
 async function saveUniversalTimeState(state) {
   if (!game.user.isGM) return false;
-  await game.settings.set(MODULE_ID, UNIVERSAL_TIME_SETTING, state);
+  await game.settings.set(MODULE_ID, CAMPAIGN_TIME_SETTING, state);
+  window.dispatchEvent(new CustomEvent("oscm-campaign-time-changed", { detail: state }));
   return true;
 }
 
@@ -62,7 +63,7 @@ async function checkpointUniversalClock() {
   if (!isUniversalClockAuthority()) return;
   const state = getUniversalTimeState();
   if (!state.running) return;
-  await saveUniversalTimeState(settleUniversalTimeState(state, Date.now()));
+  await saveUniversalTimeState(settleCampaignTime(state, Date.now()));
 }
 
 function startUniversalClockSessionMaintenance() {
@@ -100,14 +101,19 @@ function populateClockInputs(root, ms) {
 function refreshUniversalClock(root, { forceInputs = false } = {}) {
   if (!root?.isConnected) return;
   const state = getUniversalTimeState();
-  const ms = currentUniversalTimeMs(state);
-  const date = root.querySelector("[data-universal-date]");
-  const clock = root.querySelector("[data-universal-clock]");
+  const current = currentCampaignTime(state);
+  const ms = current.properBaseMs;
+  const date = root.querySelector("[data-proper-date]");
+  const clock = root.querySelector("[data-proper-clock]");
+  const referenceDate = root.querySelector("[data-reference-date]");
+  const referenceClock = root.querySelector("[data-reference-clock]");
   const status = root.querySelector("[data-universal-clock-status]");
   const toggle = root.querySelector('[data-action="toggle-universal-clock"]');
 
   if (date) date.textContent = formatUniversalDate(ms);
   if (clock) clock.textContent = formatUniversalClock(ms);
+  if (referenceDate) referenceDate.textContent = formatUniversalDate(current.referenceBaseMs);
+  if (referenceClock) referenceClock.textContent = formatUniversalClock(current.referenceBaseMs);
   if (status) status.textContent = state.running ? "RUNNING" : "PAUSED";
   if (toggle) {
     toggle.innerHTML = state.running
@@ -136,14 +142,14 @@ function bindUniversalClock(root) {
   root.dataset.universalClockBound = "true";
 
   root.querySelector('[data-action="toggle-universal-clock"]')?.addEventListener("click", () => {
-    mutateUniversalClock(root, (state, now) => setUniversalTimeRunning(state, !state.running, now));
+    mutateUniversalClock(root, (state, now) => setCampaignTimeRunning(state, !state.running, now));
   });
 
   for (const button of root.querySelectorAll("[data-clock-delta-minutes]")) {
     button.addEventListener("click", () => {
       const deltaMinutes = Number(button.dataset.clockDeltaMinutes);
       if (!Number.isFinite(deltaMinutes)) return;
-      mutateUniversalClock(root, (state, now) => adjustUniversalTime(state, deltaMinutes * MINUTE_MS, now));
+      mutateUniversalClock(root, (state, now) => adjustCampaignProperTime(state, deltaMinutes * MINUTE_MS, now));
     });
   }
 
@@ -155,7 +161,8 @@ function bindUniversalClock(root) {
     const [hourText, minuteText] = timeValue.split(":");
     const hour = Number(hourText);
     const minute = Number(minuteText);
-    mutateUniversalClock(root, (state, now) => setUniversalDateTime(state, { year, month, day, hour, minute, second: 0 }, now));
+    const properMs = makeUniversalTimeMs({ year, month, day, hour, minute, second: 0 });
+    mutateUniversalClock(root, (state, now) => setCampaignProperTimestamp(state, properMs, now));
   });
 
   refreshUniversalClock(root, { forceInputs: true });
@@ -208,14 +215,24 @@ Hooks.once("init", () => {
     type: Object,
     default: { ...DEFAULT_UNIVERSAL_TIME_STATE },
   });
+  game.settings.register(MODULE_ID, CAMPAIGN_TIME_SETTING, {
+    name: "Campaign proper/reference time and active voyage",
+    scope: "world", config: false, type: Object,
+    default: { ...DEFAULT_CAMPAIGN_TIME_STATE },
+  });
 
   const module = game.modules.get(MODULE_ID);
-  if (module) module.api = Object.freeze({ open: openClusterMap });
+  if (module) module.api = Object.freeze({ open: openClusterMap, getCampaignTimeState: () => currentCampaignTime(getUniversalTimeState()), saveCampaignTimeState: saveUniversalTimeState, isClockAuthority: isUniversalClockAuthority });
 });
 
 Hooks.once("ready", async () => {
   if (isUniversalClockAuthority()) {
-    const resumed = resumeUniversalTimeSession(readUniversalTimeState(), Date.now());
+    let stored = readUniversalTimeState();
+    const legacy = normalizeUniversalTimeState(game.settings.get(MODULE_ID, UNIVERSAL_TIME_SETTING));
+    if (stored.properBaseMs === DEFAULT_CAMPAIGN_TIME_STATE.properBaseMs && legacy.baseMs !== DEFAULT_UNIVERSAL_TIME_STATE.baseMs) {
+      stored = { ...stored, properBaseMs: legacy.baseMs, referenceBaseMs: legacy.baseMs, running: legacy.running };
+    }
+    const resumed = resumeCampaignTimeSession(stored, Date.now());
     await saveUniversalTimeState(resumed);
     startUniversalClockSessionMaintenance();
   }

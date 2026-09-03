@@ -16,6 +16,7 @@ A Foundry VTT v13 module for the **Orphaned Sun** LANCER campaign. It provides a
 - Mobile/touch: one-finger drag rotates; pinch changes zoom; touch activation uses the same cluster/system/body navigation model.
 - Route calculations use physical coordinates only. Display compression and operational schematics are never treated as navigation distances.
 - Configurable shared navigation profile, defaulting to **200 g** proper acceleration and **0.995c** maximum cruise speed, with automatic midpoint flips on short routes.
+- Dual persistent campaign clocks distinguish **Cradle reference-frame time** from **crew proper time**; selected routes can be engaged as analytical relativistic voyages with live phase, velocity, transition markers, and ship position.
 - No runtime third-party libraries or CDN calls.
 
 ## Operational survey canon

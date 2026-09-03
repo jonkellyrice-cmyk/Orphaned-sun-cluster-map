@@ -4,7 +4,7 @@
 
     <section class="oscm-route-hud is-hidden" aria-live="polite" aria-label="Selected route travel time">
       <div class="oscm-route-hud-kicker">SELECTED ROUTE</div>
-      <div class="oscm-route-hud-route" data-hud-field="route">—</div>
+      <div class="oscm-route-hud-title-row"><div class="oscm-route-hud-route" data-hud-field="route">—</div>{{#if isGM}}<button type="button" data-action="engage-route">ENGAGE</button>{{/if}}</div>
       <div class="oscm-route-hud-distance" data-hud-field="spatial">—</div>
       <div class="oscm-route-hud-times">
         <div>
@@ -17,6 +17,10 @@
         </div>
       </div>
       <div class="oscm-route-hud-profile" data-hud-field="profile">—</div>
+      <div class="oscm-voyage-live is-hidden" data-voyage-live>
+        <span data-hud-field="phase">—</span><strong data-hud-field="velocity">—</strong>
+        {{#if isGM}}<button type="button" data-action="abort-voyage">ABORT VOYAGE</button>{{/if}}
+      </div>
     </section>
 
     <div class="oscm-view-help">
@@ -37,14 +41,19 @@
       <div class="oscm-system-count" data-map-count>{{systemCount}} systems</div>
     </header>
 
-    <section class="oscm-card oscm-universal-clock" aria-live="polite" aria-label="Current Union time">
+    <section class="oscm-card oscm-universal-clock" aria-live="polite" aria-label="Campaign time">
       <div class="oscm-clock-heading">
-        <div class="oscm-card-title">Current Time</div>
+        <div class="oscm-card-title">Reference Frame Time</div>
         <span class="oscm-clock-status" data-universal-clock-status>RUNNING</span>
       </div>
-      <div class="oscm-clock-date" data-universal-date>Friday, September 3, 5016 U</div>
-      <div class="oscm-clock-time" data-universal-clock>10:38:00</div>
+      <div class="oscm-clock-date" data-reference-date>Friday, September 3, 5016 U</div>
+      <div class="oscm-clock-time" data-reference-clock>10:38:00</div>
       <div class="oscm-clock-standard">Cradle Standard Reckoning</div>
+      <div class="oscm-clock-readout-divider"></div>
+      <div class="oscm-card-title">Shipboard Proper Time</div>
+      <div class="oscm-clock-date" data-proper-date>Friday, September 3, 5016 U</div>
+      <div class="oscm-clock-time" data-proper-clock>10:38:00</div>
+      <div class="oscm-clock-standard">Crew Proper Reckoning</div>
       {{#if isGM}}
       <div class="oscm-clock-gm-controls">
         <div class="oscm-clock-transport">
@@ -59,14 +68,14 @@
           <button type="button" data-clock-delta-minutes="1440">+1 day</button>
         </div>
         <div class="oscm-clock-set">
-          <div class="oscm-clock-set-label">Set date / time</div>
+          <div class="oscm-clock-set-label">Set shipboard proper date / time</div>
           <div class="oscm-clock-date-inputs">
             <label><span>Month</span><input name="universalMonth" type="number" min="1" max="12" step="1" value="9"></label>
             <label><span>Day</span><input name="universalDay" type="number" min="1" max="31" step="1" value="3"></label>
             <label><span>Year U</span><input name="universalYear" type="number" min="1" step="1" value="5016"></label>
           </div>
           <label class="oscm-clock-time-input"><span>24-hour time</span><input name="universalTime" type="time" step="60" value="10:38"></label>
-          <button class="oscm-apply" type="button" data-action="set-universal-clock"><i class="fa-solid fa-clock"></i> Set Current Time</button>
+          <button class="oscm-apply" type="button" data-action="set-universal-clock"><i class="fa-solid fa-clock"></i> Set Proper Time</button>
         </div>
       </div>
       {{/if}}

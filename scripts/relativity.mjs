@@ -1,5 +1,5 @@
-const SECONDS_PER_JULIAN_YEAR = 31_557_600;
-const C_M_S = 299_792_458;
+export const SECONDS_PER_JULIAN_YEAR = 31_557_600;
+export const C_M_S = 299_792_458;
 const LIGHT_YEAR_M = C_M_S * SECONDS_PER_JULIAN_YEAR;
 const STANDARD_GRAVITY_M_S2 = 9.80665;
 
@@ -99,6 +99,90 @@ export function calculateTransit(distanceLy, options = {}) {
     cruiseClusterYears: 0,
     cruiseShipYears: 0,
   };
+}
+
+const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+/** Spatial transition points shared by prospective and engaged route renders. */
+export function trajectoryMarkers(transit) {
+  if (!(transit?.distanceLy > 0)) return [];
+  const accelerationFraction = (transit.accelerationDistanceLy / 2) / transit.distanceLy;
+  if (transit.reachesCruise) return [
+    { kind: "speed-cap", routeFraction: accelerationFraction, label: `${transit.cruiseBeta.toFixed(3)}c Reached` },
+    { kind: "braking", routeFraction: 1 - accelerationFraction, label: "Braking Begins" },
+  ];
+  return [{ kind: "braking", routeFraction: .5, label: "Thrust Flip — Braking Begins" }];
+}
+
+/**
+ * Evaluate the solved trip analytically at elapsed shipboard proper time.
+ * No integration samples or animation state are required.
+ */
+export function evaluateTrajectoryAtProperTime(transit, elapsedProperYears) {
+  if (!transit || !(transit.distanceLy >= 0)) throw new TypeError("A solved transit is required");
+  const totalProper = transit.shipYears;
+  const totalReference = transit.clusterYears;
+  const tau = clamp(Number(elapsedProperYears) || 0, 0, totalProper);
+  if (transit.distanceLy === 0 || totalProper === 0) return {
+    phase: "arrived", properElapsed: 0, referenceElapsed: 0, distanceTravelled: 0,
+    routeFraction: 1, velocity: 0, gamma: 1, remainingDistance: 0,
+    properRemaining: 0, referenceRemaining: 0,
+  };
+
+  const alpha = accelerationGToLyPerYear2(transit.accelerationG);
+  const accelProperOneWay = transit.accelerationShipYears / 2;
+  const accelReferenceOneWay = transit.accelerationClusterYears / 2;
+  const accelDistanceOneWay = transit.accelerationDistanceLy / 2;
+  const cruiseProper = transit.cruiseShipYears || 0;
+  const cruiseReference = transit.cruiseClusterYears || 0;
+  const cruiseEndProper = accelProperOneWay + cruiseProper;
+  let phase, referenceElapsed, distanceTravelled, velocity, gamma;
+
+  if (tau >= totalProper) {
+    phase = "arrived"; referenceElapsed = totalReference; distanceTravelled = transit.distanceLy; velocity = 0; gamma = 1;
+  } else if (tau < accelProperOneWay) {
+    const rapidity = alpha * tau;
+    phase = "accelerating";
+    referenceElapsed = Math.sinh(rapidity) / alpha;
+    distanceTravelled = (Math.cosh(rapidity) - 1) / alpha;
+    velocity = Math.tanh(rapidity); gamma = Math.cosh(rapidity);
+  } else if (transit.reachesCruise && tau < cruiseEndProper) {
+    const cruiseTau = tau - accelProperOneWay;
+    phase = "cruise";
+    referenceElapsed = accelReferenceOneWay + cruiseTau * transit.peakGamma;
+    distanceTravelled = accelDistanceOneWay + cruiseTau * transit.peakGamma * transit.peakBeta;
+    velocity = transit.peakBeta; gamma = transit.peakGamma;
+  } else {
+    const remainingTau = totalProper - tau;
+    const rapidity = alpha * remainingTau;
+    phase = "decelerating";
+    referenceElapsed = totalReference - Math.sinh(rapidity) / alpha;
+    distanceTravelled = transit.distanceLy - (Math.cosh(rapidity) - 1) / alpha;
+    velocity = Math.tanh(rapidity); gamma = Math.cosh(rapidity);
+  }
+
+  distanceTravelled = clamp(distanceTravelled, 0, transit.distanceLy);
+  return {
+    phase,
+    properElapsed: tau,
+    referenceElapsed: clamp(referenceElapsed, 0, totalReference),
+    distanceTravelled,
+    routeFraction: distanceTravelled / transit.distanceLy,
+    velocity,
+    gamma,
+    remainingDistance: transit.distanceLy - distanceTravelled,
+    properRemaining: totalProper - tau,
+    referenceRemaining: totalReference - referenceElapsed,
+  };
+}
+
+export function formatVelocity(beta) {
+  const speedMps = Math.max(0, Number(beta) || 0) * C_M_S;
+  const speedKps = speedMps / 1000;
+  if (speedMps < 1000) return `${speedMps.toLocaleString(undefined, { maximumFractionDigits: 0 })} m/s`;
+  if (beta < .02) return `${speedKps.toLocaleString(undefined, { maximumFractionDigits: speedKps < 100 ? 1 : 0 })} km/s`;
+  if (beta < .1) return `${(beta * 100).toFixed(2)}% c`;
+  return `${beta.toFixed(3)} c`;
 }
 
 export function formatDuration(years) {

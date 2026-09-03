@@ -1,5 +1,6 @@
 import { SYSTEMS, projectedDistanceLy, spatialDistanceLy } from "./cluster-data.mjs";
-import { calculateTransit, formatDuration, formatLightYears } from "./relativity.mjs";
+import { calculateTransit, formatDuration, formatLightYears, formatVelocity, trajectoryMarkers } from "./relativity.mjs";
+import { abortVoyage, engageVoyage, evaluateVoyage } from "./campaign-time.mjs";
 import { ClusterView } from "./cluster-view.mjs";
 import { attachFactionTerritories } from "./faction-territories.mjs";
 import { attachCapitalIcons } from "./capital-icons.mjs";
@@ -21,6 +22,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
   activeSystem = null;
   activeBody = null;
   _registryPromise = null;
+  selectedRoute = null;
   static DEFAULT_OPTIONS = {
     id: "orphaned-sun-cluster-map",
     classes: ["orphaned-sun-cluster-map", "standard-form"],
@@ -74,6 +76,8 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     root.querySelector('[data-action="reset-view"]')?.addEventListener("click", () => this._clusterView.resetView());
     root.querySelector('[data-action="clear-route"]')?.addEventListener("click", () => this._clusterView.clearSelection());
     root.querySelector('[data-action="apply-profile"]')?.addEventListener("click", () => this.#applyProfile(root));
+    root.querySelector('[data-action="engage-route"]')?.addEventListener("click", () => this.#engageSelectedRoute());
+    root.querySelector('[data-action="abort-voyage"]')?.addEventListener("click", () => this.#abortActiveVoyage());
     root.querySelector('[data-action="back-to-cluster"]')?.addEventListener("click", () => this.#showCluster());
     root.querySelector('[data-action="back-to-system"]')?.addEventListener("click", () => this.#showSystem());
     for (const control of root.querySelectorAll("[data-body-layer]")) control.addEventListener("change", () => this._clusterView?.setLayerVisibility?.(control.dataset.bodyLayer, control.checked));
@@ -84,6 +88,12 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     this.#updateRoutePanel(null, null);
     if (this.mode === "system" && this.activeSystem) this.#enterSystem(this.activeSystem);
     if (this.mode === "body" && this.activeSystem && this.activeBody) this.#enterBody(this.activeBody);
+    window.removeEventListener("oscm-campaign-time-changed", this._campaignTimeListener);
+    window.clearInterval(this._voyageTicker);
+    this._campaignTimeListener = () => this.#refreshActiveVoyage();
+    window.addEventListener("oscm-campaign-time-changed", this._campaignTimeListener);
+    this._voyageTicker = window.setInterval(() => this.#refreshActiveVoyage(), 1000);
+    this.#refreshActiveVoyage();
   }
 
   _onClose(options) {
@@ -91,6 +101,8 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     this._resizeObserver = null;
     this._clusterView?.destroy();
     this._clusterView = null;
+    window.removeEventListener("oscm-campaign-time-changed", this._campaignTimeListener);
+    window.clearInterval(this._voyageTicker);
     return super._onClose(options);
   }
 
@@ -263,6 +275,8 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
         prompt.textContent = origin ? `Select a destination ${noun}.` : `Select an origin ${noun}, then a destination.`;
       }
       this.#updateObjectDetails(origin, destination);
+      this.selectedRoute = null;
+      this.#refreshActiveVoyage();
       return;
     }
 
@@ -280,6 +294,14 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     const accelerationG = Number(game.settings.get(MODULE_ID, "accelerationG"));
     const cruiseBeta = Number(game.settings.get(MODULE_ID, "cruiseBeta"));
     const transit = calculateTransit(spatial, { accelerationG, cruiseBeta });
+    this.selectedRoute = {
+      originId: origin.id, destinationId: destination.id, originName: origin.name, destinationName: destination.name,
+      context: isSystem ? "system" : "cluster", systemId: isSystem ? this.activeSystem?.id : null,
+      originCoordinates: isSystem ? structuredClone(origin.physical) : { x: origin.x, y: origin.y, z: origin.z },
+      destinationCoordinates: isSystem ? structuredClone(destination.physical) : { x: destination.x, y: destination.y, z: destination.z },
+      distanceLy: spatial, accelerationG, cruiseBeta, transit, origin, destination,
+    };
+    this._clusterView?.setRouteVisualization?.({ origin, destination, markers: trajectoryMarkers(transit) });
 
     const values = {
       projected: isSystem ? formatSystemDistance(projected) : formatLightYears(projected),
@@ -312,6 +334,63 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       if (el) el.textContent = value;
     }
     this.#updateObjectDetails(origin, destination);
+    this.#refreshActiveVoyage();
+  }
+
+  async #engageSelectedRoute() {
+    const api = game.modules.get(MODULE_ID)?.api;
+    if (!game.user.isGM || !api?.isClockAuthority?.() || !this.selectedRoute) return;
+    try {
+      const next = engageVoyage(api.getCampaignTimeState(), this.selectedRoute, Date.now());
+      await api.saveCampaignTimeState(next);
+      ui.notifications.info(`${this.selectedRoute.originName} → ${this.selectedRoute.destinationName} engaged.`);
+      this.#refreshActiveVoyage();
+    } catch (error) { ui.notifications.warn(error?.message || "Unable to engage route."); }
+  }
+
+  async #abortActiveVoyage() {
+    const api = game.modules.get(MODULE_ID)?.api;
+    if (!game.user.isGM || !api?.isClockAuthority?.()) return;
+    await api.saveCampaignTimeState(abortVoyage(api.getCampaignTimeState(), Date.now()));
+    ui.notifications.info("Active voyage aborted. Accumulated clock divergence was preserved.");
+    this.#updateRoutePanel(this._clusterView?.origin ?? null, this._clusterView?.destination ?? null);
+  }
+
+  #refreshActiveVoyage() {
+    const root = this.element?.querySelector?.(".oscm-shell"), api = game.modules.get(MODULE_ID)?.api;
+    if (!root || !api) return;
+    const state = api.getCampaignTimeState(), voyage = state.activeVoyage;
+    const live = root.querySelector("[data-voyage-live]"), engage = root.querySelector('[data-action="engage-route"]');
+    const active = voyage && voyage.status !== "arrived";
+    live?.classList.toggle("is-hidden", !voyage);
+    if (engage) { engage.disabled = Boolean(active) || !this.selectedRoute; engage.textContent = active ? "VOYAGE ACTIVE" : "ENGAGE"; }
+    if (!voyage) return;
+    const evaluated = evaluateVoyage(voyage, state.properBaseMs);
+    const hud = root.querySelector(".oscm-route-hud"); hud?.classList.remove("is-hidden");
+    const voyageHud = {
+      route: `${voyage.originName} → ${voyage.destinationName}`,
+      spatial: voyage.context === "system" ? `${formatSystemDistance(voyage.distanceLy * LIGHT_YEAR_KM / AU_KM)} true distance` : `${formatLightYears(voyage.distanceLy)} true distance`,
+      clusterTime: formatDuration(voyage.referenceYears), shipTime: formatDuration(voyage.shipYears),
+      profile: `${voyage.accelerationG} g → ${(voyage.peakBeta * 100).toFixed(3)}% c${voyage.reachesCruise ? " → cruise → brake" : " peak → brake"}`,
+    };
+    for (const [field, value] of Object.entries(voyageHud)) { const el = root.querySelector(`[data-hud-field="${field}"]`); if (el) el.textContent = value; }
+    const phaseLabels = { accelerating: evaluated.velocity >= .1 ? "RELATIVISTIC ACCELERATION" : "ACCELERATING", cruise: "CRUISE", decelerating: evaluated.velocity < .02 ? "ARRIVAL APPROACH" : "DECELERATING", arrived: "ARRIVED" };
+    const phase = root.querySelector('[data-hud-field="phase"]'), velocity = root.querySelector('[data-hud-field="velocity"]');
+    if (phase) phase.textContent = phaseLabels[evaluated.phase] || evaluated.phase.toUpperCase();
+    if (velocity) velocity.textContent = `${formatVelocity(evaluated.velocity)}${evaluated.phase === "cruise" ? " · CRUISE LIMIT" : ""}`;
+
+    const sameSelectedRoute = this.selectedRoute?.originId === voyage.originId && this.selectedRoute?.destinationId === voyage.destinationId;
+    let origin = sameSelectedRoute ? this.selectedRoute.origin : null, destination = sameSelectedRoute ? this.selectedRoute.destination : null;
+    if (!origin && voyage.context === "cluster" && this.mode === "cluster") {
+      origin = SYSTEMS.find((system) => system.id === voyage.originId); destination = SYSTEMS.find((system) => system.id === voyage.destinationId);
+    } else if (!origin && voyage.context === "system" && this.mode === "system" && this.activeSystem?.id === voyage.systemId) {
+      origin = this._clusterView?.model?.objects?.find((object) => object.id === voyage.originId);
+      destination = this._clusterView?.model?.objects?.find((object) => object.id === voyage.destinationId);
+    }
+    if (origin && destination) this._clusterView?.setRouteVisualization?.({
+      origin, destination,
+      markers: trajectoryMarkers(evaluated.transit), shipFraction: evaluated.routeFraction,
+    });
   }
 
   #updateObjectDetails(origin, destination) {

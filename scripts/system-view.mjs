@@ -82,6 +82,7 @@ export class SystemView {
     this.pendingSelectionTimer = null;
     this.lastActivation = null;
     this.activationSuppressedUntil = 0;
+    this.routeVisualization = null;
     this.displayPositions = new Map(this.model.objects.map((object) => [object.id, displayPosition(object, this.model)]));
     this.#buildScene();
     this.#attachEvents();
@@ -106,6 +107,8 @@ export class SystemView {
     this.onSelectionChange(null, null);
     this.render();
   }
+
+  setRouteVisualization(visualization) { this.routeVisualization = visualization; this.render(); }
 
   #buildScene() {
     this.svg.replaceChildren();
@@ -293,9 +296,21 @@ export class SystemView {
       this.factionMarker.setAttribute("transform", `translate(${x.toFixed(2)} ${(y - 46).toFixed(2)})`);
     }
     this.routeLayer.replaceChildren();
-    if (this.origin && this.destination) {
-      const a = this.#project(this.displayPositions.get(this.origin.id)), b = this.#project(this.displayPositions.get(this.destination.id));
+    const routeOrigin = this.routeVisualization?.origin ?? this.origin;
+    const routeDestination = this.routeVisualization?.destination ?? this.destination;
+    if (routeOrigin && routeDestination) {
+      const a = this.#project(this.displayPositions.get(routeOrigin.id) ?? routeOrigin), b = this.#project(this.displayPositions.get(routeDestination.id) ?? routeDestination);
       this.routeLayer.append(svgElement("line", { class: "oscm-system-route-line", x1: a.x, y1: a.y, x2: b.x, y2: b.y }));
+      const pointAt = (fraction) => ({ x: a.x + (b.x - a.x) * fraction, y: a.y + (b.y - a.y) * fraction });
+      for (const marker of this.routeVisualization?.markers ?? []) {
+        const point = pointAt(marker.routeFraction), dot = svgElement("circle", { class: `oscm-trajectory-marker is-${marker.kind}`, cx: point.x, cy: point.y, r: 4 });
+        const title = svgElement("title"); title.textContent = marker.label; dot.append(title); this.routeLayer.append(dot);
+      }
+      if (Number.isFinite(this.routeVisualization?.shipFraction)) {
+        const point = pointAt(this.routeVisualization.shipFraction), angle = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
+        const ship = svgElement("polygon", { class: "oscm-active-ship-marker", points: "8,0 -6,-5 -4,0 -6,5", transform: `translate(${point.x} ${point.y}) rotate(${angle})` });
+        this.routeLayer.append(ship);
+      }
     }
   }
 }
