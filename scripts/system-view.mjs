@@ -71,6 +71,7 @@ export class SystemView {
     this.onSelectionChange = options.onSelectionChange ?? (() => {});
     this.onExitRequested = options.onExitRequested ?? (() => {});
     this.onObjectActivate = options.onObjectActivate ?? (() => {});
+    this.onShipDrag = options.onShipDrag ?? null;
     this.state = { yaw: -0.62, pitch: 0.82, zoom: 1, panX: 0, panY: 0 };
     this.origin = null;
     this.destination = null;
@@ -109,6 +110,22 @@ export class SystemView {
   }
 
   setRouteVisualization(visualization) { this.routeVisualization = visualization; this.render(); }
+  get isDraggingShip() { return Boolean(this.shipDrag); }
+
+  #clientPoint(event) {
+    const matrix = this.svg.getScreenCTM?.(); if (!matrix) return { x: event.clientX, y: event.clientY };
+    const point = new DOMPoint(event.clientX, event.clientY).matrixTransform(matrix.inverse()); return { x: point.x, y: point.y };
+  }
+
+  #bindShipRailDrag(ship, a, b, initialFraction) {
+    if (!this.routeVisualization?.draggable || !this.onShipDrag) return;
+    const angle = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
+    const fractionAt = (event) => { const point = this.#clientPoint(event), dx = b.x - a.x, dy = b.y - a.y; return clamp(((point.x-a.x)*dx+(point.y-a.y)*dy)/Math.max(1e-9,dx*dx+dy*dy), 0, 1); };
+    const move = (event) => { if (this.shipDrag?.id !== event.pointerId) return; event.preventDefault(); event.stopPropagation(); this.shipDrag.fraction = fractionAt(event); const f=this.shipDrag.fraction, point={x:a.x+(b.x-a.x)*f,y:a.y+(b.y-a.y)*f}; ship.setAttribute("transform",`translate(${point.x} ${point.y}) rotate(${angle})`); };
+    const finish = (event) => { if (this.shipDrag?.id !== event.pointerId) return; event.preventDefault(); event.stopPropagation(); move(event); const fraction=this.shipDrag.fraction; this.shipDrag=null; ship.classList.remove("is-dragging"); ship.releasePointerCapture?.(event.pointerId); void this.onShipDrag(fraction); };
+    ship.classList.add("is-draggable"); ship.addEventListener("pointerdown",(event)=>{ event.preventDefault(); event.stopPropagation(); this.shipDrag={id:event.pointerId,fraction:initialFraction}; ship.classList.add("is-dragging"); ship.setPointerCapture?.(event.pointerId); });
+    ship.addEventListener("pointermove",move); ship.addEventListener("pointerup",finish); ship.addEventListener("pointercancel",finish);
+  }
 
   #buildScene() {
     this.svg.replaceChildren();
@@ -310,8 +327,9 @@ export class SystemView {
       }
       if (Number.isFinite(this.routeVisualization?.shipFraction)) {
         const point = pointAt(this.routeVisualization.shipFraction), angle = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
-        const ship = svgElement("polygon", { class: "oscm-active-ship-marker", points: "8,0 -6,-5 -4,0 -6,5", transform: `translate(${point.x} ${point.y}) rotate(${angle})` });
-        this.shipLayer.append(ship);
+        const ship = svgElement("g", { class: "oscm-active-ship-control", transform: `translate(${point.x} ${point.y}) rotate(${angle})` });
+        ship.append(svgElement("circle", { class: "oscm-active-ship-hit", r: 13 }), svgElement("polygon", { class: "oscm-active-ship-marker", points: "8,0 -6,-5 -4,0 -6,5" }));
+        this.#bindShipRailDrag(ship, a, b, this.routeVisualization.shipFraction); this.shipLayer.append(ship);
       }
     }
   }

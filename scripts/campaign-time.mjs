@@ -1,4 +1,4 @@
-import { calculateTransit, evaluateTrajectoryAtProperTime, SECONDS_PER_JULIAN_YEAR } from "./relativity.mjs";
+import { calculateTransit, evaluateTrajectoryAtProperTime, properTimeAtRouteFraction, SECONDS_PER_JULIAN_YEAR } from "./relativity.mjs";
 import { UNION_EPOCH_MS } from "./universal-time.mjs";
 
 export const CAMPAIGN_TIME_SETTING = "campaignTimeState";
@@ -107,4 +107,25 @@ export function engageVoyage(state, route, realNowMs = Date.now()) {
 export function abortVoyage(state, realNowMs = Date.now()) {
   const settled = settleCampaignTime(state, realNowMs);
   return { ...settled, activeVoyage: null };
+}
+
+/** GM timeline scrub: set both clocks to the exact solved worldline point on the route rail. */
+export function advanceVoyageToRouteFraction(state, routeFraction, realNowMs = Date.now()) {
+  const settled = settleCampaignTime(state, realNowMs);
+  const voyage = settled.activeVoyage;
+  if (!voyage) throw new Error("There is no voyage to scrub.");
+  const transit = voyageTrajectory(voyage);
+  const requestedFraction = Math.min(1, Math.max(0, Number(routeFraction) || 0));
+  const targetElapsedYears = properTimeAtRouteFraction(transit, requestedFraction);
+  const targetProperMs = voyage.departureProperMs + targetElapsedYears * MS_PER_YEAR;
+  const evaluated = evaluateTrajectoryAtProperTime(transit, targetElapsedYears);
+  const activeVoyage = { ...voyage, status: evaluated.phase === "arrived" ? "arrived" : "engaged" };
+  if (evaluated.phase !== "arrived") delete activeVoyage.arrivedProperMs;
+  return {
+    ...settled,
+    properBaseMs: targetProperMs,
+    referenceBaseMs: voyage.departureReferenceMs + evaluated.referenceElapsed * MS_PER_YEAR,
+    anchorRealMs: Number(realNowMs),
+    activeVoyage,
+  };
 }

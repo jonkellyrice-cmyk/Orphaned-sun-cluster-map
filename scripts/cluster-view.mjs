@@ -33,6 +33,7 @@ export class ClusterView {
     this.gridSpacing = options.gridSpacing ?? CLUSTER.defaultGridSpacingLy;
     this.onSelectionChange = options.onSelectionChange ?? (() => {});
     this.onSystemActivate = options.onSystemActivate ?? (() => {});
+    this.onShipDrag = options.onShipDrag ?? null;
 
     this.state = {
       yaw: -0.62,
@@ -94,6 +95,45 @@ export class ClusterView {
   setRouteVisualization(visualization) {
     this.routeVisualization = visualization;
     this.render();
+  }
+
+  get isDraggingShip() { return Boolean(this.shipDrag); }
+
+  #clientPoint(event) {
+    const matrix = this.svg.getScreenCTM?.();
+    if (!matrix) return { x: event.clientX, y: event.clientY };
+    const point = new DOMPoint(event.clientX, event.clientY).matrixTransform(matrix.inverse());
+    return { x: point.x, y: point.y };
+  }
+
+  #bindShipRailDrag(ship, a, b, initialFraction) {
+    if (!this.routeVisualization?.draggable || !this.onShipDrag) return;
+    const angle = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
+    const fractionAt = (event) => {
+      const point = this.#clientPoint(event), dx = b.x - a.x, dy = b.y - a.y;
+      const projected = ((point.x - a.x) * dx + (point.y - a.y) * dy) / Math.max(1e-9, dx * dx + dy * dy);
+      return clamp(projected, 0, 1);
+    };
+    const move = (event) => {
+      if (this.shipDrag?.id !== event.pointerId) return;
+      event.preventDefault(); event.stopPropagation();
+      this.shipDrag.fraction = fractionAt(event);
+      const point = { x: a.x + (b.x - a.x) * this.shipDrag.fraction, y: a.y + (b.y - a.y) * this.shipDrag.fraction };
+      ship.setAttribute("transform", `translate(${point.x.toFixed(2)} ${point.y.toFixed(2)}) rotate(${angle.toFixed(2)})`);
+    };
+    const finish = (event) => {
+      if (this.shipDrag?.id !== event.pointerId) return;
+      event.preventDefault(); event.stopPropagation(); move(event);
+      const fraction = this.shipDrag.fraction; this.shipDrag = null; ship.classList.remove("is-dragging");
+      ship.releasePointerCapture?.(event.pointerId); void this.onShipDrag(fraction);
+    };
+    ship.classList.add("is-draggable");
+    ship.addEventListener("pointerdown", (event) => {
+      event.preventDefault(); event.stopPropagation();
+      this.shipDrag = { id: event.pointerId, fraction: initialFraction };
+      ship.classList.add("is-dragging"); ship.setPointerCapture?.(event.pointerId);
+    });
+    ship.addEventListener("pointermove", move); ship.addEventListener("pointerup", finish); ship.addEventListener("pointercancel", finish);
   }
 
   #buildScene() {
@@ -519,8 +559,10 @@ export class ClusterView {
       if (Number.isFinite(this.routeVisualization?.shipFraction)) {
         const fraction = this.routeVisualization.shipFraction, point = pointAt(fraction);
         const angle = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
-        const ship = svgElement("polygon", { class: "oscm-active-ship-marker", points: "8,0 -6,-5 -4,0 -6,5", transform: `translate(${point.x.toFixed(2)} ${point.y.toFixed(2)}) rotate(${angle.toFixed(2)})` });
-        const title = svgElement("title"); title.textContent = "Party vessel"; ship.append(title); this.shipLayer.append(ship);
+        const ship = svgElement("g", { class: "oscm-active-ship-control", transform: `translate(${point.x.toFixed(2)} ${point.y.toFixed(2)}) rotate(${angle.toFixed(2)})` });
+        ship.append(svgElement("circle", { class: "oscm-active-ship-hit", r: 13 }), svgElement("polygon", { class: "oscm-active-ship-marker", points: "8,0 -6,-5 -4,0 -6,5" }));
+        const title = svgElement("title"); title.textContent = this.routeVisualization.draggable ? "Drag along route to scrub campaign time" : "Party vessel"; ship.append(title);
+        this.#bindShipRailDrag(ship, a, b, fraction); this.shipLayer.append(ship);
       }
     }
   }

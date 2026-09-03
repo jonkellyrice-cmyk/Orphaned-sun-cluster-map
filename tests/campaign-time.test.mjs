@@ -1,10 +1,10 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
-  DEFAULT_CAMPAIGN_TIME_STATE, adjustCampaignProperTime, currentCampaignTime,
+  DEFAULT_CAMPAIGN_TIME_STATE, adjustCampaignProperTime, advanceVoyageToRouteFraction, currentCampaignTime,
   engageVoyage, evaluateVoyage, normalizeCampaignTimeState, resumeCampaignTimeSession,
 } from "../scripts/campaign-time.mjs";
-import { calculateTransit, evaluateTrajectoryAtProperTime, trajectoryMarkers } from "../scripts/relativity.mjs";
+import { calculateTransit, evaluateTrajectoryAtProperTime, properTimeAtRouteFraction, trajectoryMarkers } from "../scripts/relativity.mjs";
 import { UNION_EPOCH_MS } from "../scripts/universal-time.mjs";
 
 const DAY_MS = 86_400_000;
@@ -65,6 +65,32 @@ test("position and marker transitions are deterministic from proper timestamp", 
   const shortMarkers = trajectoryMarkers(calculateTransit(1e-8, { accelerationG: 200, cruiseBeta: .995 }));
   assert.deepEqual(shortMarkers.map((marker) => marker.kind), ["braking"]);
   assert.equal(shortMarkers[0].routeFraction, .5);
+});
+
+test("spatial rail inversion recovers proper time across acceleration, cruise, and braking", () => {
+  const transit = calculateTransit(5.29, { accelerationG: 200, cruiseBeta: .995 });
+  for (const fraction of [.02, .25, .5, .75, .98]) {
+    const proper = properTimeAtRouteFraction(transit, fraction);
+    assert.ok(Math.abs(evaluateTrajectoryAtProperTime(transit, proper).routeFraction - fraction) < 1e-10);
+  }
+});
+
+test("GM route scrubbing moves both clocks forward and backward on the solved worldline", () => {
+  const engaged = engageVoyage({ ...DEFAULT_CAMPAIGN_TIME_STATE, running: false }, route, 10);
+  const forward = advanceVoyageToRouteFraction(engaged, .75, 20);
+  const backward = advanceVoyageToRouteFraction(forward, .25, 30);
+  assert.ok(forward.properBaseMs > backward.properBaseMs);
+  assert.ok(forward.referenceBaseMs > backward.referenceBaseMs);
+  assert.ok(Math.abs(evaluateVoyage(backward.activeVoyage, backward.properBaseMs).routeFraction - .25) < 1e-10);
+});
+
+test("an arrived voyage can be scrubbed backward for GM correction", () => {
+  const engaged = engageVoyage({ ...DEFAULT_CAMPAIGN_TIME_STATE, running: false }, route, 10);
+  const arrived = advanceVoyageToRouteFraction(engaged, 1, 20);
+  assert.equal(arrived.activeVoyage.status, "arrived");
+  const restored = advanceVoyageToRouteFraction(arrived, .5, 30);
+  assert.equal(restored.activeVoyage.status, "engaged");
+  assert.ok(Math.abs(evaluateVoyage(restored.activeVoyage, restored.properBaseMs).routeFraction - .5) < 1e-10);
 });
 
 test("offline resume adds no time and preserves deterministic voyage state", () => {

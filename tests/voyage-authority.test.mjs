@@ -28,4 +28,8 @@ test("both route renderers consume the same solver-derived markers and ship frac
   assert.match(systemView, /this\.svg\.append\(this\.orbitLayer, this\.routeLayer, this\.objectLayer, this\.factionLayer, this\.shipLayer\)/);
   assert.match(app, /markers: trajectoryMarkers\(transit\)/);
   assert.match(app, /shipFraction: evaluated\.routeFraction/);
+  assert.match(app, /!game\.user\.isGM \|\| !api\?\.isClockAuthority/);
+  assert.match(app, /advanceVoyageToRouteFraction/);
+  assert.match(clusterView, /clamp\(projected, 0, 1\)/);
+  assert.match(systemView, /Math\.max\(1e-9,dx\*dx\+dy\*dy\), 0, 1/);
 });

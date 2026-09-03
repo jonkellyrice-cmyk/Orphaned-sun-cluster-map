@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.0
+
+- Added an authoritative-GM-only draggable ship control constrained to the selected route rail.
+- Converted dragged spatial position through the inverse solved relativistic trajectory so proper time, reference time, velocity, phase, and ship position remain one deterministic state.
+- Allowed bidirectional GM timeline scrubbing, including restoring an earlier point after arrival, while players remain read-only.
+
 ## 0.7.1
 
 - Rendered the active party-vessel triangle in a dedicated top SVG layer so it remains visible over its origin marker during the visually negligible opening portion of a voyage.

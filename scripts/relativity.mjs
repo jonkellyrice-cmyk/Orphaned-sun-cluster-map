@@ -176,6 +176,23 @@ export function evaluateTrajectoryAtProperTime(transit, elapsedProperYears) {
   };
 }
 
+/** Inverse of the trajectory position function: spatial route fraction → proper elapsed time. */
+export function properTimeAtRouteFraction(transit, routeFraction) {
+  if (!transit || !(transit.distanceLy >= 0)) throw new TypeError("A solved transit is required");
+  if (transit.distanceLy === 0) return 0;
+  const fraction = clamp(Number(routeFraction) || 0, 0, 1);
+  const distance = fraction * transit.distanceLy;
+  const alpha = accelerationGToLyPerYear2(transit.accelerationG);
+  const accelDistanceOneWay = transit.accelerationDistanceLy / 2;
+  const accelProperOneWay = transit.accelerationShipYears / 2;
+  if (distance <= accelDistanceOneWay) return Math.acosh(1 + alpha * distance) / alpha;
+  if (transit.reachesCruise && distance < transit.distanceLy - accelDistanceOneWay) {
+    return accelProperOneWay + (distance - accelDistanceOneWay) / (transit.peakGamma * transit.peakBeta);
+  }
+  const remainingDistance = Math.max(0, transit.distanceLy - distance);
+  return transit.shipYears - Math.acosh(1 + alpha * remainingDistance) / alpha;
+}
+
 export function formatVelocity(beta) {
   const speedMps = Math.max(0, Number(beta) || 0) * C_M_S;
   const speedKps = speedMps / 1000;

@@ -146,6 +146,10 @@
 .oscm-trajectory-marker.is-speed-cap { fill: #52dc79; }
 .oscm-trajectory-marker.is-braking { fill: #ff5d62; }
 .oscm-active-ship-marker { fill: #f4f8f8; stroke: #071316; stroke-width: 1.2; filter: drop-shadow(0 0 3px rgba(169,243,242,.8)); pointer-events: auto; }
+.oscm-active-ship-hit { fill: transparent; stroke: none; pointer-events: all; }
+.oscm-active-ship-control.is-draggable { cursor: grab; touch-action: none; }
+.oscm-active-ship-control.is-dragging { cursor: grabbing; }
+.oscm-active-ship-control.is-draggable .oscm-active-ship-marker { fill: #fff7c7; stroke: #263438; }
 
 .oscm-view-help {
   position: absolute;

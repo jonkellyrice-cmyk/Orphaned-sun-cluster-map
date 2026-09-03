@@ -1,6 +1,6 @@
 import { SYSTEMS, projectedDistanceLy, spatialDistanceLy } from "./cluster-data.mjs";
 import { calculateTransit, formatDuration, formatLightYears, formatVelocity, trajectoryMarkers } from "./relativity.mjs";
-import { abortVoyage, engageVoyage, evaluateVoyage } from "./campaign-time.mjs";
+import { abortVoyage, advanceVoyageToRouteFraction, engageVoyage, evaluateVoyage } from "./campaign-time.mjs";
 import { ClusterView } from "./cluster-view.mjs";
 import { attachFactionTerritories } from "./faction-territories.mjs";
 import { attachCapitalIcons } from "./capital-icons.mjs";
@@ -69,6 +69,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       gridSpacing: Number(game.settings.get(MODULE_ID, "gridSpacing")),
       onSelectionChange: (origin, destination) => this.#updateRoutePanel(origin, destination),
       onSystemActivate: (system) => this.#enterSystem(system),
+      onShipDrag: (fraction) => this.#scrubVoyageToFraction(fraction),
     });
     attachFactionTerritories(this._clusterView);
     attachCapitalIcons(this._clusterView);
@@ -120,6 +121,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
         onSelectionChange: (origin, destination) => this.#updateRoutePanel(origin, destination),
         onExitRequested: () => this.#showCluster(),
         onObjectActivate: (object) => this.#enterBody(object),
+        onShipDrag: (fraction) => this.#scrubVoyageToFraction(fraction),
       });
       this.mode = "system";
       this.activeSystem = system;
@@ -211,6 +213,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       gridSpacing: Number(game.settings.get(MODULE_ID, "gridSpacing")),
       onSelectionChange: (origin, destination) => this.#updateRoutePanel(origin, destination),
       onSystemActivate: (system) => this.#enterSystem(system),
+      onShipDrag: (fraction) => this.#scrubVoyageToFraction(fraction),
     });
     attachFactionTerritories(this._clusterView);
     attachCapitalIcons(this._clusterView);
@@ -356,6 +359,15 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     this.#updateRoutePanel(this._clusterView?.origin ?? null, this._clusterView?.destination ?? null);
   }
 
+  async #scrubVoyageToFraction(fraction) {
+    const api = game.modules.get(MODULE_ID)?.api;
+    if (!game.user.isGM || !api?.isClockAuthority?.()) return;
+    try {
+      await api.saveCampaignTimeState(advanceVoyageToRouteFraction(api.getCampaignTimeState(), fraction, Date.now()));
+      this.#refreshActiveVoyage();
+    } catch (error) { ui.notifications.warn(error?.message || "Unable to scrub voyage time."); }
+  }
+
   #refreshActiveVoyage() {
     const root = this.element?.querySelector?.(".oscm-shell"), api = game.modules.get(MODULE_ID)?.api;
     if (!root || !api) return;
@@ -387,9 +399,10 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       origin = this._clusterView?.model?.objects?.find((object) => object.id === voyage.originId);
       destination = this._clusterView?.model?.objects?.find((object) => object.id === voyage.destinationId);
     }
-    if (origin && destination) this._clusterView?.setRouteVisualization?.({
+    if (origin && destination && !this._clusterView?.isDraggingShip) this._clusterView?.setRouteVisualization?.({
       origin, destination,
       markers: trajectoryMarkers(evaluated.transit), shipFraction: evaluated.routeFraction,
+      draggable: Boolean(game.user.isGM && api.isClockAuthority?.()),
     });
   }
 

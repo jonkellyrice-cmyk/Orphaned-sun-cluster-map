@@ -21,11 +21,11 @@ test("release workflow packages runtime geography, cartography and operational a
   ]) assert.match(workflow, new RegExp(required.replace(/[./-]/g, "\\$&")));
 });
 
-test("Foundry and package versions agree on the v0.7.1 release archive", () => {
+test("Foundry and package versions agree on the v0.8.0 release archive", () => {
   const manifest = JSON.parse(readFileSync(new URL("module.json", root), "utf8"));
   const packageJson = JSON.parse(readFileSync(new URL("package.json", root), "utf8"));
   assert.equal(manifest.version, packageJson.version);
-  assert.equal(manifest.version, "0.7.1");
+  assert.equal(manifest.version, "0.8.0");
   assert.equal(manifest.manifest, "https://github.com/jonkellyrice-cmyk/Orphaned-sun-cluster-map/releases/latest/download/module.json");
-  assert.match(manifest.download, /v0\.7\.1\/orphaned-sun-cluster-map-v0\.7\.1\.zip$/);
+  assert.match(manifest.download, /v0\.8\.0\/orphaned-sun-cluster-map-v0\.8\.0\.zip$/);
 });
