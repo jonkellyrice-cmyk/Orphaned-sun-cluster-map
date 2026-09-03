@@ -12,6 +12,7 @@
     "body-operations:validate": "node tools/validate-body-operations.mjs",
     "astronomy:generate": "node tools/generate-astronomy-orientations.mjs",
     "astronomy:check": "node tools/generate-astronomy-orientations.mjs --check",
-    "astronomy:validate": "node tools/validate-astronomy.mjs"
+    "astronomy:validate": "node tools/validate-astronomy.mjs",
+    "atmosphere:validate": "node tools/validate-atmospheres.mjs"
   }
 }
