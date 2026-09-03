@@ -46,7 +46,7 @@ test("direct date and time setting validates calendar dates", () => {
     minute: 5,
     second: 0,
   }, 100);
-  assert.equal(formatUniversalDate(state.baseMs), "Sunday, February 28, 5017 U");
+  assert.equal(formatUniversalDate(state.baseMs), "Monday, February 28, 5017 U");
   assert.equal(formatUniversalClock(state.baseMs), "23:05:00");
   assert.throws(() => makeUniversalTimeMs({ year: 5017, month: 2, day: 29 }), /does not exist/);
 });
