@@ -9,6 +9,7 @@ import {
   formatUniversalClock,
   formatUniversalDate,
   makeUniversalTimeMs,
+  resumeUniversalTimeSession,
   setUniversalDateTime,
   setUniversalTimeRunning,
 } from "../scripts/universal-time.mjs";
@@ -22,6 +23,14 @@ test("Union epoch is Friday, September 3, 5016 U at 10:38", () => {
 test("running universal time advances from its real-time anchor", () => {
   const state = { baseMs: UNION_EPOCH_MS, anchorRealMs: 1_000, running: true };
   assert.equal(currentUniversalTimeMs(state, 61_000), UNION_EPOCH_MS + 60_000);
+});
+
+test("resuming a Foundry session discards downtime and then advances normally", () => {
+  const checkpoint = { baseMs: UNION_EPOCH_MS + 300_000, anchorRealMs: 10_000, running: true };
+  const resumed = resumeUniversalTimeSession(checkpoint, 3_610_000);
+  assert.equal(resumed.baseMs, checkpoint.baseMs);
+  assert.equal(currentUniversalTimeMs(resumed, 3_610_000), checkpoint.baseMs);
+  assert.equal(currentUniversalTimeMs(resumed, 3_670_000), checkpoint.baseMs + 60_000);
 });
 
 test("pausing settles elapsed time and freezes the clock", () => {
