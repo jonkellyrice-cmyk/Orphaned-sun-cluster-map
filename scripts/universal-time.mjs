@@ -44,6 +44,15 @@ export function settleUniversalTimeState(state, realNowMs = Date.now()) {
   };
 }
 
+export function resumeUniversalTimeSession(state, realNowMs = Date.now()) {
+  const normalized = normalizeUniversalTimeState(state);
+  const now = Number(realNowMs);
+  return {
+    ...normalized,
+    anchorRealMs: Number.isFinite(now) ? now : Date.now(),
+  };
+}
+
 export function setUniversalTimeRunning(state, running, realNowMs = Date.now()) {
   const settled = settleUniversalTimeState(state, realNowMs);
   return { ...settled, running: Boolean(running) };
