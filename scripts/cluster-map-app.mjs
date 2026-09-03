@@ -1,5 +1,5 @@
 import { SYSTEMS, projectedDistanceLy, spatialDistanceLy } from "./cluster-data.mjs";
-import { calculateTransit, formatDuration, formatLightYears, formatVelocity, trajectoryMarkers } from "./relativity.mjs";
+import { calculateTransit, formatDuration, formatLightYears, formatVelocity, SECONDS_PER_JULIAN_YEAR, trajectoryMarkers } from "./relativity.mjs";
 import { abortVoyage, advanceVoyageToRouteFraction, engageVoyage, evaluateVoyage } from "./campaign-time.mjs";
 import { ClusterView } from "./cluster-view.mjs";
 import { attachFactionTerritories } from "./faction-territories.mjs";
@@ -11,6 +11,8 @@ import { naturalBodyKind, buildNaturalBodyModel } from "./natural-body-data.mjs"
 import { artificialBodyKind, buildArtificialBodyModel } from "./artificial-body-data.mjs";
 import { inspectSurfaceFeature } from "./body-layers.mjs";
 import { loadBodyOperationAsset } from "./body-operations.mjs";
+import { AstronomySnapshotCache, loadAstronomyOrientations } from "./astronomy.mjs";
+import { UNION_EPOCH_MS } from "./universal-time.mjs";
 
 export const MODULE_ID = "orphaned-sun-cluster-map";
 const assetSlug = (value) => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -22,6 +24,10 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
   activeSystem = null;
   activeBody = null;
   _registryPromise = null;
+  _astronomyOrientationsPromise = null;
+  _astronomyCache = new AstronomySnapshotCache();
+  _systemSnapshotReferenceMs = null;
+  _astronomyArrivalVoyageId = null;
   selectedRoute = null;
   static DEFAULT_OPTIONS = {
     id: "orphaned-sun-cluster-map",
@@ -91,7 +97,11 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     if (this.mode === "body" && this.activeSystem && this.activeBody) this.#enterBody(this.activeBody);
     window.removeEventListener("oscm-campaign-time-changed", this._campaignTimeListener);
     window.clearInterval(this._voyageTicker);
-    this._campaignTimeListener = () => this.#refreshActiveVoyage();
+    this._campaignTimeListener = () => {
+      this.#refreshActiveVoyage();
+      void this.#refreshVisibleAstronomy().catch((error) => console.warn(`${MODULE_ID} | Unable to refresh visible astronomy`, error));
+      void this.#snapshotVoyageArrival().catch((error) => console.warn(`${MODULE_ID} | Unable to snapshot voyage arrival system`, error));
+    };
     window.addEventListener("oscm-campaign-time-changed", this._campaignTimeListener);
     this._voyageTicker = window.setInterval(() => this.#refreshActiveVoyage(), 1000);
     this.#refreshActiveVoyage();
@@ -107,14 +117,45 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     return super._onClose(options);
   }
 
-  async #enterSystem(system) {
+  async #astronomicalModel(systemName, referenceTimestampMs) {
+    this._registryPromise ??= loadSystemRegistry(MODULE_ID);
+    this._astronomyOrientationsPromise ??= loadAstronomyOrientations(MODULE_ID);
+    const [rows, orientationDocument] = await Promise.all([this._registryPromise, this._astronomyOrientationsPromise]);
+    return this._astronomyCache.getOrCreate(systemName, referenceTimestampMs, () => buildSystemModel(rows, systemName, {
+      referenceTimestampMs,
+      orientations: orientationDocument.orientations,
+    }));
+  }
+
+  async #refreshVisibleAstronomy() {
+    if (this.mode !== "system" || !this.activeSystem || this._clusterView?.isDraggingShip) return;
+    const referenceTimestampMs = game.modules.get(MODULE_ID)?.api?.getCampaignTimeState?.()?.referenceBaseMs;
+    if (!Number.isFinite(referenceTimestampMs)) return;
+    if (Number.isFinite(this._systemSnapshotReferenceMs) && Math.abs(referenceTimestampMs - this._systemSnapshotReferenceMs) < 3_600_000) return;
+    await this.#enterSystem(this.activeSystem, referenceTimestampMs);
+  }
+
+  async #snapshotVoyageArrival() {
+    const state = game.modules.get(MODULE_ID)?.api?.getCampaignTimeState?.();
+    const voyage = state?.activeVoyage;
+    if (!voyage || voyage.context !== "cluster" || this._astronomyArrivalVoyageId === voyage.id) return;
+    const evaluated = evaluateVoyage(voyage, state.properBaseMs);
+    if (evaluated.phase !== "arrived") return;
+    const arrivalReferenceMs = voyage.departureReferenceMs + voyage.referenceYears * SECONDS_PER_JULIAN_YEAR * 1000;
+    await this.#astronomicalModel(voyage.destinationName, arrivalReferenceMs);
+    this._astronomyArrivalVoyageId = voyage.id;
+  }
+
+  async #enterSystem(system, requestedReferenceTimestampMs = null) {
     const root = this.element?.querySelector?.(".oscm-shell");
     const svg = root?.querySelector(".oscm-cluster-svg");
     if (!root || !svg) return;
     try {
-      this._registryPromise ??= loadSystemRegistry(MODULE_ID);
-      const rows = await this._registryPromise;
-      const model = buildSystemModel(rows, system.name);
+      const api = game.modules.get(MODULE_ID)?.api;
+      const referenceTimestampMs = Number.isFinite(requestedReferenceTimestampMs)
+        ? requestedReferenceTimestampMs
+        : api?.getCampaignTimeState?.()?.referenceBaseMs ?? UNION_EPOCH_MS;
+      const model = await this.#astronomicalModel(system.name, referenceTimestampMs);
       this._clusterView?.destroy();
       this._clusterView = new SystemView(svg, {
         model,
@@ -126,6 +167,7 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
       this.mode = "system";
       this.activeSystem = system;
       this.activeBody = null;
+      this._systemSnapshotReferenceMs = referenceTimestampMs;
       root.classList.add("is-system-mode");
       root.classList.remove("is-body-mode");
       root.classList.remove("has-geography");
@@ -344,6 +386,25 @@ export class ClusterMapApplication extends HandlebarsApplicationMixin(Applicatio
     const api = game.modules.get(MODULE_ID)?.api;
     if (!game.user.isGM || !api?.isClockAuthority?.() || !this.selectedRoute) return;
     try {
+      if (this.selectedRoute.context === "system" && this.activeSystem) {
+        const state = api.getCampaignTimeState();
+        const currentModel = await this.#astronomicalModel(this.activeSystem.name, state.referenceBaseMs);
+        const origin = currentModel.objects.find((object) => object.id === this.selectedRoute.originId);
+        const destination = currentModel.objects.find((object) => object.id === this.selectedRoute.destinationId);
+        if (!origin || !destination) throw new Error("The selected bodies are absent from the departure snapshot.");
+        const distanceLy = physicalDistanceLy(origin, destination);
+        this.selectedRoute = {
+          ...this.selectedRoute,
+          originCoordinates: structuredClone(origin.physical), destinationCoordinates: structuredClone(destination.physical),
+          distanceLy,
+          transit: calculateTransit(distanceLy, { accelerationG: this.selectedRoute.accelerationG, cruiseBeta: this.selectedRoute.cruiseBeta }),
+          astronomySnapshotReferenceMs: state.referenceBaseMs,
+        };
+      } else if (this.selectedRoute.context === "cluster") {
+        const state = api.getCampaignTimeState();
+        await this.#astronomicalModel(this.selectedRoute.originName, state.referenceBaseMs);
+        this.selectedRoute = { ...this.selectedRoute, astronomySnapshotReferenceMs: state.referenceBaseMs };
+      }
       const next = engageVoyage(api.getCampaignTimeState(), this.selectedRoute, Date.now());
       await api.saveCampaignTimeState(next);
       ui.notifications.info(`${this.selectedRoute.originName} → ${this.selectedRoute.destinationName} engaged.`);

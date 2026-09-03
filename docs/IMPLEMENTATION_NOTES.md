@@ -70,3 +70,11 @@ Artificial structures remain survey/superstructure plans rather than room-scale 
 ## Navigation model
 
 For cluster/system routes the module computes projected separation, depth-axis difference, true 3D distance, ship-frame contracted distance, cluster-rest-frame elapsed time, and shipboard proper time. The flight model uses constant proper acceleration, a configurable speed cap (default `0.995c`), and symmetric braking; sufficiently short routes use a midpoint flip instead.
+
+## On-demand astronomy
+
+`docs/system-orbital-distances.csv` remains authoritative for hierarchy, adopted semi-major axes, eccentricities, inclinations, periods, epoch reference phases, rotations, tilts, and tidal-lock declarations. `scripts/astronomy.mjs` converts each epoch true anomaly to mean anomaly, advances mean anomaly directly to the requested Cradle timestamp, solves Kepler's equation, and recursively resolves parent-relative physical coordinates. The Tanis stellar pair shares one opposed barycentric solution.
+
+Free epoch spin and axial-season orientation are the only fabricated degrees of freedom. They are frozen in `data/astronomy/epoch-orientations.json`, generated from `geography_seed` where present or an immutable canonical identity fingerprint otherwise, and carry explicit provenance. Tidally locked bodies do not receive random spin phases; their facing derives from current parent-relative orbital geometry. Three established tidal-lock records have rotation-hour values differing by more than one percent from their orbital periods (Enoch, Dun Varya, and Eilean Volna). Those source values are preserved and validation reports them; the explicit tidal-lock flag controls runtime facing.
+
+System state is a random-access snapshot, never a global simulation. Opening a system requests the exact current Cradle timestamp. Repeated identical requests use a small bounded cache; an authoritative change of at least one hour invalidates an actively viewed system. Intra-system engagement resolves fresh physical departure coordinates before freezing the route. No astronomy code is connected to the one-second voyage HUD ticker, and large or backward jumps do not replay intermediate states.

@@ -95,6 +95,7 @@ export function engageVoyage(state, route, realNowMs = Date.now()) {
     context: route.context, systemId: route.systemId || null,
     departureProperMs: settled.properBaseMs, departureReferenceMs: settled.referenceBaseMs,
     originCoordinates: structuredClone(route.originCoordinates), destinationCoordinates: structuredClone(route.destinationCoordinates),
+    departureAstronomySnapshotReferenceMs: Number(route.astronomySnapshotReferenceMs ?? settled.referenceBaseMs),
     distanceLy: transit.distanceLy, accelerationG: transit.accelerationG, cruiseBeta: transit.cruiseBeta,
     reachesCruise: transit.reachesCruise, peakBeta: transit.peakBeta,
     shipYears: transit.shipYears, referenceYears: transit.clusterYears,

@@ -1,6 +1,6 @@
 {
   "name": "orphaned-sun-cluster-map",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,6 +9,9 @@
     "atlas:snapshot:check": "node tools/export-atlas-snapshots.mjs --check",
     "body-operations:generate": "node tools/generate-body-operations.mjs",
     "body-operations:check": "node tools/generate-body-operations.mjs --check",
-    "body-operations:validate": "node tools/validate-body-operations.mjs"
+    "body-operations:validate": "node tools/validate-body-operations.mjs",
+    "astronomy:generate": "node tools/generate-astronomy-orientations.mjs",
+    "astronomy:check": "node tools/generate-astronomy-orientations.mjs --check",
+    "astronomy:validate": "node tools/validate-astronomy.mjs"
   }
 }

@@ -68,6 +68,11 @@ export function buildNaturalBodyModel(row) {
     radiationProfile: row.radiation_hazard_level || row.magnetosphere_radiation || "nominal",
     operationalNotes: row.resource_operations_notes || "Reference-epoch orbital approach model.",
     operationalParameters: naturalOperationalParameters(row),
+    astronomy: row.orbitalState && row.rotationState ? {
+      referenceTimestampMs: row.referenceTimestampMs ?? null,
+      orbitalState: structuredClone(row.orbitalState),
+      rotationState: structuredClone(row.rotationState),
+    } : null,
   };
 }
 

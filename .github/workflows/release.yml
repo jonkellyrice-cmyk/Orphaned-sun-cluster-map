@@ -21,6 +21,8 @@ jobs:
         run: npm test
       - name: Validate accepted body operations
         run: npm run body-operations:validate && npm run body-operations:check
+      - name: Validate deterministic astronomy
+        run: npm run astronomy:validate && npm run astronomy:check
 
   release:
     needs: validate
@@ -49,7 +51,8 @@ jobs:
             data/body-operations/manifest.json \
             data/body-operations/abydos/cataphract.json \
             data/body-operations/amarna/akhetan.json \
-            data/body-operations/seti/arrowfall-range.json; do
+            data/body-operations/seti/arrowfall-range.json \
+            data/astronomy/epoch-orientations.json; do
             unzip -Z1 "$ARCHIVE" | grep -Fx "$required"
           done
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"

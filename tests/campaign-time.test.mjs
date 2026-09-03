@@ -31,6 +31,7 @@ test("engagement freezes navigation parameters and departure snapshot", () => {
   assert.equal(engaged.activeVoyage.accelerationG, 200);
   assert.equal(engaged.activeVoyage.cruiseBeta, .995);
   assert.equal(engaged.activeVoyage.departureProperMs, UNION_EPOCH_MS);
+  assert.equal(engaged.activeVoyage.departureAstronomySnapshotReferenceMs, UNION_EPOCH_MS);
   route.accelerationG = 200; route.cruiseBeta = .995;
 });
 
