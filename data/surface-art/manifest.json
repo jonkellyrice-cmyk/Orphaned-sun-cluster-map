@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "contractId": "orphaned-sun.surface-art-registration.v1",
+  "authority": "jonkellyrice-cmyk/Orphaned-sun-cluster-map",
+  "runtimePolicy": "repository-local-promoted-assets-only",
+  "entries": []
+}
