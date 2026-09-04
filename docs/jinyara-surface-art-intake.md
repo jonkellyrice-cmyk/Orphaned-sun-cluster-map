@@ -1,16 +1,16 @@
 # Jinyara surface-art intake — Step 2
 
-This artifact is the deterministic bridge between the approved **Lancer GM Kit** illustration and Jinyara's canonical Cluster Map cartography. It deliberately stops before image-byte acquisition or warping.
+This is the deterministic intake bridge between the approved **Lancer GM Kit** illustration and Jinyara's canonical Cluster Map cartography. It stops before private image-byte acquisition or warping.
 
 ## Canonical binding
 
-- Cluster Map body: **Thebes / Jinyara**
-- Cartography source: `data/planet-cartography/thebes/jinyara.json`
+- Body: **Thebes / Jinyara**
+- Source: `data/planet-cartography/thebes/jinyara.json`
 - Cartography SHA-256: `5d5347e444e9d86cbe162a4340b9cfb1be3e1a5f25cde46e2c3d98de7f9f1b19`
 - Source fingerprint: `375d0440032e4c3c4480`
-- Target UV frame: equirectangular, north-up, east-right, seam at ±180°
+- UV frame: equirectangular, north-up, east-right, seam at ±180°
 
-## Approved GM Kit source
+## Exact GM Kit attachment
 
 - Campaign: `orphaned-sun-generated-maps`
 - Entity: `generated-map-375d0440032e4c3c4480`
@@ -19,23 +19,23 @@ This artifact is the deterministic bridge between the approved **Lancer GM Kit**
 - Source bytes: 3829195
 - Source SHA-256: **pending authenticated byte acquisition**
 
-The exact attachment identity is known, but the private storage object has not been read by this repository. The v1 contract requires a real SHA-256 of the image bytes, so this step explicitly refuses to substitute an ETag or storage metadata hash.
+The attachment identity is exact, but Cluster Map has not read the private object bytes. The v1 contract requires a real SHA-256, so this step deliberately does not substitute the storage ETag or any metadata-derived value.
 
-## Anchor candidate pack
+## Registration anchors
 
-The one-off patch derives **211** deterministic semantic candidates directly from committed Jinyara metadata:
+The script audits a full metadata-derived pool of **211** candidates (18 hard / 68 strong / 125 soft), but it persists only a bounded **50-anchor registration shortlist**:
 
-- hard: 18 — every settlement, with superstructure/metropolitan/regional hierarchy preserved
-- strong: 68 — named continents, islands, lakes, ranges, and mountains
-- soft: 125 — river endpoints and one midpoint for each transport corridor
-- seam-adjacent: 24 candidates carry an alternate wrapped U coordinate
+- 18 hard — all 18 settlements, preserving superstructure/metropolitan/regional hierarchy
+- 16 strong — spatially distributed macro-geography from continents, islands, lakes, ranges, and mountains
+- 16 soft — spatially distributed road midpoints and hydrology endpoints
+- 22 selected anchors are seam-adjacent and carry an alternate wrapped U coordinate
 
-Every candidate stores canonical latitude/longitude, canonical UV, and the expected pixel location in the 1774×887 source image. Those expected pixels are only starting guesses. The next registration step must replace a selected subset with **observed** source-image UV coordinates before a transform is solved.
+The full 211-candidate pool is reproducible from canonical metadata and is therefore not duplicated into committed JSON. Each selected anchor stores canonical latitude/longitude, canonical UV, and an expected pixel location in the 1774×887 source. Expected pixels are initial guesses only; Step 3 replaces them with observed image correspondences.
 
-## What this step does not do
+## Scope boundary
 
-It does not modify Jinyara's canonical cartography, does not change the 114-map frozen atlas, does not add a runtime texture, does not hide primitive SVG layers, and does not add elevation/normal/lighting data. `data/surface-art/manifest.json` remains the runtime promotion authority and intentionally receives no Jinyara entry yet.
+This step does not modify Jinyara cartography, change the 114-map frozen atlas, add a runtime texture, hide primitive SVG layers, or add elevation/normal/lighting data. `data/surface-art/manifest.json` remains unchanged.
 
 ## Next gate
 
-Step 3 can begin once the exact private attachment bytes are acquired through an authenticated authoring-time bridge. That step can compute the source checksum, observe selected anchors, solve the seam-aware warp, and bake `assets/body-textures/thebes/jinyara.webp`.
+Step 3 is authenticated source acquisition + correspondence registration: read the exact private image bytes, compute its SHA-256, measure selected source-image anchors, solve the seam-aware warp, and bake `assets/body-textures/thebes/jinyara.webp`.

@@ -34,34 +34,37 @@ test("Jinyara intake identifies the exact GM Kit attachment without inventing it
   assert.equal(intake.sourceArtwork.authoringStorage.runtimeDependencyAllowed, false);
 });
 
-test("all 18 Jinyara settlements are hard semantic anchor candidates", () => {
-  const hard = intake.anchorCandidates.filter((item) => item.weightClass === "hard");
+test("bounded registration shortlist retains every Jinyara settlement as a hard anchor", () => {
+  const hard = intake.selectedAnchors.filter((item) => item.weight === "hard");
   assert.equal(canonical.settlements.length, 18);
   assert.equal(hard.length, canonical.settlements.length);
-  assert.deepEqual(hard.map((item) => item.featureRef).sort(), canonical.settlements.map((_, index) => `settlement-${index + 1}`).sort());
-  assert(hard.some((item) => item.metadata.scaleClass === "superstructure"));
-  assert(hard.some((item) => item.metadata.scaleClass === "metropolitan"));
-  assert(hard.some((item) => item.metadata.scaleClass === "regional"));
+  assert.deepEqual(hard.map((item) => item.ref).sort(), canonical.settlements.map((_, index) => `settlement-${index + 1}`).sort());
+  assert(hard.some((item) => item.class === "superstructure"));
+  assert(hard.some((item) => item.class === "metropolitan"));
+  assert(hard.some((item) => item.class === "regional"));
 });
 
-test("anchor candidate pack includes macro geography, hydrology, roads, and seam handling", () => {
-  assert(intake.candidateSummary.byWeight.strong > 0);
-  assert(intake.candidateSummary.byWeight.soft > 0);
-  assert(intake.candidateSummary.byKind.island > 0);
-  assert(intake.candidateSummary.byKind.lake > 0);
-  assert(intake.candidateSummary.byKind["river-endpoint"] > 0);
-  assert.equal(intake.candidateSummary.byKind["transport-corridor-midpoint"], canonical.transportRoutes.length);
-  const seam = intake.anchorCandidates.filter((item) => item.canonical.seamAdjacent);
+test("shortlist is deliberately bounded while retaining geography, roads, hydrology, and seam coverage", () => {
+  assert.equal(intake.anchorPoolSummary.total, 211);
+  assert.equal(intake.selectedAnchorSummary.total, 50);
+  assert.equal(intake.selectedAnchorSummary.byWeight.hard, 18);
+  assert.equal(intake.selectedAnchorSummary.byWeight.strong, 16);
+  assert.equal(intake.selectedAnchorSummary.byWeight.soft, 16);
+  assert(intake.selectedAnchorSummary.byKind.island > 0);
+  assert(intake.selectedAnchorSummary.byKind.lake > 0);
+  assert(intake.selectedAnchorSummary.byKind["river-endpoint"] > 0);
+  assert(intake.selectedAnchorSummary.byKind["transport-corridor-midpoint"] > 0);
+  const seam = intake.selectedAnchors.filter((item) => item.canonical.seamAdjacent);
   assert(seam.length > 0);
-  assert(seam.every((item) => Number.isFinite(item.canonical.alternateWrapU)));
+  assert(seam.every((item) => Number.isFinite(item.canonical.wrapU)));
 });
 
-test("expected source pixels are deterministic projection guesses, not observed anchors", () => {
-  for (const item of intake.anchorCandidates) {
-    assert(item.canonical.uv.u >= 0 && item.canonical.uv.u <= 1);
-    assert(item.canonical.uv.v >= 0 && item.canonical.uv.v <= 1);
-    assert(item.canonical.sourcePixelExpectation.x >= 0 && item.canonical.sourcePixelExpectation.x <= 1773);
-    assert(item.canonical.sourcePixelExpectation.y >= 0 && item.canonical.sourcePixelExpectation.y <= 886);
+test("expected source pixels remain projection guesses until image correspondence is measured", () => {
+  for (const item of intake.selectedAnchors) {
+    assert(item.canonical.u >= 0 && item.canonical.u <= 1);
+    assert(item.canonical.v >= 0 && item.canonical.v <= 1);
+    assert(item.canonical.x >= 0 && item.canonical.x <= 1773);
+    assert(item.canonical.y >= 0 && item.canonical.y <= 886);
     assert.equal(item.sourceObservation.status, "pending");
     assert.equal(item.sourceObservation.u, null);
     assert.equal(item.sourceObservation.v, null);
