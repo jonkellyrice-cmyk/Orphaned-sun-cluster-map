@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Repair migration bootstrap
+        run: node tools/phase-2-bootstrap-fix.mjs
       - name: Apply and validate Phase 2
         run: node tools/generated-maps-phase-2-natural-solid-cartography.mjs
       - name: Commit deterministic migration output
