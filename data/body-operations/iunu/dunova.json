@@ -59,21 +59,21 @@
       "layer": "landmarks",
       "name": "Braereach Crater",
       "position": {
-        "lat": 54.087,
-        "lon": -16.901,
-        "elevation": -1.41
+        "lat": -57.343,
+        "lon": 32.466,
+        "elevation": -0.64
       },
       "dimensions": {
-        "radius": 203.41,
+        "radius": 38.24,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-02",
@@ -81,21 +81,21 @@
       "layer": "landmarks",
       "name": "Dunreach Crater",
       "position": {
-        "lat": 53.603,
-        "lon": -18.308,
-        "elevation": -1.38
+        "lat": 42.83,
+        "lon": 164.746,
+        "elevation": -0.09
       },
       "dimensions": {
-        "radius": 204.23,
+        "radius": 24.09,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-03",
@@ -103,21 +103,21 @@
       "layer": "landmarks",
       "name": "Morozbrae Crater",
       "position": {
-        "lat": 55.056,
-        "lon": -14.089,
-        "elevation": -1.47
+        "lat": -9.25,
+        "lon": -57.576,
+        "elevation": 0.62
       },
       "dimensions": {
-        "radius": 205.05,
+        "radius": 8.04,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-04",
@@ -125,278 +125,271 @@
       "layer": "landmarks",
       "name": "Morozova Crater",
       "position": {
-        "lat": 54.572,
-        "lon": -15.495,
-        "elevation": -1.44
+        "lat": -71.623,
+        "lon": 92.861,
+        "elevation": -0.64
       },
       "dimensions": {
-        "radius": 205.87,
+        "radius": 44.66,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-basin-05",
+      "id": "natural-solid-crater-05",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Gannetreach Crater",
+      "position": {
+        "lat": 33.352,
+        "lon": -133.891,
+        "elevation": -0.63
+      },
+      "dimensions": {
+        "radius": 31.84,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-crater-06",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Gannetbrae Crater",
+      "position": {
+        "lat": -66.97,
+        "lon": 3.17,
+        "elevation": 0.32
+      },
+      "dimensions": {
+        "radius": 31.72,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-basin-07",
       "type": "basin",
       "layer": "landmarks",
-      "name": "Cairnsk Basin",
+      "name": "Morozova Basin",
       "position": {
-        "lat": 56.025,
-        "lon": -11.276,
-        "elevation": -1.54
+        "lat": 41.522,
+        "lon": 137.548,
+        "elevation": 0.01
       },
       "dimensions": {
-        "radius": 206.69,
+        "radius": 102.9,
         "unit": "km"
       },
-      "operationalRole": "regional impact basin",
+      "operationalRole": "major impact basin / regional datum",
       "resource": null,
       "hazard": null,
       "refs": [],
-      "lodPriority": 2,
-      "description": "regional impact basin. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
+      "lodPriority": 1,
+      "description": "Seeded basin constrained by body scale and surface age.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-ridge-06",
+      "id": "natural-solid-ridge-08",
       "type": "ridge",
       "layer": "terrain",
-      "name": "Volnabrae Ridge",
+      "name": "Krasova Ridge",
       "position": {
-        "lat": 56.509,
-        "lon": -9.87,
-        "elevation": -1.57
+        "lat": 80.866,
+        "lon": -93.89,
+        "elevation": 0.53
       },
       "dimensions": {
-        "radius": 611.85,
+        "radius": 174.29,
         "unit": "km"
       },
-      "operationalRole": "regional traverse landmark",
+      "operationalRole": "major relief / traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Seeded relief consistent with the activity regime.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-scarp-09",
+      "type": "scarp",
+      "layer": "terrain",
+      "name": "Blackwakeova Scarp",
+      "position": {
+        "lat": 12.832,
+        "lon": 44.052,
+        "elevation": -0.54
+      },
+      "dimensions": {
+        "radius": 70.71,
+        "unit": "km"
+      },
+      "operationalRole": "regional fault/impact scarp",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "regional traverse landmark. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded broad scarp; no fine fault network implied.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-rift-07",
-      "type": "rift",
-      "layer": "terrain",
-      "name": "Braesk Chasma",
-      "position": {
-        "lat": 57.963,
-        "lon": -5.651,
-        "elevation": -1.16
-      },
-      "dimensions": {
-        "radius": 439.94,
-        "unit": "km"
-      },
-      "operationalRole": "geotechnical boundary",
-      "resource": null,
-      "hazard": "unstable slopes and regolith",
-      "refs": [],
-      "lodPriority": 3,
-      "description": "geotechnical boundary. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-ice-08",
+      "id": "natural-solid-ice-10",
       "type": "ice",
       "layer": "resources",
-      "name": "Cold Trap 8",
+      "name": "Cold Trap 10",
       "position": {
-        "lat": 71.999,
-        "lon": -7.057,
-        "elevation": -1.13
+        "lat": 85.864,
+        "lon": -179.435,
+        "elevation": 0.29
       },
       "dimensions": {
-        "radius": 229.4,
+        "radius": 62.13,
         "unit": "km"
       },
-      "operationalRole": "volatile reserve and extraction zone",
-      "resource": "water/ammonia cold-trap volatiles",
+      "operationalRole": "major volatile reserve / cold-trap province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-mine-09",
-      "type": "mine",
+      "id": "natural-solid-ice-11",
+      "type": "ice",
       "layer": "resources",
-      "name": "Claim 9",
+      "name": "Cold Trap 11",
       "position": {
-        "lat": 26.039,
-        "lon": 69.578,
-        "elevation": 4.94
+        "lat": 69.322,
+        "lon": -34.791,
+        "elevation": 0.31
       },
-      "dimensions": null,
-      "operationalRole": "automated or lightly crewed extraction site",
-      "resource": "metals, silicates and construction feedstock",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-habitat-10",
-      "type": "habitat",
-      "layer": "installations",
-      "name": "Habitat 10",
-      "position": {
-        "lat": 26.524,
-        "lon": 70.984,
-        "elevation": 4.91
+      "dimensions": {
+        "radius": 64.53,
+        "unit": "km"
       },
-      "dimensions": null,
-      "operationalRole": "sealed surface habitat and logistics node",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 1,
-      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-landing-11",
-      "type": "landing",
-      "layer": "installations",
-      "name": "Field 11",
-      "position": {
-        "lat": 27.008,
-        "lon": 72.39,
-        "elevation": 5
-      },
-      "dimensions": null,
-      "operationalRole": "landing field and cargo transfer pad",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10"
-      ],
-      "lodPriority": 1,
-      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-observatory-12",
-      "type": "observatory",
-      "layer": "installations",
-      "name": "Array 12",
-      "position": {
-        "lat": 27.492,
-        "lon": 73.797,
-        "elevation": 4.97
-      },
-      "dimensions": null,
-      "operationalRole": "survey and navigation observatory",
-      "resource": null,
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "survey and navigation observatory. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-hazard-13",
+      "id": "natural-solid-deposit-12",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 12",
+      "position": {
+        "lat": 65.375,
+        "lon": 100.683,
+        "elevation": 0.23
+      },
+      "dimensions": {
+        "radius": 106.65,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-13",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 13",
+      "position": {
+        "lat": -31.748,
+        "lon": -128.18,
+        "elevation": -0.24
+      },
+      "dimensions": {
+        "radius": 96.8,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-hazard-14",
       "type": "hazard",
       "layer": "hazards",
-      "name": "Exclusion 13",
+      "name": "Exclusion 14",
       "position": {
-        "lat": 27.977,
-        "lon": 75.203,
-        "elevation": 4.82
+        "lat": -57.619,
+        "lon": 15.477,
+        "elevation": 0.16
       },
       "dimensions": {
-        "radius": 153.88,
+        "radius": 69.65,
         "unit": "km"
       },
-      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "operationalRole": "mapped operational exclusion / caution zone",
       "resource": null,
-      "hazard": "radiation, ejecta and unstable regolith",
+      "hazard": "low-to-moderate; rock, metals and water ice; vacuum, radiation, thermal extremes",
       "refs": [],
       "lodPriority": 1,
-      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-14",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 14",
-      "position": {
-        "lat": 28.461,
-        "lon": 76.609,
-        "elevation": 4.78
-      },
-      "dimensions": null,
-      "operationalRole": "pressurized-rover and cargo traverse",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-landing-11",
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 2,
-      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-15",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 15",
-      "position": {
-        "lat": 28.946,
-        "lon": 78.015,
-        "elevation": 4.88
-      },
-      "dimensions": null,
-      "operationalRole": "survey traverse to volatile field",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-ice-08"
-      ],
-      "lodPriority": 3,
-      "description": "survey traverse to volatile field. Accepted operational survey feature for Dunova.",
-      "provenance": "accepted-generated-canon"
+      "description": "Localized zone from a supported environmental hazard.",
+      "provenance": "working-surface-v1"
     }
   ],
   "operationalSummary": {
-    "featureCount": 15,
+    "featureCount": 14,
     "layerCounts": {
       "hazards": 1,
-      "installations": 3,
-      "landmarks": 5,
-      "resources": 2,
-      "routes": 2,
+      "landmarks": 7,
+      "resources": 4,
       "terrain": 2
     },
     "keyFeatures": [
       "natural-solid-crater-01",
       "natural-solid-crater-02",
-      "natural-solid-ice-08",
-      "natural-solid-mine-09",
-      "natural-solid-habitat-10",
-      "natural-solid-landing-11",
-      "natural-solid-hazard-13"
+      "natural-solid-basin-07",
+      "natural-solid-ridge-08",
+      "natural-solid-ice-10",
+      "natural-solid-deposit-12",
+      "natural-solid-hazard-14"
     ],
     "geometryStatement": "constrained estimate",
     "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  },
+  "surfaceSurvey": {
+    "modelVersion": "orphaned-sun-natural-solid-survey-v1",
+    "provenance": "deterministic-working-canon/metadata-conditioned-natural-surface-v1",
+    "surfaceFamily": "mixed ice-rock cratered surface",
+    "activity": "geologically quiet / impact-retaining",
+    "craterRetention": "dense ancient crater retention",
+    "volatiles": "patchy volatile deposits and cold traps",
+    "exploitation": "none-established",
+    "basis": "canonical-metadata+permanent-seed"
   }
 }

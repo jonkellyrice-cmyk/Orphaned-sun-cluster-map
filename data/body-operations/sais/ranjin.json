@@ -59,21 +59,21 @@
       "layer": "landmarks",
       "name": "Shanvara Crater",
       "position": {
-        "lat": -31.877,
-        "lon": 152.994,
-        "elevation": 4.34
+        "lat": 45.132,
+        "lon": 95.089,
+        "elevation": 0.64
       },
       "dimensions": {
-        "radius": 92.27,
+        "radius": 7.94,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-02",
@@ -81,21 +81,21 @@
       "layer": "landmarks",
       "name": "Tianyuan Crater",
       "position": {
-        "lat": -31.393,
-        "lon": 154.4,
-        "elevation": 4.31
+        "lat": 29.654,
+        "lon": -125.116,
+        "elevation": 0
       },
       "dimensions": {
-        "radius": 91.45,
+        "radius": 14.4,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-03",
@@ -103,21 +103,21 @@
       "layer": "landmarks",
       "name": "Jyotiyuan Crater",
       "position": {
-        "lat": -32.846,
-        "lon": 150.181,
-        "elevation": 4.28
+        "lat": 22.757,
+        "lon": 14.411,
+        "elevation": -0.47
       },
       "dimensions": {
-        "radius": 93.91,
+        "radius": 14.16,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-04",
@@ -125,278 +125,271 @@
       "layer": "landmarks",
       "name": "Jinpur Crater",
       "position": {
-        "lat": -32.361,
-        "lon": 151.587,
-        "elevation": 4.25
+        "lat": -49.766,
+        "lon": 132.981,
+        "elevation": -0.7
       },
       "dimensions": {
-        "radius": 93.09,
+        "radius": 13.77,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-basin-05",
+      "id": "natural-solid-crater-05",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Rudrapur Crater",
+      "position": {
+        "lat": -1.508,
+        "lon": -71.664,
+        "elevation": -0.41
+      },
+      "dimensions": {
+        "radius": 28.05,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-crater-06",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Rudrashan Crater",
+      "position": {
+        "lat": -63.396,
+        "lon": 67.835,
+        "elevation": 0.02
+      },
+      "dimensions": {
+        "radius": 38.64,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-basin-07",
       "type": "basin",
       "layer": "landmarks",
-      "name": "Qingshan Basin",
+      "name": "Jyotiling Basin",
       "position": {
-        "lat": -29.94,
-        "lon": 147.369,
-        "elevation": 4.47
+        "lat": -15.261,
+        "lon": -173.549,
+        "elevation": 0.35
       },
       "dimensions": {
-        "radius": 88.99,
+        "radius": 133.57,
         "unit": "km"
       },
-      "operationalRole": "regional impact basin",
+      "operationalRole": "major impact basin / regional datum",
       "resource": null,
       "hazard": null,
       "refs": [],
-      "lodPriority": 2,
-      "description": "regional impact basin. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
+      "lodPriority": 1,
+      "description": "Seeded basin constrained by body scale and surface age.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-ridge-06",
+      "id": "natural-solid-ridge-08",
       "type": "ridge",
       "layer": "terrain",
       "name": "Jyotipur Ridge",
       "position": {
-        "lat": -30.424,
-        "lon": 145.962,
-        "elevation": 4.37
+        "lat": -48.844,
+        "lon": -28.073,
+        "elevation": 0.56
       },
       "dimensions": {
-        "radius": 270.89,
+        "radius": 176.08,
         "unit": "km"
       },
-      "operationalRole": "regional traverse landmark",
+      "operationalRole": "major relief / traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Seeded relief consistent with the activity regime.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-scarp-09",
+      "type": "scarp",
+      "layer": "terrain",
+      "name": "Lingvara Scarp",
+      "position": {
+        "lat": 9.333,
+        "lon": 105.513,
+        "elevation": -0.45
+      },
+      "dimensions": {
+        "radius": 132.28,
+        "unit": "km"
+      },
+      "operationalRole": "regional fault/impact scarp",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "regional traverse landmark. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded broad scarp; no fine fault network implied.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-rift-07",
-      "type": "rift",
-      "layer": "terrain",
-      "name": "Qingyuan Chasma",
-      "position": {
-        "lat": -35.752,
-        "lon": 164.244,
-        "elevation": 4.09
-      },
-      "dimensions": {
-        "radius": 191.42,
-        "unit": "km"
-      },
-      "operationalRole": "geotechnical boundary",
-      "resource": null,
-      "hazard": "unstable slopes and regolith",
-      "refs": [],
-      "lodPriority": 3,
-      "description": "geotechnical boundary. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-ice-08",
+      "id": "natural-solid-ice-10",
       "type": "ice",
       "layer": "resources",
-      "name": "Cold Trap 8",
+      "name": "Cold Trap 10",
       "position": {
-        "lat": -77.958,
-        "lon": 165.65,
-        "elevation": 4.06
+        "lat": 79.573,
+        "lon": -122.625,
+        "elevation": -0.4
       },
       "dimensions": {
-        "radius": 97.5,
+        "radius": 102.41,
         "unit": "km"
       },
-      "operationalRole": "volatile reserve and extraction zone",
-      "resource": "water/ammonia cold-trap volatiles",
+      "operationalRole": "major volatile reserve / cold-trap province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-mine-09",
-      "type": "mine",
+      "id": "natural-solid-ice-11",
+      "type": "ice",
       "layer": "resources",
-      "name": "Claim 9",
+      "name": "Cold Trap 11",
       "position": {
-        "lat": 51.476,
-        "lon": 17.72,
-        "elevation": -1.34
+        "lat": -80.253,
+        "lon": 21.471,
+        "elevation": 0.2
       },
-      "dimensions": null,
-      "operationalRole": "automated or lightly crewed extraction site",
-      "resource": "metals, silicates and construction feedstock",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-habitat-10",
-      "type": "habitat",
-      "layer": "installations",
-      "name": "Habitat 10",
-      "position": {
-        "lat": 50.991,
-        "lon": 16.314,
-        "elevation": -1.31
+      "dimensions": {
+        "radius": 138.28,
+        "unit": "km"
       },
-      "dimensions": null,
-      "operationalRole": "sealed surface habitat and logistics node",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 1,
-      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-landing-11",
-      "type": "landing",
-      "layer": "installations",
-      "name": "Field 11",
-      "position": {
-        "lat": 52.444,
-        "lon": 20.532,
-        "elevation": -1.4
-      },
-      "dimensions": null,
-      "operationalRole": "landing field and cargo transfer pad",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10"
-      ],
-      "lodPriority": 1,
-      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-observatory-12",
-      "type": "observatory",
-      "layer": "installations",
-      "name": "Array 12",
-      "position": {
-        "lat": 51.96,
-        "lon": 19.126,
-        "elevation": -1.37
-      },
-      "dimensions": null,
-      "operationalRole": "survey and navigation observatory",
-      "resource": null,
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "survey and navigation observatory. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-hazard-13",
+      "id": "natural-solid-deposit-12",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 12",
+      "position": {
+        "lat": -18.946,
+        "lon": 158.46,
+        "elevation": -0.19
+      },
+      "dimensions": {
+        "radius": 58.32,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-13",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 13",
+      "position": {
+        "lat": 6.366,
+        "lon": -49.88,
+        "elevation": -0.65
+      },
+      "dimensions": {
+        "radius": 96.57,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-hazard-14",
       "type": "hazard",
       "layer": "hazards",
-      "name": "Exclusion 13",
+      "name": "Exclusion 14",
       "position": {
-        "lat": 53.413,
-        "lon": 12.095,
-        "elevation": -1.47
+        "lat": 39.319,
+        "lon": 77.076,
+        "elevation": 0.06
       },
       "dimensions": {
-        "radius": 100.51,
+        "radius": 82.76,
         "unit": "km"
       },
-      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "operationalRole": "mapped operational exclusion / caution zone",
       "resource": null,
-      "hazard": "radiation, ejecta and unstable regolith",
+      "hazard": "low-to-moderate; rock, metals and water ice; vacuum, radiation, thermal extremes",
       "refs": [],
       "lodPriority": 1,
-      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-14",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 14",
-      "position": {
-        "lat": 52.929,
-        "lon": 10.688,
-        "elevation": -1.44
-      },
-      "dimensions": null,
-      "operationalRole": "pressurized-rover and cargo traverse",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-landing-11",
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 2,
-      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-15",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 15",
-      "position": {
-        "lat": 54.382,
-        "lon": 14.907,
-        "elevation": -1.53
-      },
-      "dimensions": null,
-      "operationalRole": "survey traverse to volatile field",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-ice-08"
-      ],
-      "lodPriority": 3,
-      "description": "survey traverse to volatile field. Accepted operational survey feature for Ranjin.",
-      "provenance": "accepted-generated-canon"
+      "description": "Localized zone from a supported environmental hazard.",
+      "provenance": "working-surface-v1"
     }
   ],
   "operationalSummary": {
-    "featureCount": 15,
+    "featureCount": 14,
     "layerCounts": {
       "hazards": 1,
-      "installations": 3,
-      "landmarks": 5,
-      "resources": 2,
-      "routes": 2,
+      "landmarks": 7,
+      "resources": 4,
       "terrain": 2
     },
     "keyFeatures": [
       "natural-solid-crater-01",
       "natural-solid-crater-02",
-      "natural-solid-ice-08",
-      "natural-solid-mine-09",
-      "natural-solid-habitat-10",
-      "natural-solid-landing-11",
-      "natural-solid-hazard-13"
+      "natural-solid-basin-07",
+      "natural-solid-ridge-08",
+      "natural-solid-ice-10",
+      "natural-solid-deposit-12",
+      "natural-solid-hazard-14"
     ],
     "geometryStatement": "constrained estimate",
     "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  },
+  "surfaceSurvey": {
+    "modelVersion": "orphaned-sun-natural-solid-survey-v1",
+    "provenance": "deterministic-working-canon/metadata-conditioned-natural-surface-v1",
+    "surfaceFamily": "ice-rich cryogenic surface",
+    "activity": "geologically quiet / impact-retaining",
+    "craterRetention": "dense ancient crater retention",
+    "volatiles": "substantial ice/volatile provinces",
+    "exploitation": "none-established",
+    "basis": "canonical-metadata+permanent-seed"
   }
 }

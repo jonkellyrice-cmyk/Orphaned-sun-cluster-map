@@ -59,21 +59,21 @@
       "layer": "landmarks",
       "name": "Longling Crater",
       "position": {
-        "lat": -38.461,
-        "lon": -176.835,
-        "elevation": -1.07
+        "lat": 12.129,
+        "lon": -36.122,
+        "elevation": 0.43
       },
       "dimensions": {
-        "radius": 174.58,
+        "radius": 42.86,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-02",
@@ -81,21 +81,21 @@
       "layer": "landmarks",
       "name": "Yuepur Crater",
       "position": {
-        "lat": -38.946,
-        "lon": -178.241,
-        "elevation": -1.04
+        "lat": -11.153,
+        "lon": 91.671,
+        "elevation": 0.15
       },
       "dimensions": {
-        "radius": 175.4,
+        "radius": 19.97,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-03",
@@ -103,21 +103,21 @@
       "layer": "landmarks",
       "name": "Navavara Crater",
       "position": {
-        "lat": -39.43,
-        "lon": -179.648,
-        "elevation": -1.01
+        "lat": 76.058,
+        "lon": -115.877,
+        "elevation": -0.6
       },
       "dimensions": {
-        "radius": 172.93,
+        "radius": 57.73,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-04",
@@ -125,278 +125,271 @@
       "layer": "landmarks",
       "name": "Shanshan Crater",
       "position": {
-        "lat": -39.914,
-        "lon": 178.946,
-        "elevation": -0.98
+        "lat": 12.177,
+        "lon": 14.694,
+        "elevation": -0.43
       },
       "dimensions": {
-        "radius": 173.76,
+        "radius": 36.79,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-basin-05",
+      "id": "natural-solid-crater-05",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Varunyuan Crater",
+      "position": {
+        "lat": 11.063,
+        "lon": 153.347,
+        "elevation": -0.75
+      },
+      "dimensions": {
+        "radius": 55.88,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-crater-06",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Jyotiling Crater",
+      "position": {
+        "lat": -41.317,
+        "lon": -73.399,
+        "elevation": -0.05
+      },
+      "dimensions": {
+        "radius": 39.09,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-basin-07",
       "type": "basin",
       "layer": "landmarks",
-      "name": "Jinpur Basin",
+      "name": "Jinling Basin",
       "position": {
-        "lat": -36.524,
-        "lon": -171.21,
-        "elevation": -0.95
+        "lat": -84.752,
+        "lon": 62.4,
+        "elevation": 0.34
       },
       "dimensions": {
-        "radius": 177.86,
+        "radius": 107.19,
         "unit": "km"
       },
-      "operationalRole": "regional impact basin",
+      "operationalRole": "major impact basin / regional datum",
       "resource": null,
       "hazard": null,
       "refs": [],
-      "lodPriority": 2,
-      "description": "regional impact basin. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
+      "lodPriority": 1,
+      "description": "Seeded basin constrained by body scale and surface age.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-ridge-06",
+      "id": "natural-solid-ridge-08",
       "type": "ridge",
       "layer": "terrain",
-      "name": "Shanyuan Ridge",
+      "name": "Rudraling Ridge",
       "position": {
-        "lat": -37.977,
-        "lon": -175.429,
-        "elevation": -0.85
+        "lat": 43.27,
+        "lon": -165.238,
+        "elevation": -0.25
       },
       "dimensions": {
-        "radius": 520.1,
+        "radius": 170.82,
         "unit": "km"
       },
-      "operationalRole": "regional traverse landmark",
+      "operationalRole": "major relief / traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Seeded relief consistent with the activity regime.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-scarp-09",
+      "type": "scarp",
+      "layer": "terrain",
+      "name": "Chandrayuan Scarp",
+      "position": {
+        "lat": -41.213,
+        "lon": -14.501,
+        "elevation": -0.55
+      },
+      "dimensions": {
+        "radius": 83.22,
+        "unit": "km"
+      },
+      "operationalRole": "regional fault/impact scarp",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "regional traverse landmark. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded broad scarp; no fine fault network implied.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-rift-07",
-      "type": "rift",
-      "layer": "terrain",
-      "name": "Yueling Chasma",
-      "position": {
-        "lat": -42.336,
-        "lon": -165.585,
-        "elevation": -1.32
-      },
-      "dimensions": {
-        "radius": 356.03,
-        "unit": "km"
-      },
-      "operationalRole": "geotechnical boundary",
-      "resource": null,
-      "hazard": "unstable slopes and regolith",
-      "refs": [],
-      "lodPriority": 3,
-      "description": "geotechnical boundary. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-ice-08",
+      "id": "natural-solid-ice-10",
       "type": "ice",
       "layer": "resources",
-      "name": "Cold Trap 8",
+      "name": "Cold Trap 10",
       "position": {
-        "lat": -72.158,
-        "lon": -166.991,
-        "elevation": -1.29
+        "lat": -79.682,
+        "lon": 116.934,
+        "elevation": 1.07
       },
       "dimensions": {
-        "radius": 185.44,
+        "radius": 152.98,
         "unit": "km"
       },
-      "operationalRole": "volatile reserve and extraction zone",
-      "resource": "water/ammonia cold-trap volatiles",
+      "operationalRole": "major volatile reserve / cold-trap province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-mine-09",
-      "type": "mine",
+      "id": "natural-solid-ice-11",
+      "type": "ice",
       "layer": "resources",
-      "name": "Claim 9",
+      "name": "Cold Trap 11",
       "position": {
-        "lat": -56.597,
-        "lon": 154.621,
-        "elevation": -1.74
+        "lat": -85.674,
+        "lon": -106.128,
+        "elevation": 0.29
       },
-      "dimensions": null,
-      "operationalRole": "automated or lightly crewed extraction site",
-      "resource": "metals, silicates and construction feedstock",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-habitat-10",
-      "type": "habitat",
-      "layer": "installations",
-      "name": "Habitat 10",
-      "position": {
-        "lat": -56.112,
-        "lon": 156.027,
-        "elevation": -1.77
+      "dimensions": {
+        "radius": 174.43,
+        "unit": "km"
       },
-      "dimensions": null,
-      "operationalRole": "sealed surface habitat and logistics node",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 1,
-      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-landing-11",
-      "type": "landing",
-      "layer": "installations",
-      "name": "Field 11",
-      "position": {
-        "lat": -57.565,
-        "lon": 151.808,
-        "elevation": -1.8
-      },
-      "dimensions": null,
-      "operationalRole": "landing field and cargo transfer pad",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10"
-      ],
-      "lodPriority": 1,
-      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-observatory-12",
-      "type": "observatory",
-      "layer": "installations",
-      "name": "Array 12",
-      "position": {
-        "lat": -57.081,
-        "lon": 153.215,
-        "elevation": -1.83
-      },
-      "dimensions": null,
-      "operationalRole": "survey and navigation observatory",
-      "resource": null,
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "survey and navigation observatory. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-hazard-13",
+      "id": "natural-solid-deposit-12",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 12",
+      "position": {
+        "lat": 18.547,
+        "lon": 43.159,
+        "elevation": -0.67
+      },
+      "dimensions": {
+        "radius": 134.59,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-13",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 13",
+      "position": {
+        "lat": 40.993,
+        "lon": 170.843,
+        "elevation": -0.37
+      },
+      "dimensions": {
+        "radius": 49.92,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-hazard-14",
       "type": "hazard",
       "layer": "hazards",
-      "name": "Exclusion 13",
+      "name": "Exclusion 14",
       "position": {
-        "lat": -58.534,
-        "lon": 148.996,
-        "elevation": -1.62
+        "lat": 24.049,
+        "lon": -46.739,
+        "elevation": 0.25
       },
       "dimensions": {
-        "radius": 177.04,
+        "radius": 50.53,
         "unit": "km"
       },
-      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "operationalRole": "mapped operational exclusion / caution zone",
       "resource": null,
-      "hazard": "radiation, ejecta and unstable regolith",
+      "hazard": "low-to-moderate; rock, metals and water ice; vacuum, radiation, thermal extremes",
       "refs": [],
       "lodPriority": 1,
-      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-14",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 14",
-      "position": {
-        "lat": -58.05,
-        "lon": 150.402,
-        "elevation": -1.65
-      },
-      "dimensions": null,
-      "operationalRole": "pressurized-rover and cargo traverse",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-landing-11",
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 2,
-      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-15",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 15",
-      "position": {
-        "lat": -59.503,
-        "lon": 146.183,
-        "elevation": -1.68
-      },
-      "dimensions": null,
-      "operationalRole": "survey traverse to volatile field",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-ice-08"
-      ],
-      "lodPriority": 3,
-      "description": "survey traverse to volatile field. Accepted operational survey feature for Yuehara.",
-      "provenance": "accepted-generated-canon"
+      "description": "Localized zone from a supported environmental hazard.",
+      "provenance": "working-surface-v1"
     }
   ],
   "operationalSummary": {
-    "featureCount": 15,
+    "featureCount": 14,
     "layerCounts": {
       "hazards": 1,
-      "installations": 3,
-      "landmarks": 5,
-      "resources": 2,
-      "routes": 2,
+      "landmarks": 7,
+      "resources": 4,
       "terrain": 2
     },
     "keyFeatures": [
       "natural-solid-crater-01",
       "natural-solid-crater-02",
-      "natural-solid-ice-08",
-      "natural-solid-mine-09",
-      "natural-solid-habitat-10",
-      "natural-solid-landing-11",
-      "natural-solid-hazard-13"
+      "natural-solid-basin-07",
+      "natural-solid-ridge-08",
+      "natural-solid-ice-10",
+      "natural-solid-deposit-12",
+      "natural-solid-hazard-14"
     ],
     "geometryStatement": "constrained estimate",
     "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  },
+  "surfaceSurvey": {
+    "modelVersion": "orphaned-sun-natural-solid-survey-v1",
+    "provenance": "deterministic-working-canon/metadata-conditioned-natural-surface-v1",
+    "surfaceFamily": "mixed ice-rock cratered surface",
+    "activity": "geologically quiet / impact-retaining",
+    "craterRetention": "dense ancient crater retention",
+    "volatiles": "substantial ice/volatile provinces",
+    "exploitation": "none-established",
+    "basis": "canonical-metadata+permanent-seed"
   }
 }

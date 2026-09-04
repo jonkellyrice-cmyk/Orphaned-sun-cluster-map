@@ -1,3 +1,5 @@
+import { deriveNaturalSolidProfile } from "./natural-solid-cartography.mjs";
+
 const number = (row, key, fallback = null) => {
   const value = Number(row[key]);
   return row[key] !== "" && Number.isFinite(value) ? value : fallback;
@@ -37,6 +39,7 @@ export function buildNaturalBodyModel(row) {
   const identity = `${row.system}/${row.object}/${row.type}`;
   const volatile = number(row, "water_ice_pct_est", number(row, "water_pct", 0));
   const temperatureC = number(row, "mean_surface_temp_c", number(row, "operational_temperature_profile", -80));
+  const surfaceCharacter = ["terrestrial", "moon", "minor-world"].includes(kind) ? deriveNaturalSolidProfile(row) : null;
   const giant = kind === "giant";
   const regions = kind === "asteroid-field" ? [
     { type: "asteroid-population", count: 32 + Math.floor(hashUnit(identity) * 25) },
@@ -64,6 +67,7 @@ export function buildNaturalBodyModel(row) {
     atmosphere: row.atmosphere_profile || "none or negligible",
     palette: row.visual_palette || (giant ? "banded giant" : volatile > 20 ? "ice and regolith" : "rock and regolith"),
     regions,
+    surfaceCharacter,
     resourceProfile: row.resource_profile || row.strategic_resource_geography || row.resources_hazards || "no major mapped province",
     radiationProfile: row.radiation_hazard_level || row.magnetosphere_radiation || "nominal",
     operationalNotes: row.resource_operations_notes || "Reference-epoch orbital approach model.",

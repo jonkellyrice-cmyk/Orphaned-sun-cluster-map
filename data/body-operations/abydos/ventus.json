@@ -59,21 +59,21 @@
       "layer": "landmarks",
       "name": "Crater Sundown Ward",
       "position": {
-        "lat": -39.855,
-        "lon": 56.696,
-        "elevation": -0.5
+        "lat": 12.024,
+        "lon": -137.779,
+        "elevation": -1
       },
       "dimensions": {
-        "radius": 208.59,
+        "radius": 25.98,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-02",
@@ -81,21 +81,21 @@
       "layer": "landmarks",
       "name": "Crater Sundown Rise",
       "position": {
-        "lat": -40.339,
-        "lon": 55.289,
-        "elevation": -0.47
+        "lat": 47.681,
+        "lon": 1.413,
+        "elevation": 1.07
       },
       "dimensions": {
-        "radius": 209.41,
+        "radius": 35.21,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-03",
@@ -103,21 +103,21 @@
       "layer": "landmarks",
       "name": "Crater Kandar Reach",
       "position": {
-        "lat": -38.886,
-        "lon": 59.508,
-        "elevation": -0.57
+        "lat": -4.259,
+        "lon": 148.14,
+        "elevation": 0.79
       },
       "dimensions": {
-        "radius": 210.23,
+        "radius": 28.98,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-04",
@@ -125,278 +125,292 @@
       "layer": "landmarks",
       "name": "Crater Vada Ward",
       "position": {
-        "lat": -39.37,
-        "lon": 58.102,
-        "elevation": -0.54
+        "lat": -16.38,
+        "lon": -83.736,
+        "elevation": -0.5
       },
       "dimensions": {
-        "radius": 211.05,
+        "radius": 14.82,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-basin-05",
-      "type": "basin",
+      "id": "natural-solid-crater-05",
+      "type": "crater",
       "layer": "landmarks",
-      "name": "Basin Thorn Rise",
+      "name": "Crater Caldera Crown",
       "position": {
-        "lat": -41.792,
-        "lon": 51.071,
-        "elevation": -0.38
-      },
-      "dimensions": {
-        "radius": 205.31,
-        "unit": "km"
-      },
-      "operationalRole": "regional impact basin",
-      "resource": null,
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 2,
-      "description": "regional impact basin. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-ridge-06",
-      "type": "ridge",
-      "layer": "terrain",
-      "name": "Ridge Halcyon Crown",
-      "position": {
-        "lat": -41.308,
-        "lon": 52.477,
-        "elevation": -0.41
-      },
-      "dimensions": {
-        "radius": 607.91,
-        "unit": "km"
-      },
-      "operationalRole": "regional traverse landmark",
-      "resource": null,
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 2,
-      "description": "regional traverse landmark. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-rift-07",
-      "type": "rift",
-      "layer": "terrain",
-      "name": "Chasma Kandar",
-      "position": {
-        "lat": -35.98,
-        "lon": 45.445,
-        "elevation": -0.25
-      },
-      "dimensions": {
-        "radius": 450.3,
-        "unit": "km"
-      },
-      "operationalRole": "geotechnical boundary",
-      "resource": null,
-      "hazard": "unstable slopes and regolith",
-      "refs": [],
-      "lodPriority": 3,
-      "description": "geotechnical boundary. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-ice-08",
-      "type": "ice",
-      "layer": "resources",
-      "name": "Cold Trap 8",
-      "position": {
-        "lat": -72.092,
-        "lon": 44.039,
+        "lat": 0.8,
+        "lon": 62.705,
         "elevation": -0.22
       },
       "dimensions": {
-        "radius": 234.83,
+        "radius": 33.27,
         "unit": "km"
       },
-      "operationalRole": "volatile reserve and extraction zone",
-      "resource": "water/ammonia cold-trap volatiles",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-mine-09",
-      "type": "mine",
-      "layer": "resources",
-      "name": "Claim 9",
-      "position": {
-        "lat": 31.946,
-        "lon": 79.749,
-        "elevation": 0.75
-      },
-      "dimensions": null,
-      "operationalRole": "automated or lightly crewed extraction site",
-      "resource": "metals, silicates and construction feedstock",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-habitat-10",
-      "type": "habitat",
-      "layer": "installations",
-      "name": "Habitat 10",
-      "position": {
-        "lat": 32.431,
-        "lon": 81.155,
-        "elevation": 0.72
-      },
-      "dimensions": null,
-      "operationalRole": "sealed surface habitat and logistics node",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 1,
-      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-landing-11",
-      "type": "landing",
-      "layer": "installations",
-      "name": "Field 11",
-      "position": {
-        "lat": 32.915,
-        "lon": 82.562,
-        "elevation": 0.81
-      },
-      "dimensions": null,
-      "operationalRole": "landing field and cargo transfer pad",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10"
-      ],
-      "lodPriority": 1,
-      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-observatory-12",
-      "type": "observatory",
-      "layer": "installations",
-      "name": "Array 12",
-      "position": {
-        "lat": 33.399,
-        "lon": 83.968,
-        "elevation": 0.78
-      },
-      "dimensions": null,
-      "operationalRole": "survey and navigation observatory",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
-      "lodPriority": 2,
-      "description": "survey and navigation observatory. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-hazard-13",
-      "type": "hazard",
-      "layer": "hazards",
-      "name": "Exclusion 13",
+      "id": "natural-solid-crater-06",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Sundown Crown",
       "position": {
-        "lat": 30.009,
-        "lon": 74.124,
-        "elevation": 0.87
+        "lat": -7.02,
+        "lon": -174.367,
+        "elevation": -1.01
       },
       "dimensions": {
-        "radius": 131.14,
+        "radius": 41.85,
         "unit": "km"
       },
-      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
-      "hazard": "radiation, ejecta and unstable regolith",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-basin-07",
+      "type": "basin",
+      "layer": "landmarks",
+      "name": "Basin Orison Rise",
+      "position": {
+        "lat": 4.273,
+        "lon": -24.681,
+        "elevation": 0.65
+      },
+      "dimensions": {
+        "radius": 120.49,
+        "unit": "km"
+      },
+      "operationalRole": "major impact basin / regional datum",
+      "resource": null,
+      "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded basin constrained by body scale and surface age.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-corridor-14",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 14",
+      "id": "natural-solid-ridge-08",
+      "type": "ridge",
+      "layer": "terrain",
+      "name": "Ridge Vada Ward",
       "position": {
-        "lat": 30.493,
-        "lon": 75.53,
-        "elevation": 0.84
+        "lat": -55.469,
+        "lon": 120.986,
+        "elevation": 0.73
       },
-      "dimensions": null,
-      "operationalRole": "pressurized-rover and cargo traverse",
+      "dimensions": {
+        "radius": 180.34,
+        "unit": "km"
+      },
+      "operationalRole": "major relief / traverse landmark",
       "resource": null,
       "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-landing-11",
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 2,
-      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Seeded relief consistent with the activity regime.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-corridor-15",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 15",
+      "id": "natural-solid-scarp-09",
+      "type": "scarp",
+      "layer": "terrain",
+      "name": "Scarp Orison Ward",
       "position": {
-        "lat": 30.978,
-        "lon": 76.937,
+        "lat": 4.501,
+        "lon": -112.768,
+        "elevation": -0.82
+      },
+      "dimensions": {
+        "radius": 85.65,
+        "unit": "km"
+      },
+      "operationalRole": "regional fault/impact scarp",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Seeded broad scarp; no fine fault network implied.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-volcanic-10",
+      "type": "volcanic",
+      "layer": "terrain",
+      "name": "Caldera Vesper Reach",
+      "position": {
+        "lat": -11.518,
+        "lon": 16.436,
         "elevation": 0.94
       },
-      "dimensions": null,
-      "operationalRole": "survey traverse to volatile field",
+      "dimensions": {
+        "radius": 100.08,
+        "unit": "km"
+      },
+      "operationalRole": "cryovolcanic/resurfacing center",
       "resource": null,
       "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-ice-08"
-      ],
-      "lodPriority": 3,
-      "description": "survey traverse to volatile field. Accepted operational survey feature for Ventus.",
-      "provenance": "accepted-generated-canon"
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Generated only where activity supports resurfacing.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-ice-11",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 11",
+      "position": {
+        "lat": -68.976,
+        "lon": 169.599,
+        "elevation": 0.92
+      },
+      "dimensions": {
+        "radius": 113.68,
+        "unit": "km"
+      },
+      "operationalRole": "major volatile reserve / cold-trap province",
+      "resource": "water ice dominant with ammonia, CO2, methane/organics and other cryogenic volatiles likely",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-ice-12",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 12",
+      "position": {
+        "lat": 33.589,
+        "lon": -62.928,
+        "elevation": -0.51
+      },
+      "dimensions": {
+        "radius": 72.82,
+        "unit": "km"
+      },
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice dominant with ammonia, CO2, methane/organics and other cryogenic volatiles likely",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-ice-13",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 13",
+      "position": {
+        "lat": 25.962,
+        "lon": 84.385,
+        "elevation": -0.07
+      },
+      "dimensions": {
+        "radius": 119.56,
+        "unit": "km"
+      },
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice dominant with ammonia, CO2, methane/organics and other cryogenic volatiles likely",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-14",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 14",
+      "position": {
+        "lat": 59.74,
+        "lon": -150.51,
+        "elevation": -0.93
+      },
+      "dimensions": {
+        "radius": 141.02,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "large water-ice reserve; silicates; ammonia-bearing volatiles; carbonaceous compounds; modest Fe-Ni metal fraction",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-15",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 15",
+      "position": {
+        "lat": -26.076,
+        "lon": -7.542,
+        "elevation": -0.11
+      },
+      "dimensions": {
+        "radius": 91.84,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "large water-ice reserve; silicates; ammonia-bearing volatiles; carbonaceous compounds; modest Fe-Ni metal fraction",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
     }
   ],
   "operationalSummary": {
     "featureCount": 15,
     "layerCounts": {
-      "hazards": 1,
-      "installations": 3,
-      "landmarks": 5,
-      "resources": 2,
-      "routes": 2,
-      "terrain": 2
+      "landmarks": 7,
+      "resources": 5,
+      "terrain": 3
     },
     "keyFeatures": [
       "natural-solid-crater-01",
       "natural-solid-crater-02",
-      "natural-solid-ice-08",
-      "natural-solid-mine-09",
-      "natural-solid-habitat-10",
-      "natural-solid-landing-11",
-      "natural-solid-hazard-13"
+      "natural-solid-basin-07",
+      "natural-solid-ridge-08",
+      "natural-solid-volcanic-10",
+      "natural-solid-ice-11",
+      "natural-solid-deposit-14"
     ],
     "geometryStatement": "constrained estimate",
     "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  },
+  "surfaceSurvey": {
+    "modelVersion": "orphaned-sun-natural-solid-survey-v1",
+    "provenance": "deterministic-working-canon/metadata-conditioned-natural-surface-v1",
+    "surfaceFamily": "ice-rich cryogenic surface",
+    "activity": "geologically quiet / impact-retaining",
+    "craterRetention": "dense ancient crater retention",
+    "volatiles": "extensive ice/volatile terrain",
+    "exploitation": "none-established",
+    "basis": "canonical-metadata+permanent-seed"
   }
 }

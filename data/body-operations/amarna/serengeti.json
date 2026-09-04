@@ -59,21 +59,21 @@
       "layer": "landmarks",
       "name": "Crater Atacama Crown",
       "position": {
-        "lat": -20.105,
-        "lon": -81.541,
-        "elevation": 4.75
+        "lat": -21.005,
+        "lon": -97.947,
+        "elevation": 0.3
       },
       "dimensions": {
-        "radius": 200.82,
+        "radius": 26.89,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-02",
@@ -81,21 +81,21 @@
       "layer": "landmarks",
       "name": "Crater Danube",
       "position": {
-        "lat": -19.621,
-        "lon": -80.134,
-        "elevation": 4.72
+        "lat": 71.198,
+        "lon": 40.731,
+        "elevation": 0.72
       },
       "dimensions": {
-        "radius": 200,
+        "radius": 17.55,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-03",
@@ -103,21 +103,21 @@
       "layer": "landmarks",
       "name": "Crater Danube Ward",
       "position": {
-        "lat": -21.074,
-        "lon": -84.353,
-        "elevation": 4.69
+        "lat": -20.306,
+        "lon": 173.436,
+        "elevation": -0.21
       },
       "dimensions": {
-        "radius": 202.46,
+        "radius": 12.56,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-04",
@@ -125,278 +125,271 @@
       "layer": "landmarks",
       "name": "Crater Atlas Crown",
       "position": {
-        "lat": -20.59,
-        "lon": -82.947,
-        "elevation": 4.66
+        "lat": -20.27,
+        "lon": -40.618,
+        "elevation": -0.7
       },
       "dimensions": {
-        "radius": 201.64,
+        "radius": 37.19,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-basin-05",
+      "id": "natural-solid-crater-05",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Magellan Crown",
+      "position": {
+        "lat": -59.243,
+        "lon": 94.028,
+        "elevation": -0.03
+      },
+      "dimensions": {
+        "radius": 14.36,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-crater-06",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Serengeti Rise",
+      "position": {
+        "lat": 36.359,
+        "lon": -114.432,
+        "elevation": 0.64
+      },
+      "dimensions": {
+        "radius": 43.97,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-basin-07",
       "type": "basin",
       "layer": "landmarks",
-      "name": "Basin Orinoco Rise",
+      "name": "Basin Okavango Reach",
       "position": {
-        "lat": -22.043,
-        "lon": -75.915,
-        "elevation": 4.62
+        "lat": 56.177,
+        "lon": 18.772,
+        "elevation": -0.56
       },
       "dimensions": {
-        "radius": 204.1,
+        "radius": 88.58,
         "unit": "km"
       },
-      "operationalRole": "regional impact basin",
+      "operationalRole": "major impact basin / regional datum",
       "resource": null,
       "hazard": null,
       "refs": [],
-      "lodPriority": 2,
-      "description": "regional impact basin. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
+      "lodPriority": 1,
+      "description": "Seeded basin constrained by body scale and surface age.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-ridge-06",
+      "id": "natural-solid-ridge-08",
       "type": "ridge",
       "layer": "terrain",
       "name": "Ridge Danube",
       "position": {
-        "lat": -22.527,
-        "lon": -77.322,
-        "elevation": 4.53
+        "lat": -24.421,
+        "lon": 143.805,
+        "elevation": 0.32
       },
       "dimensions": {
-        "radius": 599.77,
+        "radius": 161.14,
         "unit": "km"
       },
-      "operationalRole": "regional traverse landmark",
+      "operationalRole": "major relief / traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Seeded relief consistent with the activity regime.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-scarp-09",
+      "type": "scarp",
+      "layer": "terrain",
+      "name": "Scarp Magellan Reach",
+      "position": {
+        "lat": -4.449,
+        "lon": -60.544,
+        "elevation": 0.45
+      },
+      "dimensions": {
+        "radius": 83.85,
+        "unit": "km"
+      },
+      "operationalRole": "regional fault/impact scarp",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "regional traverse landmark. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded broad scarp; no fine fault network implied.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-rift-07",
-      "type": "rift",
-      "layer": "terrain",
-      "name": "Chasma Atlas",
-      "position": {
-        "lat": -23.981,
-        "lon": -70.29,
-        "elevation": 5
-      },
-      "dimensions": {
-        "radius": 434.76,
-        "unit": "km"
-      },
-      "operationalRole": "geotechnical boundary",
-      "resource": null,
-      "hazard": "unstable slopes and regolith",
-      "refs": [],
-      "lodPriority": 3,
-      "description": "geotechnical boundary. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-ice-08",
+      "id": "natural-solid-ice-10",
       "type": "ice",
       "layer": "resources",
-      "name": "Cold Trap 8",
+      "name": "Cold Trap 10",
       "position": {
-        "lat": -83.683,
-        "lon": -68.884,
-        "elevation": 4.97
+        "lat": -86.882,
+        "lon": 60.284,
+        "elevation": 0.29
       },
       "dimensions": {
-        "radius": 224.97,
+        "radius": 54.33,
         "unit": "km"
       },
-      "operationalRole": "volatile reserve and extraction zone",
-      "resource": "water/ammonia cold-trap volatiles",
+      "operationalRole": "major volatile reserve / cold-trap province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-mine-09",
-      "type": "mine",
+      "id": "natural-solid-ice-11",
+      "type": "ice",
       "layer": "resources",
-      "name": "Claim 9",
+      "name": "Cold Trap 11",
       "position": {
-        "lat": 35.019,
-        "lon": -151.472,
-        "elevation": 1.49
+        "lat": 69.197,
+        "lon": -145.971,
+        "elevation": -0.06
       },
-      "dimensions": null,
-      "operationalRole": "automated or lightly crewed extraction site",
-      "resource": "metals, silicates and construction feedstock",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-habitat-10",
-      "type": "habitat",
-      "layer": "installations",
-      "name": "Habitat 10",
-      "position": {
-        "lat": 34.534,
-        "lon": -152.879,
-        "elevation": 1.52
+      "dimensions": {
+        "radius": 40.85,
+        "unit": "km"
       },
-      "dimensions": null,
-      "operationalRole": "sealed surface habitat and logistics node",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 1,
-      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-landing-11",
-      "type": "landing",
-      "layer": "installations",
-      "name": "Field 11",
-      "position": {
-        "lat": 35.987,
-        "lon": -148.66,
-        "elevation": 1.43
-      },
-      "dimensions": null,
-      "operationalRole": "landing field and cargo transfer pad",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10"
-      ],
-      "lodPriority": 1,
-      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-observatory-12",
-      "type": "observatory",
-      "layer": "installations",
-      "name": "Array 12",
-      "position": {
-        "lat": 35.503,
-        "lon": -150.066,
-        "elevation": 1.46
-      },
-      "dimensions": null,
-      "operationalRole": "survey and navigation observatory",
-      "resource": null,
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "survey and navigation observatory. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-hazard-13",
+      "id": "natural-solid-deposit-12",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 12",
+      "position": {
+        "lat": 53.839,
+        "lon": -24.567,
+        "elevation": -0.56
+      },
+      "dimensions": {
+        "radius": 45.5,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-13",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 13",
+      "position": {
+        "lat": 14.527,
+        "lon": 126.363,
+        "elevation": 0.66
+      },
+      "dimensions": {
+        "radius": 68.67,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-hazard-14",
       "type": "hazard",
       "layer": "hazards",
-      "name": "Exclusion 13",
+      "name": "Exclusion 14",
       "position": {
-        "lat": 33.081,
-        "lon": -145.847,
-        "elevation": 1.61
+        "lat": 54.816,
+        "lon": -98.453,
+        "elevation": -0.13
       },
       "dimensions": {
-        "radius": 135.74,
+        "radius": 56.35,
         "unit": "km"
       },
-      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "operationalRole": "mapped operational exclusion / caution zone",
       "resource": null,
-      "hazard": "radiation, ejecta and unstable regolith",
+      "hazard": "low-to-moderate; rock, metals and water ice; vacuum, radiation, thermal extremes",
       "refs": [],
       "lodPriority": 1,
-      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-14",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 14",
-      "position": {
-        "lat": 32.597,
-        "lon": -147.253,
-        "elevation": 1.65
-      },
-      "dimensions": null,
-      "operationalRole": "pressurized-rover and cargo traverse",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-landing-11",
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 2,
-      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-15",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 15",
-      "position": {
-        "lat": 34.05,
-        "lon": -143.035,
-        "elevation": 1.55
-      },
-      "dimensions": null,
-      "operationalRole": "survey traverse to volatile field",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-ice-08"
-      ],
-      "lodPriority": 3,
-      "description": "survey traverse to volatile field. Accepted operational survey feature for Serengeti.",
-      "provenance": "accepted-generated-canon"
+      "description": "Localized zone from a supported environmental hazard.",
+      "provenance": "working-surface-v1"
     }
   ],
   "operationalSummary": {
-    "featureCount": 15,
+    "featureCount": 14,
     "layerCounts": {
       "hazards": 1,
-      "installations": 3,
-      "landmarks": 5,
-      "resources": 2,
-      "routes": 2,
+      "landmarks": 7,
+      "resources": 4,
       "terrain": 2
     },
     "keyFeatures": [
       "natural-solid-crater-01",
       "natural-solid-crater-02",
-      "natural-solid-ice-08",
-      "natural-solid-mine-09",
-      "natural-solid-habitat-10",
-      "natural-solid-landing-11",
-      "natural-solid-hazard-13"
+      "natural-solid-basin-07",
+      "natural-solid-ridge-08",
+      "natural-solid-ice-10",
+      "natural-solid-deposit-12",
+      "natural-solid-hazard-14"
     ],
     "geometryStatement": "constrained estimate",
     "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  },
+  "surfaceSurvey": {
+    "modelVersion": "orphaned-sun-natural-solid-survey-v1",
+    "provenance": "deterministic-working-canon/metadata-conditioned-natural-surface-v1",
+    "surfaceFamily": "mixed ice-rock cratered surface",
+    "activity": "geologically quiet / impact-retaining",
+    "craterRetention": "dense ancient crater retention",
+    "volatiles": "substantial ice/volatile provinces",
+    "exploitation": "none-established",
+    "basis": "canonical-metadata+permanent-seed"
   }
 }

@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseCsv } from "../scripts/system-data.mjs";
 import { BODY_OPERATIONS_MODEL_VERSION, BODY_OPERATIONS_SCHEMA_VERSION, BODY_OPERATIONS_STATUS, bodyOperationAssetPath, canonicalRowFingerprint, coordinateFrameForKind, deriveBodyOperationTargets, operationLayerDefinitions, operationSeed, operationalKindForRow, stableUnit } from "../scripts/body-operations.mjs";
+import { NATURAL_SOLID_SURVEY_MODEL_VERSION, NATURAL_SOLID_SURVEY_PROVENANCE, naturalSolidFeaturePlan } from "../scripts/natural-solid-cartography.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const PROFILE = Object.freeze({ Abydos: "vadan", Tanis: "vostrann", Saqqara: "vostrann", Iunu: "vostrann", Memphis: "aurethic", Nekhen: "aurethic", Thebes: "xuanhari", Sais: "xuanhari", Seti: "xuanhari", Amarna: "union" });
@@ -14,7 +15,7 @@ const NAMES = Object.freeze({
   xuanhari: ["Tian","Qing","Long","Shan","Jin","Yue","Ling","Varun","Chandra","Rudra","Nava","Jyoti"],
   union: ["Magellan","Kepler","Nansen","Tasman","Atacama","Altai","Danube","Serengeti","Atlas","Okavango","Caliburn","Orinoco"],
 });
-const TERM = Object.freeze({ crater:"Crater", basin:"Basin", ridge:"Ridge", rift:"Chasma", ice:"Cold Trap", mine:"Claim", habitat:"Habitat", landing:"Field", observatory:"Array", hazard:"Exclusion", storm:"Storm", vortex:"Vortex", band:"Belt", platform:"Platform", asteroid:"Rock", module:"Module", ring:"Ring", hub:"Hub", dock:"Dock", hangar:"Hangar", reactor:"Reactor", approach:"Approach", gantry:"Gantry", berth:"Berth", hull:"Hull", bridge:"Command", engineering:"Engineering", deck:"Flight Deck", ship:"Element", segment:"Segment", control:"Control", power:"Power", aperture:"Aperture", beacon:"Marker", contour:"Contour", corridor:"Corridor" });
+const TERM = Object.freeze({ crater:"Crater", basin:"Basin", ridge:"Ridge", rift:"Chasma", scarp:"Scarp", volcanic:"Caldera", dune:"Dune Sea", deposit:"Province", ice:"Cold Trap", mine:"Claim", habitat:"Habitat", landing:"Field", observatory:"Array", hazard:"Exclusion", storm:"Storm", vortex:"Vortex", band:"Belt", platform:"Platform", asteroid:"Rock", module:"Module", ring:"Ring", hub:"Hub", dock:"Dock", hangar:"Hangar", reactor:"Reactor", approach:"Approach", gantry:"Gantry", berth:"Berth", hull:"Hull", bridge:"Command", engineering:"Engineering", deck:"Flight Deck", ship:"Element", segment:"Segment", control:"Control", power:"Power", aperture:"Aperture", beacon:"Marker", contour:"Contour", corridor:"Corridor" });
 
 const pickName = (system, body, seed, type, index, functional = false) => {
   if (functional) return `${TERM[type] ?? type} ${index + 1}`;
@@ -31,33 +32,40 @@ function featureFactory(asset) {
   let serial = 0; const features = asset.features;
   return (type, layer, position, role, { name, description, resource = null, hazard = null, refs = [], lodPriority = 2, dimensions = null, provenance = BODY_OPERATIONS_STATUS } = {}) => {
     const i = serial++, id = `${asset.operationalKind}-${type}-${String(i + 1).padStart(2,"0")}`;
-    features.push({ id, type, layer, name: name ?? pickName(asset.system, asset.body, asset.permanentOperationalSeed, type, i, !["crater","basin","ridge","rift","storm","vortex","asteroid","segment"].includes(type)), position, dimensions, operationalRole: role, resource, hazard, refs, lodPriority, description: description ?? `${role}. Accepted operational survey feature for ${asset.body}.`, provenance });
+    features.push({ id, type, layer, name: name ?? pickName(asset.system, asset.body, asset.permanentOperationalSeed, type, i, !["crater","basin","ridge","rift","scarp","volcanic","dune","storm","vortex","asteroid","segment"].includes(type)), position, dimensions, operationalRole: role, resource, hazard, refs, lodPriority, description: description ?? `${role}. Accepted operational survey feature for ${asset.body}.`, provenance });
     return id;
   };
 }
-function generateNatural(asset) {
-  const add = featureFactory(asset), s = asset.permanentOperationalSeed;
-  for (let i=0;i<5;i++) add(i===4?"basin":"crater","landmarks",spherical(s,i),i===4?"regional impact basin":"named navigational landmark",{lodPriority:i<2?1:2,dimensions:extent(s,i,30,240,"km")});
-  add("ridge","terrain",spherical(s,7),"regional traverse landmark",{lodPriority:2,dimensions:extent(s,7,100,700,"km")});
-  add("rift","terrain",spherical(s,8),"geotechnical boundary",{hazard:"unstable slopes and regolith",lodPriority:3,dimensions:extent(s,8,80,500,"km")});
-  const cold = add("ice","resources",spherical(s,9,true),"volatile reserve and extraction zone",{resource:"water/ammonia cold-trap volatiles",lodPriority:1,dimensions:extent(s,9,40,260,"km")});
-  const mine = add("mine","resources",spherical(s,10),"automated or lightly crewed extraction site",{resource:"metals, silicates and construction feedstock",lodPriority:1});
-  const habitat = add("habitat","installations",spherical(s,11),"sealed surface habitat and logistics node",{lodPriority:1,refs:[mine]});
-  const field = add("landing","installations",spherical(s,12),"landing field and cargo transfer pad",{lodPriority:1,refs:[habitat]});
-  add("observatory","installations",spherical(s,13),"survey and navigation observatory",{lodPriority:2});
-  add("hazard","hazards",spherical(s,14),"radiation/unstable-terrain exclusion zone",{hazard:"radiation, ejecta and unstable regolith",lodPriority:1,dimensions:extent(s,14,40,180,"km")});
-  add("corridor","routes",spherical(s,15),"pressurized-rover and cargo traverse",{refs:[habitat,field,mine],lodPriority:2});
-  add("corridor","routes",spherical(s,16),"survey traverse to volatile field",{refs:[habitat,cold],lodPriority:3});
-  if (asset.body === "Eilean Volna") {
-    add("habitat","installations",{lat:-8.4,lon:42.2,elevation:-.2},"marginal favorable enclave",{name:"Volna Thaw Enclave",lodPriority:1,description:"A small engineered thaw-basin settlement exploiting locally favorable pressure, geothermal warmth and shielding; not an open-air city."});
-    add("observatory","terrain",{lat:-11.1,lon:47.8,elevation:.1},"limited biosphere monitoring site",{name:"Sheltered Lichen Preserve",lodPriority:2,description:"Protected microbial/lichen-like biosphere site within a favorable thaw region; it does not imply an Earthlike global biosphere."});
+function generateNatural(asset, row) {
+  const add = featureFactory(asset), plan = naturalSolidFeaturePlan(row, asset.permanentOperationalSeed);
+  asset.surfaceSurvey = {
+    modelVersion: NATURAL_SOLID_SURVEY_MODEL_VERSION,
+    provenance: NATURAL_SOLID_SURVEY_PROVENANCE,
+    surfaceFamily: plan.profile.surfaceFamily,
+    activity: plan.profile.activityLabel,
+    craterRetention: plan.profile.craterRetentionLabel,
+    volatiles: plan.profile.volatileExpression,
+    exploitation: plan.profile.exploitationIndex > 0 ? "established" : "none-established",
+    basis: "canonical-metadata+permanent-seed",
+  };
+  const ids = new Map(), featureStart = asset.features.length;
+  for (const spec of plan.features) {
+    const id = add(spec.type, spec.layer, spec.position, spec.role, {
+      name: spec.name,
+      description: spec.description,
+      resource: spec.resource,
+      hazard: spec.hazard,
+      refs: [],
+      lodPriority: spec.lodPriority,
+      dimensions: spec.dimensions,
+      provenance: spec.provenance,
+    });
+    ids.set(spec.key, id);
   }
-  if (asset.body === "Old Kestrel") {
-    add("mine","resources",{lat:12.5,lon:-28.4,elevation:-1.4},"primary deep excavation and refinery feed",{name:"Black Kestrel Cut",resource:"exceptionally metal-rich ore",lodPriority:1});
-    add("habitat","installations",{lat:8.2,lon:-20.1,elevation:-.8},"sealed industrial habitat complex",{name:"Cairnreach Surface Annex",lodPriority:1});
-    add("landing","installations",{lat:5.6,lon:-15.2,elevation:-.3},"mass-driver export terminus",{name:"Gannet Mass Driver",lodPriority:1,hazard:"high-velocity export lane"});
-    add("hazard","hazards",{lat:15.8,lon:-36.7,elevation:-2.2},"worked spoil and debris exclusion field",{name:"Old Cut Debris Zone",hazard:"excavation debris and unstable spoil",lodPriority:1});
-  }
+  plan.features.forEach((spec, index) => {
+    const refs = spec.refKeys.map((key) => ids.get(key)).filter(Boolean);
+    if (refs.length) asset.features[featureStart + index].refs = refs;
+  });
 }
 function generateGiant(asset) {
   const add=featureFactory(asset),s=asset.permanentOperationalSeed;
@@ -111,7 +119,7 @@ function generateAnomaly(asset) {
 export function generateBodyOperationAsset(row) {
   const operationalKind=operationalKindForRow(row); if(!operationalKind) throw new TypeError(`${row.system}/${row.object} is not an operational target`);
   const asset={ schemaVersion:BODY_OPERATIONS_SCHEMA_VERSION, system:row.system, body:row.object, canonicalType:row.type, operationalKind, permanentOperationalSeed:operationSeed(row.system,row.object,row.type), operationalModelVersion:BODY_OPERATIONS_MODEL_VERSION, canonicalSourceFingerprint:canonicalRowFingerprint(row), acceptedCanonStatus:BODY_OPERATIONS_STATUS, coordinateFrame:coordinateFrameForKind(operationalKind), namingProfile:PROFILE[row.system]??"union", layers:operationLayerDefinitions(operationalKind), features:[], operationalSummary:{} };
-  if(operationalKind==="natural-solid") generateNatural(asset); else if(operationalKind==="giant") generateGiant(asset); else if(operationalKind==="belt") generateBelt(asset); else if(operationalKind==="fleet") generateFleet(asset); else if(operationalKind==="anomaly") generateAnomaly(asset); else generateStructure(asset);
+  if(operationalKind==="natural-solid") generateNatural(asset,row); else if(operationalKind==="giant") generateGiant(asset); else if(operationalKind==="belt") generateBelt(asset); else if(operationalKind==="fleet") generateFleet(asset); else if(operationalKind==="anomaly") generateAnomaly(asset); else generateStructure(asset);
   const counts=Object.fromEntries([...new Set(asset.features.map(f=>f.layer))].sort().map(layer=>[layer,asset.features.filter(f=>f.layer===layer).length]));
   asset.operationalSummary={ featureCount:asset.features.length, layerCounts:counts, keyFeatures:asset.features.filter(f=>f.lodPriority===1).slice(0,8).map(f=>f.id), geometryStatement:asset.coordinateFrame.geometryKind, note: operationalKind==="giant"?"Atmospheric survey; no solid traversable surface.":operationalKind==="belt"?"Distributed reference-epoch sample; centroid is not an asteroid or route endpoint.":operationalKind==="anomaly"?"Uncertain observation volume; no docking geometry asserted.":"Accepted generated operational survey; display compression must not be used for physical calculations." };
   return asset;
