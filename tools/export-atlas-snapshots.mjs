@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { applyNaturalBodyArtDirection } from "../scripts/atlas-art-direction.mjs";
 import { createAtlasBundle, sha256, snapshotOperational, snapshotPlanet } from "../scripts/atlas-snapshot.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -16,10 +17,10 @@ function buildBundle() {
   const planetManifest = JSON.parse(planetManifestText), operationsManifest = JSON.parse(operationsManifestText);
   const planetEntries = planetManifest.worlds.map((item) => snapshotPlanet(JSON.parse(read(item.path)), item.path, read(item.path)));
   const operationalEntries = operationsManifest.assets.map((item) => snapshotOperational(JSON.parse(read(item.path)), item.path, read(item.path)));
-  return createAtlasBundle(planetEntries, operationalEntries, [
+  return applyNaturalBodyArtDirection(createAtlasBundle(planetEntries, operationalEntries, [
     { path: PLANET_MANIFEST, sha256: sha256(planetManifestText), modelVersion: planetManifest.modelVersion },
     { path: OPERATIONS_MANIFEST, sha256: sha256(operationsManifestText), modelVersion: operationsManifest.modelVersion },
-  ]);
+  ]));
 }
 
 function main() {
