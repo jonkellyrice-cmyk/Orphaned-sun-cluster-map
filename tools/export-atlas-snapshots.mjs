@@ -3,39 +3,69 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { applyNaturalBodyArtDirection } from "../scripts/atlas-art-direction.mjs";
-import { createAtlasBundle, sha256, snapshotOperational, snapshotPlanet } from "../scripts/atlas-snapshot.mjs";
+import { createAtlasBundle, sha256, snapshotPlanet } from "../scripts/atlas-snapshot.mjs";
+import { snapshotOperationalRich } from "../scripts/atlas-snapshot-v2.mjs";
+import { buildArtificialBodyModel } from "../scripts/artificial-body-data.mjs";
+import { buildNaturalBodyModel, naturalBodyKind } from "../scripts/natural-body-data.mjs";
+import { parseCsv } from "../scripts/system-data.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = path.join(ROOT, "exports", "generated-maps.bundle.json");
+const AUTHORITY_MANIFEST = path.join(ROOT, "exports", "generated-maps.manifest.json");
 const PLANET_MANIFEST = "data/planet-cartography/manifest.json";
 const OPERATIONS_MANIFEST = "data/body-operations/manifest.json";
+const REGISTRY = "docs/system-orbital-distances.csv";
 
 const read = (relative) => fs.readFileSync(path.join(ROOT, relative), "utf8");
+const key = (system, body) => `${system}\u0000${body}`;
 
 function buildBundle() {
   const planetManifestText = read(PLANET_MANIFEST), operationsManifestText = read(OPERATIONS_MANIFEST);
   const planetManifest = JSON.parse(planetManifestText), operationsManifest = JSON.parse(operationsManifestText);
+  const rows = parseCsv(read(REGISTRY));
+  const rowByBody = new Map(rows.map((row) => [key(row.system, row.object), row]));
   const planetEntries = planetManifest.worlds.map((item) => snapshotPlanet(JSON.parse(read(item.path)), item.path, read(item.path)));
-  const operationalEntries = operationsManifest.assets.map((item) => snapshotOperational(JSON.parse(read(item.path)), item.path, read(item.path)));
+  const operationalEntries = operationsManifest.assets.map((item) => {
+    const sourceText = read(item.path), asset = JSON.parse(sourceText);
+    const row = rowByBody.get(key(asset.system, asset.body));
+    if (!row) throw new Error(`Missing canonical registry row for ${asset.system}/${asset.body}`);
+    const model = naturalBodyKind(row) ? buildNaturalBodyModel(row) : buildArtificialBodyModel(row, asset);
+    return snapshotOperationalRich(asset, model, item.path, sourceText);
+  });
   return applyNaturalBodyArtDirection(createAtlasBundle(planetEntries, operationalEntries, [
     { path: PLANET_MANIFEST, sha256: sha256(planetManifestText), modelVersion: planetManifest.modelVersion },
     { path: OPERATIONS_MANIFEST, sha256: sha256(operationsManifestText), modelVersion: operationsManifest.modelVersion },
+    { path: REGISTRY, sha256: sha256(read(REGISTRY)), modelVersion: "canonical-registry" },
   ]));
 }
 
+function authorityManifest(bundleText, bundle) {
+  return `${JSON.stringify({
+    schemaVersion: 1,
+    authority: "jonkellyrice-cmyk/Orphaned-sun-cluster-map",
+    branch: "main",
+    bundlePath: "exports/generated-maps.bundle.json",
+    bundleSha256: sha256(bundleText),
+    bundleSchemaVersion: bundle.schemaVersion,
+    counts: bundle.counts,
+    sourceManifests: bundle.sourceManifests,
+  })}\n`;
+}
+
 function main() {
-  const output = `${JSON.stringify(buildBundle())}\n`;
+  const bundle = buildBundle();
+  const output = `${JSON.stringify(bundle)}\n`;
+  const manifest = authorityManifest(output, bundle);
   if (process.argv.includes("--check")) {
-    if (!fs.existsSync(OUTPUT) || fs.readFileSync(OUTPUT, "utf8") !== output) {
-      throw new Error("Frozen atlas snapshot is stale. Run npm run atlas:snapshot.");
-    }
-    console.log(`[atlas:snapshot] verified ${JSON.parse(output).counts.total} frozen reference sheets`);
+    if (!fs.existsSync(OUTPUT) || fs.readFileSync(OUTPUT, "utf8") !== output) throw new Error("Frozen atlas snapshot is stale. Run npm run atlas:snapshot.");
+    if (!fs.existsSync(AUTHORITY_MANIFEST) || fs.readFileSync(AUTHORITY_MANIFEST, "utf8") !== manifest) throw new Error("Generated Maps authority manifest is stale. Run npm run atlas:snapshot.");
+    console.log(`[atlas:snapshot] verified ${bundle.counts.total} authoritative reference sheets + manifest`);
     return;
   }
   fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
   fs.writeFileSync(OUTPUT, output);
-  const counts = JSON.parse(output).counts;
-  console.log(`[atlas:snapshot] wrote ${path.relative(ROOT, OUTPUT)} (${counts.planetary} planetary + ${counts.operational} operational = ${counts.total})`);
+  fs.writeFileSync(AUTHORITY_MANIFEST, manifest);
+  console.log(`[atlas:snapshot] wrote ${path.relative(ROOT, OUTPUT)} + ${path.relative(ROOT, AUTHORITY_MANIFEST)} (${bundle.counts.planetary} planetary + ${bundle.counts.operational} operational = ${bundle.counts.total})`);
 }
 
 main();
