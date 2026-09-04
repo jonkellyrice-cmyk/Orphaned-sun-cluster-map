@@ -40,6 +40,6 @@ test("station reference combines canonical structure model with operational geom
   assert.match(snapshot.referenceSvg, /data-superstructure="Abydos\/Thornwatch Array"/);
   assert.match(snapshot.referenceSvg, /data-superstructure-family="watch-citadel-chain"/);
   assert.match(snapshot.referenceSvg, /data-operational-overlay="true"/);
-  assert.match(snapshot.informationPacket, /sparse chain of watch stations/);
+  assert.match(snapshot.informationPacket, /chain of separate watch installations tracking the Thornfield/i);
   assert.match(snapshot.informationPacket, /distributed watch\/sensor-defense array/);
 });
