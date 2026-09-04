@@ -1,5 +1,7 @@
 import { renderOperationalAtlasBody, operationalProfileLines } from "./atlas-operational-visuals.mjs";
 import { sha256 } from "./atlas-snapshot.mjs";
+import { renderSuperstructureAtlas, superstructureProfileLines } from "./superstructure-atlas-visuals.mjs";
+import { renderSuperstructureOperationalOverlay } from "./superstructure-operational-overlay.mjs";
 
 const xml = (value) => String(value ?? "")
   .replaceAll("&", "&amp;")
@@ -25,14 +27,30 @@ ${body}${sidebar}
 </svg>`;
 }
 
+function superstructureArtDirection(identity) {
+  if (!identity) return ["Treat the attached schematic as structurally authoritative. Preserve the named components, their relative positions, major approach vectors, hazards, and functional relationships while adding high-fidelity visual design."];
+  return [
+    "STRUCTURE=attached structural plate is authoritative for macro-silhouette, primary axes, relative massing, signature structures, structural-zone relationships, docking/approach logic, and named operational features",
+    "SCALE=city-scale or larger inhabited superstructure; never interpret as a conventional small spacecraft, ordinary station, or lightly crewed platform",
+    "EXTERIOR=preserve object-specific silhouette and faction design grammar; add high-fidelity local structure without changing the established macroform",
+    "CROSS_SECTION=preserve the exterior envelope and listed structural-zone order/relationships; infer deck, room, conduit, transit, and local machinery detail only inside those bounded zones",
+    `FACTION=${identity.factionLabel}; ${identity.factionDesignGrammar}`,
+    "DETAIL=high information / low noise; city-scale habitation, transit, logistics, engineering and civic infrastructure should be visibly plausible",
+    "TEXT=no invented labels, names, lore, slogans, heraldry, or annotations beyond supplied canon",
+    `DO_NOT=${identity.prohibitedMisreadings.join("; ")}`,
+  ];
+}
+
 function packet(asset, model, sourcePath, sourceHash) {
   const spherical = asset.coordinateFrame.id.includes("spherical") || asset.coordinateFrame.id.includes("observation");
+  const identity = model?.superstructure ?? null;
+  const profile = [...operationalProfileLines(asset, model), ...superstructureProfileLines(identity)];
   const lines = [
     `# ${asset.body} — Frozen Operational Reference`, "", `- System: ${asset.system}`, `- Canonical type: ${asset.canonicalType}`,
     `- Operational kind: ${asset.operationalKind}`, `- Coordinate frame: ${asset.coordinateFrame.id}`, `- Geometry: ${asset.coordinateFrame.geometryKind}`,
     `- Source: ${sourcePath}`, `- Source SHA-256: ${sourceHash}`, `- Source fingerprint: ${asset.canonicalSourceFingerprint}`, `- Canon status: ${asset.acceptedCanonStatus}`, "",
-    "## Visual / physical profile", "", ...operationalProfileLines(asset, model), "",
-    "## Art-direction constraint", "", "Treat the attached schematic as structurally authoritative. Preserve the named components, their relative positions, major approach vectors, hazards, and functional relationships while adding high-fidelity visual design.", "",
+    "## Visual / physical profile", "", ...profile, "",
+    identity ? "## Superstructure generation contract" : "## Art-direction constraint", "", ...superstructureArtDirection(identity), "",
     "## Feature key", "",
   ];
   asset.features.forEach((feature, index) => {
@@ -47,13 +65,19 @@ function packet(asset, model, sourcePath, sourceHash) {
 export function snapshotOperationalRich(asset, model, sourcePath, sourceText) {
   const sourceHash = sha256(sourceText);
   const x = 80, y = 230, width = 1740, height = 870;
-  const body = renderOperationalAtlasBody(asset, model, { x, y, width, height });
+  const frame = { x, y, width, height };
+  const identity = model?.superstructure ?? null;
+  const body = identity
+    ? `<rect x="${x}" y="${y}" width="${width}" height="${height}" fill="#081725"/>${renderSuperstructureAtlas(identity, frame)}${renderSuperstructureOperationalOverlay(asset, frame)}<rect x="${x}" y="${y}" width="${width}" height="${height}" fill="none" stroke="#0b7ead" stroke-width="4"/>`
+    : renderOperationalAtlasBody(asset, model, frame);
   const key = asset.features.slice(0, 26).map((feature, index) => `<text x="1870" y="${260 + index * 36}" fill="#172637" font-family="monospace" font-size="17"><tspan fill="#c52d31" font-weight="700">${String(index + 1).padStart(2, "0")}</tspan> ${xml(feature.name)}</text>`).join("");
   const sidebar = `<text x="1870" y="220" fill="#147ca6" font-family="monospace" font-size="22" font-weight="700">FEATURE KEY</text>${key}<text x="1870" y="1230" fill="#53616d" font-family="monospace" font-size="16">Full feature packet accompanies this image.</text>`;
   const natural = ["natural-solid", "giant"].includes(asset.operationalKind);
   const subtitle = natural
     ? `${asset.system} system // ${asset.operationalKind === "giant" ? "atmospheric" : "surface"} survey chart`
-    : `${asset.system} system // ${asset.operationalKind} structural / operational plate`;
+    : identity
+      ? `${asset.system} system // city-scale superstructure identity / operational plate`
+      : `${asset.system} system // ${asset.operationalKind} structural / operational plate`;
   return {
     id: `${slug(asset.system)}--${slug(asset.body)}`,
     name: asset.body,
