@@ -20,25 +20,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Audit natural-solid exploitation evidence
-        run: |
-          node --input-type=module <<'NODE'
-          import fs from "node:fs";
-          import { parseCsv } from "./scripts/system-data.mjs";
-          import { operationalKindForRow } from "./scripts/body-operations.mjs";
-          const rows = parseCsv(fs.readFileSync("docs/system-orbital-distances.csv", "utf8"));
-          for (const row of rows.filter((item) => operationalKindForRow(item) === "natural-solid")) {
-            console.log(JSON.stringify({
-              system: row.system,
-              body: row.object,
-              currentExploitation: row.current_exploitation || "",
-              infrastructure: row.infrastructure_profile || "",
-              operations: row.resource_operations_notes || "",
-            }));
-          }
-          NODE
       - name: Repair migration bootstrap
         run: node tools/phase-2-bootstrap-fix.mjs
+      - name: Tighten conservative inference and budgets
+        run: node tools/phase-2-quality-fix.mjs
       - name: Apply and validate Phase 2
         run: node tools/generated-maps-phase-2-natural-solid-cartography.mjs
       - name: Commit deterministic migration output
