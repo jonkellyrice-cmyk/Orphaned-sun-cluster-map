@@ -23,11 +23,11 @@ test("release workflow packages runtime geography, cartography, operational, and
   assert.match(workflow, /npm run astronomy:validate && npm run astronomy:check/);
 });
 
-test("Foundry and package versions agree on the v0.9.0 release archive", () => {
+test("Foundry and package versions agree on the v0.10.0 release archive", () => {
   const manifest = JSON.parse(readFileSync(new URL("module.json", root), "utf8"));
   const packageJson = JSON.parse(readFileSync(new URL("package.json", root), "utf8"));
   assert.equal(manifest.version, packageJson.version);
-  assert.equal(manifest.version, "0.9.0");
+  assert.equal(manifest.version, "0.10.0");
   assert.equal(manifest.manifest, "https://github.com/jonkellyrice-cmyk/Orphaned-sun-cluster-map/releases/latest/download/module.json");
-  assert.match(manifest.download, /v0\.9\.0\/orphaned-sun-cluster-map-v0\.9\.0\.zip$/);
+  assert.match(manifest.download, /v0\.10\.0\/orphaned-sun-cluster-map-v0\.10\.0\.zip$/);
 });
