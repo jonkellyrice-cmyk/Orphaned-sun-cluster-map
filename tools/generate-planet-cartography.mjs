@@ -5,8 +5,11 @@ import { buildRefinedHydrology, buildRefinedTerrain } from "../scripts/planet-ca
 import { buildCartographicRegions } from "../scripts/cartography-regions.mjs";
 import { buildNamedGeography } from "../scripts/cartography-names.mjs";
 import { buildSettlementCartography } from "../scripts/cartography-settlements.mjs";
+import { parseCsv } from "../scripts/system-data.mjs";
 
 const root = new URL("../", import.meta.url), coarseManifest = JSON.parse(readFileSync(new URL("data/planet-geography/manifest.json", root), "utf8"));
+const registryRows = parseCsv(readFileSync(new URL("docs/system-orbital-distances.csv", root), "utf8"));
+const registryByWorld = new Map(registryRows.map((row) => [`${row.system}\u0000${row.object}`, row]));
 const status = process.argv.includes("--accept") ? "accepted-working-canon" : "derived-working-canon";
 const slug = (value) => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const hash = (text) => createHash("sha256").update(text).digest("hex");
@@ -20,13 +23,26 @@ for (const entry of coarseManifest.worlds) {
   const coarse = JSON.parse(readFileSync(new URL(entry.path, root), "utf8"));
   const terrain = buildRefinedTerrain(coarse), hydrology = buildRefinedHydrology(coarse, terrain), regions = buildCartographicRegions(coarse, hydrology);
   const gazetteer = buildNamedGeography({ coarse, terrain, hydrology, regions });
-  const civilization = buildSettlementCartography({ coarse, hydrology, regions, gazetteer });
+  const registryRow = registryByWorld.get(`${coarse.system}\u0000${coarse.body}`);
+  if (!registryRow) throw new Error(`Missing canonical registry row for ${coarse.system}/${coarse.body}`);
+  const civilizationProfile = {
+    ownerFaction: registryRow.owner_faction,
+    settlementPattern: registryRow.settlement_pattern || "",
+    dominantSettlementPattern: registryRow.dominant_settlement_pattern || "",
+    majorPopulationCorridors: registryRow.major_population_corridors || "",
+    urbanConcentration: registryRow.urban_concentration || "",
+    majorCityCountBand: registryRow.major_city_count_band || "",
+    likelyTransportGeography: registryRow.likely_transport_geography || "",
+  };
+  const civilization = buildSettlementCartography({ coarse, hydrology, regions, gazetteer, ownerFaction: registryRow.owner_faction });
   const asset = {
     schemaVersion: 2,
     status,
     modelVersion: "orphaned-sun-cartography-v1",
     system: coarse.system,
     body: coarse.body,
+    ownerFaction: registryRow.owner_faction,
+    civilizationProfile,
     sourceSeed: coarse.seed,
     sourceFingerprint: coarse.inputFingerprint,
     resolutionDeg: terrain.resolutionDeg,

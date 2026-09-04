@@ -113,14 +113,21 @@ function planetPacket(world, sourcePath, sourceHash) {
     groups.get(item.featureClass).push(item);
   }
   const lines = [
-    `# ${world.body} — Frozen Cartographic Reference`, "", `- System: ${world.system}`,
+    `# ${world.body} — Frozen Cartographic Reference`, "", `- System: ${world.system}`, `- Owner faction: ${world.ownerFaction}`,
     `- Projection: Equirectangular`, `- Source: ${sourcePath}`, `- Source SHA-256: ${sourceHash}`,
     `- Source fingerprint: ${world.sourceFingerprint}`, `- Canon status: ${world.status}`, "",
     "## Art-direction constraint", "",
     "Treat the attached snapshot as structurally authoritative. Preserve the relative positions and topology of continents, coastlines, named regions, waterways, settlements, and routes. Add fine visual detail and polish without relocating or replacing established features.", "",
+    "## Civilization profile", "",
+    `- Settlement pattern: ${world.civilizationProfile.settlementPattern}`,
+    `- Dominant settlement pattern: ${world.civilizationProfile.dominantSettlementPattern}`,
+    `- Major population corridors: ${world.civilizationProfile.majorPopulationCorridors}`,
+    `- Urban concentration: ${world.civilizationProfile.urbanConcentration}`,
+    `- Major city count band: ${world.civilizationProfile.majorCityCountBand}`,
+    `- Likely transport geography: ${world.civilizationProfile.likelyTransportGeography}`, "",
     "## Legend", "", "- Blue: oceans and seas", "- Green: forest and productive biomes", "- Ochre: steppe, savanna, and deserts", "- White/pale blue: ice and glaciers", "- Blue lines: rivers", "- Cyan lines: transport corridors", "- Numbered circles: settlements", "",
     "## Settlements", "",
-    ...world.settlements.map((item, index) => `${index + 1}. **${item.properName}** — ${item.role}; ${item.kind}; ${item.lat}°, ${item.lon}°`), "",
+    ...world.settlements.map((item, index) => `${index + 1}. **${item.properName}** — ${item.role}; ${item.kind}; built-environment scale: ${item.scaleClass}; ${item.lat}°, ${item.lon}°`), "",
     "## Gazetteer", "",
   ];
   for (const [featureClass, items] of [...groups.entries()].sort(([a], [b]) => a.localeCompare(b))) {
@@ -128,7 +135,7 @@ function planetPacket(world, sourcePath, sourceHash) {
     for (const item of items) lines.push(`- **${item.properName}** — ${item.scientificClassification}; ${item.at[0]}°, ${item.at[1]}°`);
     lines.push("");
   }
-  lines.push("## Transport routes", "", ...world.transportRoutes.map((item) => `- **${item.properName}** — ${item.kind}; ${item.from} → ${item.to}`), "");
+  lines.push("## Transport routes", "", ...world.transportRoutes.map((item) => `- **${item.properName}** — ${item.kind}; corridor scale: ${item.corridorClass}; routing doctrine: ${item.routingDoctrine}; ${item.from} → ${item.to}`), "");
   return lines.join("\n");
 }
 

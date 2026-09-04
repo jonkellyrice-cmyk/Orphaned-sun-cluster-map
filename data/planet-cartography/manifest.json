@@ -10,8 +10,8 @@
       "path": "data/planet-cartography/abydos/ramses.json",
       "sourceSeed": "8dfaf7db71502f6e",
       "sourceFingerprint": "98728c83432208985073",
-      "sha256": "29499ba57b1d8fda6630435aedfbe10bab387d397c654458476fafc196d68f97",
-      "bytes": 1002541
+      "sha256": "dd5944b5833bb19624f65d6ed613682ecbf7474893b5f4972d31e9b3a3e6e0e9",
+      "bytes": 1004844
     },
     {
       "system": "Abydos",
@@ -19,8 +19,8 @@
       "path": "data/planet-cartography/abydos/eventide.json",
       "sourceSeed": "741343188e552de0",
       "sourceFingerprint": "bcd18cf3da72e6a056e5",
-      "sha256": "d51159179554f2072de885f218054e77681035340994f23b6e1cd74d1a558913",
-      "bytes": 1017270
+      "sha256": "e20039bdf112832d6634ad1126f05c0e65888b84b2294c3a0fd493b6511acb23",
+      "bytes": 1019518
     },
     {
       "system": "Abydos",
@@ -28,8 +28,8 @@
       "path": "data/planet-cartography/abydos/thraximundus.json",
       "sourceSeed": "f54bfd702ebbc1db",
       "sourceFingerprint": "bc3ccd2812370dfd00ba",
-      "sha256": "f29512100ecb66053f0b18f8cfde59272cd7afbeabc8aeb9b669277a5cad18e6",
-      "bytes": 980775
+      "sha256": "ba5c11660d884778099c3e9de4e0265fc377e3ebb02312cd4b2973ff92f4238e",
+      "bytes": 982965
     },
     {
       "system": "Abydos",
@@ -37,8 +37,8 @@
       "path": "data/planet-cartography/abydos/kandahar.json",
       "sourceSeed": "58705906c91fcc27",
       "sourceFingerprint": "ee54e5961815f5811ff1",
-      "sha256": "f2e00d985af4ffbc58cbd516695fd6c8918286377e717ecb4be413be5fb7b589",
-      "bytes": 871620
+      "sha256": "21895f49c50abe547cf02ef74340f65502db0881d3eb43c21fd2514902e01eda",
+      "bytes": 873821
     },
     {
       "system": "Tanis",
@@ -46,8 +46,8 @@
       "path": "data/planet-cartography/tanis/krasna-brae.json",
       "sourceSeed": "159d1abb57b4db2b",
       "sourceFingerprint": "ad606ed98dda5f1b6a9a",
-      "sha256": "171d11a8ceccf1d3fa5772e49ae9d5932fe6bec493f50519451c9c563cc6bfed",
-      "bytes": 901372
+      "sha256": "e25d29c1a8ebcf62b4b864597886c7ac2a6e56e67f2050a1f6c03a0b6f164f7e",
+      "bytes": 903705
     },
     {
       "system": "Tanis",
@@ -55,8 +55,8 @@
       "path": "data/planet-cartography/tanis/novy-skye.json",
       "sourceSeed": "aabea66712ba4db6",
       "sourceFingerprint": "120c009f4e691f31cd1d",
-      "sha256": "0afd5ac5ede195b9638c4271e953d83f647485887e58ffad54319551bae9a322",
-      "bytes": 1232963
+      "sha256": "03178a0014e73932a313f610d32098a993db04c5d20902322754b60815eb5333",
+      "bytes": 1235176
     },
     {
       "system": "Tanis",
@@ -64,8 +64,8 @@
       "path": "data/planet-cartography/tanis/muigrad.json",
       "sourceSeed": "24ccc23b06265d0a",
       "sourceFingerprint": "ab3fac1ae882eacbbc96",
-      "sha256": "e0096c2970f22bc5b737ce3aa77c63facb0bb7e938a4de62429015c60ca1dada",
-      "bytes": 1074413
+      "sha256": "b84cb4e013e17bb4997dbca82a9357cd843b28a85c1604f5c94de128369f0aae",
+      "bytes": 1076630
     },
     {
       "system": "Tanis",
@@ -73,8 +73,8 @@
       "path": "data/planet-cartography/tanis/moroz-cairn.json",
       "sourceSeed": "fe0d7b436d181c35",
       "sourceFingerprint": "f0634a9e80493f3b5bbd",
-      "sha256": "aa08395377fe3f9ab334a077b28df2603948e3776316d2c480de3dbe71dd9f5e",
-      "bytes": 1104491
+      "sha256": "34c73ee9c4b4cf1973ccae8589af3669c5512fb4363e359599d1c85c630bf387",
+      "bytes": 1106734
     },
     {
       "system": "Saqqara",
@@ -82,8 +82,8 @@
       "path": "data/planet-cartography/saqqara/kilmorov.json",
       "sourceSeed": "fa0a4a47bb03eb31",
       "sourceFingerprint": "66fc9006ba073918d5f9",
-      "sha256": "b5a4e9ef5d7fba50bb13fe0c0d807561a4c19252cec57ee54dc62f0349d07aa9",
-      "bytes": 901133
+      "sha256": "bb2c457d90e3af5ba3a968b45e19884275bd1019c1bec2783c53b1e85feafc40",
+      "bytes": 903473
     },
     {
       "system": "Saqqara",
@@ -91,8 +91,8 @@
       "path": "data/planet-cartography/saqqara/thennaris.json",
       "sourceSeed": "ccac8c27747592d3",
       "sourceFingerprint": "3f4d3bc7308c4f00dd45",
-      "sha256": "cd3bad54fbfe5002bf84974b274badb8f06baea15a510f0bbfff056320c8ee26",
-      "bytes": 1180395
+      "sha256": "547fad6b62b5dd85a8280da47b8095425d739c9b18c16344dd5a4f701e25bd87",
+      "bytes": 1182616
     },
     {
       "system": "Iunu",
@@ -100,8 +100,8 @@
       "path": "data/planet-cartography/iunu/valeth.json",
       "sourceSeed": "a9e5db13d68d8392",
       "sourceFingerprint": "eac3d551c39ff7174d20",
-      "sha256": "b5c0bc10fe2f1e84314d2855db469fa2f542f6f4e0ebffcd6e20ff9e18bc2c66",
-      "bytes": 1000690
+      "sha256": "11d69fcd736015fbaf3da2cf247322ef0bbc9eacd406194ea63916e8a1df53d4",
+      "bytes": 1003025
     },
     {
       "system": "Iunu",
@@ -109,8 +109,8 @@
       "path": "data/planet-cartography/iunu/kyradon.json",
       "sourceSeed": "72e47b6ac3ca8aa2",
       "sourceFingerprint": "aa76713b85847b357d1c",
-      "sha256": "f74a7ba2c23bbd87c41262b8f1ba0ca8eebbeb501b50def5bff7303c55445695",
-      "bytes": 1337061
+      "sha256": "339e288a75794157547b92105b53dbedd1d40ce8646df70e530e6c25de025e74",
+      "bytes": 1339280
     },
     {
       "system": "Iunu",
@@ -118,8 +118,8 @@
       "path": "data/planet-cartography/iunu/pelagos.json",
       "sourceSeed": "a579768f64e9e61d",
       "sourceFingerprint": "d0f9e567120fe6ff0cf3",
-      "sha256": "f3ec8fd5bbb917974603111c197208e6144cc74831f25a2acd3277ca6aae76bc",
-      "bytes": 1049831
+      "sha256": "fb068defb4248fe1194cd77427766f70eccb816f175a439ee701140cd18d0619",
+      "bytes": 1052093
     },
     {
       "system": "Iunu",
@@ -127,8 +127,8 @@
       "path": "data/planet-cartography/iunu/beth-aster.json",
       "sourceSeed": "e122ee274565fbc8",
       "sourceFingerprint": "977cd2fdb4958daff461",
-      "sha256": "f9f1c293cc9fdeecd6903936665503b277461a692874244da89cf356f8b3c207",
-      "bytes": 942159
+      "sha256": "1262ae25c0bb616dfbe769e39e1852b7d6e88f62cff6fb30eeca167da3edcd2d",
+      "bytes": 944374
     },
     {
       "system": "Iunu",
@@ -136,8 +136,8 @@
       "path": "data/planet-cartography/iunu/ophira.json",
       "sourceSeed": "21419585b2eb9b89",
       "sourceFingerprint": "e000b9d85504d1367b31",
-      "sha256": "5288f368c70cc4e9a023794a1b4bb0f733c7a118e1b438f2eac8b495e4806155",
-      "bytes": 1097780
+      "sha256": "c8f90f201cdab97aeac8e3f239f612c63ecafaa3bcba69a421065d23b4df64d0",
+      "bytes": 1099985
     },
     {
       "system": "Iunu",
@@ -145,8 +145,8 @@
       "path": "data/planet-cartography/iunu/mercatia.json",
       "sourceSeed": "40c9fb2891ec81eb",
       "sourceFingerprint": "d17c8935e4234bdd90ee",
-      "sha256": "fbc79dccfdc39d765e78fb80159f7c1fbf908407809dd6d6179fc550334c5bda",
-      "bytes": 1113158
+      "sha256": "c7a06e479c0645358923c5ebeb06c9d8ad5b8aa9dae473bc2d8cc21813297e35",
+      "bytes": 1115398
     },
     {
       "system": "Memphis",
@@ -154,8 +154,8 @@
       "path": "data/planet-cartography/memphis/serapha.json",
       "sourceSeed": "4a91c598a0fa2d43",
       "sourceFingerprint": "d07961ab640086b78c94",
-      "sha256": "d42b1e81e67a4e8a5d3027d75c84928f5c8acfbe6e8830c629e932b4b9154c14",
-      "bytes": 1257802
+      "sha256": "9add07dbae37a7d121a37b83ec34793cb9fe657a4479acc5c23fd40f04f37903",
+      "bytes": 1260150
     },
     {
       "system": "Memphis",
@@ -163,8 +163,8 @@
       "path": "data/planet-cartography/memphis/via-aureth.json",
       "sourceSeed": "58b8a4c3614aa0ff",
       "sourceFingerprint": "e84c4b882bf35bf1a091",
-      "sha256": "d185fd57120a7f278d82d68b493242d861041fd556e08c3d966c064eab0b337e",
-      "bytes": 1110378
+      "sha256": "0c178e1df1b3fe671649a6eeb60904e906153517316d4d1ffde67e29c17b19cd",
+      "bytes": 1112662
     },
     {
       "system": "Memphis",
@@ -172,8 +172,8 @@
       "path": "data/planet-cartography/memphis/melekion.json",
       "sourceSeed": "db523303b4e59f49",
       "sourceFingerprint": "a87618a06233a29839c0",
-      "sha256": "f68778b22adfd1e0ed5cb2f153e12a05dd81a67f5defe64f40d399af68ba0236",
-      "bytes": 1128086
+      "sha256": "db545ee527c0e1f1697f60644cc1168471c49ee515cc54dff0ceeeb0527a6600",
+      "bytes": 1130368
     },
     {
       "system": "Memphis",
@@ -181,8 +181,8 @@
       "path": "data/planet-cartography/memphis/qados.json",
       "sourceSeed": "a22344d1cfa59d75",
       "sourceFingerprint": "7b9881177f1cc2f59ac4",
-      "sha256": "707d4ccd22e52c3c9c66f44a611ebc1d1778c9bcf244e87d0898260f75e5f2a3",
-      "bytes": 911722
+      "sha256": "e5fbfec6450256115dc7d859c18ea29538b3adf0fb5ee783ddfcfa38c672100c",
+      "bytes": 914067
     },
     {
       "system": "Nekhen",
@@ -190,8 +190,8 @@
       "path": "data/planet-cartography/nekhen/aurelios.json",
       "sourceSeed": "0f1c84585f671960",
       "sourceFingerprint": "d3a23ea3d29328d2d1ea",
-      "sha256": "2716aaef07d15e8ca69b897145a7f6ae8ac7371cefed975ba967d2b0b78c1396",
-      "bytes": 1607140
+      "sha256": "053cbfe869ecf547883d776401098142396b3ab55cd2698acf9f35b5030c4a09",
+      "bytes": 1609531
     },
     {
       "system": "Nekhen",
@@ -199,8 +199,8 @@
       "path": "data/planet-cartography/nekhen/hierava.json",
       "sourceSeed": "2480c318ee25783f",
       "sourceFingerprint": "a9e57f2a1c53ce7b5e20",
-      "sha256": "67c9f95e2cccb0deb00cc4c8f09a9bd5abd8b9f0eeeffd7f70d987b89ba0a088",
-      "bytes": 1249996
+      "sha256": "4adce0962bfd7855c1d52b35628ea9aeefb6171527c76231d0d6385fc9ddc437",
+      "bytes": 1252396
     },
     {
       "system": "Nekhen",
@@ -208,8 +208,8 @@
       "path": "data/planet-cartography/nekhen/thessaron.json",
       "sourceSeed": "d26cfebfa8847962",
       "sourceFingerprint": "36b7616347d9b3ca0fe9",
-      "sha256": "18aadecad66d67e13071b55aa01b66c8c3c45e962294100517eb8fde3e603911",
-      "bytes": 1072138
+      "sha256": "f3576fb0d4832a71f16b3f40965c11af6225140ba7b18ca61c625bf8698c1c94",
+      "bytes": 1074300
     },
     {
       "system": "Nekhen",
@@ -217,8 +217,8 @@
       "path": "data/planet-cartography/nekhen/or-qedem.json",
       "sourceSeed": "cb1ea46925c3ece1",
       "sourceFingerprint": "bf43a9532a44f1595dac",
-      "sha256": "13d74ae0366492d900bdb9a880cf68931459a0be31a8acd871b29f04cb2cd004",
-      "bytes": 942213
+      "sha256": "a5621e2e85b45a02dd232e854030bd6ae501c86e49ea9294175c2d17d50586ad",
+      "bytes": 944494
     },
     {
       "system": "Thebes",
@@ -226,8 +226,8 @@
       "path": "data/planet-cartography/thebes/jinyara.json",
       "sourceSeed": "64569b5f797c5673",
       "sourceFingerprint": "375d0440032e4c3c4480",
-      "sha256": "30e09ba8ab39463eccc28c14e54ba78ac0f7cfa6e03fb3f36d5ec11eb40970e2",
-      "bytes": 1315964
+      "sha256": "5d5347e444e9d86cbe162a4340b9cfb1be3e1a5f25cde46e2c3d98de7f9f1b19",
+      "bytes": 1317957
     },
     {
       "system": "Thebes",
@@ -235,8 +235,8 @@
       "path": "data/planet-cartography/thebes/qingpur.json",
       "sourceSeed": "26668c67a27ac185",
       "sourceFingerprint": "98531213ed1233b73be8",
-      "sha256": "dabc145367ca1b5ae4c20b3396084b481960483e70e25a67d586d502b57a3606",
-      "bytes": 947707
+      "sha256": "d64fe058de6de34426da97113d5cfd5e36c09026818711e1dc82ee873278f845",
+      "bytes": 949776
     },
     {
       "system": "Thebes",
@@ -244,8 +244,8 @@
       "path": "data/planet-cartography/thebes/varunhai.json",
       "sourceSeed": "5124d89217625c93",
       "sourceFingerprint": "836f075fba645c3e0da6",
-      "sha256": "341a763e00ee5b038c97f84cf5b3f71fe3d6f50540d239d97dc96223ef735935",
-      "bytes": 1135773
+      "sha256": "c07bcf335bc39a07885d4ab079453c9a909546c6a8d8ce82abc6f046377e0aa9",
+      "bytes": 1137765
     },
     {
       "system": "Thebes",
@@ -253,8 +253,8 @@
       "path": "data/planet-cartography/thebes/meilong.json",
       "sourceSeed": "1912e416dfe9fcd6",
       "sourceFingerprint": "cd44cd1e138a12561da9",
-      "sha256": "3a3fcda01c65eb84fdf2f602efcb09ac8f5914adde310e632daed43e18c546c9",
-      "bytes": 934330
+      "sha256": "097d8c5e625f98ce6de9e2b9b81b9bd437bd601afcccc33eab0380e9856e1ca7",
+      "bytes": 936331
     },
     {
       "system": "Sais",
@@ -262,8 +262,8 @@
       "path": "data/planet-cartography/sais/nalini.json",
       "sourceSeed": "a5c4023006034858",
       "sourceFingerprint": "1d6f1e7daa8fac1feed8",
-      "sha256": "381efbb63615975de09ae5699a24ce839a40ef057810b963b6e730f661836d3d",
-      "bytes": 1197592
+      "sha256": "dc41303f49b5857c5c6e9aec5e4b549a3eb005a8e5668a151147c85240d359d3",
+      "bytes": 1199502
     },
     {
       "system": "Sais",
@@ -271,8 +271,8 @@
       "path": "data/planet-cartography/sais/shanvara.json",
       "sourceSeed": "027d7142775dcd1d",
       "sourceFingerprint": "bcdf290995f18b3e5e64",
-      "sha256": "7d94cd328ff8064aa34f609c3763db93dde7dc55292127be2d0a9abccc41ff99",
-      "bytes": 1152430
+      "sha256": "9d1b3a1a3f44cd30754739d616e07bf75b60b18fa9dd0699df0db60c271fa7ed",
+      "bytes": 1154442
     },
     {
       "system": "Sais",
@@ -280,8 +280,8 @@
       "path": "data/planet-cartography/sais/longwei.json",
       "sourceSeed": "7cdcb23408f32783",
       "sourceFingerprint": "9875e99144e8b47df7cd",
-      "sha256": "92c89b1d109ca1b4bd9c22e43951d89ead1489dc49221480297161dabd2efb3c",
-      "bytes": 791417
+      "sha256": "0e102c043a4589e44fcd7b007ab6146cc79df09da19636bc07ebaa664ffdcfad",
+      "bytes": 793510
     },
     {
       "system": "Sais",
@@ -289,8 +289,8 @@
       "path": "data/planet-cartography/sais/kailashun.json",
       "sourceSeed": "e4bafddf62f7ac1b",
       "sourceFingerprint": "f6f5260e219c697fc5f5",
-      "sha256": "72677aa43e080016c19d7cfc8768d7bd0ac3c84fccbe449a01599fd8b2fdbe59",
-      "bytes": 1050111
+      "sha256": "34c7b755ed33f1209b0302b40f2dd137d5d3893d8b2b54ccbbe414e013f6901a",
+      "bytes": 1052048
     },
     {
       "system": "Amarna",
@@ -298,8 +298,8 @@
       "path": "data/planet-cartography/amarna/nansen.json",
       "sourceSeed": "c7139dfb659ff718",
       "sourceFingerprint": "cdc3c16b9b9250696465",
-      "sha256": "c89dc7636cad3ffc417827290f9ff2a7cc042d259a4e3abff95dc76a7ad7a10b",
-      "bytes": 838037
+      "sha256": "54f9e5eb5092756f251edfe97ced813d657a4c97da3b0bdbd64e0cbd18ff0ef9",
+      "bytes": 840315
     },
     {
       "system": "Amarna",
@@ -307,8 +307,8 @@
       "path": "data/planet-cartography/amarna/samarkand.json",
       "sourceSeed": "84e5541414f661e5",
       "sourceFingerprint": "b447e11d477956195299",
-      "sha256": "064e41c49f4fa37a31103ca5877ec3e9f98c497d22110f2be0e775bfae24db50",
-      "bytes": 1271881
+      "sha256": "535a9fabcafcf0af5b32bae106960871c5480c98204794debeea750426bce00b",
+      "bytes": 1274060
     },
     {
       "system": "Amarna",
@@ -316,8 +316,8 @@
       "path": "data/planet-cartography/amarna/aoraki.json",
       "sourceSeed": "ccb41174f7d40f3a",
       "sourceFingerprint": "1bfd18cea863af20bdc6",
-      "sha256": "42d4fe2abf768cf3b9bbab28b1001c53b9822e7b2a4953b6444ff9f9971c6c9b",
-      "bytes": 1169352
+      "sha256": "7211e36077e4757d2deb9ccb48db4fc030ddd90dea88dfc78dab3a811af07bbc",
+      "bytes": 1171523
     },
     {
       "system": "Amarna",
@@ -325,8 +325,8 @@
       "path": "data/planet-cartography/amarna/tlaloc.json",
       "sourceSeed": "e0f6517a71cbeafa",
       "sourceFingerprint": "d5ae7d1fe29608a9d09b",
-      "sha256": "16843f14e431d18a19e57cb4d03a731bee11e572d6814a8da3ab3642129ae69d",
-      "bytes": 1111949
+      "sha256": "2026d27ba1b9c69f81fe63fc2b8a448bfca0a5f888349aad6f222969c0bb3ad0",
+      "bytes": 1114167
     },
     {
       "system": "Amarna",
@@ -334,8 +334,8 @@
       "path": "data/planet-cartography/amarna/cordoba.json",
       "sourceSeed": "e9c3f8b439597348",
       "sourceFingerprint": "4f7cd8f74ac3fb52992c",
-      "sha256": "1971b5fa2299d7e5af37d73bda6433ae082966acf71580075e085cdee33af13c",
-      "bytes": 790353
+      "sha256": "7360ec7443f2e674f38e8a7de0ee47c8607032d52199fba3e869a61869d09d05",
+      "bytes": 792567
     },
     {
       "system": "Amarna",
@@ -343,8 +343,8 @@
       "path": "data/planet-cartography/amarna/saraswati.json",
       "sourceSeed": "bca49360be8c8139",
       "sourceFingerprint": "6c672b020caabaa3a2cd",
-      "sha256": "939a3ee7036e3ff7cccc14b53e002e897595e7daf0b81bcee8e78892b1e7afbd",
-      "bytes": 908545
+      "sha256": "939c17e9fda06749dcbed93227bd8a24b5a2c8f8c8d1e11e7bf8d5a0bdabdc66",
+      "bytes": 910729
     },
     {
       "system": "Amarna",
@@ -352,8 +352,8 @@
       "path": "data/planet-cartography/amarna/kilimanjaro.json",
       "sourceSeed": "18e378f6db9096b1",
       "sourceFingerprint": "91ea3454d0cf8d51627e",
-      "sha256": "4e0d1cb281802120502be39a34ba92f3b836375c9d3e90daa9061c6eb9a211b3",
-      "bytes": 948285
+      "sha256": "9f82f8f197bc459d55aa06175e1c690ead1a8239762f4c6b141689f1a3fb0077",
+      "bytes": 950559
     },
     {
       "system": "Seti",
@@ -361,8 +361,8 @@
       "path": "data/planet-cartography/seti/tianvara.json",
       "sourceSeed": "14fd64c046cb88a2",
       "sourceFingerprint": "8ab66471ee8aa4cfeec8",
-      "sha256": "35762084e110c6372293f1e9dbd682d921a77d7788718c99ab3acdcab0eada29",
-      "bytes": 1053773
+      "sha256": "43ebd6374cedaaa73a8c53f2b6d98c28ab3106f32038a031f29cb3b6c7b4c3d7",
+      "bytes": 1055741
     },
     {
       "system": "Seti",
@@ -370,8 +370,8 @@
       "path": "data/planet-cartography/seti/chandrao.json",
       "sourceSeed": "2565cba531272ed0",
       "sourceFingerprint": "23f1f089d62cb9f73f1b",
-      "sha256": "bdf64e9c7ce62088451783935e1bb3d679ebb746d04cb9ff4a97e65d796ab703",
-      "bytes": 1025581
+      "sha256": "b57f23ba2c788c1c667e561dd4820d4d33673f97267a383cf1748c84301a503a",
+      "bytes": 1027591
     },
     {
       "system": "Seti",
@@ -379,8 +379,8 @@
       "path": "data/planet-cartography/seti/rudrashen.json",
       "sourceSeed": "48fa0003cecf54db",
       "sourceFingerprint": "df05e4bd9d52dcba686f",
-      "sha256": "f98800588e86fa9613a7cbdea96fd04a607c19653183dc19bea5e583abee786d",
-      "bytes": 1215440
+      "sha256": "9989659fc188db2f88f3b7aace3a941c1d6ce4ad13c783dc432491193fc69ded",
+      "bytes": 1217438
     },
     {
       "system": "Seti",
@@ -388,8 +388,8 @@
       "path": "data/planet-cartography/seti/keshun.json",
       "sourceSeed": "f2744ee4d0f9a94a",
       "sourceFingerprint": "d9b733819e34bc8d651f",
-      "sha256": "13908977fc0b29d4e98d190ad0cc98878fd530945499354e447affb8fd61f457",
-      "bytes": 781052
+      "sha256": "d8191532a3a2921e942820e19898b2b444f7ffff60392e82169d1764a27aefff",
+      "bytes": 783127
     }
   ]
 }

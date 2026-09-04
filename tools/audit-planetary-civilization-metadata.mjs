@@ -48,6 +48,14 @@ const routeCounts = assets.map(({ entry, asset }) => ({ system: entry.system, bo
 const ownerFactionCounts = [...seededRows.reduce((map, row) => map.set(row.owner_faction || "(blank)", (map.get(row.owner_faction || "(blank)") ?? 0) + 1), new Map()).entries()].sort((a, b) => a[0].localeCompare(b[0]));
 const roles = [...new Set(assets.flatMap(({ asset }) => (asset.settlements ?? []).map((site) => site.role)))].sort();
 const routeKinds = [...new Set(assets.flatMap(({ asset }) => (asset.transportRoutes ?? []).map((route) => route.kind)))].sort();
+const totalSettlements = assets.reduce((sum, { asset }) => sum + (asset.settlements?.length ?? 0), 0);
+const totalRoutes = assets.reduce((sum, { asset }) => sum + (asset.transportRoutes?.length ?? 0), 0);
+const gaps = [];
+if (fieldPresence.assetOwnerFaction !== assets.length) gaps.push("Authoritative owner_faction is not propagated into every planetary cartography asset.");
+if (fieldPresence.settlementScaleClass !== totalSettlements) gaps.push("Not every generated settlement carries an explicit built-environment scale class.");
+if (fieldPresence.routeCorridorClass !== totalRoutes) gaps.push("Not every generated transport route carries an explicit corridor scale class.");
+if (fieldPresence.routeRoutingDoctrine !== totalRoutes) gaps.push("Not every generated transport route carries routing-doctrine metadata.");
+if (!/routingStepCost/.test(settlementSource) || !/routingDoctrineForFaction/.test(settlementSource)) gaps.push("Surface-road geometry does not yet apply faction-aware routing doctrine.");
 
 const jinyaraRow = jinyara.sourceRow;
 const jinyaraAsset = jinyara.asset;
@@ -88,13 +96,7 @@ const report = {
     referencesOwnerFaction: /ownerFaction|owner_faction/.test(settlementSource),
     referencesRoutingDoctrine: /routingDoctrine/.test(settlementSource),
   },
-  gaps: [
-    "Generated settlements have role/kind/location but no explicit physical scale class for built-environment magnitude.",
-    "Generated transport routes have kind/mode/geometry but no explicit corridor scale class tied to endpoint settlement magnitude.",
-    "Authoritative owner_faction exists upstream but is not propagated into planetary cartography assets.",
-    "Surface-road routing currently uses one shared terrain-cost pathfinder for every faction; Mandate directness and Conclave ecological avoidance are not represented.",
-    "Authoritative settlement/transport descriptors already exist upstream and can be propagated rather than inventing a parallel lore source.",
-  ],
+  gaps,
 };
 
 fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
@@ -117,3 +119,5 @@ console.log("\nUpstream Jinyara civilization metadata:");
 for (const [name, value] of Object.entries(report.exemplar.upstreamCivilizationMetadata)) console.log(`  ${name}: ${value}`);
 console.log("\nIdentified gaps:");
 for (const gap of report.gaps) console.log(`  - ${gap}`);
+
+if (process.argv.includes("--strict") && report.gaps.length) fail(`Audit still has ${report.gaps.length} civilization metadata gap(s).`);
