@@ -91,14 +91,22 @@ function validatePropagation(before, after) {
   console.log(`[phase-1] validated projection-only propagation: ${changedReferences}/43 planetary sheets changed; ${afterOperational.size} operational sheets byte-stable`);
 }
 
+function validateAlreadyApplied(before, after) {
+  assert.equal(after.counts.planetary, 43, "Phase 1 expects the canonical 43 planetary sheets");
+  assert.equal(after.counts.operational, 71, "Phase 1 expects the canonical 71 operational sheets");
+  assert.deepEqual(after, before, "An already-applied Phase 1 migration must regenerate byte-identically");
+  console.log("[phase-1] idempotence verified: north-up source and 114-sheet authoritative bundle are already current");
+}
+
 function main() {
   const before = readJson(BUNDLE);
-  patchProjection();
+  const patched = patchProjection();
   run("npm test");
   run("npm run atlas:snapshot");
   run("npm run atlas:snapshot:check");
   const after = readJson(BUNDLE);
-  validatePropagation(before, after);
+  if (patched) validatePropagation(before, after);
+  else validateAlreadyApplied(before, after);
   console.log("[phase-1] complete: planetary atlas raster is north-up and authoritative export regenerated");
 }
 
