@@ -1,0 +1,6928 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "surface-art-intake",
+  "contractId": "orphaned-sun.surface-art-registration.v1",
+  "stage": "anchor-candidate-intake",
+  "system": "Thebes",
+  "body": "Jinyara",
+  "canonical": {
+    "authority": "jonkellyrice-cmyk/Orphaned-sun-cluster-map",
+    "sourcePath": "data/planet-cartography/thebes/jinyara.json",
+    "sourceSha256": "5d5347e444e9d86cbe162a4340b9cfb1be3e1a5f25cde46e2c3d98de7f9f1b19",
+    "sourceFingerprint": "375d0440032e4c3c4480",
+    "projection": {
+      "name": "equirectangular",
+      "north": "up",
+      "east": "right",
+      "primeMeridianDeg": 0,
+      "seamLongitudeDeg": 180,
+      "wrapLongitude": true
+    }
+  },
+  "sourceArtwork": {
+    "provider": "lancer-gm-kit",
+    "campaignId": "orphaned-sun-generated-maps",
+    "entityId": "generated-map-375d0440032e4c3c4480",
+    "attachmentId": "cb4fdeae-019c-4d5e-b651-2229c4622080",
+    "filename": "image.png",
+    "contentType": "image/png",
+    "bytes": 3829195,
+    "width": 1774,
+    "height": 887,
+    "aspectRatio": "2:1",
+    "sha256": null,
+    "checksumStatus": "pending-secure-byte-acquisition",
+    "logicalRef": "lancer-gm-kit://orphaned-sun-generated-maps/generated-map-375d0440032e4c3c4480/cb4fdeae-019c-4d5e-b651-2229c4622080",
+    "authoringStorage": {
+      "provider": "supabase-private-storage",
+      "bucket": "lancer-codex-media",
+      "storagePath": "primary/orphaned-sun-generated-maps/generated-map-375d0440032e4c3c4480/cb4fdeae-019c-4d5e-b651-2229c4622080.png",
+      "runtimeDependencyAllowed": false
+    }
+  },
+  "targetRuntime": {
+    "canonicalPath": "assets/body-textures/thebes/jinyara.webp",
+    "contentType": "image/webp",
+    "projection": "equirectangular",
+    "aspectRatio": "2:1",
+    "status": "not-baked"
+  },
+  "anchorCandidates": [
+    {
+      "id": "settlement:1",
+      "featureKind": "settlement",
+      "featureRef": "settlement-1",
+      "label": "Kailashpur Jing",
+      "weightClass": "hard",
+      "priority": 100,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "planetary capital",
+        "kind": "capital",
+        "scaleClass": "superstructure"
+      },
+      "canonical": {
+        "lat": 9,
+        "lon": 169,
+        "uv": {
+          "u": 0.96944444,
+          "v": 0.45
+        },
+        "sourcePixelExpectation": {
+          "x": 1718.825,
+          "y": 398.7
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": -0.03055556
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:10",
+      "featureKind": "settlement",
+      "featureRef": "settlement-10",
+      "label": "Qinghai Gang",
+      "weightClass": "hard",
+      "priority": 100,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "major port city",
+        "kind": "city",
+        "scaleClass": "superstructure"
+      },
+      "canonical": {
+        "lat": 43,
+        "lon": 3,
+        "uv": {
+          "u": 0.50833333,
+          "v": 0.26111111
+        },
+        "sourcePixelExpectation": {
+          "x": 901.275,
+          "y": 231.344
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:13",
+      "featureKind": "settlement",
+      "featureRef": "settlement-13",
+      "label": "Qinghe Gang",
+      "weightClass": "hard",
+      "priority": 100,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "major port city",
+        "kind": "city",
+        "scaleClass": "superstructure"
+      },
+      "canonical": {
+        "lat": 51,
+        "lon": -7,
+        "uv": {
+          "u": 0.48055556,
+          "v": 0.21666667
+        },
+        "sourcePixelExpectation": {
+          "x": 852.025,
+          "y": 191.967
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:16",
+      "featureKind": "settlement",
+      "featureRef": "settlement-16",
+      "label": "Tianadi Gang",
+      "weightClass": "hard",
+      "priority": 100,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "major port city",
+        "kind": "city",
+        "scaleClass": "superstructure"
+      },
+      "canonical": {
+        "lat": 23,
+        "lon": 115,
+        "uv": {
+          "u": 0.81944444,
+          "v": 0.37222222
+        },
+        "sourcePixelExpectation": {
+          "x": 1452.875,
+          "y": 329.789
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:2",
+      "featureKind": "settlement",
+      "featureRef": "settlement-2",
+      "label": "Meigarh Cheng",
+      "weightClass": "hard",
+      "priority": 100,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "major city",
+        "kind": "city",
+        "scaleClass": "superstructure"
+      },
+      "canonical": {
+        "lat": 43,
+        "lon": 45,
+        "uv": {
+          "u": 0.625,
+          "v": 0.26111111
+        },
+        "sourcePixelExpectation": {
+          "x": 1108.125,
+          "y": 231.344
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:3",
+      "featureKind": "settlement",
+      "featureRef": "settlement-3",
+      "label": "Longshan Cheng",
+      "weightClass": "hard",
+      "priority": 100,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "major city",
+        "kind": "city",
+        "scaleClass": "superstructure"
+      },
+      "canonical": {
+        "lat": 25,
+        "lon": -51,
+        "uv": {
+          "u": 0.35833333,
+          "v": 0.36111111
+        },
+        "sourcePixelExpectation": {
+          "x": 635.325,
+          "y": 319.944
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:4",
+      "featureKind": "settlement",
+      "featureRef": "settlement-4",
+      "label": "Jinhe Gang",
+      "weightClass": "hard",
+      "priority": 100,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "major port city",
+        "kind": "city",
+        "scaleClass": "superstructure"
+      },
+      "canonical": {
+        "lat": 41,
+        "lon": -63,
+        "uv": {
+          "u": 0.325,
+          "v": 0.27222222
+        },
+        "sourcePixelExpectation": {
+          "x": 576.225,
+          "y": 241.189
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:5",
+      "featureKind": "settlement",
+      "featureRef": "settlement-5",
+      "label": "Rudradao Cheng",
+      "weightClass": "hard",
+      "priority": 100,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "major city",
+        "kind": "city",
+        "scaleClass": "superstructure"
+      },
+      "canonical": {
+        "lat": 53,
+        "lon": -27,
+        "uv": {
+          "u": 0.425,
+          "v": 0.20555556
+        },
+        "sourcePixelExpectation": {
+          "x": 753.525,
+          "y": 182.122
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:6",
+      "featureKind": "settlement",
+      "featureRef": "settlement-6",
+      "label": "Qinghai Cheng",
+      "weightClass": "hard",
+      "priority": 100,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "major city",
+        "kind": "city",
+        "scaleClass": "superstructure"
+      },
+      "canonical": {
+        "lat": 39,
+        "lon": 151,
+        "uv": {
+          "u": 0.91944444,
+          "v": 0.28333333
+        },
+        "sourcePixelExpectation": {
+          "x": 1630.175,
+          "y": 251.033
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:7",
+      "featureKind": "settlement",
+      "featureRef": "settlement-7",
+      "label": "Lingshan Gang",
+      "weightClass": "hard",
+      "priority": 100,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "major port city",
+        "kind": "city",
+        "scaleClass": "superstructure"
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": 29,
+        "uv": {
+          "u": 0.58055556,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 1029.325,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:11",
+      "featureKind": "settlement",
+      "featureRef": "settlement-11",
+      "label": "Linghai Cheng",
+      "weightClass": "hard",
+      "priority": 92,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "regional city",
+        "kind": "city",
+        "scaleClass": "metropolitan"
+      },
+      "canonical": {
+        "lat": 13,
+        "lon": 163,
+        "uv": {
+          "u": 0.95277778,
+          "v": 0.42777778
+        },
+        "sourcePixelExpectation": {
+          "x": 1689.275,
+          "y": 379.011
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": -0.04722222
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:12",
+      "featureKind": "settlement",
+      "featureRef": "settlement-12",
+      "label": "Shandao Cheng",
+      "weightClass": "hard",
+      "priority": 92,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "regional city",
+        "kind": "city",
+        "scaleClass": "metropolitan"
+      },
+      "canonical": {
+        "lat": 37,
+        "lon": -37,
+        "uv": {
+          "u": 0.39722222,
+          "v": 0.29444444
+        },
+        "sourcePixelExpectation": {
+          "x": 704.275,
+          "y": 260.878
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:8",
+      "featureKind": "settlement",
+      "featureRef": "settlement-8",
+      "label": "Varunhe Cheng",
+      "weightClass": "hard",
+      "priority": 92,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "regional city",
+        "kind": "city",
+        "scaleClass": "metropolitan"
+      },
+      "canonical": {
+        "lat": 39,
+        "lon": -113,
+        "uv": {
+          "u": 0.18611111,
+          "v": 0.28333333
+        },
+        "sourcePixelExpectation": {
+          "x": 329.975,
+          "y": 251.033
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:9",
+      "featureKind": "settlement",
+      "featureRef": "settlement-9",
+      "label": "Longnadi Cheng",
+      "weightClass": "hard",
+      "priority": 92,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "regional city",
+        "kind": "city",
+        "scaleClass": "metropolitan"
+      },
+      "canonical": {
+        "lat": 23,
+        "lon": 143,
+        "uv": {
+          "u": 0.89722222,
+          "v": 0.37222222
+        },
+        "sourcePixelExpectation": {
+          "x": 1590.775,
+          "y": 329.789
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-11",
+      "featureKind": "continent",
+      "featureRef": "coast-11",
+      "label": "Xuanpur Dazhou",
+      "weightClass": "strong",
+      "priority": 90,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "major continental landmass"
+      },
+      "canonical": {
+        "lat": 69.168,
+        "lon": -97.53300000000002,
+        "uv": {
+          "u": 0.229075,
+          "v": 0.11573333
+        },
+        "sourcePixelExpectation": {
+          "x": 406.15,
+          "y": 102.54
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-2",
+      "featureKind": "continent",
+      "featureRef": "coast-2",
+      "label": "Chandravara Dazhou",
+      "weightClass": "strong",
+      "priority": 90,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "major continental landmass"
+      },
+      "canonical": {
+        "lat": 5.84,
+        "lon": -78.82400000000001,
+        "uv": {
+          "u": 0.28104444,
+          "v": 0.46755556
+        },
+        "sourcePixelExpectation": {
+          "x": 498.292,
+          "y": 414.254
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:14",
+      "featureKind": "settlement",
+      "featureRef": "settlement-14",
+      "label": "Tianvana Cheng",
+      "weightClass": "hard",
+      "priority": 82,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "regional city",
+        "kind": "city",
+        "scaleClass": "regional"
+      },
+      "canonical": {
+        "lat": -15,
+        "lon": -7,
+        "uv": {
+          "u": 0.48055556,
+          "v": 0.58333333
+        },
+        "sourcePixelExpectation": {
+          "x": 852.025,
+          "y": 516.833
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:15",
+      "featureKind": "settlement",
+      "featureRef": "settlement-15",
+      "label": "Shanhai Cheng",
+      "weightClass": "hard",
+      "priority": 82,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "regional city",
+        "kind": "city",
+        "scaleClass": "regional"
+      },
+      "canonical": {
+        "lat": 41,
+        "lon": -123,
+        "uv": {
+          "u": 0.15833333,
+          "v": 0.27222222
+        },
+        "sourcePixelExpectation": {
+          "x": 280.725,
+          "y": 241.189
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:17",
+      "featureKind": "settlement",
+      "featureRef": "settlement-17",
+      "label": "Shanling Cheng",
+      "weightClass": "hard",
+      "priority": 82,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "regional city",
+        "kind": "city",
+        "scaleClass": "regional"
+      },
+      "canonical": {
+        "lat": 35,
+        "lon": -79,
+        "uv": {
+          "u": 0.28055556,
+          "v": 0.30555556
+        },
+        "sourcePixelExpectation": {
+          "x": 497.425,
+          "y": 270.722
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "settlement:18",
+      "featureKind": "settlement",
+      "featureRef": "settlement-18",
+      "label": "Jyotishan Cheng",
+      "weightClass": "hard",
+      "priority": 82,
+      "reason": "Visible inhabited structure; settlement coordinates remain canonical even when painted footprint is exaggerated.",
+      "metadata": {
+        "role": "regional city",
+        "kind": "city",
+        "scaleClass": "regional"
+      },
+      "canonical": {
+        "lat": 47,
+        "lon": 155,
+        "uv": {
+          "u": 0.93055556,
+          "v": 0.23888889
+        },
+        "sourcePixelExpectation": {
+          "x": 1649.875,
+          "y": 211.656
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-10",
+      "featureKind": "island",
+      "featureRef": "coast-10",
+      "label": "Chandrapur Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 28.5,
+        "lon": 9.16700000000003,
+        "uv": {
+          "u": 0.52546389,
+          "v": 0.34166667
+        },
+        "sourcePixelExpectation": {
+          "x": 931.647,
+          "y": 302.717
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-14",
+      "featureKind": "island",
+      "featureRef": "coast-14",
+      "label": "Meiyuan Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 36.333,
+        "lon": 13.33299999999997,
+        "uv": {
+          "u": 0.53703611,
+          "v": 0.29815
+        },
+        "sourcePixelExpectation": {
+          "x": 952.165,
+          "y": 264.161
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-15",
+      "featureKind": "island",
+      "featureRef": "coast-15",
+      "label": "Kailashnagar Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 39,
+        "lon": -9.33299999999997,
+        "uv": {
+          "u": 0.474075,
+          "v": 0.28333333
+        },
+        "sourcePixelExpectation": {
+          "x": 840.535,
+          "y": 251.033
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-17",
+      "featureKind": "island",
+      "featureRef": "coast-17",
+      "label": "Lingdao Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 47.071,
+        "lon": -61.214,
+        "uv": {
+          "u": 0.32996111,
+          "v": 0.23849444
+        },
+        "sourcePixelExpectation": {
+          "x": 585.021,
+          "y": 211.306
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-18",
+      "featureKind": "island",
+      "featureRef": "coast-18",
+      "label": "Kailashshan Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 46.4,
+        "lon": -28.399999999999977,
+        "uv": {
+          "u": 0.42111111,
+          "v": 0.24222222
+        },
+        "sourcePixelExpectation": {
+          "x": 746.63,
+          "y": 214.609
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-19",
+      "featureKind": "island",
+      "featureRef": "coast-19",
+      "label": "Jingarh Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 50.188,
+        "lon": -171.313,
+        "uv": {
+          "u": 0.02413056,
+          "v": 0.22117778
+        },
+        "sourcePixelExpectation": {
+          "x": 42.783,
+          "y": 195.964
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.02413056
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-20",
+      "featureKind": "island",
+      "featureRef": "coast-20",
+      "label": "Sarasyuan Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 48.667,
+        "lon": -97,
+        "uv": {
+          "u": 0.23055556,
+          "v": 0.22962778
+        },
+        "sourcePixelExpectation": {
+          "x": 408.775,
+          "y": 203.45
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-23",
+      "featureKind": "island",
+      "featureRef": "coast-23",
+      "label": "Yueshan Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 47.353,
+        "lon": 54.11799999999994,
+        "uv": {
+          "u": 0.65032778,
+          "v": 0.23692778
+        },
+        "sourcePixelExpectation": {
+          "x": 1153.031,
+          "y": 209.918
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-25",
+      "featureKind": "island",
+      "featureRef": "coast-25",
+      "label": "Shanshan Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 59,
+        "lon": -50.80000000000001,
+        "uv": {
+          "u": 0.35888889,
+          "v": 0.17222222
+        },
+        "sourcePixelExpectation": {
+          "x": 636.31,
+          "y": 152.589
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-26",
+      "featureKind": "island",
+      "featureRef": "coast-26",
+      "label": "Shanvara Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 50.4,
+        "lon": -3,
+        "uv": {
+          "u": 0.49166667,
+          "v": 0.22
+        },
+        "sourcePixelExpectation": {
+          "x": 871.725,
+          "y": 194.92
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-30",
+      "featureKind": "island",
+      "featureRef": "coast-30",
+      "label": "Yuyuan Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 57.778,
+        "lon": -149.889,
+        "uv": {
+          "u": 0.08364167,
+          "v": 0.17901111
+        },
+        "sourcePixelExpectation": {
+          "x": 148.297,
+          "y": 158.604
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-31",
+      "featureKind": "island",
+      "featureRef": "coast-31",
+      "label": "Kailashpur Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 60.273,
+        "lon": 46.90899999999999,
+        "uv": {
+          "u": 0.63030278,
+          "v": 0.16515
+        },
+        "sourcePixelExpectation": {
+          "x": 1117.527,
+          "y": 146.323
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-32",
+      "featureKind": "island",
+      "featureRef": "coast-32",
+      "label": "Jyotiling Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 60,
+        "lon": 24,
+        "uv": {
+          "u": 0.56666667,
+          "v": 0.16666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1004.7,
+          "y": 147.667
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-35",
+      "featureKind": "island",
+      "featureRef": "coast-35",
+      "label": "Jyotipur Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": -84,
+        "uv": {
+          "u": 0.26666667,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 472.8,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-39",
+      "featureKind": "island",
+      "featureRef": "coast-39",
+      "label": "Yuedao Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": 132,
+        "uv": {
+          "u": 0.86666667,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1536.6,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-4",
+      "featureKind": "island",
+      "featureRef": "coast-4",
+      "label": "Yuhai Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 9,
+        "lon": -165,
+        "uv": {
+          "u": 0.04166667,
+          "v": 0.45
+        },
+        "sourcePixelExpectation": {
+          "x": 73.875,
+          "y": 398.7
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.04166667
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-41",
+      "featureKind": "island",
+      "featureRef": "coast-41",
+      "label": "Xuanhe Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 84.769,
+        "lon": -131,
+        "uv": {
+          "u": 0.13611111,
+          "v": 0.02906111
+        },
+        "sourcePixelExpectation": {
+          "x": 241.325,
+          "y": 25.748
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-43",
+      "featureKind": "island",
+      "featureRef": "coast-43",
+      "label": "Qingshan Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 82.5,
+        "lon": 82.5,
+        "uv": {
+          "u": 0.72916667,
+          "v": 0.04166667
+        },
+        "sourcePixelExpectation": {
+          "x": 1292.813,
+          "y": 36.917
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-44",
+      "featureKind": "island",
+      "featureRef": "coast-44",
+      "label": "Rudrapur Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 85.778,
+        "lon": 98.33299999999997,
+        "uv": {
+          "u": 0.77314722,
+          "v": 0.02345556
+        },
+        "sourcePixelExpectation": {
+          "x": 1370.79,
+          "y": 20.782
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-45",
+      "featureKind": "island",
+      "featureRef": "coast-45",
+      "label": "Jinyuan Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 87.143,
+        "lon": 145.66700000000003,
+        "uv": {
+          "u": 0.90463056,
+          "v": 0.01587222
+        },
+        "sourcePixelExpectation": {
+          "x": 1603.91,
+          "y": 14.063
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-7",
+      "featureKind": "island",
+      "featureRef": "coast-7",
+      "label": "Meivara Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 19.667,
+        "lon": -56.44400000000002,
+        "uv": {
+          "u": 0.34321111,
+          "v": 0.39073889
+        },
+        "sourcePixelExpectation": {
+          "x": 608.513,
+          "y": 346.195
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:coast-8",
+      "featureKind": "island",
+      "featureRef": "coast-8",
+      "label": "Longnadi Dao",
+      "weightClass": "strong",
+      "priority": 76,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "island or microcontinental fragment"
+      },
+      "canonical": {
+        "lat": 32.944,
+        "lon": 158.83299999999997,
+        "uv": {
+          "u": 0.94120278,
+          "v": 0.31697778
+        },
+        "sourcePixelExpectation": {
+          "x": 1668.753,
+          "y": 280.842
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-1",
+      "featureKind": "lake",
+      "featureRef": "lake-1",
+      "label": "Kailashdao Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 15,
+        "lon": 81,
+        "uv": {
+          "u": 0.725,
+          "v": 0.41666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1285.425,
+          "y": 369.167
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-10",
+      "featureKind": "lake",
+      "featureRef": "lake-10",
+      "label": "Tiangarh Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": -21,
+        "uv": {
+          "u": 0.44166667,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 783.075,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-11",
+      "featureKind": "lake",
+      "featureRef": "lake-11",
+      "label": "Longhe Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 45,
+        "lon": -147,
+        "uv": {
+          "u": 0.09166667,
+          "v": 0.25
+        },
+        "sourcePixelExpectation": {
+          "x": 162.525,
+          "y": 221.5
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-12",
+      "featureKind": "lake",
+      "featureRef": "lake-12",
+      "label": "Longvana Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": 159,
+        "uv": {
+          "u": 0.94166667,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1669.575,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-13",
+      "featureKind": "lake",
+      "featureRef": "lake-13",
+      "label": "Rudrahai Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": -135,
+        "uv": {
+          "u": 0.125,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 221.625,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-14",
+      "featureKind": "lake",
+      "featureRef": "lake-14",
+      "label": "Rudranadi Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": 45,
+        "uv": {
+          "u": 0.625,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1108.125,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-15",
+      "featureKind": "lake",
+      "featureRef": "lake-15",
+      "label": "Yuhe Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": -87,
+        "uv": {
+          "u": 0.25833333,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 458.025,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-16",
+      "featureKind": "lake",
+      "featureRef": "lake-16",
+      "label": "Yushan Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": -27,
+        "uv": {
+          "u": 0.425,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 753.525,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-17",
+      "featureKind": "lake",
+      "featureRef": "lake-17",
+      "label": "Sarashai Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 15,
+        "lon": 69,
+        "uv": {
+          "u": 0.69166667,
+          "v": 0.41666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1226.325,
+          "y": 369.167
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-18",
+      "featureKind": "lake",
+      "featureRef": "lake-18",
+      "label": "Shanadi Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 3,
+        "lon": -33,
+        "uv": {
+          "u": 0.40833333,
+          "v": 0.48333333
+        },
+        "sourcePixelExpectation": {
+          "x": 723.975,
+          "y": 428.233
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-2",
+      "featureKind": "lake",
+      "featureRef": "lake-2",
+      "label": "Meihai Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": -153,
+        "uv": {
+          "u": 0.075,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 132.975,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-3",
+      "featureKind": "lake",
+      "featureRef": "lake-3",
+      "label": "Shanshan Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": -147,
+        "uv": {
+          "u": 0.09166667,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 162.525,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-4",
+      "featureKind": "lake",
+      "featureRef": "lake-4",
+      "label": "Tianhe Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 21,
+        "lon": -21,
+        "uv": {
+          "u": 0.44166667,
+          "v": 0.38333333
+        },
+        "sourcePixelExpectation": {
+          "x": 783.075,
+          "y": 339.633
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-5",
+      "featureKind": "lake",
+      "featureRef": "lake-5",
+      "label": "Meinagar Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": 63,
+        "uv": {
+          "u": 0.675,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 1196.775,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-6",
+      "featureKind": "lake",
+      "featureRef": "lake-6",
+      "label": "Longarh Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 3,
+        "lon": -15,
+        "uv": {
+          "u": 0.45833333,
+          "v": 0.48333333
+        },
+        "sourcePixelExpectation": {
+          "x": 812.625,
+          "y": 428.233
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-7",
+      "featureKind": "lake",
+      "featureRef": "lake-7",
+      "label": "Rudrashan Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 15,
+        "lon": -39,
+        "uv": {
+          "u": 0.39166667,
+          "v": 0.41666667
+        },
+        "sourcePixelExpectation": {
+          "x": 694.425,
+          "y": 369.167
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-8",
+      "featureKind": "lake",
+      "featureRef": "lake-8",
+      "label": "Yueling Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 21,
+        "lon": -177,
+        "uv": {
+          "u": 0.00833333,
+          "v": 0.38333333
+        },
+        "sourcePixelExpectation": {
+          "x": 14.775,
+          "y": 339.633
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.00833333
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:lake-9",
+      "featureKind": "lake",
+      "featureRef": "lake-9",
+      "label": "Rudradao Hu",
+      "weightClass": "strong",
+      "priority": 72,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "surface freshwater basin"
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": -63,
+        "uv": {
+          "u": 0.325,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 576.225,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:range-resource-101",
+      "featureKind": "range",
+      "featureRef": "range-resource-101",
+      "label": "Yuenagar Shanmai",
+      "weightClass": "strong",
+      "priority": 70,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "orogenic belt"
+      },
+      "canonical": {
+        "lat": 21,
+        "lon": 165,
+        "uv": {
+          "u": 0.95833333,
+          "v": 0.38333333
+        },
+        "sourcePixelExpectation": {
+          "x": 1699.125,
+          "y": 339.633
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": -0.04166667
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:range-resource-111",
+      "featureKind": "range",
+      "featureRef": "range-resource-111",
+      "label": "Qingpur Shanmai",
+      "weightClass": "strong",
+      "priority": 70,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "orogenic belt"
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": 105,
+        "uv": {
+          "u": 0.79166667,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 1403.625,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:range-resource-114",
+      "featureKind": "range",
+      "featureRef": "range-resource-114",
+      "label": "Yueshan Shanmai",
+      "weightClass": "strong",
+      "priority": 70,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "orogenic belt"
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": 141,
+        "uv": {
+          "u": 0.89166667,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 1580.925,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:range-resource-126",
+      "featureKind": "range",
+      "featureRef": "range-resource-126",
+      "label": "Navahai Shanmai",
+      "weightClass": "strong",
+      "priority": 70,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "orogenic belt"
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": 3,
+        "uv": {
+          "u": 0.50833333,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 901.275,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:range-resource-147",
+      "featureKind": "range",
+      "featureRef": "range-resource-147",
+      "label": "Lingnadi Shanmai",
+      "weightClass": "strong",
+      "priority": 70,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "orogenic belt"
+      },
+      "canonical": {
+        "lat": 39,
+        "lon": 33,
+        "uv": {
+          "u": 0.59166667,
+          "v": 0.28333333
+        },
+        "sourcePixelExpectation": {
+          "x": 1049.025,
+          "y": 251.033
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:range-resource-195",
+      "featureKind": "range",
+      "featureRef": "range-resource-195",
+      "label": "Kailashshan Shanmai",
+      "weightClass": "strong",
+      "priority": 70,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "orogenic belt"
+      },
+      "canonical": {
+        "lat": 56.778,
+        "lon": 83.77800000000002,
+        "uv": {
+          "u": 0.73271667,
+          "v": 0.18456667
+        },
+        "sourcePixelExpectation": {
+          "x": 1299.107,
+          "y": 163.526
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:range-resource-236",
+      "featureKind": "range",
+      "featureRef": "range-resource-236",
+      "label": "Varunpur Shanmai",
+      "weightClass": "strong",
+      "priority": 70,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "orogenic belt"
+      },
+      "canonical": {
+        "lat": 75.714,
+        "lon": 117.28600000000006,
+        "uv": {
+          "u": 0.82579444,
+          "v": 0.07936667
+        },
+        "sourcePixelExpectation": {
+          "x": 1464.134,
+          "y": 70.319
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:range-resource-41",
+      "featureKind": "range",
+      "featureRef": "range-resource-41",
+      "label": "Kailashling Shanmai",
+      "weightClass": "strong",
+      "priority": 70,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "orogenic belt"
+      },
+      "canonical": {
+        "lat": -9,
+        "lon": -3,
+        "uv": {
+          "u": 0.49166667,
+          "v": 0.55
+        },
+        "sourcePixelExpectation": {
+          "x": 871.725,
+          "y": 487.3
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:range-resource-62",
+      "featureKind": "range",
+      "featureRef": "range-resource-62",
+      "label": "Sarasvana Shanmai",
+      "weightClass": "strong",
+      "priority": 70,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "orogenic belt"
+      },
+      "canonical": {
+        "lat": 3,
+        "lon": 93,
+        "uv": {
+          "u": 0.75833333,
+          "v": 0.48333333
+        },
+        "sourcePixelExpectation": {
+          "x": 1344.525,
+          "y": 428.233
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:range-resource-66",
+      "featureKind": "range",
+      "featureRef": "range-resource-66",
+      "label": "Jinhai Shanmai",
+      "weightClass": "strong",
+      "priority": 70,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "orogenic belt"
+      },
+      "canonical": {
+        "lat": 9,
+        "lon": -135,
+        "uv": {
+          "u": 0.125,
+          "v": 0.45
+        },
+        "sourcePixelExpectation": {
+          "x": 221.625,
+          "y": 398.7
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-1",
+      "featureKind": "mountain",
+      "featureRef": "summit-1",
+      "label": "Lingling Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": 105,
+        "uv": {
+          "u": 0.79166667,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 1403.625,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-10",
+      "featureKind": "mountain",
+      "featureRef": "summit-10",
+      "label": "Meipur Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 39,
+        "lon": 105,
+        "uv": {
+          "u": 0.79166667,
+          "v": 0.28333333
+        },
+        "sourcePixelExpectation": {
+          "x": 1403.625,
+          "y": 251.033
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-11",
+      "featureKind": "mountain",
+      "featureRef": "summit-11",
+      "label": "Qingyuan Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 21,
+        "lon": 9,
+        "uv": {
+          "u": 0.525,
+          "v": 0.38333333
+        },
+        "sourcePixelExpectation": {
+          "x": 930.825,
+          "y": 339.633
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-12",
+      "featureKind": "mountain",
+      "featureRef": "summit-12",
+      "label": "Tiangarh Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": 177,
+        "uv": {
+          "u": 0.99166667,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1758.225,
+          "y": 280.567
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": -0.00833333
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-13",
+      "featureKind": "mountain",
+      "featureRef": "summit-13",
+      "label": "Chandravara Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": -3,
+        "lon": 75,
+        "uv": {
+          "u": 0.70833333,
+          "v": 0.51666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1255.875,
+          "y": 457.767
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-14",
+      "featureKind": "mountain",
+      "featureRef": "summit-14",
+      "label": "Qingling Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": 141,
+        "uv": {
+          "u": 0.89166667,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 1580.925,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-15",
+      "featureKind": "mountain",
+      "featureRef": "summit-15",
+      "label": "Navadao Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 51,
+        "lon": -135,
+        "uv": {
+          "u": 0.125,
+          "v": 0.21666667
+        },
+        "sourcePixelExpectation": {
+          "x": 221.625,
+          "y": 191.967
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-16",
+      "featureKind": "mountain",
+      "featureRef": "summit-16",
+      "label": "Longyuan Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": -141,
+        "uv": {
+          "u": 0.10833333,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 192.075,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-2",
+      "featureKind": "mountain",
+      "featureRef": "summit-2",
+      "label": "Jyotivara Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 9,
+        "lon": -135,
+        "uv": {
+          "u": 0.125,
+          "v": 0.45
+        },
+        "sourcePixelExpectation": {
+          "x": 221.625,
+          "y": 398.7
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-3",
+      "featureKind": "mountain",
+      "featureRef": "summit-3",
+      "label": "Tianyuan Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": -9,
+        "lon": -3,
+        "uv": {
+          "u": 0.49166667,
+          "v": 0.55
+        },
+        "sourcePixelExpectation": {
+          "x": 871.725,
+          "y": 487.3
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-4",
+      "featureKind": "mountain",
+      "featureRef": "summit-4",
+      "label": "Yunadi Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 75,
+        "lon": 117,
+        "uv": {
+          "u": 0.825,
+          "v": 0.08333333
+        },
+        "sourcePixelExpectation": {
+          "x": 1462.725,
+          "y": 73.833
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-5",
+      "featureKind": "mountain",
+      "featureRef": "summit-5",
+      "label": "Qinghe Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 45,
+        "lon": -129,
+        "uv": {
+          "u": 0.14166667,
+          "v": 0.25
+        },
+        "sourcePixelExpectation": {
+          "x": 251.175,
+          "y": 221.5
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-6",
+      "featureKind": "mountain",
+      "featureRef": "summit-6",
+      "label": "Meivara Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 3,
+        "lon": 93,
+        "uv": {
+          "u": 0.75833333,
+          "v": 0.48333333
+        },
+        "sourcePixelExpectation": {
+          "x": 1344.525,
+          "y": 428.233
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-7",
+      "featureKind": "mountain",
+      "featureRef": "summit-7",
+      "label": "Yueyuan Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 21,
+        "lon": 165,
+        "uv": {
+          "u": 0.95833333,
+          "v": 0.38333333
+        },
+        "sourcePixelExpectation": {
+          "x": 1699.125,
+          "y": 339.633
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": -0.04166667
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-8",
+      "featureKind": "mountain",
+      "featureRef": "summit-8",
+      "label": "Chandranagar Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": 105,
+        "uv": {
+          "u": 0.79166667,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1403.625,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "gazetteer:summit-9",
+      "featureKind": "mountain",
+      "featureRef": "summit-9",
+      "label": "Sarasvara Shan",
+      "weightClass": "strong",
+      "priority": 62,
+      "reason": "Named macro-geographic feature expected to remain visually recoverable after illustration.",
+      "metadata": {
+        "scientificClassification": "local elevation maximum"
+      },
+      "canonical": {
+        "lat": -21,
+        "lon": -9,
+        "uv": {
+          "u": 0.475,
+          "v": 0.61666667
+        },
+        "sourcePixelExpectation": {
+          "x": 842.175,
+          "y": 546.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:1:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-1",
+      "label": "Jyotinadi Dadao",
+      "weightClass": "soft",
+      "priority": 58,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "trunk",
+        "routingDoctrine": "direct",
+        "from": "settlement-1",
+        "to": "settlement-2"
+      },
+      "canonical": {
+        "lat": 31,
+        "lon": 107,
+        "uv": {
+          "u": 0.79722222,
+          "v": 0.32777778
+        },
+        "sourcePixelExpectation": {
+          "x": 1413.475,
+          "y": 290.411
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:12:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-12",
+      "label": "Navadao Dadao",
+      "weightClass": "soft",
+      "priority": 58,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "trunk",
+        "routingDoctrine": "direct",
+        "from": "settlement-10",
+        "to": "settlement-13"
+      },
+      "canonical": {
+        "lat": 47,
+        "lon": -3,
+        "uv": {
+          "u": 0.49166667,
+          "v": 0.23888889
+        },
+        "sourcePixelExpectation": {
+          "x": 871.725,
+          "y": 211.656
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:2:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-2",
+      "label": "Shangarh Dadao",
+      "weightClass": "soft",
+      "priority": 58,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "trunk",
+        "routingDoctrine": "direct",
+        "from": "settlement-2",
+        "to": "settlement-3"
+      },
+      "canonical": {
+        "lat": 45,
+        "lon": -3,
+        "uv": {
+          "u": 0.49166667,
+          "v": 0.25
+        },
+        "sourcePixelExpectation": {
+          "x": 871.725,
+          "y": 221.5
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:3:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-3",
+      "label": "Navashan Dadao",
+      "weightClass": "soft",
+      "priority": 58,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "trunk",
+        "routingDoctrine": "direct",
+        "from": "settlement-3",
+        "to": "settlement-4"
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": -59,
+        "uv": {
+          "u": 0.33611111,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 595.925,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:4:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-4",
+      "label": "Chandrahe Dadao",
+      "weightClass": "soft",
+      "priority": 58,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "trunk",
+        "routingDoctrine": "direct",
+        "from": "settlement-4",
+        "to": "settlement-5"
+      },
+      "canonical": {
+        "lat": 47,
+        "lon": -45,
+        "uv": {
+          "u": 0.375,
+          "v": 0.23888889
+        },
+        "sourcePixelExpectation": {
+          "x": 664.875,
+          "y": 211.656
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:5:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-5",
+      "label": "Yudao Dadao",
+      "weightClass": "soft",
+      "priority": 58,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "trunk",
+        "routingDoctrine": "direct",
+        "from": "settlement-1",
+        "to": "settlement-6"
+      },
+      "canonical": {
+        "lat": 19,
+        "lon": 149,
+        "uv": {
+          "u": 0.91388889,
+          "v": 0.39444444
+        },
+        "sourcePixelExpectation": {
+          "x": 1620.325,
+          "y": 349.478
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:6:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-6",
+      "label": "Rudrayuan Dadao",
+      "weightClass": "soft",
+      "priority": 58,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "trunk",
+        "routingDoctrine": "direct",
+        "from": "settlement-2",
+        "to": "settlement-7"
+      },
+      "canonical": {
+        "lat": 35,
+        "lon": 37,
+        "uv": {
+          "u": 0.60277778,
+          "v": 0.30555556
+        },
+        "sourcePixelExpectation": {
+          "x": 1068.725,
+          "y": 270.722
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:9:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-9",
+      "label": "Lingdao Dadao",
+      "weightClass": "soft",
+      "priority": 58,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "trunk",
+        "routingDoctrine": "direct",
+        "from": "settlement-5",
+        "to": "settlement-10"
+      },
+      "canonical": {
+        "lat": 51,
+        "lon": -11,
+        "uv": {
+          "u": 0.46944444,
+          "v": 0.21666667
+        },
+        "sourcePixelExpectation": {
+          "x": 832.325,
+          "y": 191.967
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:10:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-10",
+      "label": "Tianagar Dadao",
+      "weightClass": "soft",
+      "priority": 50,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "primary",
+        "routingDoctrine": "direct",
+        "from": "settlement-1",
+        "to": "settlement-11"
+      },
+      "canonical": {
+        "lat": 13,
+        "lon": 167,
+        "uv": {
+          "u": 0.96388889,
+          "v": 0.42777778
+        },
+        "sourcePixelExpectation": {
+          "x": 1708.975,
+          "y": 379.011
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": -0.03611111
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:11:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-11",
+      "label": "Sarashai Dadao",
+      "weightClass": "soft",
+      "priority": 50,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "primary",
+        "routingDoctrine": "direct",
+        "from": "settlement-3",
+        "to": "settlement-12"
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": -43,
+        "uv": {
+          "u": 0.38055556,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 674.725,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:13:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-13",
+      "label": "Qinghe Dadao",
+      "weightClass": "soft",
+      "priority": 50,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "primary",
+        "routingDoctrine": "direct",
+        "from": "settlement-7",
+        "to": "settlement-14"
+      },
+      "canonical": {
+        "lat": 17,
+        "lon": 5,
+        "uv": {
+          "u": 0.51388889,
+          "v": 0.40555556
+        },
+        "sourcePixelExpectation": {
+          "x": 911.125,
+          "y": 359.322
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:14:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-14",
+      "label": "Jinshan Dadao",
+      "weightClass": "soft",
+      "priority": 50,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "primary",
+        "routingDoctrine": "direct",
+        "from": "settlement-8",
+        "to": "settlement-15"
+      },
+      "canonical": {
+        "lat": 39,
+        "lon": -119,
+        "uv": {
+          "u": 0.16944444,
+          "v": 0.28333333
+        },
+        "sourcePixelExpectation": {
+          "x": 300.425,
+          "y": 251.033
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:15:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-15",
+      "label": "Chandranadi Dadao",
+      "weightClass": "soft",
+      "priority": 50,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "primary",
+        "routingDoctrine": "direct",
+        "from": "settlement-9",
+        "to": "settlement-16"
+      },
+      "canonical": {
+        "lat": 23,
+        "lon": 127,
+        "uv": {
+          "u": 0.85277778,
+          "v": 0.37222222
+        },
+        "sourcePixelExpectation": {
+          "x": 1511.975,
+          "y": 329.789
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:16:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-16",
+      "label": "Sarasnagar Dadao",
+      "weightClass": "soft",
+      "priority": 50,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "primary",
+        "routingDoctrine": "direct",
+        "from": "settlement-4",
+        "to": "settlement-17"
+      },
+      "canonical": {
+        "lat": 35,
+        "lon": -71,
+        "uv": {
+          "u": 0.30277778,
+          "v": 0.30555556
+        },
+        "sourcePixelExpectation": {
+          "x": 536.825,
+          "y": 270.722
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:17:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-17",
+      "label": "Tianling Dadao",
+      "weightClass": "soft",
+      "priority": 50,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "primary",
+        "routingDoctrine": "direct",
+        "from": "settlement-6",
+        "to": "settlement-18"
+      },
+      "canonical": {
+        "lat": 47,
+        "lon": 151,
+        "uv": {
+          "u": 0.91944444,
+          "v": 0.23888889
+        },
+        "sourcePixelExpectation": {
+          "x": 1630.175,
+          "y": 211.656
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:7:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-7",
+      "label": "Sarasvara Dadao",
+      "weightClass": "soft",
+      "priority": 50,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "primary",
+        "routingDoctrine": "direct",
+        "from": "settlement-4",
+        "to": "settlement-8"
+      },
+      "canonical": {
+        "lat": 41,
+        "lon": -89,
+        "uv": {
+          "u": 0.25277778,
+          "v": 0.27222222
+        },
+        "sourcePixelExpectation": {
+          "x": 448.175,
+          "y": 241.189
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "route:8:midpoint",
+      "featureKind": "transport-corridor-midpoint",
+      "featureRef": "transport-8",
+      "label": "Yueling Dadao",
+      "weightClass": "soft",
+      "priority": 50,
+      "reason": "A single corridor midpoint gives the future warp road-awareness while settlement endpoints remain the controlling anchors.",
+      "metadata": {
+        "corridorClass": "primary",
+        "routingDoctrine": "direct",
+        "from": "settlement-6",
+        "to": "settlement-9"
+      },
+      "canonical": {
+        "lat": 31,
+        "lon": 147,
+        "uv": {
+          "u": 0.90833333,
+          "v": 0.32777778
+        },
+        "sourcePixelExpectation": {
+          "x": 1610.475,
+          "y": 290.411
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:1:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-1",
+      "label": "river-1 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 3,
+        "lon": -11,
+        "uv": {
+          "u": 0.46944444,
+          "v": 0.48333333
+        },
+        "sourcePixelExpectation": {
+          "x": 832.325,
+          "y": 428.233
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:1:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-1",
+      "label": "river-1 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 3,
+        "lon": -15,
+        "uv": {
+          "u": 0.45833333,
+          "v": 0.48333333
+        },
+        "sourcePixelExpectation": {
+          "x": 812.625,
+          "y": 428.233
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:10:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-10",
+      "label": "river-10 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 31,
+        "lon": 81,
+        "uv": {
+          "u": 0.725,
+          "v": 0.32777778
+        },
+        "sourcePixelExpectation": {
+          "x": 1285.425,
+          "y": 290.411
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:10:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-10",
+      "label": "river-10 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 15,
+        "lon": 81,
+        "uv": {
+          "u": 0.725,
+          "v": 0.41666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1285.425,
+          "y": 369.167
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:11:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-11",
+      "label": "river-11 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 21,
+        "lon": -25,
+        "uv": {
+          "u": 0.43055556,
+          "v": 0.38333333
+        },
+        "sourcePixelExpectation": {
+          "x": 763.375,
+          "y": 339.633
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:11:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-11",
+      "label": "river-11 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 21,
+        "lon": -21,
+        "uv": {
+          "u": 0.44166667,
+          "v": 0.38333333
+        },
+        "sourcePixelExpectation": {
+          "x": 783.075,
+          "y": 339.633
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:12:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-12",
+      "label": "river-12 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": -1,
+        "lon": -15,
+        "uv": {
+          "u": 0.45833333,
+          "v": 0.50555556
+        },
+        "sourcePixelExpectation": {
+          "x": 812.625,
+          "y": 447.922
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:12:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-12",
+      "label": "river-12 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 3,
+        "lon": -15,
+        "uv": {
+          "u": 0.45833333,
+          "v": 0.48333333
+        },
+        "sourcePixelExpectation": {
+          "x": 812.625,
+          "y": 428.233
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:13:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-13",
+      "label": "river-13 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": -3,
+        "lon": -155,
+        "uv": {
+          "u": 0.06944444,
+          "v": 0.51666667
+        },
+        "sourcePixelExpectation": {
+          "x": 123.125,
+          "y": 457.767
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:13:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-13",
+      "label": "river-13 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": -7,
+        "lon": -163,
+        "uv": {
+          "u": 0.04722222,
+          "v": 0.53888889
+        },
+        "sourcePixelExpectation": {
+          "x": 83.725,
+          "y": 477.456
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.04722222
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:14:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-14",
+      "label": "river-14 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 45,
+        "lon": 89,
+        "uv": {
+          "u": 0.74722222,
+          "v": 0.25
+        },
+        "sourcePixelExpectation": {
+          "x": 1324.825,
+          "y": 221.5
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:14:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-14",
+      "label": "river-14 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 51,
+        "lon": 87,
+        "uv": {
+          "u": 0.74166667,
+          "v": 0.21666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1314.975,
+          "y": 191.967
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:15:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-15",
+      "label": "river-15 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 75,
+        "lon": -15,
+        "uv": {
+          "u": 0.45833333,
+          "v": 0.08333333
+        },
+        "sourcePixelExpectation": {
+          "x": 812.625,
+          "y": 73.833
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:15:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-15",
+      "label": "river-15 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 83,
+        "lon": -21,
+        "uv": {
+          "u": 0.44166667,
+          "v": 0.03888889
+        },
+        "sourcePixelExpectation": {
+          "x": 783.075,
+          "y": 34.456
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:16:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-16",
+      "label": "river-16 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 13,
+        "lon": -147,
+        "uv": {
+          "u": 0.09166667,
+          "v": 0.42777778
+        },
+        "sourcePixelExpectation": {
+          "x": 162.525,
+          "y": 379.011
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:16:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-16",
+      "label": "river-16 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": -147,
+        "uv": {
+          "u": 0.09166667,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 162.525,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:17:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-17",
+      "label": "river-17 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": -31,
+        "uv": {
+          "u": 0.41388889,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 733.825,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:17:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-17",
+      "label": "river-17 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": -27,
+        "uv": {
+          "u": 0.425,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 753.525,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:18:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-18",
+      "label": "river-18 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 17,
+        "lon": -165,
+        "uv": {
+          "u": 0.04166667,
+          "v": 0.40555556
+        },
+        "sourcePixelExpectation": {
+          "x": 73.875,
+          "y": 359.322
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.04166667
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:18:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-18",
+      "label": "river-18 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 15,
+        "lon": -169,
+        "uv": {
+          "u": 0.03055556,
+          "v": 0.41666667
+        },
+        "sourcePixelExpectation": {
+          "x": 54.175,
+          "y": 369.167
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.03055556
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:19:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-19",
+      "label": "river-19 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": 57,
+        "uv": {
+          "u": 0.65833333,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1167.225,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:19:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-19",
+      "label": "river-19 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 63,
+        "lon": 51,
+        "uv": {
+          "u": 0.64166667,
+          "v": 0.15
+        },
+        "sourcePixelExpectation": {
+          "x": 1137.675,
+          "y": 132.9
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:2:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-2",
+      "label": "river-2 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 39,
+        "lon": -159,
+        "uv": {
+          "u": 0.05833333,
+          "v": 0.28333333
+        },
+        "sourcePixelExpectation": {
+          "x": 103.425,
+          "y": 251.033
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:2:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-2",
+      "label": "river-2 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": -153,
+        "uv": {
+          "u": 0.075,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 132.975,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:20:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-20",
+      "label": "river-20 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": -29,
+        "uv": {
+          "u": 0.41944444,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 743.675,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:20:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-20",
+      "label": "river-20 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 51,
+        "lon": -27,
+        "uv": {
+          "u": 0.425,
+          "v": 0.21666667
+        },
+        "sourcePixelExpectation": {
+          "x": 753.525,
+          "y": 191.967
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:21:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-21",
+      "label": "river-21 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 53,
+        "lon": -111,
+        "uv": {
+          "u": 0.19166667,
+          "v": 0.20555556
+        },
+        "sourcePixelExpectation": {
+          "x": 339.825,
+          "y": 182.122
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:21:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-21",
+      "label": "river-21 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": -115,
+        "uv": {
+          "u": 0.18055556,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 320.125,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:22:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-22",
+      "label": "river-22 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 75,
+        "lon": 45,
+        "uv": {
+          "u": 0.625,
+          "v": 0.08333333
+        },
+        "sourcePixelExpectation": {
+          "x": 1108.125,
+          "y": 73.833
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:22:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-22",
+      "label": "river-22 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 65,
+        "lon": 51,
+        "uv": {
+          "u": 0.64166667,
+          "v": 0.13888889
+        },
+        "sourcePixelExpectation": {
+          "x": 1137.675,
+          "y": 123.056
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:23:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-23",
+      "label": "river-23 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": -67,
+        "uv": {
+          "u": 0.31388889,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 556.525,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:23:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-23",
+      "label": "river-23 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": -63,
+        "uv": {
+          "u": 0.325,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 576.225,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:24:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-24",
+      "label": "river-24 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": 49,
+        "uv": {
+          "u": 0.63611111,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1127.825,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:24:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-24",
+      "label": "river-24 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": 45,
+        "uv": {
+          "u": 0.625,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1108.125,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:25:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-25",
+      "label": "river-25 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": 11,
+        "uv": {
+          "u": 0.53055556,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 940.675,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:25:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-25",
+      "label": "river-25 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": 15,
+        "uv": {
+          "u": 0.54166667,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 960.375,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:26:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-26",
+      "label": "river-26 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 55,
+        "lon": 117,
+        "uv": {
+          "u": 0.825,
+          "v": 0.19444444
+        },
+        "sourcePixelExpectation": {
+          "x": 1462.725,
+          "y": 172.278
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:26:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-26",
+      "label": "river-26 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 51,
+        "lon": 117,
+        "uv": {
+          "u": 0.825,
+          "v": 0.21666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1462.725,
+          "y": 191.967
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:27:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-27",
+      "label": "river-27 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 5,
+        "lon": -45,
+        "uv": {
+          "u": 0.375,
+          "v": 0.47222222
+        },
+        "sourcePixelExpectation": {
+          "x": 664.875,
+          "y": 418.389
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:27:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-27",
+      "label": "river-27 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": -1,
+        "lon": -51,
+        "uv": {
+          "u": 0.35833333,
+          "v": 0.50555556
+        },
+        "sourcePixelExpectation": {
+          "x": 635.325,
+          "y": 447.922
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:28:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-28",
+      "label": "river-28 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 29,
+        "lon": -177,
+        "uv": {
+          "u": 0.00833333,
+          "v": 0.33888889
+        },
+        "sourcePixelExpectation": {
+          "x": 14.775,
+          "y": 300.256
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.00833333
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:28:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-28",
+      "label": "river-28 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 21,
+        "lon": -177,
+        "uv": {
+          "u": 0.00833333,
+          "v": 0.38333333
+        },
+        "sourcePixelExpectation": {
+          "x": 14.775,
+          "y": 339.633
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.00833333
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:29:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-29",
+      "label": "river-29 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 51,
+        "lon": 167,
+        "uv": {
+          "u": 0.96388889,
+          "v": 0.21666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1708.975,
+          "y": 191.967
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": -0.03611111
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:29:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-29",
+      "label": "river-29 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 51,
+        "lon": 171,
+        "uv": {
+          "u": 0.975,
+          "v": 0.21666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1728.675,
+          "y": 191.967
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": -0.025
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:3:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-3",
+      "label": "river-3 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 61,
+        "lon": -165,
+        "uv": {
+          "u": 0.04166667,
+          "v": 0.16111111
+        },
+        "sourcePixelExpectation": {
+          "x": 73.875,
+          "y": 142.744
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.04166667
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:3:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-3",
+      "label": "river-3 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 53,
+        "lon": -165,
+        "uv": {
+          "u": 0.04166667,
+          "v": 0.20555556
+        },
+        "sourcePixelExpectation": {
+          "x": 73.875,
+          "y": 182.122
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.04166667
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:30:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-30",
+      "label": "river-30 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 81,
+        "lon": 57,
+        "uv": {
+          "u": 0.65833333,
+          "v": 0.05
+        },
+        "sourcePixelExpectation": {
+          "x": 1167.225,
+          "y": 44.3
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:30:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-30",
+      "label": "river-30 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 81,
+        "lon": 61,
+        "uv": {
+          "u": 0.66944444,
+          "v": 0.05
+        },
+        "sourcePixelExpectation": {
+          "x": 1186.925,
+          "y": 44.3
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:31:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-31",
+      "label": "river-31 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": 17,
+        "uv": {
+          "u": 0.54722222,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 970.225,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:31:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-31",
+      "label": "river-31 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": 21,
+        "uv": {
+          "u": 0.55833333,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 989.925,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:32:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-32",
+      "label": "river-32 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 63,
+        "lon": -21,
+        "uv": {
+          "u": 0.44166667,
+          "v": 0.15
+        },
+        "sourcePixelExpectation": {
+          "x": 783.075,
+          "y": 132.9
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:32:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-32",
+      "label": "river-32 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": -21,
+        "uv": {
+          "u": 0.44166667,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 783.075,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:33:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-33",
+      "label": "river-33 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 45,
+        "lon": -143,
+        "uv": {
+          "u": 0.10277778,
+          "v": 0.25
+        },
+        "sourcePixelExpectation": {
+          "x": 182.225,
+          "y": 221.5
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:33:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-33",
+      "label": "river-33 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 45,
+        "lon": -147,
+        "uv": {
+          "u": 0.09166667,
+          "v": 0.25
+        },
+        "sourcePixelExpectation": {
+          "x": 162.525,
+          "y": 221.5
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:34:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-34",
+      "label": "river-34 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 39,
+        "lon": -15,
+        "uv": {
+          "u": 0.45833333,
+          "v": 0.28333333
+        },
+        "sourcePixelExpectation": {
+          "x": 812.625,
+          "y": 251.033
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:34:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-34",
+      "label": "river-34 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 39,
+        "lon": -11,
+        "uv": {
+          "u": 0.46944444,
+          "v": 0.28333333
+        },
+        "sourcePixelExpectation": {
+          "x": 832.325,
+          "y": 251.033
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:35:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-35",
+      "label": "river-35 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 3,
+        "lon": -161,
+        "uv": {
+          "u": 0.05277778,
+          "v": 0.48333333
+        },
+        "sourcePixelExpectation": {
+          "x": 93.575,
+          "y": 428.233
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.05277778
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:35:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-35",
+      "label": "river-35 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 7,
+        "lon": -165,
+        "uv": {
+          "u": 0.04166667,
+          "v": 0.46111111
+        },
+        "sourcePixelExpectation": {
+          "x": 73.875,
+          "y": 408.544
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.04166667
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:36:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-36",
+      "label": "river-36 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": 59,
+        "uv": {
+          "u": 0.66388889,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 1177.075,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:36:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-36",
+      "label": "river-36 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": 63,
+        "uv": {
+          "u": 0.675,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 1196.775,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:37:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-37",
+      "label": "river-37 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 43,
+        "lon": 87,
+        "uv": {
+          "u": 0.74166667,
+          "v": 0.26111111
+        },
+        "sourcePixelExpectation": {
+          "x": 1314.975,
+          "y": 231.344
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:37:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-37",
+      "label": "river-37 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 51,
+        "lon": 87,
+        "uv": {
+          "u": 0.74166667,
+          "v": 0.21666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1314.975,
+          "y": 191.967
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:38:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-38",
+      "label": "river-38 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": -157,
+        "uv": {
+          "u": 0.06388889,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 113.275,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:38:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-38",
+      "label": "river-38 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": -147,
+        "uv": {
+          "u": 0.09166667,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 162.525,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:39:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-39",
+      "label": "river-39 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 25,
+        "lon": -159,
+        "uv": {
+          "u": 0.05833333,
+          "v": 0.36111111
+        },
+        "sourcePixelExpectation": {
+          "x": 103.425,
+          "y": 319.944
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:39:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-39",
+      "label": "river-39 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": -153,
+        "uv": {
+          "u": 0.075,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 132.975,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:4:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-4",
+      "label": "river-4 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": -161,
+        "uv": {
+          "u": 0.05277778,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 93.575,
+          "y": 280.567
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.05277778
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:4:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-4",
+      "label": "river-4 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 33,
+        "lon": -153,
+        "uv": {
+          "u": 0.075,
+          "v": 0.31666667
+        },
+        "sourcePixelExpectation": {
+          "x": 132.975,
+          "y": 280.567
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:40:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-40",
+      "label": "river-40 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 15,
+        "lon": 87,
+        "uv": {
+          "u": 0.74166667,
+          "v": 0.41666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1314.975,
+          "y": 369.167
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:40:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-40",
+      "label": "river-40 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 15,
+        "lon": 81,
+        "uv": {
+          "u": 0.725,
+          "v": 0.41666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1285.425,
+          "y": 369.167
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:41:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-41",
+      "label": "river-41 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": -83,
+        "uv": {
+          "u": 0.26944444,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 477.725,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:41:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-41",
+      "label": "river-41 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": -87,
+        "uv": {
+          "u": 0.25833333,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 458.025,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:42:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-42",
+      "label": "river-42 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": 165,
+        "uv": {
+          "u": 0.95833333,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1699.125,
+          "y": 103.367
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": -0.04166667
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:42:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-42",
+      "label": "river-42 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": 159,
+        "uv": {
+          "u": 0.94166667,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1669.575,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:43:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-43",
+      "label": "river-43 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 53,
+        "lon": 27,
+        "uv": {
+          "u": 0.575,
+          "v": 0.20555556
+        },
+        "sourcePixelExpectation": {
+          "x": 1019.475,
+          "y": 182.122
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:43:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-43",
+      "label": "river-43 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": 25,
+        "uv": {
+          "u": 0.56944444,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 1009.625,
+          "y": 162.433
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:44:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-44",
+      "label": "river-44 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 55,
+        "lon": 135,
+        "uv": {
+          "u": 0.875,
+          "v": 0.19444444
+        },
+        "sourcePixelExpectation": {
+          "x": 1551.375,
+          "y": 172.278
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:44:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-44",
+      "label": "river-44 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 51,
+        "lon": 135,
+        "uv": {
+          "u": 0.875,
+          "v": 0.21666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1551.375,
+          "y": 191.967
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:45:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-45",
+      "label": "river-45 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": 125,
+        "uv": {
+          "u": 0.84722222,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1502.125,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:45:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-45",
+      "label": "river-45 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 69,
+        "lon": 129,
+        "uv": {
+          "u": 0.85833333,
+          "v": 0.11666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1521.825,
+          "y": 103.367
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:46:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-46",
+      "label": "river-46 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 63,
+        "lon": 71,
+        "uv": {
+          "u": 0.69722222,
+          "v": 0.15
+        },
+        "sourcePixelExpectation": {
+          "x": 1236.175,
+          "y": 132.9
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:46:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-46",
+      "label": "river-46 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 67,
+        "lon": 81,
+        "uv": {
+          "u": 0.725,
+          "v": 0.12777778
+        },
+        "sourcePixelExpectation": {
+          "x": 1285.425,
+          "y": 113.211
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:47:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-47",
+      "label": "river-47 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 13,
+        "lon": -3,
+        "uv": {
+          "u": 0.49166667,
+          "v": 0.42777778
+        },
+        "sourcePixelExpectation": {
+          "x": 871.725,
+          "y": 379.011
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:47:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-47",
+      "label": "river-47 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 5,
+        "lon": 1,
+        "uv": {
+          "u": 0.50277778,
+          "v": 0.47222222
+        },
+        "sourcePixelExpectation": {
+          "x": 891.425,
+          "y": 418.389
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:48:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-48",
+      "label": "river-48 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 57,
+        "lon": -171,
+        "uv": {
+          "u": 0.025,
+          "v": 0.18333333
+        },
+        "sourcePixelExpectation": {
+          "x": 44.325,
+          "y": 162.433
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.025
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:48:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-48",
+      "label": "river-48 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 53,
+        "lon": -167,
+        "uv": {
+          "u": 0.03611111,
+          "v": 0.20555556
+        },
+        "sourcePixelExpectation": {
+          "x": 64.025,
+          "y": 182.122
+        },
+        "seamAdjacent": true,
+        "alternateWrapU": 1.03611111
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:49:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-49",
+      "label": "river-49 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 15,
+        "lon": -31,
+        "uv": {
+          "u": 0.41388889,
+          "v": 0.41666667
+        },
+        "sourcePixelExpectation": {
+          "x": 733.825,
+          "y": 369.167
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:49:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-49",
+      "label": "river-49 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 15,
+        "lon": -39,
+        "uv": {
+          "u": 0.39166667,
+          "v": 0.41666667
+        },
+        "sourcePixelExpectation": {
+          "x": 694.425,
+          "y": 369.167
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:5:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-5",
+      "label": "river-5 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 71,
+        "lon": 51,
+        "uv": {
+          "u": 0.64166667,
+          "v": 0.10555556
+        },
+        "sourcePixelExpectation": {
+          "x": 1137.675,
+          "y": 93.522
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:5:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-5",
+      "label": "river-5 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 65,
+        "lon": 51,
+        "uv": {
+          "u": 0.64166667,
+          "v": 0.13888889
+        },
+        "sourcePixelExpectation": {
+          "x": 1137.675,
+          "y": 123.056
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:50:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-50",
+      "label": "river-50 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 9,
+        "lon": 87,
+        "uv": {
+          "u": 0.74166667,
+          "v": 0.45
+        },
+        "sourcePixelExpectation": {
+          "x": 1314.975,
+          "y": 398.7
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:50:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-50",
+      "label": "river-50 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 15,
+        "lon": 81,
+        "uv": {
+          "u": 0.725,
+          "v": 0.41666667
+        },
+        "sourcePixelExpectation": {
+          "x": 1285.425,
+          "y": 369.167
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:51:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-51",
+      "label": "river-51 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 25,
+        "lon": -21,
+        "uv": {
+          "u": 0.44166667,
+          "v": 0.36111111
+        },
+        "sourcePixelExpectation": {
+          "x": 783.075,
+          "y": 319.944
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:51:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-51",
+      "label": "river-51 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 21,
+        "lon": -21,
+        "uv": {
+          "u": 0.44166667,
+          "v": 0.38333333
+        },
+        "sourcePixelExpectation": {
+          "x": 783.075,
+          "y": 339.633
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:52:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-52",
+      "label": "river-52 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 75,
+        "lon": -53,
+        "uv": {
+          "u": 0.35277778,
+          "v": 0.08333333
+        },
+        "sourcePixelExpectation": {
+          "x": 625.475,
+          "y": 73.833
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:52:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-52",
+      "label": "river-52 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 67,
+        "lon": -57,
+        "uv": {
+          "u": 0.34166667,
+          "v": 0.12777778
+        },
+        "sourcePixelExpectation": {
+          "x": 605.775,
+          "y": 113.211
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:53:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-53",
+      "label": "river-53 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": -7,
+        "lon": -39,
+        "uv": {
+          "u": 0.39166667,
+          "v": 0.53888889
+        },
+        "sourcePixelExpectation": {
+          "x": 694.425,
+          "y": 477.456
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:53:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-53",
+      "label": "river-53 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": -11,
+        "lon": -39,
+        "uv": {
+          "u": 0.39166667,
+          "v": 0.56111111
+        },
+        "sourcePixelExpectation": {
+          "x": 694.425,
+          "y": 497.144
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:54:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-54",
+      "label": "river-54 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 55,
+        "lon": 159,
+        "uv": {
+          "u": 0.94166667,
+          "v": 0.19444444
+        },
+        "sourcePixelExpectation": {
+          "x": 1669.575,
+          "y": 172.278
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:54:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-54",
+      "label": "river-54 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 47,
+        "lon": 153,
+        "uv": {
+          "u": 0.925,
+          "v": 0.23888889
+        },
+        "sourcePixelExpectation": {
+          "x": 1640.025,
+          "y": 211.656
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:6:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-6",
+      "label": "river-6 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": -143,
+        "uv": {
+          "u": 0.10277778,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 182.225,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:6:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-6",
+      "label": "river-6 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 27,
+        "lon": -147,
+        "uv": {
+          "u": 0.09166667,
+          "v": 0.35
+        },
+        "sourcePixelExpectation": {
+          "x": 162.525,
+          "y": 310.1
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:7:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-7",
+      "label": "river-7 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 49,
+        "lon": 75,
+        "uv": {
+          "u": 0.70833333,
+          "v": 0.22777778
+        },
+        "sourcePixelExpectation": {
+          "x": 1255.875,
+          "y": 201.811
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:7:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-7",
+      "label": "river-7 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 45,
+        "lon": 75,
+        "uv": {
+          "u": 0.70833333,
+          "v": 0.25
+        },
+        "sourcePixelExpectation": {
+          "x": 1255.875,
+          "y": 221.5
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:8:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-8",
+      "label": "river-8 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": -11,
+        "lon": 117,
+        "uv": {
+          "u": 0.825,
+          "v": 0.56111111
+        },
+        "sourcePixelExpectation": {
+          "x": 1462.725,
+          "y": 497.144
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:8:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-8",
+      "label": "river-8 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": -17,
+        "lon": 123,
+        "uv": {
+          "u": 0.84166667,
+          "v": 0.59444444
+        },
+        "sourcePixelExpectation": {
+          "x": 1492.275,
+          "y": 526.678
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:9:endpoint-a",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-9",
+      "label": "river-9 endpoint A",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": 3,
+        "lon": -45,
+        "uv": {
+          "u": 0.375,
+          "v": 0.48333333
+        },
+        "sourcePixelExpectation": {
+          "x": 664.875,
+          "y": 428.233
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    },
+    {
+      "id": "river:9:endpoint-b",
+      "featureKind": "river-endpoint",
+      "featureRef": "river-9",
+      "label": "river-9 endpoint B",
+      "weightClass": "soft",
+      "priority": 44,
+      "reason": "Hydrology endpoint helps keep drainage placement coherent without overpowering city and macro-geography anchors.",
+      "metadata": {
+        "riverKind": null
+      },
+      "canonical": {
+        "lat": -1,
+        "lon": -51,
+        "uv": {
+          "u": 0.35833333,
+          "v": 0.50555556
+        },
+        "sourcePixelExpectation": {
+          "x": 635.325,
+          "y": 447.922
+        },
+        "seamAdjacent": false,
+        "alternateWrapU": null
+      },
+      "sourceObservation": {
+        "status": "pending",
+        "u": null,
+        "v": null,
+        "tolerancePixels": null
+      }
+    }
+  ],
+  "candidateSummary": {
+    "total": 211,
+    "byWeight": {
+      "hard": 18,
+      "strong": 68,
+      "soft": 125
+    },
+    "byKind": {
+      "settlement": 18,
+      "continent": 2,
+      "island": 22,
+      "lake": 18,
+      "range": 10,
+      "mountain": 16,
+      "transport-corridor-midpoint": 17,
+      "river-endpoint": 108
+    },
+    "seamAdjacent": 24
+  },
+  "registrationReadiness": {
+    "sourceLinked": false,
+    "registered": false,
+    "promoted": false,
+    "blockers": [
+      "Compute SHA-256 from the exact private GM Kit attachment bytes via an authenticated authoring-time promotion read.",
+      "Measure source-image UV positions for selected semantic anchors and record tolerances.",
+      "Solve and validate the seam-aware registration transform.",
+      "Bake and checksum the repository-local WebP runtime derivative."
+    ]
+  },
+  "invariants": [
+    "Canonical cartography remains authoritative and unmodified.",
+    "The private GM Kit object is authoring provenance only and must never become a Foundry runtime dependency.",
+    "Expected source pixels are initial equirectangular guesses, not observed correspondence points.",
+    "No source SHA-256 is invented from storage metadata or ETag values.",
+    "No runtime surface-art manifest entry is created until the v1 contract can validate it."
+  ]
+}
