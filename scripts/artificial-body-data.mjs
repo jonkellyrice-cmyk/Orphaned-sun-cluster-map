@@ -29,9 +29,9 @@ export function operationalApproachGeometry(asset, fallbackKind) {
 }
 
 export function buildArtificialBodyModel(row, operations = null) {
-  const kind = artificialBodyKind(row);
-  if (!kind) throw new TypeError(`${row.object} is not an artificial or anomalous body`);
   const superstructure = buildSuperstructureIdentity(row, operations);
+  const kind = superstructure && operations?.operationalKind ? operations.operationalKind : artificialBodyKind(row);
+  if (!kind) throw new TypeError(`${row.object} is not an artificial or anomalous body`);
   return {
     schemaVersion: 2,
     system: row.system,
