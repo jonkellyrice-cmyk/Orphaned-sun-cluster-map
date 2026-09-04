@@ -52,4 +52,6 @@ jobs:
             tests/jinyara-surface-art-intake.test.mjs
           git diff --cached --quiet && { echo "No scripted outputs to commit."; exit 0; }
           git commit -m "feat: add Jinyara surface art intake and anchor candidates"
+          git fetch origin feature/jinyara-surface-art-intake
+          git rebase origin/feature/jinyara-surface-art-intake
           git push origin HEAD:feature/jinyara-surface-art-intake
