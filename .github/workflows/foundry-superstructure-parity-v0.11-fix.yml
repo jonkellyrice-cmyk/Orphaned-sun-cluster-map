@@ -1,0 +1,39 @@
+name: Foundry Superstructure Parity v0.11 Fix
+
+on:
+  push:
+    branches:
+      - foundry-superstructure-parity-v0.11.0
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Fix migration change tracking
+        run: sed -i 's/sourceChanged ||= replaceOnce(/sourceChanged = replaceOnce(/g' tools/foundry-superstructure-parity-v0.11.mjs
+      - name: Run deterministic parity migration
+        run: node tools/foundry-superstructure-parity-v0.11.mjs
+      - name: Commit deterministic changes when present
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "No parity changes to commit."
+            exit 0
+          fi
+          git status --short
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/foundry-superstructure-parity-v0.11.mjs scripts/body-view-core.mjs scripts/body-view.mjs scripts/superstructure-atlas-visuals.mjs tests/body-view.test.mjs tests/release-package.test.mjs package.json module.json
+          git commit -m "Apply Foundry superstructure parity v0.11.0 [parity-runner]"
+          git push
