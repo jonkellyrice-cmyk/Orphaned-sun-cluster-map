@@ -7,6 +7,7 @@ import { createAtlasBundle, sha256, snapshotPlanet } from "../scripts/atlas-snap
 import { snapshotOperationalRich } from "../scripts/atlas-snapshot-v2.mjs";
 import { buildArtificialBodyModel } from "../scripts/artificial-body-data.mjs";
 import { buildNaturalBodyModel, naturalBodyKind } from "../scripts/natural-body-data.mjs";
+import { buildSuperstructureIdentity, SUPERSTRUCTURE_MODEL_VERSION } from "../scripts/superstructure-identities.mjs";
 import { parseCsv } from "../scripts/system-data.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -14,28 +15,31 @@ const OUTPUT = path.join(ROOT, "exports", "generated-maps.bundle.json");
 const AUTHORITY_MANIFEST = path.join(ROOT, "exports", "generated-maps.manifest.json");
 const PLANET_MANIFEST = "data/planet-cartography/manifest.json";
 const OPERATIONS_MANIFEST = "data/body-operations/manifest.json";
+const SUPERSTRUCTURE_IDENTITIES = "data/superstructure-identities.json";
 const REGISTRY = "docs/system-orbital-distances.csv";
 
 const read = (relative) => fs.readFileSync(path.join(ROOT, relative), "utf8");
 const key = (system, body) => `${system}\u0000${body}`;
 
 function fallbackOperationalPresentationModel(row, asset) {
+  const superstructure = buildSuperstructureIdentity(row, asset);
   return {
-    schemaVersion: 1,
+    schemaVersion: superstructure ? 2 : 1,
     system: row.system,
     body: row.object,
     kind: asset.operationalKind,
-    dimensions: row.dimensions_estimate || "schematic; exact dimensions unestablished",
+    dimensions: superstructure?.effectiveDimensions ?? (row.dimensions_estimate || "schematic; exact dimensions unestablished"),
     structureClass: row.structure_class || row.type,
-    visualArchetype: row.visual_archetype || asset.operationalKind,
+    visualArchetype: superstructure?.silhouetteFamily ?? (row.visual_archetype || asset.operationalKind),
     palette: row.visual_palette || "campaign interface neutral",
-    population: row.population_crew_scale || "operational population unspecified",
+    population: superstructure?.populationBand ?? (row.population_crew_scale || "operational population unspecified"),
     gravity: row.artificial_gravity || "varies by occupied section",
     power: row.power_axiolith || "canonical infrastructure power",
     mobility: row.mobility || "fixed reference-epoch position",
     function: row.primary_function || row.resource_profile || "mapped infrastructure",
     strategicRole: row.strategic_role || row.resource_value || "local operations",
-    presentationBasis: "canonical registry + body-operations operational taxonomy",
+    presentationBasis: superstructure ? "superstructure identity + canonical registry + body operations" : "canonical registry + body-operations operational taxonomy",
+    superstructure,
   };
 }
 
@@ -50,9 +54,11 @@ function presentationModel(row, asset) {
 }
 
 function buildBundle() {
-  const planetManifestText = read(PLANET_MANIFEST), operationsManifestText = read(OPERATIONS_MANIFEST);
-  const planetManifest = JSON.parse(planetManifestText), operationsManifest = JSON.parse(operationsManifestText);
-  const rows = parseCsv(read(REGISTRY));
+  const planetManifestText = read(PLANET_MANIFEST), operationsManifestText = read(OPERATIONS_MANIFEST), superstructureText = read(SUPERSTRUCTURE_IDENTITIES);
+  const planetManifest = JSON.parse(planetManifestText), operationsManifest = JSON.parse(operationsManifestText), superstructureManifest = JSON.parse(superstructureText);
+  if (superstructureManifest.modelVersion !== SUPERSTRUCTURE_MODEL_VERSION || superstructureManifest.count !== 28) throw new Error("Superstructure identity artifact is stale or incompatible.");
+  const registryText = read(REGISTRY);
+  const rows = parseCsv(registryText);
   const rowByBody = new Map(rows.map((row) => [key(row.system, row.object), row]));
   const planetEntries = planetManifest.worlds.map((item) => snapshotPlanet(JSON.parse(read(item.path)), item.path, read(item.path)));
   const operationalEntries = operationsManifest.assets.map((item) => {
@@ -64,7 +70,8 @@ function buildBundle() {
   return applyNaturalBodyArtDirection(createAtlasBundle(planetEntries, operationalEntries, [
     { path: PLANET_MANIFEST, sha256: sha256(planetManifestText), modelVersion: planetManifest.modelVersion },
     { path: OPERATIONS_MANIFEST, sha256: sha256(operationsManifestText), modelVersion: operationsManifest.modelVersion },
-    { path: REGISTRY, sha256: sha256(read(REGISTRY)), modelVersion: "canonical-registry" },
+    { path: SUPERSTRUCTURE_IDENTITIES, sha256: sha256(superstructureText), modelVersion: superstructureManifest.modelVersion },
+    { path: REGISTRY, sha256: sha256(registryText), modelVersion: "canonical-registry" },
   ]));
 }
 
