@@ -23,7 +23,7 @@ jobs:
       - name: Commit deterministic artifact if changed
         shell: bash
         run: |
-          if git diff --quiet -- data/superstructure-identities.json; then
+          if [ -z "$(git status --porcelain -- data/superstructure-identities.json)" ]; then
             echo "Phase 1 artifact already current."
           else
             git config user.name "github-actions[bot]"
