@@ -19,6 +19,36 @@ const REGISTRY = "docs/system-orbital-distances.csv";
 const read = (relative) => fs.readFileSync(path.join(ROOT, relative), "utf8");
 const key = (system, body) => `${system}\u0000${body}`;
 
+function fallbackOperationalPresentationModel(row, asset) {
+  return {
+    schemaVersion: 1,
+    system: row.system,
+    body: row.object,
+    kind: asset.operationalKind,
+    dimensions: row.dimensions_estimate || "schematic; exact dimensions unestablished",
+    structureClass: row.structure_class || row.type,
+    visualArchetype: row.visual_archetype || asset.operationalKind,
+    palette: row.visual_palette || "campaign interface neutral",
+    population: row.population_crew_scale || "operational population unspecified",
+    gravity: row.artificial_gravity || "varies by occupied section",
+    power: row.power_axiolith || "canonical infrastructure power",
+    mobility: row.mobility || "fixed reference-epoch position",
+    function: row.primary_function || row.resource_profile || "mapped infrastructure",
+    strategicRole: row.strategic_role || row.resource_value || "local operations",
+    presentationBasis: "canonical registry + body-operations operational taxonomy",
+  };
+}
+
+function presentationModel(row, asset) {
+  if (naturalBodyKind(row)) return buildNaturalBodyModel(row);
+  try {
+    return buildArtificialBodyModel(row, asset);
+  } catch (error) {
+    if (!(error instanceof TypeError)) throw error;
+    return fallbackOperationalPresentationModel(row, asset);
+  }
+}
+
 function buildBundle() {
   const planetManifestText = read(PLANET_MANIFEST), operationsManifestText = read(OPERATIONS_MANIFEST);
   const planetManifest = JSON.parse(planetManifestText), operationsManifest = JSON.parse(operationsManifestText);
@@ -29,8 +59,7 @@ function buildBundle() {
     const sourceText = read(item.path), asset = JSON.parse(sourceText);
     const row = rowByBody.get(key(asset.system, asset.body));
     if (!row) throw new Error(`Missing canonical registry row for ${asset.system}/${asset.body}`);
-    const model = naturalBodyKind(row) ? buildNaturalBodyModel(row) : buildArtificialBodyModel(row, asset);
-    return snapshotOperationalRich(asset, model, item.path, sourceText);
+    return snapshotOperationalRich(asset, presentationModel(row, asset), item.path, sourceText);
   });
   return applyNaturalBodyArtDirection(createAtlasBundle(planetEntries, operationalEntries, [
     { path: PLANET_MANIFEST, sha256: sha256(planetManifestText), modelVersion: planetManifest.modelVersion },
