@@ -1,5 +1,5 @@
 import { BodyView as CoreBodyView } from "../scripts/body-view-core.mjs";
-export { schematicVisualProfile, orthographicProject, bodyVisualContract } from "../scripts/body-view-core.mjs";
+export { schematicVisualProfile, orthographicProject, bodyVisualContract, liveSuperstructureIdentity } from "../scripts/body-view-core.mjs";
 import { buildBodyOperationsRenderPlan, inspectBodyOperationFeature, loadBodyOperationAsset, projectOperationPosition } from "../scripts/body-operations.mjs";
 import { createFactionEmblem, factionPresentationForOwner } from "../scripts/capital-icons.mjs";
 

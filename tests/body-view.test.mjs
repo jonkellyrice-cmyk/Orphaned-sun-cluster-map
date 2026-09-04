@@ -1,7 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { bodyVisualContract, orthographicProject, projectOperationAnchor, schematicVisualProfile } from "../scripts/body-view.mjs";
+import { bodyVisualContract, liveSuperstructureIdentity, orthographicProject, projectOperationAnchor, schematicVisualProfile } from "../scripts/body-view.mjs";
+import { renderSuperstructureAtlas } from "../scripts/superstructure-atlas-visuals.mjs";
+import { SUPERSTRUCTURE_KEYS } from "../scripts/superstructure-identities.mjs";
 
 test("orthographic projection hides the far hemisphere and responds to rotation", () => {
   assert.equal(orthographicProject(0, 0).visible, true);
@@ -59,4 +61,24 @@ test("body views propagate canonical jurisdiction emblems above every entered bo
   const source = readFileSync(new URL("../scripts/body-view.mjs", import.meta.url), "utf8");
   for (const token of ["ownerFaction", "#buildFactionContext", "oscm-faction-context-marker", "createFactionEmblem"]) assert.match(source, new RegExp(token));
   assert.equal([...source.matchAll(/class: `oscm-faction-context-marker/g)].length, 1, "body view must construct exactly one jurisdiction marker");
+});
+
+test("live Foundry artificial-body renderer shares the frozen-atlas superstructure identity families", () => {
+  assert.equal(SUPERSTRUCTURE_KEYS.length, 28);
+  for (const key of SUPERSTRUCTURE_KEYS) {
+    const [system, body] = key.split("/");
+    const identity = liveSuperstructureIdentity({ system, body });
+    assert.ok(identity, `missing live identity for ${key}`);
+    const rendered = renderSuperstructureAtlas(identity, { x: -340, y: -260, width: 680, height: 520 }, { includeSectionalBand: false });
+    assert.match(rendered, new RegExp(`data-superstructure-family=\"${identity.silhouetteFamily.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\"`));
+    assert.doesNotMatch(rendered, /data-section-logic=\"true\"/, `Foundry live silhouette must not include the frozen atlas zoning strip for ${key}`);
+  }
+
+  assert.equal(liveSuperstructureIdentity({ system: "Amarna", body: "Far Lantern" }).silhouetteFamily, "stacked-vertical-station");
+  assert.equal(liveSuperstructureIdentity({ system: "Memphis", body: "Pilgrim's Lantern" }).silhouetteFamily, "conclave-lantern-spindle");
+  assert.equal(liveSuperstructureIdentity({ system: "Iunu", body: "Asterion Crown" }).silhouetteFamily, "accord-crown-spindle");
+  assert.equal(liveSuperstructureIdentity({ system: "Abydos", body: "Thornfield" }), null);
+
+  const source = readFileSync(new URL("../scripts/body-view-core.mjs", import.meta.url), "utf8");
+  for (const token of ["renderSuperstructureAtlas", "liveSuperstructureIdentity", "is-superstructure-parity", "includeSectionalBand: false", "#buildDockingNodes"]) assert.match(source, new RegExp(token));
 });
