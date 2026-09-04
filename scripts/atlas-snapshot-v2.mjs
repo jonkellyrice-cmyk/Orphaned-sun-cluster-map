@@ -62,13 +62,20 @@ function packet(asset, model, sourcePath, sourceHash) {
   return lines.join("\n");
 }
 
+function normalizedRenderIdentity(identity) {
+  if (!identity) return null;
+  const silhouetteFamily = String(identity.silhouetteFamily ?? "").trim().replace(/\s+/g, "-");
+  return silhouetteFamily === identity.silhouetteFamily ? identity : { ...identity, silhouetteFamily };
+}
+
 export function snapshotOperationalRich(asset, model, sourcePath, sourceText) {
   const sourceHash = sha256(sourceText);
   const x = 80, y = 230, width = 1740, height = 870;
   const frame = { x, y, width, height };
   const identity = model?.superstructure ?? null;
+  const renderIdentity = normalizedRenderIdentity(identity);
   const body = identity
-    ? `<rect x="${x}" y="${y}" width="${width}" height="${height}" fill="#081725"/>${renderSuperstructureAtlas(identity, frame)}${renderSuperstructureOperationalOverlay(asset, frame)}<rect x="${x}" y="${y}" width="${width}" height="${height}" fill="none" stroke="#0b7ead" stroke-width="4"/>`
+    ? `<rect x="${x}" y="${y}" width="${width}" height="${height}" fill="#081725"/>${renderSuperstructureAtlas(renderIdentity, frame)}${renderSuperstructureOperationalOverlay(asset, frame)}<rect x="${x}" y="${y}" width="${width}" height="${height}" fill="none" stroke="#0b7ead" stroke-width="4"/>`
     : renderOperationalAtlasBody(asset, model, frame);
   const key = asset.features.slice(0, 26).map((feature, index) => `<text x="1870" y="${260 + index * 36}" fill="#172637" font-family="monospace" font-size="17"><tspan fill="#c52d31" font-weight="700">${String(index + 1).padStart(2, "0")}</tspan> ${xml(feature.name)}</text>`).join("");
   const sidebar = `<text x="1870" y="220" fill="#147ca6" font-family="monospace" font-size="22" font-weight="700">FEATURE KEY</text>${key}<text x="1870" y="1230" fill="#53616d" font-family="monospace" font-size="16">Full feature packet accompanies this image.</text>`;
