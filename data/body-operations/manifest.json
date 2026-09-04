@@ -14,7 +14,7 @@
       "path": "data/body-operations/abydos/cataphract.json",
       "seed": "a3505837e24554ca",
       "fingerprint": "f401c47d8afef3005ac6",
-      "featureCount": 15
+      "featureCount": 11
     },
     {
       "system": "Abydos",
@@ -24,7 +24,7 @@
       "path": "data/body-operations/abydos/enoch.json",
       "seed": "44a24b1e71c53369",
       "fingerprint": "7b71ab4e215b0e6b6d4f",
-      "featureCount": 15
+      "featureCount": 16
     },
     {
       "system": "Abydos",
@@ -104,7 +104,7 @@
       "path": "data/body-operations/amarna/atacama.json",
       "seed": "06f5d2058182e476",
       "fingerprint": "492159ec9586ed47d5e9",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Amarna",
@@ -124,7 +124,7 @@
       "path": "data/body-operations/amarna/cholula.json",
       "seed": "d452a9733d448944",
       "fingerprint": "e8a6b1f2f5c692e759cf",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Amarna",
@@ -144,7 +144,7 @@
       "path": "data/body-operations/amarna/nalanda.json",
       "seed": "bb9c8b068214b6c9",
       "fingerprint": "6469c9c033d29d6f6678",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Amarna",
@@ -154,7 +154,7 @@
       "path": "data/body-operations/amarna/pamir.json",
       "seed": "7600f7603e7a3de7",
       "fingerprint": "5d0143b064737d094990",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Amarna",
@@ -164,7 +164,7 @@
       "path": "data/body-operations/amarna/serengeti.json",
       "seed": "2abb402525fec616",
       "fingerprint": "e87d99a67e61f861d571",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Amarna",
@@ -174,7 +174,7 @@
       "path": "data/body-operations/amarna/svalbard.json",
       "seed": "21a172de340bac8b",
       "fingerprint": "6337d53cb1f8a89bea30",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Amarna",
@@ -184,7 +184,7 @@
       "path": "data/body-operations/amarna/tasman.json",
       "seed": "9402777b5d0fc386",
       "fingerprint": "51f5198a592c0f89f37c",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Amarna",
@@ -214,7 +214,7 @@
       "path": "data/body-operations/iunu/braemir.json",
       "seed": "d418d85819fc3e4b",
       "fingerprint": "5e20045e9988da2b5d8a",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Iunu",
@@ -224,7 +224,7 @@
       "path": "data/body-operations/iunu/cairnov.json",
       "seed": "2a88b53091144d4f",
       "fingerprint": "4e2b8599a117c7beaf25",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Iunu",
@@ -244,7 +244,7 @@
       "path": "data/body-operations/iunu/dunova.json",
       "seed": "3955f7afe0ee085a",
       "fingerprint": "b6aac143c7af7ffe3af6",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Iunu",
@@ -254,7 +254,7 @@
       "path": "data/body-operations/iunu/eilevost.json",
       "seed": "8985b19b42de660e",
       "fingerprint": "d5d412d87c113431135c",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Iunu",
@@ -264,7 +264,7 @@
       "path": "data/body-operations/iunu/muirka.json",
       "seed": "b613848b36f6f7c6",
       "fingerprint": "4d5dcfa729ea51eed973",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Iunu",
@@ -274,7 +274,7 @@
       "path": "data/body-operations/iunu/volnaskye.json",
       "seed": "18bebd0697316e6d",
       "fingerprint": "a4788c6e7f09d22b7b33",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Iunu",
@@ -284,7 +284,7 @@
       "path": "data/body-operations/iunu/vostara.json",
       "seed": "675b2348221aa827",
       "fingerprint": "bc90d3c0fc9cc0878d78",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Memphis",
@@ -294,7 +294,7 @@
       "path": "data/body-operations/memphis/aurema.json",
       "seed": "84b24649343da382",
       "fingerprint": "a952efc26c055e1ba3cd",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Memphis",
@@ -314,7 +314,7 @@
       "path": "data/body-operations/memphis/elyon.json",
       "seed": "60c10cdb956e4d4e",
       "fingerprint": "21818dfb932ca2bca1e1",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Memphis",
@@ -324,7 +324,7 @@
       "path": "data/body-operations/memphis/kedrion.json",
       "seed": "3309e1e4cfa478b9",
       "fingerprint": "6aca11796338bc065d50",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Memphis",
@@ -344,7 +344,7 @@
       "path": "data/body-operations/memphis/nereth.json",
       "seed": "fa49f456dae849f9",
       "fingerprint": "001e4d7def41202e10b6",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Memphis",
@@ -404,7 +404,7 @@
       "path": "data/body-operations/sais/chandri.json",
       "seed": "f1b88b5412eba723",
       "fingerprint": "fb1bb5a1eb9c4ee4133e",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Sais",
@@ -434,7 +434,7 @@
       "path": "data/body-operations/sais/ranjin.json",
       "seed": "9241782da41a6ee8",
       "fingerprint": "bc9d14a0d592500b95ee",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Sais",
@@ -444,7 +444,7 @@
       "path": "data/body-operations/sais/tianesh.json",
       "seed": "4c541c8f5b6e3240",
       "fingerprint": "5a46fd2cdc719cb10842",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Sais",
@@ -454,7 +454,7 @@
       "path": "data/body-operations/sais/yuehara.json",
       "seed": "e973ccaa42ee99d9",
       "fingerprint": "5fcf09a42e7568b10f4e",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Saqqara",
@@ -484,7 +484,7 @@
       "path": "data/body-operations/saqqara/eilean-volna.json",
       "seed": "ab58009552edfb82",
       "fingerprint": "6dcff50aa5684881b6bd",
-      "featureCount": 17
+      "featureCount": 18
     },
     {
       "system": "Saqqara",
@@ -524,7 +524,7 @@
       "path": "data/body-operations/saqqara/old-kestrel.json",
       "seed": "01dc078460b606d5",
       "fingerprint": "96db90d23b4e41c19fc1",
-      "featureCount": 19
+      "featureCount": 20
     },
     {
       "system": "Saqqara",
@@ -564,7 +564,7 @@
       "path": "data/body-operations/seti/navira.json",
       "seed": "e670d01bede69fea",
       "fingerprint": "49af8393a11107547549",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Seti",
@@ -574,7 +574,7 @@
       "path": "data/body-operations/seti/shenpur.json",
       "seed": "096459e7ba2f04bc",
       "fingerprint": "d50ada171a2f2adab98e",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Seti",
@@ -584,7 +584,7 @@
       "path": "data/body-operations/seti/yuelin.json",
       "seed": "627bdcc4845424ad",
       "fingerprint": "c81a92140f4419a567a6",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Tanis",
@@ -604,7 +604,7 @@
       "path": "data/body-operations/tanis/dun-varya.json",
       "seed": "c925e996fe64a54f",
       "fingerprint": "8ec909acdf55c0eb0c5d",
-      "featureCount": 15
+      "featureCount": 13
     },
     {
       "system": "Tanis",
@@ -654,7 +654,7 @@
       "path": "data/body-operations/thebes/devyan.json",
       "seed": "6dc455f7f58ce91e",
       "fingerprint": "44f28e7da13be32802a4",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Thebes",
@@ -674,7 +674,7 @@
       "path": "data/body-operations/thebes/kiranwei.json",
       "seed": "eed936b4671c1651",
       "fingerprint": "5456557bc420afaefb7d",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Thebes",
@@ -684,7 +684,7 @@
       "path": "data/body-operations/thebes/lianesh.json",
       "seed": "4eee770ab9247581",
       "fingerprint": "bc498c5cf1a3e5136135",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Thebes",
@@ -694,7 +694,7 @@
       "path": "data/body-operations/thebes/mingvara.json",
       "seed": "9ad94ec32732f3da",
       "fingerprint": "149f9d9f8891d5fc6d2f",
-      "featureCount": 15
+      "featureCount": 14
     },
     {
       "system": "Thebes",
@@ -714,7 +714,7 @@
       "path": "data/body-operations/thebes/suryin.json",
       "seed": "b705af1e98003a87",
       "fingerprint": "d678150d63f8208e760b",
-      "featureCount": 15
+      "featureCount": 14
     }
   ]
 }

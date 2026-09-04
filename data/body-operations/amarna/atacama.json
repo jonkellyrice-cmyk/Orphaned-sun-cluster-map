@@ -59,21 +59,21 @@
       "layer": "landmarks",
       "name": "Crater Magellan Crown",
       "position": {
-        "lat": -44.156,
-        "lon": 98.43,
-        "elevation": 0.68
+        "lat": 23.82,
+        "lon": -69.096,
+        "elevation": 0.02
       },
       "dimensions": {
-        "radius": 40.01,
+        "radius": 59.28,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-02",
@@ -81,21 +81,21 @@
       "layer": "landmarks",
       "name": "Crater Kepler Reach",
       "position": {
-        "lat": -44.641,
-        "lon": 97.023,
-        "elevation": 0.72
+        "lat": -7.965,
+        "lon": 61.427,
+        "elevation": 0.05
       },
       "dimensions": {
-        "radius": 40.83,
+        "radius": 18,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-03",
@@ -103,21 +103,21 @@
       "layer": "landmarks",
       "name": "Crater Tasman Ward",
       "position": {
-        "lat": -43.188,
-        "lon": 101.242,
-        "elevation": 0.62
+        "lat": -22.039,
+        "lon": -162.326,
+        "elevation": -0.5
       },
       "dimensions": {
-        "radius": 41.65,
+        "radius": 52.36,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-04",
@@ -125,278 +125,271 @@
       "layer": "landmarks",
       "name": "Crater Altai Ward",
       "position": {
-        "lat": -43.672,
-        "lon": 99.836,
-        "elevation": 0.65
-      },
-      "dimensions": {
-        "radius": 42.47,
-        "unit": "km"
-      },
-      "operationalRole": "named navigational landmark",
-      "resource": null,
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-basin-05",
-      "type": "basin",
-      "layer": "landmarks",
-      "name": "Basin Orinoco",
-      "position": {
-        "lat": -42.219,
-        "lon": 104.055,
-        "elevation": 0.56
-      },
-      "dimensions": {
-        "radius": 43.29,
-        "unit": "km"
-      },
-      "operationalRole": "regional impact basin",
-      "resource": null,
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 2,
-      "description": "regional impact basin. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-ridge-06",
-      "type": "ridge",
-      "layer": "terrain",
-      "name": "Ridge Kepler Reach",
-      "position": {
-        "lat": -41.734,
-        "lon": 105.461,
-        "elevation": 0.53
-      },
-      "dimensions": {
-        "radius": 145.01,
-        "unit": "km"
-      },
-      "operationalRole": "regional traverse landmark",
-      "resource": null,
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 2,
-      "description": "regional traverse landmark. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-rift-07",
-      "type": "rift",
-      "layer": "terrain",
-      "name": "Chasma Tasman Crown",
-      "position": {
-        "lat": -40.281,
-        "lon": 109.68,
-        "elevation": 0.93
-      },
-      "dimensions": {
-        "radius": 113.15,
-        "unit": "km"
-      },
-      "operationalRole": "geotechnical boundary",
-      "resource": null,
-      "hazard": "unstable slopes and regolith",
-      "refs": [],
-      "lodPriority": 3,
-      "description": "geotechnical boundary. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-ice-08",
-      "type": "ice",
-      "layer": "resources",
-      "name": "Cold Trap 8",
-      "position": {
-        "lat": -76.816,
-        "lon": 108.274,
+        "lat": -26.212,
+        "lon": -27.154,
         "elevation": 0.97
       },
       "dimensions": {
-        "radius": 58.22,
+        "radius": 55.14,
         "unit": "km"
       },
-      "operationalRole": "volatile reserve and extraction zone",
-      "resource": "water/ammonia cold-trap volatiles",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-mine-09",
-      "type": "mine",
-      "layer": "resources",
-      "name": "Claim 9",
-      "position": {
-        "lat": 44.015,
-        "lon": 40.407,
-        "elevation": -0.18
-      },
-      "dimensions": null,
-      "operationalRole": "automated or lightly crewed extraction site",
-      "resource": "metals, silicates and construction feedstock",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-habitat-10",
-      "type": "habitat",
-      "layer": "installations",
-      "name": "Habitat 10",
-      "position": {
-        "lat": 44.499,
-        "lon": 41.813,
-        "elevation": -0.21
-      },
-      "dimensions": null,
-      "operationalRole": "sealed surface habitat and logistics node",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 1,
-      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-landing-11",
-      "type": "landing",
-      "layer": "installations",
-      "name": "Field 11",
-      "position": {
-        "lat": 44.984,
-        "lon": 43.22,
-        "elevation": -0.12
-      },
-      "dimensions": null,
-      "operationalRole": "landing field and cargo transfer pad",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10"
-      ],
-      "lodPriority": 1,
-      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-observatory-12",
-      "type": "observatory",
-      "layer": "installations",
-      "name": "Array 12",
-      "position": {
-        "lat": 45.468,
-        "lon": 44.626,
-        "elevation": -0.15
-      },
-      "dimensions": null,
-      "operationalRole": "survey and navigation observatory",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "survey and navigation observatory. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-hazard-13",
-      "type": "hazard",
-      "layer": "hazards",
-      "name": "Exclusion 13",
+      "id": "natural-solid-crater-05",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Danube Rise",
       "position": {
-        "lat": 45.952,
-        "lon": 46.032,
-        "elevation": -0.3
+        "lat": 12.147,
+        "lon": 108.535,
+        "elevation": -0.19
       },
       "dimensions": {
-        "radius": 118.6,
+        "radius": 59.99,
         "unit": "km"
       },
-      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
-      "hazard": "radiation, ejecta and unstable regolith",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-crater-06",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Serengeti",
+      "position": {
+        "lat": -10.839,
+        "lon": -99.512,
+        "elevation": -0.57
+      },
+      "dimensions": {
+        "radius": 14.04,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-basin-07",
+      "type": "basin",
+      "layer": "landmarks",
+      "name": "Basin Atacama Rise",
+      "position": {
+        "lat": -19.668,
+        "lon": 22.567,
+        "elevation": 0.53
+      },
+      "dimensions": {
+        "radius": 159.15,
+        "unit": "km"
+      },
+      "operationalRole": "major impact basin / regional datum",
+      "resource": null,
+      "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded basin constrained by body scale and surface age.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-corridor-14",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 14",
+      "id": "natural-solid-ridge-08",
+      "type": "ridge",
+      "layer": "terrain",
+      "name": "Ridge Altai Rise",
       "position": {
-        "lat": 46.437,
-        "lon": 47.439,
-        "elevation": -0.33
+        "lat": -42.422,
+        "lon": 171.39,
+        "elevation": -0.4
       },
-      "dimensions": null,
-      "operationalRole": "pressurized-rover and cargo traverse",
+      "dimensions": {
+        "radius": 155.72,
+        "unit": "km"
+      },
+      "operationalRole": "major relief / traverse landmark",
       "resource": null,
       "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-landing-11",
-        "natural-solid-mine-09"
-      ],
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Seeded relief consistent with the activity regime.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-scarp-09",
+      "type": "scarp",
+      "layer": "terrain",
+      "name": "Scarp Atlas Reach",
+      "position": {
+        "lat": -3.82,
+        "lon": -55.075,
+        "elevation": 0.53
+      },
+      "dimensions": {
+        "radius": 63.65,
+        "unit": "km"
+      },
+      "operationalRole": "regional fault/impact scarp",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
       "lodPriority": 2,
-      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded broad scarp; no fine fault network implied.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-corridor-15",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 15",
+      "id": "natural-solid-ice-10",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 10",
       "position": {
-        "lat": 46.921,
-        "lon": 48.845,
-        "elevation": -0.24
+        "lat": -75.24,
+        "lon": 72.45,
+        "elevation": 0.14
       },
-      "dimensions": null,
-      "operationalRole": "survey traverse to volatile field",
-      "resource": null,
+      "dimensions": {
+        "radius": 103.5,
+        "unit": "km"
+      },
+      "operationalRole": "major volatile reserve / cold-trap province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-ice-08"
-      ],
-      "lodPriority": 3,
-      "description": "survey traverse to volatile field. Accepted operational survey feature for Atacama.",
-      "provenance": "accepted-generated-canon"
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-ice-11",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 11",
+      "position": {
+        "lat": -82.805,
+        "lon": -148.98,
+        "elevation": 0.72
+      },
+      "dimensions": {
+        "radius": 61.78,
+        "unit": "km"
+      },
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-12",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 12",
+      "position": {
+        "lat": 24.775,
+        "lon": -7.71,
+        "elevation": -0.96
+      },
+      "dimensions": {
+        "radius": 66.65,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-13",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 13",
+      "position": {
+        "lat": 67.742,
+        "lon": 134.499,
+        "elevation": 0.87
+      },
+      "dimensions": {
+        "radius": 121.82,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-hazard-14",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Exclusion 14",
+      "position": {
+        "lat": 47.869,
+        "lon": -86.627,
+        "elevation": -0.58
+      },
+      "dimensions": {
+        "radius": 103.22,
+        "unit": "km"
+      },
+      "operationalRole": "mapped operational exclusion / caution zone",
+      "resource": null,
+      "hazard": "low-to-moderate; rock, metals and water ice; vacuum, radiation, thermal extremes",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Localized zone from a supported environmental hazard.",
+      "provenance": "working-surface-v1"
     }
   ],
   "operationalSummary": {
-    "featureCount": 15,
+    "featureCount": 14,
     "layerCounts": {
       "hazards": 1,
-      "installations": 3,
-      "landmarks": 5,
-      "resources": 2,
-      "routes": 2,
+      "landmarks": 7,
+      "resources": 4,
       "terrain": 2
     },
     "keyFeatures": [
       "natural-solid-crater-01",
       "natural-solid-crater-02",
-      "natural-solid-ice-08",
-      "natural-solid-mine-09",
-      "natural-solid-habitat-10",
-      "natural-solid-landing-11",
-      "natural-solid-hazard-13"
+      "natural-solid-basin-07",
+      "natural-solid-ridge-08",
+      "natural-solid-ice-10",
+      "natural-solid-deposit-12",
+      "natural-solid-hazard-14"
     ],
     "geometryStatement": "constrained estimate",
     "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  },
+  "surfaceSurvey": {
+    "modelVersion": "orphaned-sun-natural-solid-survey-v1",
+    "provenance": "deterministic-working-canon/metadata-conditioned-natural-surface-v1",
+    "surfaceFamily": "mixed ice-rock cratered surface",
+    "activity": "geologically quiet / impact-retaining",
+    "craterRetention": "dense ancient crater retention",
+    "volatiles": "substantial ice/volatile provinces",
+    "exploitation": "none-established",
+    "basis": "canonical-metadata+permanent-seed"
   }
 }

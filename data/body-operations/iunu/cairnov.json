@@ -59,21 +59,21 @@
       "layer": "landmarks",
       "name": "Blackwakesk Crater",
       "position": {
-        "lat": -48.905,
-        "lon": -157.219,
-        "elevation": 1.98
+        "lat": 7.731,
+        "lon": 13.843,
+        "elevation": -0.17
       },
       "dimensions": {
-        "radius": 197.34,
+        "radius": 40.43,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-02",
@@ -81,21 +81,21 @@
       "layer": "landmarks",
       "name": "Gannetreach Crater",
       "position": {
-        "lat": -48.421,
-        "lon": -155.813,
-        "elevation": 1.95
+        "lat": -36.254,
+        "lon": 141.835,
+        "elevation": -0.31
       },
       "dimensions": {
-        "radius": 196.52,
+        "radius": 40.47,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-03",
@@ -103,21 +103,21 @@
       "layer": "landmarks",
       "name": "Dunreach Crater",
       "position": {
-        "lat": -49.874,
-        "lon": -160.032,
-        "elevation": 1.92
+        "lat": 53.133,
+        "lon": -69.566,
+        "elevation": -0.12
       },
       "dimensions": {
-        "radius": 198.98,
+        "radius": 25.65,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-04",
@@ -125,278 +125,271 @@
       "layer": "landmarks",
       "name": "Gannetgrad Crater",
       "position": {
-        "lat": -49.39,
-        "lon": -158.625,
-        "elevation": 1.89
+        "lat": 13.035,
+        "lon": 52.729,
+        "elevation": 0.21
       },
       "dimensions": {
-        "radius": 198.16,
+        "radius": 8.08,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-basin-05",
-      "type": "basin",
+      "id": "natural-solid-crater-05",
+      "type": "crater",
       "layer": "landmarks",
-      "name": "Skyesk Basin",
+      "name": "Gannetova Crater",
       "position": {
-        "lat": -50.843,
-        "lon": -151.594,
-        "elevation": 1.86
+        "lat": 5.409,
+        "lon": -167.631,
+        "elevation": 0.56
       },
       "dimensions": {
-        "radius": 200.62,
+        "radius": 9.11,
         "unit": "km"
       },
-      "operationalRole": "regional impact basin",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
-      "refs": [],
-      "lodPriority": 2,
-      "description": "regional impact basin. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-ridge-06",
-      "type": "ridge",
-      "layer": "terrain",
-      "name": "Morozbrae Ridge",
-      "position": {
-        "lat": -51.327,
-        "lon": -153,
-        "elevation": 1.77
-      },
-      "dimensions": {
-        "radius": 589.83,
-        "unit": "km"
-      },
-      "operationalRole": "regional traverse landmark",
-      "resource": null,
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 2,
-      "description": "regional traverse landmark. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-rift-07",
-      "type": "rift",
-      "layer": "terrain",
-      "name": "Muirgrad Chasma",
-      "position": {
-        "lat": -45.03,
-        "lon": -168.469,
-        "elevation": 1.73
-      },
-      "dimensions": {
-        "radius": 401.55,
-        "unit": "km"
-      },
-      "operationalRole": "geotechnical boundary",
-      "resource": null,
-      "hazard": "unstable slopes and regolith",
       "refs": [],
       "lodPriority": 3,
-      "description": "geotechnical boundary. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-ice-08",
-      "type": "ice",
-      "layer": "resources",
-      "name": "Cold Trap 8",
+      "id": "natural-solid-crater-06",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Dunsk Crater",
       "position": {
-        "lat": -66.675,
-        "lon": -167.063,
-        "elevation": 1.7
+        "lat": -2.44,
+        "lon": -20.206,
+        "elevation": 0.27
       },
       "dimensions": {
-        "radius": 207.57,
+        "radius": 43.36,
         "unit": "km"
       },
-      "operationalRole": "volatile reserve and extraction zone",
-      "resource": "water/ammonia cold-trap volatiles",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-mine-09",
-      "type": "mine",
-      "layer": "resources",
-      "name": "Claim 9",
-      "position": {
-        "lat": 42.028,
-        "lon": -128.653,
-        "elevation": -0.26
-      },
-      "dimensions": null,
-      "operationalRole": "automated or lightly crewed extraction site",
-      "resource": "metals, silicates and construction feedstock",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-habitat-10",
-      "type": "habitat",
-      "layer": "installations",
-      "name": "Habitat 10",
-      "position": {
-        "lat": 41.543,
-        "lon": -130.06,
-        "elevation": -0.23
-      },
-      "dimensions": null,
-      "operationalRole": "sealed surface habitat and logistics node",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 1,
-      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-landing-11",
-      "type": "landing",
-      "layer": "installations",
-      "name": "Field 11",
-      "position": {
-        "lat": 42.996,
-        "lon": -125.841,
-        "elevation": -0.32
-      },
-      "dimensions": null,
-      "operationalRole": "landing field and cargo transfer pad",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10"
-      ],
-      "lodPriority": 1,
-      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-observatory-12",
-      "type": "observatory",
-      "layer": "installations",
-      "name": "Array 12",
-      "position": {
-        "lat": 42.512,
-        "lon": -127.247,
-        "elevation": -0.29
-      },
-      "dimensions": null,
-      "operationalRole": "survey and navigation observatory",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
-      "lodPriority": 2,
-      "description": "survey and navigation observatory. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-hazard-13",
-      "type": "hazard",
-      "layer": "hazards",
-      "name": "Exclusion 13",
+      "id": "natural-solid-basin-07",
+      "type": "basin",
+      "layer": "landmarks",
+      "name": "Morozsk Basin",
       "position": {
-        "lat": 40.09,
-        "lon": -123.028,
+        "lat": 39.194,
+        "lon": 124.912,
+        "elevation": 0.77
+      },
+      "dimensions": {
+        "radius": 62.74,
+        "unit": "km"
+      },
+      "operationalRole": "major impact basin / regional datum",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Seeded basin constrained by body scale and surface age.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-ridge-08",
+      "type": "ridge",
+      "layer": "terrain",
+      "name": "Krasova Ridge",
+      "position": {
+        "lat": -24.441,
+        "lon": -98.738,
+        "elevation": -0.64
+      },
+      "dimensions": {
+        "radius": 93.17,
+        "unit": "km"
+      },
+      "operationalRole": "major relief / traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Seeded relief consistent with the activity regime.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-scarp-09",
+      "type": "scarp",
+      "layer": "terrain",
+      "name": "Skyesk Scarp",
+      "position": {
+        "lat": -48.106,
+        "lon": 18.919,
         "elevation": -0.13
       },
       "dimensions": {
-        "radius": 45.38,
+        "radius": 92.15,
         "unit": "km"
       },
-      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "operationalRole": "regional fault/impact scarp",
       "resource": null,
-      "hazard": "radiation, ejecta and unstable regolith",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Seeded broad scarp; no fine fault network implied.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-ice-10",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 10",
+      "position": {
+        "lat": -79.563,
+        "lon": 177.844,
+        "elevation": -0.69
+      },
+      "dimensions": {
+        "radius": 145.83,
+        "unit": "km"
+      },
+      "operationalRole": "major volatile reserve / cold-trap province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
+      "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-corridor-14",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 14",
+      "id": "natural-solid-ice-11",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 11",
       "position": {
-        "lat": 39.606,
-        "lon": -124.435,
-        "elevation": -0.1
+        "lat": -82.449,
+        "lon": -51.312,
+        "elevation": -0.59
       },
-      "dimensions": null,
-      "operationalRole": "pressurized-rover and cargo traverse",
-      "resource": null,
+      "dimensions": {
+        "radius": 36.79,
+        "unit": "km"
+      },
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-landing-11",
-        "natural-solid-mine-09"
-      ],
+      "refs": [],
       "lodPriority": 2,
-      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-corridor-15",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 15",
+      "id": "natural-solid-deposit-12",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 12",
       "position": {
-        "lat": 41.059,
-        "lon": -120.216,
-        "elevation": -0.2
+        "lat": -1.523,
+        "lon": 77.238,
+        "elevation": 0.51
       },
-      "dimensions": null,
-      "operationalRole": "survey traverse to volatile field",
-      "resource": null,
+      "dimensions": {
+        "radius": 117.45,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; platinum-group/trace siderophile metals; water ice; ammonia/CO2-bearing volatiles",
       "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-ice-08"
-      ],
-      "lodPriority": 3,
-      "description": "survey traverse to volatile field. Accepted operational survey feature for Cairnov.",
-      "provenance": "accepted-generated-canon"
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-13",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 13",
+      "position": {
+        "lat": -27.329,
+        "lon": -144.108,
+        "elevation": 0.26
+      },
+      "dimensions": {
+        "radius": 45.07,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; platinum-group/trace siderophile metals; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-hazard-14",
+      "type": "hazard",
+      "layer": "hazards",
+      "name": "Exclusion 14",
+      "position": {
+        "lat": -52.603,
+        "lon": -11.566,
+        "elevation": 0.61
+      },
+      "dimensions": {
+        "radius": 70.69,
+        "unit": "km"
+      },
+      "operationalRole": "mapped operational exclusion / caution zone",
+      "resource": null,
+      "hazard": "low-to-moderate; rock, metals and water ice; vacuum, radiation, thermal extremes",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Localized zone from a supported environmental hazard.",
+      "provenance": "working-surface-v1"
     }
   ],
   "operationalSummary": {
-    "featureCount": 15,
+    "featureCount": 14,
     "layerCounts": {
       "hazards": 1,
-      "installations": 3,
-      "landmarks": 5,
-      "resources": 2,
-      "routes": 2,
+      "landmarks": 7,
+      "resources": 4,
       "terrain": 2
     },
     "keyFeatures": [
       "natural-solid-crater-01",
       "natural-solid-crater-02",
-      "natural-solid-ice-08",
-      "natural-solid-mine-09",
-      "natural-solid-habitat-10",
-      "natural-solid-landing-11",
-      "natural-solid-hazard-13"
+      "natural-solid-basin-07",
+      "natural-solid-ridge-08",
+      "natural-solid-ice-10",
+      "natural-solid-deposit-12",
+      "natural-solid-hazard-14"
     ],
     "geometryStatement": "constrained estimate",
     "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  },
+  "surfaceSurvey": {
+    "modelVersion": "orphaned-sun-natural-solid-survey-v1",
+    "provenance": "deterministic-working-canon/metadata-conditioned-natural-surface-v1",
+    "surfaceFamily": "mixed ice-rock cratered surface",
+    "activity": "geologically quiet / impact-retaining",
+    "craterRetention": "dense ancient crater retention",
+    "volatiles": "substantial ice/volatile provinces",
+    "exploitation": "none-established",
+    "basis": "canonical-metadata+permanent-seed"
   }
 }

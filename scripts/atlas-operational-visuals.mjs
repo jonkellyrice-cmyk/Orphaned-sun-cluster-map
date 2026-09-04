@@ -1,3 +1,5 @@
+import { naturalSolidProfileLines, renderNaturalSolidSurvey } from "./natural-solid-atlas-visuals.mjs";
+
 const xml = (value) => String(value ?? "")
   .replaceAll("&", "&amp;")
   .replaceAll("<", "&lt;")
@@ -180,14 +182,15 @@ function renderArtificial(asset, model, frame) {
 }
 
 export function renderOperationalAtlasBody(asset, model, frame) {
-  if (asset.operationalKind === "natural-solid") return renderNaturalSolid(asset, model, frame);
+  if (asset.operationalKind === "natural-solid") return renderNaturalSolidSurvey(asset, model, frame);
   if (asset.operationalKind === "giant") return renderGiant(asset, model, frame);
   return renderArtificial(asset, model, frame);
 }
 
 export function operationalProfileLines(asset, model) {
   if (!model) return [];
-  if (asset.operationalKind === "natural-solid" || asset.operationalKind === "giant") {
+  if (asset.operationalKind === "natural-solid") return naturalSolidProfileLines(model);
+  if (asset.operationalKind === "giant") {
     return [
       `- Visual class: ${model.kind}`,
       `- Radius: ${model.radiusKm ?? "unknown"} km`,

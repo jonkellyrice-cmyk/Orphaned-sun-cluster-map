@@ -59,21 +59,21 @@
       "layer": "landmarks",
       "name": "Crater Meleketh",
       "position": {
-        "lat": -9.806,
-        "lon": 157.603,
-        "elevation": 3.77
+        "lat": 19.316,
+        "lon": 84.351,
+        "elevation": -0.34
       },
       "dimensions": {
-        "radius": 221.9,
+        "radius": 16.23,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-02",
@@ -81,21 +81,21 @@
       "layer": "landmarks",
       "name": "Crater Qedemeth",
       "position": {
-        "lat": -10.29,
-        "lon": 156.197,
-        "elevation": 3.8
+        "lat": 33.465,
+        "lon": -140.171,
+        "elevation": -0.18
       },
       "dimensions": {
-        "radius": 222.72,
+        "radius": 28.68,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-03",
@@ -103,21 +103,21 @@
       "layer": "landmarks",
       "name": "Crater Galiliel",
       "position": {
-        "lat": -8.837,
-        "lon": 160.415,
-        "elevation": 3.7
+        "lat": -29.03,
+        "lon": -7.913,
+        "elevation": 0.01
       },
       "dimensions": {
-        "radius": 223.54,
+        "radius": 30.02,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-04",
@@ -125,278 +125,271 @@
       "layer": "landmarks",
       "name": "Crater Theonion",
       "position": {
-        "lat": -9.321,
-        "lon": 159.009,
-        "elevation": 3.73
+        "lat": 41.669,
+        "lon": 137.464,
+        "elevation": -0.41
       },
       "dimensions": {
-        "radius": 224.36,
+        "radius": 43.07,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-basin-05",
+      "id": "natural-solid-crater-05",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Kyriion",
+      "position": {
+        "lat": 67.34,
+        "lon": -74.599,
+        "elevation": 0.71
+      },
+      "dimensions": {
+        "radius": 30.63,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-crater-06",
+      "type": "crater",
+      "layer": "landmarks",
+      "name": "Crater Theonon",
+      "position": {
+        "lat": 33.218,
+        "lon": 44.502,
+        "elevation": 0.31
+      },
+      "dimensions": {
+        "radius": 7.13,
+        "unit": "km"
+      },
+      "operationalRole": "regional retained impact landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 3,
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-basin-07",
       "type": "basin",
       "layer": "landmarks",
-      "name": "Basin Galilion",
+      "name": "Basin Aurethara",
       "position": {
-        "lat": -7.868,
-        "lon": 163.228,
-        "elevation": 3.64
+        "lat": 43.654,
+        "lon": -173.634,
+        "elevation": 0.36
       },
       "dimensions": {
-        "radius": 225.18,
+        "radius": 123.68,
         "unit": "km"
       },
-      "operationalRole": "regional impact basin",
+      "operationalRole": "major impact basin / regional datum",
       "resource": null,
       "hazard": null,
       "refs": [],
-      "lodPriority": 2,
-      "description": "regional impact basin. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
+      "lodPriority": 1,
+      "description": "Seeded basin constrained by body scale and surface age.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-ridge-06",
+      "id": "natural-solid-ridge-08",
       "type": "ridge",
       "layer": "terrain",
-      "name": "Ridge Kedronara",
+      "name": "Ridge Aurethiel",
       "position": {
-        "lat": -7.384,
-        "lon": 164.634,
-        "elevation": 3.61
+        "lat": -36.009,
+        "lon": -36.82,
+        "elevation": 0.35
       },
       "dimensions": {
-        "radius": 664.69,
+        "radius": 171.48,
         "unit": "km"
       },
-      "operationalRole": "regional traverse landmark",
+      "operationalRole": "major relief / traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Seeded relief consistent with the activity regime.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-scarp-09",
+      "type": "scarp",
+      "layer": "terrain",
+      "name": "Scarp Melekara",
+      "position": {
+        "lat": -51.732,
+        "lon": 113.657,
+        "elevation": 0.83
+      },
+      "dimensions": {
+        "radius": 126.34,
+        "unit": "km"
+      },
+      "operationalRole": "regional fault/impact scarp",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "regional traverse landmark. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded broad scarp; no fine fault network implied.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-rift-07",
-      "type": "rift",
-      "layer": "terrain",
-      "name": "Chasma Aurethara",
-      "position": {
-        "lat": -5.93,
-        "lon": 168.853,
-        "elevation": 4.02
-      },
-      "dimensions": {
-        "radius": 476.93,
-        "unit": "km"
-      },
-      "operationalRole": "geotechnical boundary",
-      "resource": null,
-      "hazard": "unstable slopes and regolith",
-      "refs": [],
-      "lodPriority": 3,
-      "description": "geotechnical boundary. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-ice-08",
+      "id": "natural-solid-ice-10",
       "type": "ice",
       "layer": "resources",
-      "name": "Cold Trap 8",
+      "name": "Cold Trap 10",
       "position": {
-        "lat": -82.964,
-        "lon": 167.447,
-        "elevation": 4.05
+        "lat": -74.528,
+        "lon": -108.484,
+        "elevation": 0.23
       },
       "dimensions": {
-        "radius": 248.77,
+        "radius": 84.25,
         "unit": "km"
       },
-      "operationalRole": "volatile reserve and extraction zone",
-      "resource": "water/ammonia cold-trap volatiles",
+      "operationalRole": "major volatile reserve / cold-trap province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-mine-09",
-      "type": "mine",
+      "id": "natural-solid-ice-11",
+      "type": "ice",
       "layer": "resources",
-      "name": "Claim 9",
+      "name": "Cold Trap 11",
       "position": {
-        "lat": 38.148,
-        "lon": 104.732,
-        "elevation": 1.08
+        "lat": -7.683,
+        "lon": 31.714,
+        "elevation": 0.04
       },
-      "dimensions": null,
-      "operationalRole": "automated or lightly crewed extraction site",
-      "resource": "metals, silicates and construction feedstock",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-habitat-10",
-      "type": "habitat",
-      "layer": "installations",
-      "name": "Habitat 10",
-      "position": {
-        "lat": 38.632,
-        "lon": 106.139,
-        "elevation": 1.05
+      "dimensions": {
+        "radius": 84.05,
+        "unit": "km"
       },
-      "dimensions": null,
-      "operationalRole": "sealed surface habitat and logistics node",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 1,
-      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-landing-11",
-      "type": "landing",
-      "layer": "installations",
-      "name": "Field 11",
-      "position": {
-        "lat": 39.117,
-        "lon": 107.545,
-        "elevation": 1.14
-      },
-      "dimensions": null,
-      "operationalRole": "landing field and cargo transfer pad",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10"
-      ],
-      "lodPriority": 1,
-      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-observatory-12",
-      "type": "observatory",
-      "layer": "installations",
-      "name": "Array 12",
-      "position": {
-        "lat": 39.601,
-        "lon": 108.951,
-        "elevation": 1.11
-      },
-      "dimensions": null,
-      "operationalRole": "survey and navigation observatory",
-      "resource": null,
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "survey and navigation observatory. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-hazard-13",
+      "id": "natural-solid-deposit-12",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 12",
+      "position": {
+        "lat": -21.928,
+        "lon": 157.883,
+        "elevation": 0.46
+      },
+      "dimensions": {
+        "radius": 34.04,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; platinum-group/trace siderophile metals; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-13",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 13",
+      "position": {
+        "lat": 28.659,
+        "lon": -72.333,
+        "elevation": 0.37
+      },
+      "dimensions": {
+        "radius": 88.38,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; platinum-group/trace siderophile metals; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-hazard-14",
       "type": "hazard",
       "layer": "hazards",
-      "name": "Exclusion 13",
+      "name": "Exclusion 14",
       "position": {
-        "lat": 40.086,
-        "lon": 110.357,
-        "elevation": 0.95
+        "lat": 44.889,
+        "lon": 83.463,
+        "elevation": -0.55
       },
       "dimensions": {
-        "radius": 47.69,
+        "radius": 59.6,
         "unit": "km"
       },
-      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "operationalRole": "mapped operational exclusion / caution zone",
       "resource": null,
-      "hazard": "radiation, ejecta and unstable regolith",
+      "hazard": "low-to-moderate; rock, metals and water ice; vacuum, radiation, thermal extremes",
       "refs": [],
       "lodPriority": 1,
-      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-14",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 14",
-      "position": {
-        "lat": 40.57,
-        "lon": 111.764,
-        "elevation": 0.92
-      },
-      "dimensions": null,
-      "operationalRole": "pressurized-rover and cargo traverse",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-landing-11",
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 2,
-      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-15",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 15",
-      "position": {
-        "lat": 41.054,
-        "lon": 113.17,
-        "elevation": 1.02
-      },
-      "dimensions": null,
-      "operationalRole": "survey traverse to volatile field",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-ice-08"
-      ],
-      "lodPriority": 3,
-      "description": "survey traverse to volatile field. Accepted operational survey feature for Nereth.",
-      "provenance": "accepted-generated-canon"
+      "description": "Localized zone from a supported environmental hazard.",
+      "provenance": "working-surface-v1"
     }
   ],
   "operationalSummary": {
-    "featureCount": 15,
+    "featureCount": 14,
     "layerCounts": {
       "hazards": 1,
-      "installations": 3,
-      "landmarks": 5,
-      "resources": 2,
-      "routes": 2,
+      "landmarks": 7,
+      "resources": 4,
       "terrain": 2
     },
     "keyFeatures": [
       "natural-solid-crater-01",
       "natural-solid-crater-02",
-      "natural-solid-ice-08",
-      "natural-solid-mine-09",
-      "natural-solid-habitat-10",
-      "natural-solid-landing-11",
-      "natural-solid-hazard-13"
+      "natural-solid-basin-07",
+      "natural-solid-ridge-08",
+      "natural-solid-ice-10",
+      "natural-solid-deposit-12",
+      "natural-solid-hazard-14"
     ],
     "geometryStatement": "constrained estimate",
     "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  },
+  "surfaceSurvey": {
+    "modelVersion": "orphaned-sun-natural-solid-survey-v1",
+    "provenance": "deterministic-working-canon/metadata-conditioned-natural-surface-v1",
+    "surfaceFamily": "ice-rich cryogenic surface",
+    "activity": "geologically quiet / impact-retaining",
+    "craterRetention": "dense ancient crater retention",
+    "volatiles": "substantial ice/volatile provinces",
+    "exploitation": "none-established",
+    "basis": "canonical-metadata+permanent-seed"
   }
 }

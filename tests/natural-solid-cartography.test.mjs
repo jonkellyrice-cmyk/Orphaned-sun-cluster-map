@@ -76,7 +76,19 @@ test("materialized natural-solid assets expose the Phase 2 survey contract", () 
   for (const entry of natural) {
     const asset = JSON.parse(readFileSync(new URL(entry.path, root), "utf8"));
     assert.equal(asset.surfaceSurvey?.modelVersion, NATURAL_SOLID_SURVEY_MODEL_VERSION, entry.path);
-    assert.equal(asset.surfaceSurvey?.profile?.modelVersion, NATURAL_SOLID_SURVEY_MODEL_VERSION, entry.path);
+    assert.ok(asset.surfaceSurvey?.surfaceFamily, entry.path);
+    assert.ok(asset.surfaceSurvey?.craterRetention, entry.path);
     assert.equal(entry.featureCount, asset.features.length);
+  }
+});
+
+
+test("canonical registry does not promote prospecting language into established industry", () => {
+  const targetRows = solidRows.filter((row) => row.current_exploitation || row.infrastructure_profile);
+  const established = targetRows.filter((row) => deriveNaturalSolidProfile(row).exploitationIndex > 0);
+  assert.ok(established.some((row) => row.object === "Old Kestrel"));
+  assert.ok(established.length <= 4, `expected conservative established-industry count, count must remain <= 4`);
+  for (const row of targetRows.filter((item) => /candidate|plausible|likely|prospect|no map-established/.test(String(item.current_exploitation + ";" + item.infrastructure_profile).toLowerCase()))) {
+    assert.equal(deriveNaturalSolidProfile(row).exploitationIndex, 0, row.object);
   }
 });

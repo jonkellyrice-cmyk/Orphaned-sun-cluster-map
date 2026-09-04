@@ -48,13 +48,18 @@ function radiationIndex(row) {
 }
 
 function exploitationIndex(row) {
-  const source = lower(row.current_exploitation, row.infrastructure_profile, row.resource_operations_notes, row.settlement_pattern);
-  if (!source || /unexploited|no current|none established|no dedicated infrastructure|no permanent infrastructure/.test(source)) return 0;
-  if (/major|heavy|industrial|extensive|dense|continuous|primary extraction/.test(source)) return 0.9;
-  if (/active|developed|regular|crewed|settled|habitat|refinery|mass driver/.test(source)) return 0.68;
-  if (/limited|light|automated|robotic|seasonal|survey|prospecting|occasional/.test(source)) return 0.38;
-  return 0.24;
+  const current = lower(row.current_exploitation);
+  const infrastructure = lower(row.infrastructure_profile);
+  if (!current && !infrastructure) return 0;
+  const uncertain = /candidate|possible|plausible|likely|prospect|frontier|no map-established|no dedicated|no permanent|unexploited|none established|no current/.test(current + ";" + infrastructure);
+  if (uncertain) return 0;
+  const established = current + ";" + infrastructure;
+  if (/heavily mined|industrialized|extensive excavations|active industrial|operating mine|established extraction|primary extraction|refiner|mass driver/.test(established)) return 0.9;
+  if (/active extraction|automated extraction|regular extraction|crewed mining|permanent mining/.test(established)) return 0.62;
+  return 0;
 }
+
+
 
 function resourceIndex(row) {
   const source = text(row.resource_abundance, row.resource_value, row.resource_profile, row.resources_hazards, row.strategic_materials);
@@ -207,27 +212,27 @@ export function naturalSolidFeaturePlan(row, seed) {
       hazard: options.hazard ?? null,
       lodPriority: options.lodPriority ?? 2,
       description: options.description,
-      provenance: NATURAL_SOLID_SURVEY_PROVENANCE,
+      provenance: "working-surface-v1",
       refKeys: options.refKeys ?? [],
       name: options.name,
       index,
     });
   };
 
-  const craterCount = Math.round(4 + profile.craterRetentionIndex * 7);
+  const craterCount = Math.round(3 + profile.craterRetentionIndex * 3);
   for (let i = 0; i < craterCount; i += 1) add(
     `crater-${i + 1}`,
     "crater",
     "landmarks",
     i < 2 ? "major retained impact landmark" : "regional retained impact landmark",
     {
-      lodPriority: i < 2 ? 1 : i < 6 ? 2 : 3,
+      lodPriority: i < 2 ? 1 : i < 4 ? 2 : 3,
       dimensions: scaledRadius(seed, "crater", i, profile.radiusKm, 0.005, 0.035, 3, 260),
-      description: `${profile.craterRetentionLabel}; exact landmark geometry is deterministic working canon constrained by body scale and resurfacing state.`,
+      description: "Seeded working geometry constrained by crater retention.",
     },
   );
 
-  const basinCount = 1 + Math.round(profile.craterRetentionIndex * 1.7);
+  const basinCount = 1 + (profile.craterRetentionIndex >= 0.86 ? 1 : 0);
   for (let i = 0; i < basinCount; i += 1) add(
     `basin-${i + 1}`,
     "basin",
@@ -236,7 +241,7 @@ export function naturalSolidFeaturePlan(row, seed) {
     {
       lodPriority: i === 0 ? 1 : 2,
       dimensions: scaledRadius(seed, "basin", i, profile.radiusKm, 0.04, 0.12, 15, 900),
-      description: "Large impact basin inferred conservatively from an impact-retaining solid surface; exact location and extent are deterministic working canon.",
+      description: "Seeded basin constrained by body scale and surface age.",
     },
   );
 
@@ -249,11 +254,11 @@ export function naturalSolidFeaturePlan(row, seed) {
     {
       lodPriority: i === 0 ? 1 : 2,
       dimensions: scaledRadius(seed, "ridge", i, profile.radiusKm, 0.055, 0.16, 20, 950),
-      description: `Broad relief feature consistent with ${profile.activityLabel}; exact trace is deterministic working canon.`,
+      description: "Seeded relief consistent with the activity regime.",
     },
   );
 
-  const scarpCount = profile.craterRetentionIndex >= 0.55 ? 2 : 1;
+  const scarpCount = 1;
   for (let i = 0; i < scarpCount; i += 1) add(
     `scarp-${i + 1}`,
     "scarp",
@@ -262,7 +267,7 @@ export function naturalSolidFeaturePlan(row, seed) {
     {
       lodPriority: 2,
       dimensions: scaledRadius(seed, "scarp", i, profile.radiusKm, 0.035, 0.11, 12, 700),
-      description: "Regional scarp representing broad mechanically plausible relief rather than a fabricated fine-grained fault network.",
+      description: "Seeded broad scarp; no fine fault network implied.",
     },
   );
 
@@ -276,12 +281,12 @@ export function naturalSolidFeaturePlan(row, seed) {
       lodPriority: i === 0 ? 1 : 2,
       dimensions: scaledRadius(seed, "rift", i, profile.radiusKm, 0.05, 0.15, 20, 900),
       hazard: profile.activityIndex >= 0.65 ? "unstable slopes, fractures, and locally active ground" : "fractured slopes and unstable regolith",
-      description: `Rifting is permitted by the canonical/derived activity state (${profile.activityLabel}); exact geometry is deterministic working canon.`,
+      description: "Generated only where activity supports rifting.",
     },
   );
 
   const activityText = lower(row.geological_activity, row.tidal_heating_profile, row.volcanism_level, row.resources_hazards);
-  const volcanicCount = /volcan|geothermal|cryovolcan/.test(activityText) || profile.activityIndex >= 0.68 ? (profile.activityIndex >= 0.84 ? 2 : 1) : 0;
+  const volcanicCount = /volcan|geothermal|cryovolcan/.test(activityText) || profile.activityIndex >= 0.68 ? 1 : 0;
   for (let i = 0; i < volcanicCount; i += 1) add(
     `volcanic-${i + 1}`,
     "volcanic",
@@ -291,12 +296,12 @@ export function naturalSolidFeaturePlan(row, seed) {
       lodPriority: i === 0 ? 1 : 2,
       dimensions: scaledRadius(seed, "volcanic", i, profile.radiusKm, 0.025, 0.08, 8, 500),
       hazard: profile.activityIndex >= 0.72 ? "active or geologically young resurfacing terrain" : null,
-      description: "Only generated where activity metadata supports active or geologically young resurfacing; exact center is deterministic working canon.",
+      description: "Generated only where activity supports resurfacing.",
     },
   );
 
   if (profile.atmosphereWorked) {
-    const duneCount = profile.atmospherePressureAtm >= 0.3 ? 2 : 1;
+    const duneCount = 1;
     for (let i = 0; i < duneCount; i += 1) add(
       `dune-${i + 1}`,
       "dune",
@@ -306,7 +311,7 @@ export function naturalSolidFeaturePlan(row, seed) {
         positionOptions: { equatorial: true },
         lodPriority: 2,
         dimensions: scaledRadius(seed, "dune", i, profile.radiusKm, 0.04, 0.12, 15, 750),
-        description: "Broad aeolian terrain inferred only because the body has enough atmosphere and a sufficiently dry surface for sustained sediment transport.",
+        description: "Generated only where atmosphere supports aeolian transport.",
       },
     );
   }
@@ -325,7 +330,7 @@ export function naturalSolidFeaturePlan(row, seed) {
       lodPriority: i === 0 ? 1 : 2,
       resource: row.volatile_profile || row.resource_profile || "water/volatile-bearing material",
       dimensions: scaledRadius(seed, "ice", i, profile.radiusKm, 0.025, 0.11, 8, 650),
-      description: `${profile.volatileExpression}; abundance is constrained by canonical resource/ice metadata while exact province geometry is deterministic working canon.`,
+      description: "Volatile province constrained by canonical abundance.",
     },
   );
 
@@ -339,7 +344,7 @@ export function naturalSolidFeaturePlan(row, seed) {
       lodPriority: i === 0 ? 1 : 2,
       resource: profile.resourceProfile,
       dimensions: scaledRadius(seed, "deposit", i, profile.radiusKm, 0.025, 0.09, 6, 520),
-      description: "Resource-bearing province inferred from canonical material/resource metadata; exact boundary is bounded deterministic working canon.",
+      description: "Resource province constrained by canonical material metadata.",
     },
   );
 
@@ -353,25 +358,25 @@ export function naturalSolidFeaturePlan(row, seed) {
       lodPriority: 1,
       hazard: text(row.radiation_hazard_level, row.resources_hazards, row.geological_hazard_profile) || "locally elevated surface hazard",
       dimensions: scaledRadius(seed, "hazard", 0, profile.radiusKm, 0.025, 0.08, 8, 500),
-      description: "Hazard zone summarizes an already supported environmental risk; exact local boundary is deterministic working canon.",
+      description: "Localized zone from a supported environmental hazard.",
     },
   );
 
-  const infrastructureText = lower(row.current_exploitation, row.infrastructure_profile, row.resource_operations_notes, row.settlement_pattern);
+  const infrastructureText = lower(row.current_exploitation, row.infrastructure_profile, row.resource_operations_notes);
   const infrastructureKeys = [];
   if (profile.exploitationIndex > 0) {
     if (profile.resourceBearing || /mine|extract|refin|resource/.test(infrastructureText)) {
-      add("mine-1", "mine", "resources", "active or automated extraction site", { lodPriority: 1, resource: profile.resourceProfile, description: "Surface extraction node is generated only because exploitation/infrastructure metadata indicates active use." });
+      add("mine-1", "mine", "resources", "active or automated extraction site", { lodPriority: 1, resource: profile.resourceProfile, description: "Established extraction node." });
       infrastructureKeys.push("mine-1");
       if (profile.exploitationIndex >= 0.82) {
         add("mine-2", "mine", "resources", "secondary extraction site", { lodPriority: 2, resource: profile.resourceProfile });
         infrastructureKeys.push("mine-2");
       }
     }
-    add("landing-1", "landing", "installations", "landing/cargo transfer field", { lodPriority: 1, description: "Conservative surface access node associated with established exploitation or infrastructure." });
+    add("landing-1", "landing", "installations", "landing/cargo transfer field", { lodPriority: 1, description: "Established surface access node." });
     infrastructureKeys.push("landing-1");
     if (profile.exploitationIndex >= 0.56 || /habitat|crewed|settlement|industrial|refinery|annex/.test(infrastructureText)) {
-      add("habitat-1", "habitat", "installations", "sealed habitat/logistics node", { lodPriority: 1, description: "Sealed habitation/logistics presence is supported by the exploitation/infrastructure profile; no open-air habitability is implied." });
+      add("habitat-1", "habitat", "installations", "sealed habitat/logistics node", { lodPriority: 1, description: "Sealed industrial/logistics habitat; no open-air habitability implied." });
       infrastructureKeys.push("habitat-1");
     }
     if (/survey|observ|sensor|research/.test(infrastructureText)) {
@@ -386,7 +391,7 @@ export function naturalSolidFeaturePlan(row, seed) {
       {
         lodPriority: 2,
         refKeys: infrastructureKeys.slice(0, 4),
-        description: "Local traverse connecting already-supported surface infrastructure; not a planetwide road network.",
+        description: "Local traverse between established surface nodes.",
       },
     );
   }

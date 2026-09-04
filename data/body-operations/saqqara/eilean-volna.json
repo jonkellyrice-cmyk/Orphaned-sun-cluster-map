@@ -59,21 +59,21 @@
       "layer": "landmarks",
       "name": "Cairngrad Crater",
       "position": {
-        "lat": 5.839,
-        "lon": 127.057,
-        "elevation": -1.96
+        "lat": -55.282,
+        "lon": -59.666,
+        "elevation": 2.69
       },
       "dimensions": {
-        "radius": 65.47,
+        "radius": 26.91,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-02",
@@ -81,21 +81,21 @@
       "layer": "landmarks",
       "name": "Skyeova Crater",
       "position": {
-        "lat": 6.323,
-        "lon": 128.463,
-        "elevation": -1.99
+        "lat": 40.09,
+        "lon": 73.308,
+        "elevation": -0.31
       },
       "dimensions": {
-        "radius": 64.65,
+        "radius": 100,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "major retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "named navigational landmark. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-crater-03",
@@ -103,65 +103,65 @@
       "layer": "landmarks",
       "name": "Gannetgrad Crater",
       "position": {
-        "lat": 6.808,
-        "lon": 129.869,
-        "elevation": -1.9
+        "lat": 28.5,
+        "lon": -152.122,
+        "elevation": 2.82
       },
       "dimensions": {
-        "radius": 63.83,
+        "radius": 95.55,
         "unit": "km"
       },
-      "operationalRole": "named navigational landmark",
+      "operationalRole": "regional retained impact landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded working geometry constrained by crater retention.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-crater-04",
-      "type": "crater",
-      "layer": "landmarks",
-      "name": "Krasova Crater",
-      "position": {
-        "lat": 7.292,
-        "lon": 131.275,
-        "elevation": -1.93
-      },
-      "dimensions": {
-        "radius": 63.01,
-        "unit": "km"
-      },
-      "operationalRole": "named navigational landmark",
-      "resource": null,
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 2,
-      "description": "named navigational landmark. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-basin-05",
+      "id": "natural-solid-basin-04",
       "type": "basin",
       "layer": "landmarks",
-      "name": "Gannetbrae Basin",
+      "name": "Volnabrae Basin",
       "position": {
-        "lat": 7.776,
-        "lon": 121.431,
-        "elevation": -1.84
+        "lat": 23.321,
+        "lon": 4.461,
+        "elevation": 2.08
       },
       "dimensions": {
-        "radius": 68.75,
+        "radius": 311.46,
         "unit": "km"
       },
-      "operationalRole": "regional impact basin",
+      "operationalRole": "major impact basin / regional datum",
       "resource": null,
       "hazard": null,
       "refs": [],
-      "lodPriority": 2,
-      "description": "regional impact basin. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
+      "lodPriority": 1,
+      "description": "Seeded basin constrained by body scale and surface age.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-ridge-05",
+      "type": "ridge",
+      "layer": "terrain",
+      "name": "Vostsk Ridge",
+      "position": {
+        "lat": -53.711,
+        "lon": 122.111,
+        "elevation": -2.74
+      },
+      "dimensions": {
+        "radius": 391.41,
+        "unit": "km"
+      },
+      "operationalRole": "major relief / traverse landmark",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Seeded relief consistent with the activity regime.",
+      "provenance": "working-surface-v1"
     },
     {
       "id": "natural-solid-ridge-06",
@@ -169,215 +169,244 @@
       "layer": "terrain",
       "name": "Skyebrae Ridge",
       "position": {
-        "lat": 9.23,
-        "lon": 125.65,
-        "elevation": -1.8
+        "lat": 52.888,
+        "lon": -79.926,
+        "elevation": -4.09
       },
       "dimensions": {
-        "radius": 203.69,
+        "radius": 170.42,
         "unit": "km"
       },
-      "operationalRole": "regional traverse landmark",
+      "operationalRole": "major relief / traverse landmark",
       "resource": null,
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "regional traverse landmark. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
+      "description": "Seeded relief consistent with the activity regime.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-rift-07",
+      "id": "natural-solid-scarp-07",
+      "type": "scarp",
+      "layer": "terrain",
+      "name": "Skyesk Scarp",
+      "position": {
+        "lat": 5.816,
+        "lon": 39.158,
+        "elevation": 1.27
+      },
+      "dimensions": {
+        "radius": 208.4,
+        "unit": "km"
+      },
+      "operationalRole": "regional fault/impact scarp",
+      "resource": null,
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Seeded broad scarp; no fine fault network implied.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-rift-08",
       "type": "rift",
       "layer": "terrain",
-      "name": "Morozgrad Chasma",
+      "name": "Morozbrae Chasma",
       "position": {
-        "lat": 1.964,
-        "lon": 115.806,
-        "elevation": 5.79
+        "lat": -81.752,
+        "lon": 179.918,
+        "elevation": 2.74
       },
       "dimensions": {
-        "radius": 137.81,
+        "radius": 187.93,
         "unit": "km"
       },
-      "operationalRole": "geotechnical boundary",
+      "operationalRole": "regional extensional or tectonic boundary",
       "resource": null,
-      "hazard": "unstable slopes and regolith",
+      "hazard": "unstable slopes, fractures, and locally active ground",
       "refs": [],
-      "lodPriority": 3,
-      "description": "geotechnical boundary. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
+      "lodPriority": 1,
+      "description": "Generated only where activity supports rifting.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-ice-08",
+      "id": "natural-solid-rift-09",
+      "type": "rift",
+      "layer": "terrain",
+      "name": "Krasova Chasma",
+      "position": {
+        "lat": -51.282,
+        "lon": -45.701,
+        "elevation": -0.25
+      },
+      "dimensions": {
+        "radius": 296.33,
+        "unit": "km"
+      },
+      "operationalRole": "regional extensional or tectonic boundary",
+      "resource": null,
+      "hazard": "unstable slopes, fractures, and locally active ground",
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Generated only where activity supports rifting.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-volcanic-10",
+      "type": "volcanic",
+      "layer": "terrain",
+      "name": "Glengrad Caldera",
+      "position": {
+        "lat": -35.375,
+        "lon": 89.12,
+        "elevation": -2.81
+      },
+      "dimensions": {
+        "radius": 73.47,
+        "unit": "km"
+      },
+      "operationalRole": "cryovolcanic/resurfacing center",
+      "resource": null,
+      "hazard": "active or geologically young resurfacing terrain",
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Generated only where activity supports resurfacing.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-ice-11",
       "type": "ice",
       "layer": "resources",
-      "name": "Cold Trap 8",
+      "name": "Cold Trap 11",
       "position": {
-        "lat": 77.397,
-        "lon": 117.213,
-        "elevation": 5.76
+        "lat": -74.071,
+        "lon": -125.018,
+        "elevation": -3.6
       },
       "dimensions": {
-        "radius": 69.42,
+        "radius": 103.79,
         "unit": "km"
       },
-      "operationalRole": "volatile reserve and extraction zone",
-      "resource": "water/ammonia cold-trap volatiles",
+      "operationalRole": "major volatile reserve / cold-trap province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 1,
-      "description": "volatile reserve and extraction zone. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-mine-09",
-      "type": "mine",
+      "id": "natural-solid-ice-12",
+      "type": "ice",
       "layer": "resources",
-      "name": "Claim 9",
+      "name": "Cold Trap 12",
       "position": {
-        "lat": -3.897,
-        "lon": 120.362,
-        "elevation": 2.14
+        "lat": 1.755,
+        "lon": 7.513,
+        "elevation": -3.81
       },
-      "dimensions": null,
-      "operationalRole": "automated or lightly crewed extraction site",
-      "resource": "metals, silicates and construction feedstock",
-      "hazard": null,
-      "refs": [],
-      "lodPriority": 1,
-      "description": "automated or lightly crewed extraction site. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-habitat-10",
-      "type": "habitat",
-      "layer": "installations",
-      "name": "Habitat 10",
-      "position": {
-        "lat": -4.381,
-        "lon": 118.956,
-        "elevation": 2.17
+      "dimensions": {
+        "radius": 139.47,
+        "unit": "km"
       },
-      "dimensions": null,
-      "operationalRole": "sealed surface habitat and logistics node",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 1,
-      "description": "sealed surface habitat and logistics node. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-landing-11",
-      "type": "landing",
-      "layer": "installations",
-      "name": "Field 11",
-      "position": {
-        "lat": -4.865,
-        "lon": 117.549,
-        "elevation": 2.2
-      },
-      "dimensions": null,
-      "operationalRole": "landing field and cargo transfer pad",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10"
-      ],
-      "lodPriority": 1,
-      "description": "landing field and cargo transfer pad. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-observatory-12",
-      "type": "observatory",
-      "layer": "installations",
-      "name": "Array 12",
-      "position": {
-        "lat": -5.35,
-        "lon": 116.143,
-        "elevation": 2.23
-      },
-      "dimensions": null,
-      "operationalRole": "survey and navigation observatory",
-      "resource": null,
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
       "hazard": null,
       "refs": [],
       "lodPriority": 2,
-      "description": "survey and navigation observatory. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-hazard-13",
+      "id": "natural-solid-ice-13",
+      "type": "ice",
+      "layer": "resources",
+      "name": "Cold Trap 13",
+      "position": {
+        "lat": -34.481,
+        "lon": 157.257,
+        "elevation": -3.37
+      },
+      "dimensions": {
+        "radius": 230.56,
+        "unit": "km"
+      },
+      "operationalRole": "secondary ice/volatile province",
+      "resource": "water ice; likely CO2, ammonia and minor carbon-bearing ices in cold traps/regolith",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Volatile province constrained by canonical abundance.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-14",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 14",
+      "position": {
+        "lat": 29.774,
+        "lon": -61.902,
+        "elevation": -3.56
+      },
+      "dimensions": {
+        "radius": 212.21,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; platinum-group/trace siderophile metals; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 1,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-deposit-15",
+      "type": "deposit",
+      "layer": "resources",
+      "name": "Province 15",
+      "position": {
+        "lat": -12.166,
+        "lon": 69.725,
+        "elevation": 0.49
+      },
+      "dimensions": {
+        "radius": 159.04,
+        "unit": "km"
+      },
+      "operationalRole": "surveyed resource-bearing province",
+      "resource": "Fe-Ni-Co ores; silicates; construction feedstock; platinum-group/trace siderophile metals; water ice; ammonia/CO2-bearing volatiles",
+      "hazard": null,
+      "refs": [],
+      "lodPriority": 2,
+      "description": "Resource province constrained by canonical material metadata.",
+      "provenance": "working-surface-v1"
+    },
+    {
+      "id": "natural-solid-hazard-16",
       "type": "hazard",
       "layer": "hazards",
-      "name": "Exclusion 13",
+      "name": "Exclusion 16",
       "position": {
-        "lat": -1.959,
-        "lon": 114.737,
-        "elevation": 2.26
+        "lat": 35.406,
+        "lon": -149.534,
+        "elevation": -1.43
       },
       "dimensions": {
-        "radius": 167.05,
+        "radius": 201.58,
         "unit": "km"
       },
-      "operationalRole": "radiation/unstable-terrain exclusion zone",
+      "operationalRole": "mapped operational exclusion / caution zone",
       "resource": null,
-      "hazard": "radiation, ejecta and unstable regolith",
+      "hazard": "high; water ice, volatiles; radiation and cryovolcanism",
       "refs": [],
       "lodPriority": 1,
-      "description": "radiation/unstable-terrain exclusion zone. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
+      "description": "Localized zone from a supported environmental hazard.",
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-corridor-14",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 14",
-      "position": {
-        "lat": -2.443,
-        "lon": 113.33,
-        "elevation": 2.3
-      },
-      "dimensions": null,
-      "operationalRole": "pressurized-rover and cargo traverse",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-landing-11",
-        "natural-solid-mine-09"
-      ],
-      "lodPriority": 2,
-      "description": "pressurized-rover and cargo traverse. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-corridor-15",
-      "type": "corridor",
-      "layer": "routes",
-      "name": "Corridor 15",
-      "position": {
-        "lat": -2.928,
-        "lon": 111.924,
-        "elevation": 2.33
-      },
-      "dimensions": null,
-      "operationalRole": "survey traverse to volatile field",
-      "resource": null,
-      "hazard": null,
-      "refs": [
-        "natural-solid-habitat-10",
-        "natural-solid-ice-08"
-      ],
-      "lodPriority": 3,
-      "description": "survey traverse to volatile field. Accepted operational survey feature for Eilean Volna.",
-      "provenance": "accepted-generated-canon"
-    },
-    {
-      "id": "natural-solid-habitat-16",
+      "id": "natural-solid-habitat-17",
       "type": "habitat",
       "layer": "installations",
       "name": "Volna Thaw Enclave",
@@ -393,10 +422,10 @@
       "refs": [],
       "lodPriority": 1,
       "description": "A small engineered thaw-basin settlement exploiting locally favorable pressure, geothermal warmth and shielding; not an open-air city.",
-      "provenance": "accepted-generated-canon"
+      "provenance": "working-surface-v1"
     },
     {
-      "id": "natural-solid-observatory-17",
+      "id": "natural-solid-observatory-18",
       "type": "observatory",
       "layer": "terrain",
       "name": "Sheltered Lichen Preserve",
@@ -412,30 +441,39 @@
       "refs": [],
       "lodPriority": 2,
       "description": "Protected microbial/lichen-like biosphere site within a favorable thaw region; it does not imply an Earthlike global biosphere.",
-      "provenance": "accepted-generated-canon"
+      "provenance": "working-surface-v1"
     }
   ],
   "operationalSummary": {
-    "featureCount": 17,
+    "featureCount": 18,
     "layerCounts": {
       "hazards": 1,
-      "installations": 4,
-      "landmarks": 5,
-      "resources": 2,
-      "routes": 2,
-      "terrain": 3
+      "installations": 1,
+      "landmarks": 4,
+      "resources": 5,
+      "terrain": 7
     },
     "keyFeatures": [
       "natural-solid-crater-01",
       "natural-solid-crater-02",
-      "natural-solid-ice-08",
-      "natural-solid-mine-09",
-      "natural-solid-habitat-10",
-      "natural-solid-landing-11",
-      "natural-solid-hazard-13",
-      "natural-solid-habitat-16"
+      "natural-solid-basin-04",
+      "natural-solid-ridge-05",
+      "natural-solid-rift-08",
+      "natural-solid-volcanic-10",
+      "natural-solid-ice-11",
+      "natural-solid-deposit-14"
     ],
     "geometryStatement": "constrained estimate",
     "note": "Accepted generated operational survey; display compression must not be used for physical calculations."
+  },
+  "surfaceSurvey": {
+    "modelVersion": "orphaned-sun-natural-solid-survey-v1",
+    "provenance": "deterministic-working-canon/metadata-conditioned-natural-surface-v1",
+    "surfaceFamily": "actively resurfaced ice-rock terrain",
+    "activity": "highly active / frequently resurfaced",
+    "craterRetention": "low crater retention / comparatively resurfaced",
+    "volatiles": "extensive ice/volatile terrain",
+    "exploitation": "none-established",
+    "basis": "canonical-metadata+permanent-seed"
   }
 }

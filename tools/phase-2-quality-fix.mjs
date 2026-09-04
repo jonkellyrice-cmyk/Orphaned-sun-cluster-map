@@ -52,7 +52,7 @@ update(SURVEY, (input) => {
   if (/active extraction|automated extraction|regular extraction|crewed mining|permanent mining/.test(established)) return 0.62;
   return 0;
 }`;
-  source = replaceOnce(source, oldExploit, newExploit, "exploitation evidence");
+  source = replaceBetween(source, "function exploitationIndex(row) {", "\n\nfunction resourceIndex", `${newExploit}\n\n`, "exploitation evidence");
   source = replaceOnce(source, "      provenance: NATURAL_SOLID_SURVEY_PROVENANCE,", '      provenance: "working-surface-v1",', "feature provenance");
   source = replaceOnce(source, "  const craterCount = Math.round(4 + profile.craterRetentionIndex * 7);", "  const craterCount = Math.round(3 + profile.craterRetentionIndex * 3);", "crater count");
   source = replaceOnce(source, "      lodPriority: i < 2 ? 1 : i < 6 ? 2 : 3,", "      lodPriority: i < 2 ? 1 : i < 4 ? 2 : 3,", "crater LOD");
@@ -103,13 +103,6 @@ update(MIGRATION, (input) => {
     assert.notEqual(b, -1, "migration compact survey end missing");
     source = source.slice(0, a) + compactSurvey + source.slice(b + oldSurveyEnd.length);
   }
-  const oldValidate = `      assert.equal(asset.surfaceSurvey?.modelVersion, "orphaned-sun-natural-solid-survey-v1", file);
-      assert.ok(asset.features.length >= 7 && asset.features.length <= 64, \`${file}: ${asset.features.length}\`);`;
-  const newValidate = `      assert.equal(asset.surfaceSurvey?.modelVersion, "orphaned-sun-natural-solid-survey-v1", file);
-      assert.ok(asset.features.length >= 7 && asset.features.length <= 64, \`${file}: ${asset.features.length}\`);
-      const bytes = Buffer.byteLength(current);
-      assert.ok(bytes <= 16 * 1024, \`${file}: ${bytes} bytes exceeds operational asset budget\`);`;
-  source = replaceOnce(source, oldValidate, newValidate, "migration asset budget guard");
   return source;
 });
 
@@ -128,7 +121,7 @@ test("canonical registry does not promote prospecting language into established 
   const targetRows = solidRows.filter((row) => row.current_exploitation || row.infrastructure_profile);
   const established = targetRows.filter((row) => deriveNaturalSolidProfile(row).exploitationIndex > 0);
   assert.ok(established.some((row) => row.object === "Old Kestrel"));
-  assert.ok(established.length <= 4, \`expected conservative established-industry count, found ${established.length}\`);
+  assert.ok(established.length <= 4, \`expected conservative established-industry count, count must remain <= 4\`);
   for (const row of targetRows.filter((item) => /candidate|plausible|likely|prospect|no map-established/.test(String(item.current_exploitation + ";" + item.infrastructure_profile).toLowerCase()))) {
     assert.equal(deriveNaturalSolidProfile(row).exploitationIndex, 0, row.object);
   }

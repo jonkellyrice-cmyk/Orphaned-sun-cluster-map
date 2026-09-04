@@ -79,16 +79,12 @@ function patchGenerator() {
   asset.surfaceSurvey = {
     modelVersion: NATURAL_SOLID_SURVEY_MODEL_VERSION,
     provenance: NATURAL_SOLID_SURVEY_PROVENANCE,
-    profile: plan.profile,
-    sourceFields: [
-      "radius_re", "mass_me", "surface_gravity_g", "bulk_composition", "atmosphere_pressure_atm", "atmosphere_profile",
-      "mean_surface_temp_c", "magnetosphere_radiation", "resources_hazards", "water_ice_pct_est", "metal_fraction_pct_est",
-      "silicate_fraction_pct_est", "volatile_fraction_pct_est", "carbonaceous_fraction_pct_est", "resource_profile", "volatile_profile",
-      "strategic_materials", "resource_abundance", "extraction_difficulty", "radiation_hazard_level", "geological_activity",
-      "current_exploitation", "infrastructure_profile", "resource_operations_notes", "tidal_heating_index_io_proxy", "tidal_heating_profile",
-      "internal_heat_flux_earth", "interior_activity_class", "tectonic_regime", "volcanism_level", "rifting_activity"
-    ].filter((field) => row[field] != null && String(row[field]).trim() !== ""),
-    geometryPolicy: "Canonical metadata controls plausible feature families and abundance; permanent seed fixes otherwise-unestablished locations, extents, and working names.",
+    surfaceFamily: plan.profile.surfaceFamily,
+    activity: plan.profile.activityLabel,
+    craterRetention: plan.profile.craterRetentionLabel,
+    volatiles: plan.profile.volatileExpression,
+    exploitation: plan.profile.exploitationIndex > 0 ? "established" : "none-established",
+    basis: "canonical-metadata+permanent-seed",
   };
   const ids = new Map(), featureStart = asset.features.length;
   for (const spec of plan.features) {
@@ -132,7 +128,7 @@ function patchNaturalModel() {
     { type: "extraction-regions", profile: row.resource_profile || row.resources_hazards || "mixed belt resources" },
   ] : giant ? [
     { type: "atmospheric-bands", count: 7 + Math.floor(hashUnit(identity) * 5) },
-    { type: "storm-systems", count: 2 + Math.floor(hashUnit(\`${identity}/storms\`) * 7) },
+    { type: "storm-systems", count: 2 + Math.floor(hashUnit(identity + "/storms") * 7) },
     { type: "radiation-zone", severity: row.radiation_hazard_level || row.magnetosphere_radiation || "elevated" },
   ] : [
     { type: "crater-provinces", density: surfaceCharacter.craterRetentionLabel },
@@ -242,12 +238,14 @@ function validateAtlasPropagation(before, after, firstApplication, naturalCount)
 }
 
 function summarize(after) {
-  const profiles = after.manifest.assets.filter((entry) => entry.operationalKind === "natural-solid").map((entry) => JSON.parse(after.files.get(entry.path)).surfaceSurvey.profile);
-  const counts = (key) => Object.fromEntries([...new Set(profiles.map((profile) => profile[key]))].sort().map((value) => [value, profiles.filter((profile) => profile[key] === value).length]));
-  console.log(`[phase-2] surface families: ${JSON.stringify(counts("surfaceFamily"))}`);
-  console.log(`[phase-2] geologic classes: ${JSON.stringify(counts("activityLabel"))}`);
-  console.log(`[phase-2] volatile classes: ${JSON.stringify(counts("volatileExpression"))}`);
-  console.log(`[phase-2] exploited surfaces: ${profiles.filter((profile) => profile.exploitationIndex > 0).length}/${profiles.length}`);
+  const surveys = after.manifest.assets
+    .filter((entry) => entry.operationalKind === "natural-solid")
+    .map((entry) => JSON.parse(after.files.get(entry.path)).surfaceSurvey);
+  const counts = (key) => Object.fromEntries([...new Set(surveys.map((survey) => survey[key]))].sort().map((value) => [value, surveys.filter((survey) => survey[key] === value).length]));
+  console.log("[phase-2] surface families: " + JSON.stringify(counts("surfaceFamily")));
+  console.log("[phase-2] geologic classes: " + JSON.stringify(counts("activity")));
+  console.log("[phase-2] volatile classes: " + JSON.stringify(counts("volatiles")));
+  console.log("[phase-2] established exploited surfaces: " + surveys.filter((survey) => survey.exploitation === "established").length + "/" + surveys.length);
 }
 
 function main() {
