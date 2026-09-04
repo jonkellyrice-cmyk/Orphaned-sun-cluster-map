@@ -58,15 +58,24 @@ function planetRaster(world) {
   const pixels = Buffer.alloc(latCount * lonCount * 4);
   const elevations = world.raster.elevationM;
   const biomeIndexes = Buffer.from(world.raster.biome.valuesBase64, "base64");
-  for (let index = 0; index < pixels.length / 4; index += 1) {
-    const biome = world.raster.biome.categories[biomeIndexes[index]];
-    const elevation = elevations[index];
-    const base = BIOME_COLORS[biome] ?? [112, 121, 102];
-    const relief = elevation > 0 ? Math.max(-22, Math.min(38, elevation / 180)) : Math.max(-24, elevation / 320);
-    pixels[index * 4] = Math.max(0, Math.min(255, base[0] + relief));
-    pixels[index * 4 + 1] = Math.max(0, Math.min(255, base[1] + relief));
-    pixels[index * 4 + 2] = Math.max(0, Math.min(255, base[2] + relief));
-    pixels[index * 4 + 3] = 255;
+  // Atlas projection invariant: PNG row 0 is +90° north, matching mapY().
+  // Materialized cartography is indexed south-to-north (latIndex 0 ~= -90°).
+  // PNG scanlines are top-to-bottom, so explicitly reverse latitude rows here.
+  // Longitude order is already west-to-east and remains unchanged.
+  for (let displayLatIndex = 0; displayLatIndex < latCount; displayLatIndex += 1) {
+    const sourceLatIndex = latCount - 1 - displayLatIndex;
+    for (let lonIndex = 0; lonIndex < lonCount; lonIndex += 1) {
+      const sourceIndex = sourceLatIndex * lonCount + lonIndex;
+      const targetIndex = displayLatIndex * lonCount + lonIndex;
+      const biome = world.raster.biome.categories[biomeIndexes[sourceIndex]];
+      const elevation = elevations[sourceIndex];
+      const base = BIOME_COLORS[biome] ?? [112, 121, 102];
+      const relief = elevation > 0 ? Math.max(-22, Math.min(38, elevation / 180)) : Math.max(-24, elevation / 320);
+      pixels[targetIndex * 4] = Math.max(0, Math.min(255, base[0] + relief));
+      pixels[targetIndex * 4 + 1] = Math.max(0, Math.min(255, base[1] + relief));
+      pixels[targetIndex * 4 + 2] = Math.max(0, Math.min(255, base[2] + relief));
+      pixels[targetIndex * 4 + 3] = 255;
+    }
   }
   return encodePng(lonCount, latCount, pixels).toString("base64");
 }
