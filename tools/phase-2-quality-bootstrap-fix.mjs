@@ -17,4 +17,8 @@ if (diagnosticStart !== -1) {
   source = source.slice(0, diagnosticStart) + source.slice(diagnosticEnd + diagnosticEndMarker.length);
   console.log("[phase-2-quality-bootstrap] removed redundant nested migration-size diagnostic");
 }
+if (source.includes('found ${established.length}')) {
+  source = source.replace('found ${established.length}', 'count must remain <= 4');
+  console.log("[phase-2-quality-bootstrap] flattened conservative-industry test message");
+}
 fs.writeFileSync(path, source);
