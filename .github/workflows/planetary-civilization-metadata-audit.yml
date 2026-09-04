@@ -1,18 +1,18 @@
-name: Planetary Civilization Metadata Audit
+name: Planetary Civilization Metadata Migration
 
 on:
   push:
     branches:
       - feature/planetary-civilization-scale-metadata
     paths:
-      - "tools/audit-planetary-civilization-metadata.mjs"
+      - "tools/planetary-civilization-scale-metadata-v1.mjs"
       - ".github/workflows/planetary-civilization-metadata-audit.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  audit:
+  migrate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,13 +21,49 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Validate audit script syntax
-        run: node --check tools/audit-planetary-civilization-metadata.mjs
-      - name: Audit planetary civilization metadata
+      - name: Validate migration scripts
+        run: |
+          node --check tools/audit-planetary-civilization-metadata.mjs
+          node --check tools/planetary-civilization-scale-metadata-v1.mjs
+      - name: Record baseline audit
         run: node tools/audit-planetary-civilization-metadata.mjs
-      - name: Upload audit report
+      - name: Apply bounded civilization metadata migration
+        run: node tools/planetary-civilization-scale-metadata-v1.mjs --apply
+      - name: Verify migration idempotence
+        run: node tools/planetary-civilization-scale-metadata-v1.mjs --check
+      - name: Verify patch hygiene
+        run: |
+          git diff --check
+          rm -rf artifacts
+          unexpected="$(git status --porcelain | awk '{print $2}' | grep -Ev '^(scripts/cartography-settlements\.mjs|scripts/atlas-snapshot\.mjs|tools/generate-planet-cartography\.mjs|tools/validate-planet-cartography\.mjs|tools/audit-planetary-civilization-metadata\.mjs|tests/cartography-settlements\.test\.mjs|data/planet-cartography/.*\.json|exports/generated-maps\.bundle\.json|exports/generated-maps\.manifest\.json)$' || true)"
+          if [ -n "$unexpected" ]; then
+            echo "Unexpected changed paths:"
+            echo "$unexpected"
+            exit 1
+          fi
+      - name: Re-run strict audit for artifact
+        run: node tools/audit-planetary-civilization-metadata.mjs --strict
+      - name: Upload post-migration audit report
         uses: actions/upload-artifact@v4
         with:
-          name: planetary-civilization-metadata-audit
+          name: planetary-civilization-metadata-audit-post-migration
           path: artifacts/planetary-civilization-metadata-audit.json
           if-no-files-found: error
+      - name: Commit scripted outputs
+        run: |
+          rm -rf artifacts
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            scripts/cartography-settlements.mjs \
+            scripts/atlas-snapshot.mjs \
+            tools/generate-planet-cartography.mjs \
+            tools/validate-planet-cartography.mjs \
+            tools/audit-planetary-civilization-metadata.mjs \
+            tests/cartography-settlements.test.mjs \
+            data/planet-cartography \
+            exports/generated-maps.bundle.json \
+            exports/generated-maps.manifest.json
+          git diff --cached --quiet && { echo "No scripted outputs to commit."; exit 0; }
+          git commit -m "feat: propagate planetary civilization scale metadata"
+          git push origin HEAD:feature/planetary-civilization-scale-metadata
