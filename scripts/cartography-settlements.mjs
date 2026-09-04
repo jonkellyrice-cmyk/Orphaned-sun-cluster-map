@@ -13,6 +13,51 @@ function angularDistance(a, b) {
   return Math.hypot(a.lat - b.lat, dx);
 }
 
+const ECOLOGY_ROUTE_PENALTY = new Map([
+  ["tropical-rainforest", 4.0],
+  ["temperate-rainforest", 3.5],
+  ["seasonal-forest", 2.6],
+  ["temperate-forest", 2.6],
+  ["taiga", 1.8],
+  ["savanna", 0.8],
+  ["tundra", 0.6],
+]);
+
+function settlementScaleClass(role, index) {
+  if (["planetary capital", "major city", "major port city"].includes(role)) return "superstructure";
+  return index < 12 ? "metropolitan" : "regional";
+}
+
+function corridorClass(origin, destination) {
+  const scales = new Set([origin.scaleClass, destination.scaleClass]);
+  if (origin.scaleClass === "superstructure" && destination.scaleClass === "superstructure") return "trunk";
+  if (scales.has("superstructure") || scales.has("metropolitan")) return "primary";
+  return "regional";
+}
+
+export function routingDoctrineForFaction(ownerFaction = "") {
+  const owner = String(ownerFaction).toLowerCase();
+  if (owner.includes("xuanjia") || owner.includes("mandate")) return "direct";
+  if (owner.includes("adanian") || owner.includes("conclave")) return "ecological-avoidance";
+  return "least-resistance";
+}
+
+function routingStepCost(cell, next, routingDoctrine) {
+  const reliefPenalty = Math.abs(next.elevationM - cell.elevationM) / 450;
+  const altitudePenalty = Math.max(0, next.elevationM - 1_800) / 4_000;
+  if (routingDoctrine === "direct") {
+    // Mandate corridors privilege geometric directness; terrain remains a weak engineering cost rather than a controlling obstacle.
+    return 1 + reliefPenalty * 0.08 + altitudePenalty * 0.08;
+  }
+  const baseline = 1 + reliefPenalty + altitudePenalty;
+  if (routingDoctrine !== "ecological-avoidance") return baseline;
+  // Conclave corridors preserve natural systems where practical, accepting detours around high-value living terrain and drainage.
+  const biomePenalty = ECOLOGY_ROUTE_PENALTY.get(next.biome) ?? 0;
+  const freshwaterPenalty = next.flowAccumulation > 6 ? 0.9 : next.flowAccumulation > 3 ? 0.35 : 0;
+  const fertilePenalty = ["alluvial-fertile", "volcanic-fertile", "temperate-loam"].includes(next.soil) ? 0.45 : 0;
+  return baseline + biomePenalty + freshwaterPenalty + fertilePenalty;
+}
+
 function classifyLand(cells, grid) {
   const components = new Int32Array(cells.length).fill(-1); let component = 0;
   for (const origin of cells) {
@@ -50,7 +95,7 @@ class MinHeap {
   get length() { return this.items.length; }
 }
 
-function surfacePath(cells, grid, start, goal) {
+function surfacePath(cells, grid, start, goal, routingDoctrine = "least-resistance") {
   const heap = new MinHeap(), costs = new Float64Array(cells.length).fill(Infinity), prior = new Int32Array(cells.length).fill(-1);
   costs[start.id] = 0; heap.push([0, start.id]);
   while (heap.length) {
@@ -59,7 +104,7 @@ function surfacePath(cells, grid, start, goal) {
     if (priority > costs[id] + angularDistance(cell, goal)) continue;
     for (const nextId of neighbors(cell, grid, true)) {
       const next = cells[nextId]; if (next.ocean) continue;
-      const step = 1 + Math.abs(next.elevationM - cell.elevationM) / 450 + Math.max(0, next.elevationM - 1_800) / 4_000;
+      const step = routingStepCost(cell, next, routingDoctrine);
       const cost = costs[id] + step;
       if (cost < costs[nextId]) { costs[nextId] = cost; prior[nextId] = id; heap.push([cost + angularDistance(next, goal) / 2, nextId]); }
     }
@@ -74,18 +119,46 @@ function seaLane(a, b, samples = 20) {
   return Array.from({ length: samples + 1 }, (_, index) => { const t = index / samples; return [Number((a.lat + (b.lat - a.lat) * t).toFixed(3)), Number((a.lon + (targetLon - a.lon) * t).toFixed(3))]; });
 }
 
-export function buildSettlementCartography({ coarse, hydrology, regions, gazetteer, siteCount = 18 }) {
+export function buildSettlementCartography({ coarse, hydrology, regions, gazetteer, ownerFaction = "", siteCount = 18 }) {
   for (const layer of [hydrology, regions, gazetteer]) if (layer.sourceSeed !== coarse.seed || layer.sourceFingerprint !== coarse.inputFingerprint) throw new Error("Cartographic layer does not match the accepted world");
   const cells = regions.cells, grid = { latCount: Math.round(180 / regions.resolutionDeg), lonCount: Math.round(360 / regions.resolutionDeg) }, components = classifyLand(cells, grid);
   const selected = chooseSites(cells, grid, siteCount);
-  const siteFeatures = selected.map((cell, index) => ({ id: `settlement-${index + 1}`, featureClass: index === 0 ? "capital" : (cell.drivers.includes("coastal access") && index % 3 === 0 ? "port" : "city"), kind: index === 0 ? "capital" : "city", role: index === 0 ? "planetary capital" : (cell.drivers.includes("coastal access") && index % 3 === 0 ? "major port city" : index < 6 ? "major city" : "regional city"), lat: cell.lat, lon: cell.lon, at: [cell.lat, cell.lon], cellId: cell.id, landComponent: components[cell.id], suitability: cell.settlementSuitability, drivers: cell.drivers }));
+  const siteFeatures = selected.map((cell, index) => {
+    const role = index === 0 ? "planetary capital" : (cell.drivers.includes("coastal access") && index % 3 === 0 ? "major port city" : index < 6 ? "major city" : "regional city");
+    return {
+      id: `settlement-${index + 1}`,
+      featureClass: index === 0 ? "capital" : (role === "major port city" ? "port" : "city"),
+      kind: index === 0 ? "capital" : "city",
+      role,
+      scaleClass: settlementScaleClass(role, index),
+      lat: cell.lat,
+      lon: cell.lon,
+      at: [cell.lat, cell.lon],
+      cellId: cell.id,
+      landComponent: components[cell.id],
+      suitability: cell.settlementSuitability,
+      drivers: cell.drivers,
+    };
+  });
   const settlements = assignFeatureNames({ system: coarse.system, world: coarse.body, seed: coarse.seed, features: siteFeatures });
   const routeFeatures = [];
+  const routingDoctrine = routingDoctrineForFaction(ownerFaction);
   for (let index = 1; index < settlements.length; index += 1) {
     const destination = settlements[index], origin = settlements.slice(0, index).sort((a, b) => angularDistance(a, destination) - angularDistance(b, destination) || a.id.localeCompare(b.id))[0];
-    const surface = origin.landComponent === destination.landComponent ? surfacePath(cells, grid, cells[origin.cellId], cells[destination.cellId]) : null;
-    routeFeatures.push({ id: `transport-${routeFeatures.length + 1}`, featureClass: "road", kind: surface ? (index < 7 ? "primary surface corridor" : "regional surface corridor") : "sea/air lane", mode: surface ? "surface" : "sea-or-air", from: origin.id, to: destination.id, points: surface ?? seaLane(origin, destination), distanceDeg: Number(angularDistance(origin, destination).toFixed(3)) });
+    const surface = origin.landComponent === destination.landComponent ? surfacePath(cells, grid, cells[origin.cellId], cells[destination.cellId], routingDoctrine) : null;
+    routeFeatures.push({
+      id: `transport-${routeFeatures.length + 1}`,
+      featureClass: "road",
+      kind: surface ? (index < 7 ? "primary surface corridor" : "regional surface corridor") : "sea/air lane",
+      mode: surface ? "surface" : "sea-or-air",
+      from: origin.id,
+      to: destination.id,
+      points: surface ?? seaLane(origin, destination),
+      distanceDeg: Number(angularDistance(origin, destination).toFixed(3)),
+      corridorClass: corridorClass(origin, destination),
+      routingDoctrine: surface ? routingDoctrine : "not-applicable",
+    });
   }
   const routes = assignFeatureNames({ system: coarse.system, world: coarse.body, seed: `${coarse.seed}|transport`, features: routeFeatures });
-  return { schemaVersion: 1, modelVersion: "orphaned-sun-cartography-v1", sourceFingerprint: coarse.inputFingerprint, sourceSeed: coarse.seed, system: coarse.system, body: coarse.body, settlements, routes };
+  return { schemaVersion: 1, modelVersion: "orphaned-sun-cartography-v1", sourceFingerprint: coarse.inputFingerprint, sourceSeed: coarse.seed, system: coarse.system, body: coarse.body, ownerFaction, routingDoctrine, settlements, routes };
 }

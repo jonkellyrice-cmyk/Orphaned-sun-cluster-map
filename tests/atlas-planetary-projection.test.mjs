@@ -30,6 +30,16 @@ test("planetary atlas raster is north-up while materialized grid remains south-t
   const world = {
     system: "Test",
     body: "Orientation",
+    ownerFaction: "Test Faction",
+    civilizationProfile: {
+      ownerFaction: "Test Faction",
+      settlementPattern: "test settlement pattern",
+      dominantSettlementPattern: "test dominant pattern",
+      majorPopulationCorridors: "test population corridors",
+      urbanConcentration: "test concentration",
+      majorCityCountBand: "0",
+      likelyTransportGeography: "test transport geography",
+    },
     sourceFingerprint: "orientation-test",
     status: "test",
     grid: { latCount: 2, lonCount: 1 },

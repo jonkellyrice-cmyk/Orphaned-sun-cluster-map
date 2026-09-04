@@ -5,16 +5,20 @@ import { buildRefinedHydrology, buildRefinedTerrain } from "../scripts/planet-ca
 import { buildCartographicRegions } from "../scripts/cartography-regions.mjs";
 import { buildNamedGeography } from "../scripts/cartography-names.mjs";
 import { buildSettlementCartography } from "../scripts/cartography-settlements.mjs";
+import { parseCsv } from "../scripts/system-data.mjs";
 
 const root = new URL("../", import.meta.url);
 const manifest = JSON.parse(readFileSync(new URL("data/planet-geography/manifest.json", root), "utf8"));
+const registry = parseCsv(readFileSync(new URL("docs/system-orbital-distances.csv", root), "utf8"));
+const ownerByWorld = new Map(registry.map((row) => [`${row.system}\u0000${row.object}`, row.owner_faction]));
 const load = (body) => JSON.parse(readFileSync(new URL(manifest.worlds.find((world) => world.body === body).path, root), "utf8"));
 const cache = new Map();
 function build(body) {
   if (cache.has(body)) return cache.get(body);
   const coarse = load(body), terrain = buildRefinedTerrain(coarse), hydrology = buildRefinedHydrology(coarse, terrain), regions = buildCartographicRegions(coarse, hydrology), gazetteer = buildNamedGeography({ coarse, terrain, hydrology, regions });
-  const civilization = buildSettlementCartography({ coarse, hydrology, regions, gazetteer });
-  const result = { coarse, hydrology, regions, gazetteer, civilization }; cache.set(body, result); return result;
+  const ownerFaction = ownerByWorld.get(`${coarse.system}\u0000${coarse.body}`) ?? "";
+  const civilization = buildSettlementCartography({ coarse, hydrology, regions, gazetteer, ownerFaction });
+  const result = { coarse, hydrology, regions, gazetteer, ownerFaction, civilization }; cache.set(body, result); return result;
 }
 
 test("civilization geometry is deterministic, provenance-bound and complete", () => {
@@ -59,4 +63,24 @@ test("capital placement follows suitability and recorded geographic drivers", ()
   const median = civilization.settlements.map((site) => site.suitability).sort((a, b) => a - b)[Math.floor(civilization.settlements.length / 2)];
   assert.ok(capital.suitability >= median);
   assert.ok(capital.drivers.some((driver) => ["coastal access", "river/freshwater access", "strategic resources", "fertile soils"].includes(driver)));
+});
+
+
+test("settlements expose deterministic built-environment scale classes", () => {
+  const { civilization } = build("Jinyara");
+  const capital = civilization.settlements.find((site) => site.kind === "capital");
+  assert.equal(capital.scaleClass, "superstructure");
+  assert.ok(civilization.settlements.filter((site) => ["major city", "major port city"].includes(site.role)).every((site) => site.scaleClass === "superstructure"));
+  assert.ok(civilization.settlements.some((site) => site.scaleClass === "metropolitan"));
+  assert.ok(civilization.settlements.some((site) => site.scaleClass === "regional"));
+  assert.ok(civilization.routes.every((route) => ["trunk", "primary", "regional"].includes(route.corridorClass)));
+});
+
+test("surface routes carry faction-specific routing doctrine", () => {
+  const mandate = build("Jinyara").civilization.routes.filter((route) => route.mode === "surface");
+  const conclave = build("Thessaron").civilization.routes.filter((route) => route.mode === "surface");
+  const accords = build("Kilmorov").civilization.routes.filter((route) => route.mode === "surface");
+  assert.ok(mandate.length && mandate.every((route) => route.routingDoctrine === "direct"));
+  assert.ok(conclave.length && conclave.every((route) => route.routingDoctrine === "ecological-avoidance"));
+  assert.ok(accords.length && accords.every((route) => route.routingDoctrine === "least-resistance"));
 });
