@@ -22,6 +22,8 @@ jobs:
           node-version: 22
       - name: Repair migration bootstrap
         run: node tools/phase-2-bootstrap-fix.mjs
+      - name: Repair quality-pass bootstrap
+        run: node tools/phase-2-quality-bootstrap-fix.mjs
       - name: Tighten conservative inference and budgets
         run: node tools/phase-2-quality-fix.mjs
       - name: Apply and validate Phase 2
