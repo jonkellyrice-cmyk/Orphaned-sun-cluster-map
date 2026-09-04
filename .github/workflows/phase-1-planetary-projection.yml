@@ -20,8 +20,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
       - name: Apply and validate Phase 1
         run: node tools/generated-maps-phase-1-planetary-projection.mjs
       - name: Commit deterministic migration output
