@@ -6,6 +6,7 @@ on:
       - feature/planetary-civilization-scale-metadata
     paths:
       - "tools/planetary-civilization-scale-metadata-v1.mjs"
+      - "tools/patch-planetary-civilization-test-fixture.mjs"
       - ".github/workflows/planetary-civilization-metadata-audit.yml"
 
 permissions:
@@ -25,17 +26,22 @@ jobs:
         run: |
           node --check tools/audit-planetary-civilization-metadata.mjs
           node --check tools/planetary-civilization-scale-metadata-v1.mjs
+          node --check tools/patch-planetary-civilization-test-fixture.mjs
       - name: Record baseline audit
         run: node tools/audit-planetary-civilization-metadata.mjs
+      - name: Update synthetic atlas fixture to the enriched schema
+        run: node tools/patch-planetary-civilization-test-fixture.mjs --apply
       - name: Apply bounded civilization metadata migration
         run: node tools/planetary-civilization-scale-metadata-v1.mjs --apply
       - name: Verify migration idempotence
-        run: node tools/planetary-civilization-scale-metadata-v1.mjs --check
+        run: |
+          node tools/patch-planetary-civilization-test-fixture.mjs --check
+          node tools/planetary-civilization-scale-metadata-v1.mjs --check
       - name: Verify patch hygiene
         run: |
           git diff --check
           rm -rf artifacts
-          unexpected="$(git status --porcelain | awk '{print $2}' | grep -Ev '^(scripts/cartography-settlements\.mjs|scripts/atlas-snapshot\.mjs|tools/generate-planet-cartography\.mjs|tools/validate-planet-cartography\.mjs|tools/audit-planetary-civilization-metadata\.mjs|tests/cartography-settlements\.test\.mjs|data/planet-cartography/.*\.json|exports/generated-maps\.bundle\.json|exports/generated-maps\.manifest\.json)$' || true)"
+          unexpected="$(git status --porcelain | awk '{print $2}' | grep -Ev '^(scripts/cartography-settlements\.mjs|scripts/atlas-snapshot\.mjs|tools/generate-planet-cartography\.mjs|tools/validate-planet-cartography\.mjs|tools/audit-planetary-civilization-metadata\.mjs|tests/cartography-settlements\.test\.mjs|tests/atlas-planetary-projection\.test\.mjs|data/planet-cartography/.*\.json|exports/generated-maps\.bundle\.json|exports/generated-maps\.manifest\.json)$' || true)"
           if [ -n "$unexpected" ]; then
             echo "Unexpected changed paths:"
             echo "$unexpected"
@@ -61,6 +67,7 @@ jobs:
             tools/validate-planet-cartography.mjs \
             tools/audit-planetary-civilization-metadata.mjs \
             tests/cartography-settlements.test.mjs \
+            tests/atlas-planetary-projection.test.mjs \
             data/planet-cartography \
             exports/generated-maps.bundle.json \
             exports/generated-maps.manifest.json
