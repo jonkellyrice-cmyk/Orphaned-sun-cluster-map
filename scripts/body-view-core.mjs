@@ -1,6 +1,8 @@
 const SVG_NS = "http://www.w3.org/2000/svg";
 import { buildBodyLayers } from "./body-layers.mjs";
 import { projectGeoPath, selectCartographyLabels } from "./body-cartography.mjs";
+import { renderSuperstructureAtlas } from "./superstructure-atlas-visuals.mjs";
+import { factionFamilyFor, superstructureProfile, SUPERSTRUCTURE_MODEL_VERSION } from "./superstructure-identities.mjs";
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 const svg = (name, attrs = {}) => {
   const node = document.createElementNS(SVG_NS, name);
@@ -21,6 +23,19 @@ function seededPoints(model, count, salt = "detail") {
     lon: -180 + hashUnit(`${identity}/lon/${index}`) * 360,
     size: .55 + hashUnit(`${identity}/size/${index}`) * 1.15,
   }));
+}
+
+export function liveSuperstructureIdentity(model) {
+  const profile = superstructureProfile(model?.system, model?.body);
+  if (!profile) return null;
+  return {
+    ...profile,
+    modelVersion: SUPERSTRUCTURE_MODEL_VERSION,
+    factionFamily: factionFamilyFor({
+      system: model?.system,
+      owner_faction: model?.ownerFaction ?? model?.owner_faction ?? "",
+    }),
+  };
 }
 
 export function schematicVisualProfile(model) {
@@ -193,6 +208,23 @@ export class BodyView {
     if (/gold|amber|ochre/.test(palette)) this.structure.classList.add("palette-gold");
     if (/red|crimson/.test(palette)) this.structure.classList.add("palette-red");
     if (/jade|green|viridian/.test(palette)) this.structure.classList.add("palette-jade");
+
+    const superstructure = liveSuperstructureIdentity(this.model);
+    if (superstructure) {
+      this.structure.classList.add("is-superstructure-parity");
+      this.structure.setAttribute("data-superstructure-family", superstructure.silhouetteFamily);
+      this.structure.insertAdjacentHTML(
+        "beforeend",
+        renderSuperstructureAtlas(
+          superstructure,
+          { x: -340, y: -260, width: 680, height: 520 },
+          { includeSectionalBand: false },
+        ),
+      );
+      this.#buildDockingNodes();
+      return;
+    }
+
     if (profile.renderer === "shipyard") this.#buildShipyard();
     else if (profile.renderer === "vessel") this.#buildVessel();
     else if (profile.renderer === "fleet") this.#buildFleet();

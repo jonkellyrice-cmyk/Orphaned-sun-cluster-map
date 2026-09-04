@@ -149,7 +149,7 @@ function sectionalBand(identity, frame, p) {
   return `<g data-section-logic="true"><text x="${x}" y="${y-12}" fill="#b8d6df" font-family="monospace" font-size="16" font-weight="700">STRUCTURAL ZONING — RELATIONSHIP GUIDE, NOT DECK PLAN</text>${zones.map((z,i)=>`<g><rect x="${x+i*each}" y="${y}" width="${each-3}" height="${h}" fill="${i%3===0?p.dark:i%3===1?p.hull:p.accent}" opacity="${i%3===2?.42:.62}" stroke="${p.edge}" stroke-width="2"/><text x="${x+i*each+8}" y="${y+h*.52}" fill="#edf4f5" font-family="monospace" font-size="12">${xml(z.length>20?z.slice(0,18)+"…":z)}</text></g>`).join("")}</g>`;
 }
 
-export function renderSuperstructureAtlas(identity, frame) {
+export function renderSuperstructureAtlas(identity, frame, { includeSectionalBand = true } = {}) {
   if(!identity) return "";
   const p=factionPalette(identity), family=identity.silhouetteFamily;
   let silhouette="";
@@ -180,7 +180,7 @@ export function renderSuperstructureAtlas(identity, frame) {
   else if(family==="mandate-distributed-range") silhouette=distributed(identity,frame,p,"range");
   else if(family==="accord-long-tether") silhouette=tether(identity,frame,p);
   else silhouette=accretiveCity(identity,frame,p);
-  return `<g data-superstructure="${xml(identity.system)}/${xml(identity.body)}" data-superstructure-family="${xml(family)}" data-superstructure-scale="city-scale-or-larger">${silhouette}${sectionalBand(identity,frame,p)}</g>`;
+  return `<g data-superstructure="${xml(identity.system)}/${xml(identity.body)}" data-superstructure-family="${xml(family)}" data-superstructure-scale="city-scale-or-larger">${silhouette}${includeSectionalBand ? sectionalBand(identity,frame,p) : ""}</g>`;
 }
 
 export function superstructureProfileLines(identity) {

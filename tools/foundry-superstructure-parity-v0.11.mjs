@@ -27,42 +27,42 @@ function replaceOnce(key, oldText, newText) {
 
 let sourceChanged = false;
 
-sourceChanged ||= replaceOnce(
+sourceChanged = replaceOnce(
   "core",
   'import { projectGeoPath, selectCartographyLabels } from "./body-cartography.mjs";\n',
   'import { projectGeoPath, selectCartographyLabels } from "./body-cartography.mjs";\nimport { renderSuperstructureAtlas } from "./superstructure-atlas-visuals.mjs";\nimport { factionFamilyFor, superstructureProfile, SUPERSTRUCTURE_MODEL_VERSION } from "./superstructure-identities.mjs";\n',
 );
 
-sourceChanged ||= replaceOnce(
+sourceChanged = replaceOnce(
   "core",
   'export function schematicVisualProfile(model) {\n',
   `export function liveSuperstructureIdentity(model) {\n  const profile = superstructureProfile(model?.system, model?.body);\n  if (!profile) return null;\n  return {\n    ...profile,\n    modelVersion: SUPERSTRUCTURE_MODEL_VERSION,\n    factionFamily: factionFamilyFor({\n      system: model?.system,\n      owner_faction: model?.ownerFaction ?? model?.owner_faction ?? "",\n    }),\n  };\n}\n\nexport function schematicVisualProfile(model) {\n`,
 );
 
-sourceChanged ||= replaceOnce(
+sourceChanged = replaceOnce(
   "core",
   `    if (/jade|green|viridian/.test(palette)) this.structure.classList.add("palette-jade");\n    if (profile.renderer === "shipyard") this.#buildShipyard();\n`,
   `    if (/jade|green|viridian/.test(palette)) this.structure.classList.add("palette-jade");\n\n    const superstructure = liveSuperstructureIdentity(this.model);\n    if (superstructure) {\n      this.structure.classList.add("is-superstructure-parity");\n      this.structure.setAttribute("data-superstructure-family", superstructure.silhouetteFamily);\n      this.structure.insertAdjacentHTML(\n        "beforeend",\n        renderSuperstructureAtlas(\n          superstructure,\n          { x: -340, y: -260, width: 680, height: 520 },\n          { includeSectionalBand: false },\n        ),\n      );\n      this.#buildDockingNodes();\n      return;\n    }\n\n    if (profile.renderer === "shipyard") this.#buildShipyard();\n`,
 );
 
-sourceChanged ||= replaceOnce(
+sourceChanged = replaceOnce(
   "atlas",
   'export function renderSuperstructureAtlas(identity, frame) {\n',
   'export function renderSuperstructureAtlas(identity, frame, { includeSectionalBand = true } = {}) {\n',
 );
-sourceChanged ||= replaceOnce(
+sourceChanged = replaceOnce(
   "atlas",
   '  return `<g data-superstructure="${xml(identity.system)}/${xml(identity.body)}" data-superstructure-family="${xml(family)}" data-superstructure-scale="city-scale-or-larger">${silhouette}${sectionalBand(identity,frame,p)}</g>`;\n',
   '  return `<g data-superstructure="${xml(identity.system)}/${xml(identity.body)}" data-superstructure-family="${xml(family)}" data-superstructure-scale="city-scale-or-larger">${silhouette}${includeSectionalBand ? sectionalBand(identity,frame,p) : ""}</g>`;\n',
 );
 
-sourceChanged ||= replaceOnce(
+sourceChanged = replaceOnce(
   "wrapper",
   'export { schematicVisualProfile, orthographicProject, bodyVisualContract } from "../scripts/body-view-core.mjs";\n',
   'export { schematicVisualProfile, orthographicProject, bodyVisualContract, liveSuperstructureIdentity } from "../scripts/body-view-core.mjs";\n',
 );
 
-sourceChanged ||= replaceOnce(
+sourceChanged = replaceOnce(
   "bodyTest",
   'import { bodyVisualContract, orthographicProject, projectOperationAnchor, schematicVisualProfile } from "../scripts/body-view.mjs";\n',
   'import { bodyVisualContract, liveSuperstructureIdentity, orthographicProject, projectOperationAnchor, schematicVisualProfile } from "../scripts/body-view.mjs";\nimport { renderSuperstructureAtlas } from "../scripts/superstructure-atlas-visuals.mjs";\nimport { SUPERSTRUCTURE_KEYS } from "../scripts/superstructure-identities.mjs";\n',
@@ -90,13 +90,13 @@ if (manifest.version !== TARGET_VERSION || manifest.download !== TARGET_DOWNLOAD
   sourceChanged = true;
 }
 
-sourceChanged ||= replaceOnce(
+sourceChanged = replaceOnce(
   "releaseTest",
   'test("Foundry and package versions agree on the v0.10.0 release archive", () => {',
   'test("Foundry and package versions agree on the v0.11.0 release archive", () => {',
 );
-sourceChanged ||= replaceOnce("releaseTest", '  assert.equal(manifest.version, "0.10.0");', '  assert.equal(manifest.version, "0.11.0");');
-sourceChanged ||= replaceOnce(
+sourceChanged = replaceOnce("releaseTest", '  assert.equal(manifest.version, "0.10.0");', '  assert.equal(manifest.version, "0.11.0");');
+sourceChanged = replaceOnce(
   "releaseTest",
   '  assert.match(manifest.download, /v0\\.10\\.0\\/orphaned-sun-cluster-map-v0\\.10\\.0\\.zip$/);',
   '  assert.match(manifest.download, /v0\\.11\\.0\\/orphaned-sun-cluster-map-v0\\.11\\.0\\.zip$/);',
