@@ -76,7 +76,7 @@ export function snapshotOperationalRich(asset, model, sourcePath, sourceText) {
   const subtitle = natural
     ? `${asset.system} system // ${asset.operationalKind === "giant" ? "atmospheric" : "surface"} survey chart`
     : identity
-      ? `${asset.system} system // city-scale superstructure identity / operational plate`
+      ? `${asset.system} system // city-scale superstructure identity // structural / operational plate`
       : `${asset.system} system // ${asset.operationalKind} structural / operational plate`;
   return {
     id: `${slug(asset.system)}--${slug(asset.body)}`,
