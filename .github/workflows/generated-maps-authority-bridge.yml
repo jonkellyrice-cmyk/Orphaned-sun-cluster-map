@@ -1,0 +1,34 @@
+name: Generated Maps authority bridge validation
+
+on:
+  push:
+    branches: [generated-maps-authority-bridge]
+
+jobs:
+  validate-and-regenerate:
+    if: ${{ !contains(github.event.head_commit.message, '[generated-maps-autogen]') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test before regeneration
+        run: npm test
+      - name: Regenerate authoritative atlas bundle
+        run: npm run atlas:snapshot
+      - name: Commit deterministic exports
+        run: |
+          if ! git diff --quiet -- exports/generated-maps.bundle.json exports/generated-maps.manifest.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add exports/generated-maps.bundle.json exports/generated-maps.manifest.json
+            git commit -m "[generated-maps-autogen] Regenerate authoritative Generated Maps bundle"
+            git push
+          fi
+      - name: Verify deterministic export
+        run: npm run atlas:snapshot:check
+      - name: Validate body operations
+        run: npm run body-operations:validate
