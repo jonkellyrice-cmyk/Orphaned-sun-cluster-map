@@ -1,5 +1,6 @@
 name: Superstructure packet style normalization
 
+# Second execution marker: prove the permanent migration is idempotent after the generated authority commit.
 on:
   push:
     branches:
