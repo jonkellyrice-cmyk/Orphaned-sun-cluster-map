@@ -1,4 +1,5 @@
 import { classifySystemObject } from "./system-data.mjs";
+import { buildSuperstructureIdentity } from "./superstructure-identities.mjs";
 
 export function artificialBodyKind(row) {
   const objectClass = classifySystemObject(row.type);
@@ -30,16 +31,17 @@ export function operationalApproachGeometry(asset, fallbackKind) {
 export function buildArtificialBodyModel(row, operations = null) {
   const kind = artificialBodyKind(row);
   if (!kind) throw new TypeError(`${row.object} is not an artificial or anomalous body`);
+  const superstructure = buildSuperstructureIdentity(row, operations);
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     system: row.system,
     body: row.object,
     kind,
-    dimensions: row.dimensions_estimate || "schematic; exact dimensions unestablished",
+    dimensions: superstructure?.effectiveDimensions ?? row.dimensions_estimate || "schematic; exact dimensions unestablished",
     structureClass: row.structure_class || row.type,
-    visualArchetype: row.visual_archetype || kind,
+    visualArchetype: superstructure?.silhouetteFamily ?? row.visual_archetype || kind,
     palette: row.visual_palette || "campaign interface neutral",
-    population: row.population_crew_scale || "operational population unspecified",
+    population: superstructure?.populationBand ?? row.population_crew_scale || "operational population unspecified",
     gravity: row.artificial_gravity || "varies by occupied section",
     power: row.power_axiolith || "canonical infrastructure power",
     mobility: row.mobility || "fixed reference-epoch position",
@@ -47,6 +49,7 @@ export function buildArtificialBodyModel(row, operations = null) {
     strategicRole: row.strategic_role || row.resource_value || "local operations",
     approach: operationalApproachGeometry(operations, kind),
     operationsSource: operations ? `${operations.operationalModelVersion}/${operations.permanentOperationalSeed}` : "schematic fallback",
+    superstructure,
   };
 }
 
