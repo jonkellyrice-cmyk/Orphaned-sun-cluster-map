@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
 
+# Temporary branch-only runner. This push is the required second execution / idempotence proof.
 jobs:
   migrate:
     if: github.actor != 'github-actions[bot]'
