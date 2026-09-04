@@ -1,0 +1,36 @@
+name: Planetary Civilization Metadata Audit
+
+on:
+  push:
+    branches:
+      - feature/planetary-civilization-scale-metadata
+    paths:
+      - "tools/audit-planetary-civilization-metadata.mjs"
+      - ".github/workflows/planetary-civilization-metadata-audit.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/planetary-civilization-scale-metadata
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Validate audit script syntax
+        run: node --check tools/audit-planetary-civilization-metadata.mjs
+      - name: Audit planetary civilization metadata
+        run: node tools/audit-planetary-civilization-metadata.mjs
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: planetary-civilization-metadata-audit
+          path: artifacts/planetary-civilization-metadata-audit.json
+          if-no-files-found: error
