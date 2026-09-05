@@ -6,6 +6,9 @@ on:
       - feature/jinyara-surface-art-registration
     paths:
       - "tools/register-jinyara-surface-art-v1.py"
+      - "tests/jinyara-surface-art-intake.test.mjs"
+      - "tests/surface-art-registration.test.mjs"
+      - "tests/release-package.test.mjs"
       - ".github/workflows/jinyara-surface-art-registration-authoring.yml"
 
 permissions:
@@ -74,4 +77,6 @@ jobs:
             data/surface-art/registration-reports/thebes/jinyara.json
           git diff --cached --quiet && { echo "No registration artifacts to commit."; exit 0; }
           git commit -m "feat: register and bake Jinyara surface art"
+          git fetch origin feature/jinyara-surface-art-registration
+          git rebase origin/feature/jinyara-surface-art-registration
           git push origin HEAD:feature/jinyara-surface-art-registration
