@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "artifactKind": "surface-art-intake",
   "contractId": "orphaned-sun.surface-art-registration.v1",
-  "stage": "anchor-candidate-intake",
+  "stage": "registered-and-promoted",
   "system": "Thebes",
   "body": "Jinyara",
   "canonical": {
@@ -26,12 +26,12 @@
     "attachmentId": "cb4fdeae-019c-4d5e-b651-2229c4622080",
     "filename": "image.png",
     "contentType": "image/png",
-    "bytes": 3829195,
+    "bytes": 3831433,
     "width": 1774,
     "height": 887,
     "aspectRatio": "2:1",
-    "sha256": null,
-    "checksumStatus": "pending-secure-byte-acquisition",
+    "sha256": "65efc7f9ffdd6bee7f15dfe36ee5f1bc2d5e994a09d86f80a73ae57ee2e83b38",
+    "checksumStatus": "verified-exact-source-bytes",
     "logicalRef": "lancer-gm-kit://orphaned-sun-generated-maps/generated-map-375d0440032e4c3c4480/cb4fdeae-019c-4d5e-b651-2229c4622080",
     "authoringStorage": {
       "provider": "supabase-private-storage",
@@ -45,7 +45,9 @@
     "contentType": "image/webp",
     "projection": "equirectangular",
     "aspectRatio": "2:1",
-    "status": "not-baked"
+    "status": "baked-and-promoted",
+    "sha256": "0234a0e93e029119a84815ee3ebd25fa81d00f08b58fdd78ffb7ac78a0cf6d7e",
+    "bytes": 390622
   },
   "anchorPolicy": {
     "pool": "all settlements + named continents/islands/lakes/ranges/mountains + river endpoints + route midpoints",
@@ -210,10 +212,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.58272126,
+        "v": 0.28410408,
+        "tolerancePixels": 4.77,
+        "matchScore": 0.880869
       }
     },
     {
@@ -260,10 +264,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.29813646,
+        "v": 0.28861367,
+        "tolerancePixels": 6.21,
+        "matchScore": 0.84468
       }
     },
     {
@@ -285,10 +291,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.39525667,
+        "v": 0.22096984,
+        "tolerancePixels": 5.34,
+        "matchScore": 0.866576
       }
     },
     {
@@ -310,10 +318,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.88085771,
+        "v": 0.28861367,
+        "tolerancePixels": 4.22,
+        "matchScore": 0.894442
       }
     },
     {
@@ -335,10 +345,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.52851463,
+        "v": 0.35174791,
+        "tolerancePixels": 3.0,
+        "matchScore": 0.925575
       }
     },
     {
@@ -385,10 +397,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.36815335,
+        "v": 0.31116161,
+        "tolerancePixels": 6.37,
+        "matchScore": 0.840647
       }
     },
     {
@@ -435,10 +449,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.85601301,
+        "v": 0.37880544,
+        "tolerancePixels": 5.74,
+        "matchScore": 0.8564
       }
     },
     {
@@ -460,10 +476,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.1897232,
+        "v": 0.14430684,
+        "tolerancePixels": 4.61,
+        "matchScore": 0.884817
       }
     },
     {
@@ -485,10 +503,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.25296427,
+        "v": 0.44193968,
+        "tolerancePixels": 6.32,
+        "matchScore": 0.842069
       }
     },
     {
@@ -510,10 +530,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.43365303,
+        "v": 0.56369857,
+        "tolerancePixels": 3.58,
+        "matchScore": 0.910588
       }
     },
     {
@@ -585,10 +607,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.89440937,
+        "v": 0.25253696,
+        "tolerancePixels": 4.23,
+        "matchScore": 0.894258
       }
     },
     {
@@ -610,10 +634,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.47204939,
+        "v": 0.34272873,
+        "tolerancePixels": 4.77,
+        "matchScore": 0.880711
       }
     },
     {
@@ -685,10 +711,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.60304874,
+        "v": 0.25704655,
+        "tolerancePixels": 5.37,
+        "matchScore": 0.86569
       }
     },
     {
@@ -710,10 +738,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.3320156,
+        "v": 0.18940272,
+        "tolerancePixels": 6.76,
+        "matchScore": 0.830932
       }
     },
     {
@@ -885,10 +915,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.74082392,
+        "v": 0.35174791,
+        "tolerancePixels": 3.62,
+        "matchScore": 0.909472
       }
     },
     {
@@ -960,10 +992,12 @@
         "wrapU": null
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.74534114,
+        "v": 0.33370956,
+        "tolerancePixels": 3.4,
+        "matchScore": 0.915086
       }
     },
     {
@@ -1185,10 +1219,12 @@
         "wrapU": -0.025
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.94184017,
+        "v": 0.22096984,
+        "tolerancePixels": 6.74,
+        "matchScore": 0.831387
       }
     },
     {
@@ -1335,23 +1371,20 @@
         "wrapU": -0.04166667
       },
       "sourceObservation": {
-        "status": "pending",
-        "u": null,
-        "v": null,
-        "tolerancePixels": null
+        "status": "measured",
+        "method": "local-land-water-shape-correlation",
+        "u": 0.91247824,
+        "v": 0.12626848,
+        "tolerancePixels": 3.0,
+        "matchScore": 0.956036
       }
     }
   ],
   "registrationReadiness": {
-    "sourceLinked": false,
-    "registered": false,
-    "promoted": false,
-    "blockers": [
-      "Compute SHA-256 from the exact private GM Kit attachment bytes via an authenticated authoring-time promotion read.",
-      "Measure source-image UV positions for the selected semantic anchors and record tolerances.",
-      "Solve and validate the seam-aware registration transform.",
-      "Bake and checksum the repository-local WebP runtime derivative."
-    ]
+    "sourceLinked": true,
+    "registered": true,
+    "promoted": true,
+    "blockers": []
   },
   "invariants": [
     "Canonical cartography remains authoritative and unmodified.",
@@ -1359,5 +1392,6 @@
     "Expected source pixels are initial equirectangular guesses, not observed correspondence points.",
     "No source SHA-256 is invented from storage metadata or ETag values.",
     "No runtime surface-art manifest entry is created until the v1 contract can validate it."
-  ]
+  ],
+  "registrationReportPath": "data/surface-art/registration-reports/thebes/jinyara.json"
 }
