@@ -4,9 +4,9 @@ import { readFileSync } from "node:fs";
 
 const root = new URL("../", import.meta.url);
 
-test("release workflow packages runtime geography, cartography, operational, and astronomy assets", () => {
+test("release workflow packages runtime geography, cartography, operational, astronomy, and promoted surface-art assets", () => {
   const workflow = readFileSync(new URL(".github/workflows/release.yml", root), "utf8");
-  assert.match(workflow, /module\.json scripts templates styles lang README\.md docs data/);
+  assert.match(workflow, /module\.json scripts templates styles lang README\.md docs data assets/);
   for (const required of [
     "data/planet-geography/manifest.json",
     "data/planet-geography/sais/nalini.json",
@@ -19,6 +19,8 @@ test("release workflow packages runtime geography, cartography, operational, and
     "data/body-operations/amarna/akhetan.json",
     "data/body-operations/seti/arrowfall-range.json",
     "data/astronomy/epoch-orientations.json",
+    "data/surface-art/manifest.json",
+    "assets/body-textures/thebes/jinyara.webp",
   ]) assert.match(workflow, new RegExp(required.replace(/[./-]/g, "\\$&")));
   assert.match(workflow, /npm run astronomy:validate && npm run astronomy:check/);
 });
