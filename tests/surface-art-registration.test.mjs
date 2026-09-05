@@ -53,10 +53,11 @@ const registration = {
   ],
 };
 
-test("surface-art manifest starts empty and enforces the v1 authority contract", () => {
+test("surface-art manifest enforces the v1 authority contract for zero or more promoted entries", () => {
   const manifest = JSON.parse(fs.readFileSync("data/surface-art/manifest.json", "utf8"));
   assert.equal(validateSurfaceArtManifest(manifest), manifest);
-  assert.equal(manifest.entries.length, 0);
+  assert(Array.isArray(manifest.entries));
+  assert(manifest.entries.every((entry) => entry.stage === "promoted"));
 });
 
 test("surface-art body identity and canonical path are deterministic", () => {
