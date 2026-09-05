@@ -3,5 +3,440 @@
   "contractId": "orphaned-sun.surface-art-registration.v1",
   "authority": "jonkellyrice-cmyk/Orphaned-sun-cluster-map",
   "runtimePolicy": "repository-local-promoted-assets-only",
-  "entries": []
+  "entries": [
+    {
+      "schemaVersion": 1,
+      "contractId": "orphaned-sun.surface-art-registration.v1",
+      "id": "thebes--jinyara",
+      "stage": "promoted",
+      "system": "Thebes",
+      "body": "Jinyara",
+      "canonical": {
+        "cartographyPath": "data/planet-cartography/thebes/jinyara.json",
+        "sourceSha256": "5d5347e444e9d86cbe162a4340b9cfb1be3e1a5f25cde46e2c3d98de7f9f1b19",
+        "sourceFingerprint": "375d0440032e4c3c4480",
+        "projection": "equirectangular"
+      },
+      "sourceArtwork": {
+        "authority": "lancer-gm-kit",
+        "repository": "jonkellyrice-cmyk/Lancer-GM-Kit",
+        "logicalRef": "lancer-gm-kit://orphaned-sun-generated-maps/generated-map-375d0440032e4c3c4480/cb4fdeae-019c-4d5e-b651-2229c4622080",
+        "sha256": "65efc7f9ffdd6bee7f15dfe36ee5f1bc2d5e994a09d86f80a73ae57ee2e83b38",
+        "mimeType": "image/png",
+        "widthPx": 1774,
+        "heightPx": 887
+      },
+      "targetProjection": {
+        "type": "equirectangular",
+        "widthToHeightRatio": 2,
+        "latitudeDomainDeg": "[-90,90]",
+        "longitudeDomainDeg": "[-180,180)",
+        "northUp": true,
+        "eastRight": true,
+        "primeMeridianDeg": 0,
+        "seamLongitudeDeg": 180,
+        "seamPolicy": "wrap-longitude",
+        "uvConvention": "u=(wrap(lon)+180)/360; v=(90-lat)/180"
+      },
+      "registration": {
+        "method": "seam-aware-anchor-warp",
+        "algorithmVersion": 1,
+        "seamPolicy": "wrap-longitude",
+        "deformationPolicy": "anchor-weighted-low-information-sinks",
+        "anchors": [
+          {
+            "id": "river:42:endpoint-a",
+            "featureRef": "river-42",
+            "featureClass": "river-endpoint",
+            "tier": "soft",
+            "weight": 0.45,
+            "canonical": {
+              "latDeg": 69,
+              "lonDeg": 165
+            },
+            "sourceUv": {
+              "u": 0.91247824,
+              "v": 0.12626848
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.956036,
+              "confidence": 0.008884
+            }
+          },
+          {
+            "id": "settlement:7",
+            "featureRef": "settlement-7",
+            "featureClass": "settlement",
+            "tier": "hard",
+            "weight": 1.0,
+            "canonical": {
+              "latDeg": 27,
+              "lonDeg": 29
+            },
+            "sourceUv": {
+              "u": 0.52851463,
+              "v": 0.35174791
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.925575,
+              "confidence": 0.031757
+            }
+          },
+          {
+            "id": "route:1:midpoint",
+            "featureRef": "transport-1",
+            "featureClass": "transport-corridor-midpoint",
+            "tier": "soft",
+            "weight": 0.45,
+            "canonical": {
+              "latDeg": 31,
+              "lonDeg": 107
+            },
+            "sourceUv": {
+              "u": 0.74534114,
+              "v": 0.33370956
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.915086,
+              "confidence": 0.023515
+            }
+          },
+          {
+            "id": "settlement:14",
+            "featureRef": "settlement-14",
+            "featureClass": "settlement",
+            "tier": "hard",
+            "weight": 1.0,
+            "canonical": {
+              "latDeg": -15,
+              "lonDeg": -7
+            },
+            "sourceUv": {
+              "u": 0.43365303,
+              "v": 0.56369857
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.910588,
+              "confidence": 0.021242
+            }
+          },
+          {
+            "id": "gazetteer:summit-1",
+            "featureRef": "summit-1",
+            "featureClass": "mountain",
+            "tier": "strong",
+            "weight": 0.72,
+            "canonical": {
+              "latDeg": 27,
+              "lonDeg": 105
+            },
+            "sourceUv": {
+              "u": 0.74082392,
+              "v": 0.35174791
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.909472,
+              "confidence": 0.024603
+            }
+          },
+          {
+            "id": "settlement:6",
+            "featureRef": "settlement-6",
+            "featureClass": "settlement",
+            "tier": "hard",
+            "weight": 1.0,
+            "canonical": {
+              "latDeg": 39,
+              "lonDeg": 151
+            },
+            "sourceUv": {
+              "u": 0.88085771,
+              "v": 0.28861367
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.894442,
+              "confidence": 0.012127
+            }
+          },
+          {
+            "id": "settlement:18",
+            "featureRef": "settlement-18",
+            "featureClass": "settlement",
+            "tier": "hard",
+            "weight": 1.0,
+            "canonical": {
+              "latDeg": 47,
+              "lonDeg": 155
+            },
+            "sourceUv": {
+              "u": 0.89440937,
+              "v": 0.25253696
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.894258,
+              "confidence": 0.023528
+            }
+          },
+          {
+            "id": "gazetteer:coast-11",
+            "featureRef": "coast-11",
+            "featureClass": "continent",
+            "tier": "strong",
+            "weight": 0.72,
+            "canonical": {
+              "latDeg": 69.168,
+              "lonDeg": -97.53300000000002
+            },
+            "sourceUv": {
+              "u": 0.1897232,
+              "v": 0.14430684
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.884817,
+              "confidence": 0.031915
+            }
+          },
+          {
+            "id": "settlement:2",
+            "featureRef": "settlement-2",
+            "featureClass": "settlement",
+            "tier": "hard",
+            "weight": 1.0,
+            "canonical": {
+              "latDeg": 43,
+              "lonDeg": 45
+            },
+            "sourceUv": {
+              "u": 0.58272126,
+              "v": 0.28410408
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.880869,
+              "confidence": 0.032954
+            }
+          },
+          {
+            "id": "gazetteer:coast-10",
+            "featureRef": "coast-10",
+            "featureClass": "island",
+            "tier": "strong",
+            "weight": 0.72,
+            "canonical": {
+              "latDeg": 28.5,
+              "lonDeg": 9.16700000000003
+            },
+            "sourceUv": {
+              "u": 0.47204939,
+              "v": 0.34272873
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.880711,
+              "confidence": 0.042419
+            }
+          },
+          {
+            "id": "settlement:5",
+            "featureRef": "settlement-5",
+            "featureClass": "settlement",
+            "tier": "hard",
+            "weight": 1.0,
+            "canonical": {
+              "latDeg": 53,
+              "lonDeg": -27
+            },
+            "sourceUv": {
+              "u": 0.39525667,
+              "v": 0.22096984
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.866576,
+              "confidence": 0.024704
+            }
+          },
+          {
+            "id": "gazetteer:coast-23",
+            "featureRef": "coast-23",
+            "featureClass": "island",
+            "tier": "strong",
+            "weight": 0.72,
+            "canonical": {
+              "latDeg": 47.353,
+              "lonDeg": 54.11799999999994
+            },
+            "sourceUv": {
+              "u": 0.60304874,
+              "v": 0.25704655
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.86569,
+              "confidence": 0.047591
+            }
+          },
+          {
+            "id": "settlement:9",
+            "featureRef": "settlement-9",
+            "featureClass": "settlement",
+            "tier": "hard",
+            "weight": 1.0,
+            "canonical": {
+              "latDeg": 23,
+              "lonDeg": 143
+            },
+            "sourceUv": {
+              "u": 0.85601301,
+              "v": 0.37880544
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.8564,
+              "confidence": 0.038348
+            }
+          },
+          {
+            "id": "settlement:4",
+            "featureRef": "settlement-4",
+            "featureClass": "settlement",
+            "tier": "hard",
+            "weight": 1.0,
+            "canonical": {
+              "latDeg": 41,
+              "lonDeg": -63
+            },
+            "sourceUv": {
+              "u": 0.29813646,
+              "v": 0.28861367
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.84468,
+              "confidence": 0.051587
+            }
+          },
+          {
+            "id": "gazetteer:coast-2",
+            "featureRef": "coast-2",
+            "featureClass": "continent",
+            "tier": "strong",
+            "weight": 0.72,
+            "canonical": {
+              "latDeg": 5.84,
+              "lonDeg": -78.82400000000001
+            },
+            "sourceUv": {
+              "u": 0.25296427,
+              "v": 0.44193968
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.842069,
+              "confidence": 0.103177
+            }
+          },
+          {
+            "id": "settlement:12",
+            "featureRef": "settlement-12",
+            "featureClass": "settlement",
+            "tier": "hard",
+            "weight": 1.0,
+            "canonical": {
+              "latDeg": 37,
+              "lonDeg": -37
+            },
+            "sourceUv": {
+              "u": 0.36815335,
+              "v": 0.31116161
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.840647,
+              "confidence": 0.023319
+            }
+          },
+          {
+            "id": "river:29:endpoint-b",
+            "featureRef": "river-29",
+            "featureClass": "river-endpoint",
+            "tier": "soft",
+            "weight": 0.45,
+            "canonical": {
+              "latDeg": 51,
+              "lonDeg": 171
+            },
+            "sourceUv": {
+              "u": 0.94184017,
+              "v": 0.22096984
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.831387,
+              "confidence": 0.043404
+            }
+          },
+          {
+            "id": "gazetteer:coast-25",
+            "featureRef": "coast-25",
+            "featureClass": "island",
+            "tier": "strong",
+            "weight": 0.72,
+            "canonical": {
+              "latDeg": 59,
+              "lonDeg": -50.80000000000001
+            },
+            "sourceUv": {
+              "u": 0.3320156,
+              "v": 0.18940272
+            },
+            "observation": {
+              "method": "local-land-water-shape-correlation",
+              "matchScore": 0.830932,
+              "confidence": 0.04757
+            }
+          }
+        ],
+        "quality": {
+          "rmsAnchorErrorPx": 15.9436,
+          "maxAnchorErrorPx": 30.7297,
+          "macroBalancedAccuracy": 0.801719,
+          "macroOceanJaccard": 0.744016,
+          "reliableAnchorCount": 18
+        },
+        "solver": {
+          "method": "periodic-thin-plate-spline",
+          "fieldGrid": [
+            192,
+            96
+          ],
+          "smoothing": 0.004,
+          "maxAbsDxPx": 64.0,
+          "maxAbsDyPx": 48.0,
+          "meanAbsDxPx": 61.80534362792969,
+          "meanAbsDyPx": 23.044130325317383,
+          "sampleWeightMean": 0.7157789075402294
+        }
+      },
+      "runtimeTexture": {
+        "format": "webp",
+        "repositoryPath": "assets/body-textures/thebes/jinyara.webp",
+        "widthPx": 1774,
+        "heightPx": 887,
+        "sha256": "0234a0e93e029119a84815ee3ebd25fa81d00f08b58fdd78ffb7ac78a0cf6d7e"
+      },
+      "provenance": {
+        "promotionTool": "tools/register-jinyara-surface-art-v1.py",
+        "sourceAcquisition": "authenticated-authoring-bridge; no runtime dependency"
+      }
+    }
+  ]
 }

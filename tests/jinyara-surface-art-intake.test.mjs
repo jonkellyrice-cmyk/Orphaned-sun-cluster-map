@@ -2,17 +2,21 @@ import assert from "node:assert/strict";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import test from "node:test";
+import { validateSurfaceArtManifest } from "../scripts/surface-art-registration.mjs";
 
 const canonicalPath = "data/planet-cartography/thebes/jinyara.json";
 const intakePath = "data/surface-art/intake/thebes/jinyara.json";
 const manifestPath = "data/surface-art/manifest.json";
+const runtimePath = "assets/body-textures/thebes/jinyara.webp";
+const reportPath = "data/surface-art/registration-reports/thebes/jinyara.json";
 const sha256 = (buffer) => crypto.createHash("sha256").update(buffer).digest("hex");
 const canonicalBytes = fs.readFileSync(canonicalPath);
 const canonical = JSON.parse(canonicalBytes.toString("utf8"));
 const intake = JSON.parse(fs.readFileSync(intakePath, "utf8"));
 const runtimeManifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
 
-test("Jinyara intake pins exact canonical cartography identity", () => {
+test("Jinyara intake stays pinned to exact canonical cartography identity", () => {
   assert.equal(intake.system, "Thebes");
   assert.equal(intake.body, "Jinyara");
   assert.equal(intake.canonical.sourcePath, canonicalPath);
@@ -21,20 +25,20 @@ test("Jinyara intake pins exact canonical cartography identity", () => {
   assert.equal(intake.canonical.sourceSha256, sha256(canonicalBytes));
 });
 
-test("Jinyara intake identifies the exact GM Kit attachment without inventing its checksum", () => {
+test("authenticated acquisition verifies the exact GM Kit source bytes", () => {
   assert.equal(intake.sourceArtwork.campaignId, "orphaned-sun-generated-maps");
   assert.equal(intake.sourceArtwork.entityId, "generated-map-375d0440032e4c3c4480");
   assert.equal(intake.sourceArtwork.attachmentId, "cb4fdeae-019c-4d5e-b651-2229c4622080");
-  assert.equal(intake.sourceArtwork.bytes, 3829195);
+  assert.equal(intake.sourceArtwork.bytes, 3831433);
   assert.equal(intake.sourceArtwork.width, 1774);
   assert.equal(intake.sourceArtwork.height, 887);
   assert.equal(intake.sourceArtwork.width, intake.sourceArtwork.height * 2);
-  assert.equal(intake.sourceArtwork.sha256, null);
-  assert.equal(intake.sourceArtwork.checksumStatus, "pending-secure-byte-acquisition");
+  assert.equal(intake.sourceArtwork.sha256, "65efc7f9ffdd6bee7f15dfe36ee5f1bc2d5e994a09d86f80a73ae57ee2e83b38");
+  assert.equal(intake.sourceArtwork.checksumStatus, "verified-exact-source-bytes");
   assert.equal(intake.sourceArtwork.authoringStorage.runtimeDependencyAllowed, false);
 });
 
-test("bounded registration shortlist retains every Jinyara settlement as a hard anchor", () => {
+test("bounded registration shortlist still retains every Jinyara settlement as a hard candidate", () => {
   const hard = intake.selectedAnchors.filter((item) => item.weight === "hard");
   assert.equal(canonical.settlements.length, 18);
   assert.equal(hard.length, canonical.settlements.length);
@@ -44,7 +48,7 @@ test("bounded registration shortlist retains every Jinyara settlement as a hard 
   assert(hard.some((item) => item.class === "regional"));
 });
 
-test("shortlist is deliberately bounded while retaining geography, roads, hydrology, and seam coverage", () => {
+test("registration preserves bounded geography, roads, hydrology, and seam-aware candidates", () => {
   assert.equal(intake.anchorPoolSummary.total, 211);
   assert.equal(intake.selectedAnchorSummary.total, 50);
   assert.equal(intake.selectedAnchorSummary.byWeight.hard, 18);
@@ -59,23 +63,35 @@ test("shortlist is deliberately bounded while retaining geography, roads, hydrol
   assert(seam.every((item) => Number.isFinite(item.canonical.wrapU)));
 });
 
-test("expected source pixels remain projection guesses until image correspondence is measured", () => {
-  for (const item of intake.selectedAnchors) {
-    assert(item.canonical.u >= 0 && item.canonical.u <= 1);
-    assert(item.canonical.v >= 0 && item.canonical.v <= 1);
-    assert(item.canonical.x >= 0 && item.canonical.x <= 1773);
-    assert(item.canonical.y >= 0 && item.canonical.y <= 886);
-    assert.equal(item.sourceObservation.status, "pending");
-    assert.equal(item.sourceObservation.u, null);
-    assert.equal(item.sourceObservation.v, null);
-  }
+test("measured correspondences replace projection guesses for a reliable semantic subset", () => {
+  const measured = intake.selectedAnchors.filter((item) => item.sourceObservation.status === "measured");
+  assert(measured.length >= 6);
+  assert(measured.every((item) => Number.isFinite(item.sourceObservation.u) && item.sourceObservation.u >= 0 && item.sourceObservation.u <= 1));
+  assert(measured.every((item) => Number.isFinite(item.sourceObservation.v) && item.sourceObservation.v >= 0 && item.sourceObservation.v <= 1));
+  assert(measured.every((item) => item.sourceObservation.method === "local-land-water-shape-correlation"));
+  assert(measured.every((item) => item.sourceObservation.matchScore >= 0.63));
+  const pending = intake.selectedAnchors.filter((item) => item.sourceObservation.status === "pending");
+  assert.equal(measured.length + pending.length, 50);
 });
 
-test("Step 2 does not falsely promote Jinyara into the runtime surface-art manifest", () => {
-  assert.equal(runtimeManifest.schemaVersion, 1);
-  assert.equal(runtimeManifest.entries.some((entry) => entry.system === "Thebes" && entry.body === "Jinyara"), false);
-  assert.equal(intake.registrationReadiness.sourceLinked, false);
-  assert.equal(intake.registrationReadiness.registered, false);
-  assert.equal(intake.registrationReadiness.promoted, false);
-  assert.equal(intake.targetRuntime.status, "not-baked");
+test("Jinyara is promoted only with a repository-local validated 2:1 WebP", () => {
+  validateSurfaceArtManifest(runtimeManifest, { requirePromoted: true });
+  const entry = runtimeManifest.entries.find((item) => item.id === "thebes--jinyara");
+  assert(entry);
+  assert.equal(entry.stage, "promoted");
+  assert.equal(entry.sourceArtwork.sha256, intake.sourceArtwork.sha256);
+  assert.equal(entry.runtimeTexture.repositoryPath, runtimePath);
+  assert.equal(entry.runtimeTexture.widthPx, 1774);
+  assert.equal(entry.runtimeTexture.heightPx, 887);
+  const bytes = fs.readFileSync(runtimePath);
+  assert.equal(sha256(bytes), entry.runtimeTexture.sha256);
+  assert.equal(report.runtime.sha256, entry.runtimeTexture.sha256);
+  assert.equal(intake.targetRuntime.sha256, entry.runtimeTexture.sha256);
+  assert.equal(intake.registrationReadiness.sourceLinked, true);
+  assert.equal(intake.registrationReadiness.registered, true);
+  assert.equal(intake.registrationReadiness.promoted, true);
+  assert.equal(intake.targetRuntime.status, "baked-and-promoted");
+  assert(entry.registration.quality.rmsAnchorErrorPx <= 18);
+  assert(entry.registration.quality.maxAnchorErrorPx <= 36);
+  assert(entry.registration.quality.macroBalancedAccuracy >= 0.62);
 });

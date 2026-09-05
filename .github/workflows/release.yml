@@ -39,7 +39,7 @@ jobs:
           VERSION="$(node -p "require('./package.json').version")"
           ARCHIVE="orphaned-sun-cluster-map-v${VERSION}.zip"
           zip -r "$ARCHIVE" \
-            module.json scripts templates styles lang README.md docs data \
+            module.json scripts templates styles lang README.md docs data assets \
             -x "*.DS_Store"
           for required in \
             data/planet-geography/manifest.json \
@@ -52,7 +52,9 @@ jobs:
             data/body-operations/abydos/cataphract.json \
             data/body-operations/amarna/akhetan.json \
             data/body-operations/seti/arrowfall-range.json \
-            data/astronomy/epoch-orientations.json; do
+            data/astronomy/epoch-orientations.json \
+            data/surface-art/manifest.json \
+            assets/body-textures/thebes/jinyara.webp; do
             unzip -Z1 "$ARCHIVE" | grep -Fx "$required"
           done
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
