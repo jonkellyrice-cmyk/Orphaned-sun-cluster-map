@@ -1,0 +1,77 @@
+name: Jinyara Surface Art Registration Authoring
+
+on:
+  push:
+    branches:
+      - feature/jinyara-surface-art-registration
+    paths:
+      - "tools/register-jinyara-surface-art-v1.py"
+      - ".github/workflows/jinyara-surface-art-registration-authoring.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/jinyara-surface-art-registration
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install authoring dependencies
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 Pillow==11.3.0 scipy==1.16.1
+      - name: Acquire exact approved Jinyara source
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --retry-delay 2 \
+            "https://wragudserlyxejrlftpd.supabase.co/functions/v1/surface-art-jinyara-intake-9f3c6a" \
+            --output /tmp/jinyara-source.png
+          echo "65efc7f9ffdd6bee7f15dfe36ee5f1bc2d5e994a09d86f80a73ae57ee2e83b38  /tmp/jinyara-source.png" | sha256sum --check --strict
+          test "$(stat -c %s /tmp/jinyara-source.png)" = "3831433"
+      - name: Register and bake Jinyara
+        run: python tools/register-jinyara-surface-art-v1.py --source /tmp/jinyara-source.png
+      - name: Validate promoted surface-art contract
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
+          import { validateSurfaceArtManifest } from "./scripts/surface-art-registration.mjs";
+          const manifest = JSON.parse(fs.readFileSync("data/surface-art/manifest.json", "utf8"));
+          validateSurfaceArtManifest(manifest, { requirePromoted: true });
+          console.log(`[surface-art] validated ${manifest.entries.length} promoted manifest entr${manifest.entries.length === 1 ? "y" : "ies"}`);
+          NODE
+      - name: Run focused Jinyara tests
+        run: node --test tests/jinyara-surface-art-intake.test.mjs tests/surface-art-registration.test.mjs tests/release-package.test.mjs
+      - name: Run full repository tests
+        run: npm test
+      - name: Verify frozen atlas remains unchanged
+        run: npm run atlas:snapshot:check
+      - name: Verify bounded generated diff
+        shell: bash
+        run: |
+          git diff --check
+          unexpected="$(git status --porcelain --untracked-files=all | awk '{print $2}' | grep -Ev '^(assets/body-textures/thebes/jinyara\.webp|data/surface-art/intake/thebes/jinyara\.json|data/surface-art/manifest\.json|data/surface-art/registration-reports/thebes/jinyara\.json)$' || true)"
+          if [ -n "$unexpected" ]; then
+            echo "Unexpected generated paths:"
+            echo "$unexpected"
+            exit 1
+          fi
+      - name: Commit generated registration artifacts
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            assets/body-textures/thebes/jinyara.webp \
+            data/surface-art/intake/thebes/jinyara.json \
+            data/surface-art/manifest.json \
+            data/surface-art/registration-reports/thebes/jinyara.json
+          git diff --cached --quiet && { echo "No registration artifacts to commit."; exit 0; }
+          git commit -m "feat: register and bake Jinyara surface art"
+          git push origin HEAD:feature/jinyara-surface-art-registration
